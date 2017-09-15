@@ -31,7 +31,7 @@
 
 \section{Problem Definition}
 Knowledge bases handling vast amounts of Linked Data~(e.g. DBpedia~\cite{lehmann2015dbpedia}) gained importance, requiring links to large, but domain-specific datasets. Specifically managing the process of ontology engineering, including ontology creation and ontology evolution, tends to be complex and time-consuming if done by ontology experts.
-\citeauthor{wohlgenannt2016crowd}~\cite{wohlgenannt2016crowd}~proposed the uComp Protege plugin for decomposing these tasks into simple and smaller ones, solvable by non-experts. Crowdsourcing methods were used to verify \textit{Relation Correctness~(T2)}, \textit{Relation Type~(T3)} and \textit{Domain Relevance~(T4)}, whereas Term Relatedness~(T1) was not supported. Although evaluation shows that the tool greatly reduces working time by ontology engineers, there were some challenges and limitations. 
+\citet{wohlgenannt2016crowd}~proposed the uComp Protege plugin for decomposing these tasks into simple and smaller ones, solvable by non-experts. Crowdsourcing methods were used to verify \textit{Relation Correctness~(T2)}, \textit{Relation Type~(T3)} and \textit{Domain Relevance~(T4)}, whereas Term Relatedness~(T1) was not supported. Although evaluation shows that the tool greatly reduces working time by ontology engineers, there were some challenges and limitations. 
 
 This work investigates one such limitation as the lack of contextual information in the ontology engineering tasks. More specifically, it investigates the questions of what kind of additional context is needed such that the results get more accurate and to what extend does it improve the overall workflow. In addition, options for adding task specific contexts, a detailed architecture for an implementation and and evaluation against a set of pre-selected ontologies are subjects of contribution. 
 \section{Expected Result}
@@ -68,7 +68,13 @@ To justify the improvements in a typical ontology engineering setting, a detaile
 % 3.) Take external information into account or not?
 % 4.) Fully automated or guided?
  
- 
+ The existing architecture for improving ontology engineering tasks with the help of crowdsourcing that will be used as a baseline for this thesis was introduced by \citet{wohlgenannt2016crowd}. The authors reported that \enquote{its use reduces the working times for the ontology engineers 11 times, lowers the overall task costs by 40\% to 83\% depending on the crowdsourcing settings used and leads to data quality comparable with that of tasks performed by ontology engineers.} The overall workflow ranging from task specification to result interpretation and presentation used by the tool is shown in Figure~\ref{fig:ucomp_workflow}.
+\begin{figure}[H]
+	 \includegraphics[width=\textwidth]{graphics/ucomp_workflow}
+	 \caption{Overall workflow of the uComp Protege Plugin~\cite{wohlgenannt2016crowd}}\label{fig:ucomp_workflow}
+\end{figure}
+
+
 \section{Relation to Software Engineering \& Internet Computing}
 Researching, evaluating, developing, analyzing and verifying are important skills in the curriculum \emph{Software Engineering \& Internet Computing}, matching the required skillset in this thesis for answering the research questions by applying the methodology and approach. Moreover, the development of an extension of the uComp Protege plugin requires an in-depth understanding of all phases in the Software Development Lifecycle, covering Requirement~Analysis, Design, Implementation and Maintenance. Furthermore, an overall understanding of scientific principles and approaches as well as advanced knowledge of ontologies and related concepts is necessary. Therefore the qualification profile in the study of \emph{Software Engineering \& Internet Computing} is well covered. 
 

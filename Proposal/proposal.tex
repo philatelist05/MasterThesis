@@ -30,11 +30,25 @@
 \setcounter{page}{1}
 
 \section{Problem Definition}
+% Needs extension:
+%	-) Introduce the use of crowds for ontology engineering 
+%		Semantic web and crowdsourcing (dagstuhl)
+%		https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43889.pdf => read and reference it first 
+%	-) Our focus is on “embedded crowdsourcing” through the ucomp plugin; good results, but could be better if concepts sent for 
+%	   crowdsourcing were better documented with relevant context.
+%	-)Indeed, the need for good context in crowds tasks, has already been discussed although not clearly investigated in [Mortensen]
+%	-) Not a "general" approach to apply crowdsourcing ((results depend on crowdworkers))
+
 Knowledge bases handling vast amounts of Linked Data~(e.g. DBpedia~\cite{lehmann2015dbpedia}) are gaining importance, connecting large and distributed datasets. Especially ontology engineering, including ontology creation and ontology evolution, tends to be complex and time-consuming if done by ontology experts.
 \citet{wohlgenannt2016crowd}~proposed the uComp Protege plugin for decomposing tasks into simple and small ones, solvable by non-experts. Crowdsourcing methods were used to verify \textit{Relation Correctness~(T2)}, \textit{Relation Type~(T3)} and \textit{Domain Relevance~(T4)}, whereas Term Relatedness~(T1) was not supported. Although evaluation shows that the tool greatly reduces working time by ontology engineers, there were some challenges and limitations. 
 
 This work investigates one such limitation as lacking contextual information in the ontology engineering tasks. More specifically, it investigates what kind of additional context is needed such that the results get more accurate and to what extend it improves the overall workflow. In addition, options for adding task specific contexts, a detailed architecture for an implementation and evaluation against a set of pre-selected ontologies are subjects of contribution. 
 \section{Expected Result}
+% -) Give a bit of explanation why each RQ is useful
+% -) Move relevant results under each RQ
+% -) Group Research questions with results
+% -) Rephrase Research Questions (RQ1 - RQ3) to results (R1 - R3)
+
 Based on the problem definition above, the following research questions are addressed in this thesis:
 \paragraph{RQ1}~\textbf{What are the requirements for an extension of the uComp Protege plugin for adding contextual information to crowdsourcing tasks?}\\
 \paragraph{RQ2}~\textbf{What approaches are applicable to facilitate the provision of contextual information for crowdsourcing tasks?}\\
@@ -47,7 +61,15 @@ This thesis make use of empirical and exploratory approaches strengthening the c
 	\item An in-depth evaluation on the performance of the proposed extension.
 	\item A reduction in costs and working time in crowdsourcing tasks while improving quality results from crowds.
 \end{itemize}
-\section{Methodology and Approach}
+\section{Methodological Approach}
+% 	-) Remove sections, use paragraphs instead (or description lists)
+% 	-) Make reference to each RQs
+% 	-) Extend evaluation part 
+%		*) Add references to ontologies that we already use
+%		*) Bootstrapped based evaluation will be performed to make sure that the obtained results are generalizable 
+% 	-) Add a picture about the concrete solution (at the end of the section) as we discussed 
+
+
 The expected results are derived from the following methodology and approach:
 \subsection{Literature Research}
 For a complete picture on different approaches of how contextual information can be used to improve crowdsourcing tasks, an extensive literature research will be performed. For example one approach from a different research area but also applicable with focus on solving crowdsourcing tasks is ontology matching based on neighboring nodes~\cite{hoffmann2010context}. Although \emph{RQ2} will be addressed directly by this task, literature study is done continuously throughout the whole thesis. 
@@ -61,14 +83,15 @@ The practical part of this thesis includes extending the uComp Protege plugin to
 To justify the improvements in a typical ontology engineering setting, a detailed evaluation based on the metrics in~\cite{wohlgenannt2016crowd} will be conducted. More specifically, evaluation metrics include the working time for an ontology engineer, task costs, task duration, data quality and scalability.  
 
 \section{State of the art}
-% 1.) Description of current architecture of the uComp Protege Plugin
-% 2.) Outline different approaches for adding contextual information to crowdsourcing tasks
-%	2.1) Adapt ontology matching techniques by taking neighbouring nodes into account
-%	2.2) Adapt Natural language processing techniques (NPL) to discover ambiguities and contradictions
-% 3.) Take external information into account or not?
-% 4.) Fully automated or guided?
- 
- The initial architecture for improving ontology engineering tasks with the help of crowdsourcing that will be used as a baseline for this thesis was introduced by \citet{wohlgenannt2016crowd}. The authors reported that \enquote{its use reduces the working times for the ontology engineers 11 times, lowers the overall task costs by 40\% to 83\% depending on the crowdsourcing settings used and leads to data quality comparable with that of tasks performed by ontology engineers.} The overall workflow ranging from task specification to result interpretation and presentation used by the tool is shown in Figure~\ref{fig:ucomp_workflow}.
+% Needs extension:
+% 	-) 1 paragraph about crowdsourcing
+% 	-) 1-3 paragraph about crowdsourcing in Semantic Web and concrete life-cycle stages in ontology engineering (based on SWJ table)
+%	-) Describe uComp plugin and need for context [ok]
+%	-) Add related work about context [Mortensen]
+%	-) Describe related work for proposed approaches [ok].
+%	-) (Probably move possible solutions to methodology)
+
+The initial architecture for improving ontology engineering tasks with the help of crowdsourcing that will be used as a baseline for this thesis was introduced by \citet{wohlgenannt2016crowd}. The authors reported that \enquote{its use reduces the working times for the ontology engineers 11 times, lowers the overall task costs by 40\% to 83\% depending on the crowdsourcing settings used and leads to data quality comparable with that of tasks performed by ontology engineers.} The overall workflow ranging from task specification to result interpretation and presentation used by the tool is shown in Figure~\ref{fig:ucomp_workflow}.
 \begin{figure}[H]
 	 \includegraphics[width=\textwidth]{graphics/ucomp_workflow}
 	 \caption{Overall workflow of the uComp Protege Plugin~\cite{wohlgenannt2016crowd}}\label{fig:ucomp_workflow}

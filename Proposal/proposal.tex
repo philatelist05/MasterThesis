@@ -32,15 +32,24 @@
 \section{Problem Definition}
 % Needs extension:
 %	-) Introduce the use of crowds for ontology engineering 
-%		Semantic web and crowdsourcing (dagstuhl)
-%		https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43889.pdf => read and reference it first 
-%	-) Our focus is on “embedded crowdsourcing” through the ucomp plugin; good results, but could be better if concepts sent for 
+%		Semantic web and crowdsourcing (dagstuhl) => read and reference it first 
+%		"Crowdsourcing and the Semantic Web: A Research Manifesto" => read and reference it first 
+%	-) Our focus is on "embedded crowdsourcing" through the ucomp plugin; good results, but could be better if concepts sent for 
 %	   crowdsourcing were better documented with relevant context.
 %	-)Indeed, the need for good context in crowds tasks, has already been discussed although not clearly investigated in [Mortensen]
 %	-) Not a "general" approach to apply crowdsourcing ((results depend on crowdworkers))
 
-Knowledge bases handling vast amounts of Linked Data~(e.g. DBpedia~\cite{lehmann2015dbpedia}) are gaining importance, connecting large and distributed datasets. Especially ontology engineering, including ontology creation and ontology evolution, tends to be complex and time-consuming if done by ontology experts.
-\citet{wohlgenannt2016crowd}~proposed the uComp Protege plugin for decomposing tasks into simple and small ones, solvable by non-experts. Crowdsourcing methods were used to verify \textit{Relation Correctness~(T2)}, \textit{Relation Type~(T3)} and \textit{Domain Relevance~(T4)}, whereas Term Relatedness~(T1) was not supported. Although evaluation shows that the tool greatly reduces working time by ontology engineers, there were some challenges and limitations. 
+The advance of embedding Information Technology into all kinds of electronic devices and connecting them to collect and exchange data imposes new challenges of handling the increasing amount of data. Although many problems can be solely solved by machines only, there are certain tasks where humans perform better than computers. In \emph{Crowdsourcing} collective human intelligence~(the crowd) is used to solve complex tasks. \citet{yuen2011survey}~grouped crowdsourcing applications into 
+\begin{inparaenum}[1)]
+		\item \emph{Voting Systems},
+		\item \emph{Information Sharing Systems},
+		\item \emph{Games with a purpose~(GWAP)} and
+		\item \emph{Creative Systems}
+\end{inparaenum}. 
+First, Voting Systems like Amazon Mechanical Turk~(MTurk)~\footnote{https://www.mturk.com/} use majority voting to consider the answer with the highest number of votes as the correct one. Second, Information Sharing Systems enable users to share and distribute knowledge among the crowd. Third, Games with a purpose~(GWAP) is another application of crowdsourcing where crowd~workers contribute by playing a small game in order to solve some meaningful tasks. Fourth, Creative Systems include tasks like labeling an image, writing algorithms or editing text. 
+
+% Knowledge bases handling vast amounts of Linked Data~(e.g. DBpedia~\cite{lehmann2015dbpedia}) are gaining importance, connecting large and distributed datasets. Especially ontology engineering, including ontology creation and ontology evolution, tends to be complex and time-consuming if done by ontology experts.
+% \citet{wohlgenannt2016crowd}~proposed the uComp Protege plugin for decomposing tasks into simple and small ones, solvable by non-experts. Crowdsourcing methods were used to verify \textit{Relation Correctness~(T2)}, \textit{Relation Type~(T3)} and \textit{Domain Relevance~(T4)}, whereas Term Relatedness~(T1) was not supported. Although evaluation shows that the tool greatly reduces working time by ontology engineers, there were some challenges and limitations. 
 
 This work investigates one such limitation as lacking contextual information in the ontology engineering tasks. More specifically, it investigates what kind of additional context is needed such that the results get more accurate and to what extend it improves the overall workflow. In addition, options for adding task specific contexts, a detailed architecture for an implementation and evaluation against a set of pre-selected ontologies are subjects of contribution. 
 \section{Expected Result}

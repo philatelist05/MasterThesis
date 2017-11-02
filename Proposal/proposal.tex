@@ -50,7 +50,7 @@ Whereas research shows that breaking task into smaller pieces and formulating th
 
 This work investigates this limitation by examining what kind context is needed to get better results, what would be the improvements in the overall workflow and how does the architecture of a concrete implementation look like. To answer the second question, a detailed evaluation study on selected domains and ontologies is conducted.
 
-As a practical part, an extension of the existing \emph{uComp~Protege~Plugin~\cite{wohlgenannt2016crowd}} will be implemented. This plugin uses "embedded crowdsourcing" to verify properties of generic ontologies. In particular, it supports verification of Relation Correctness~(T2), Relation Type~(T3) and Domain Relevance~(T4). It achieves good results but their quality could be improved if concepts sent for crowdsourcing were better documented with relevant context. 
+As a practical part, an extension of the existing \emph{uComp~Protege~Plugin~\cite{wohlgenannt2016crowd}} is implemented. This plugin uses "embedded crowdsourcing" to verify properties of generic ontologies. In particular, it supports verification of Relation Correctness~(T2), Relation Type~(T3) and Domain Relevance~(T4). It achieves good results but their quality could be improved if concepts sent for crowdsourcing were better documented with relevant context. 
 
 \section{Expected Results}
 Based on the problem definition above, the following results are planned:
@@ -78,15 +78,23 @@ The evaluation is based on the algorithm of \emph{RE3} and is related to the res
 
 The expected results are derived from the following methodology and approach:
 \paragraph{Literature Research}
-For a complete picture on different approaches of how contextual information can be used to improve crowdsourcing tasks, an extensive literature research will be performed. For example one approach from a different research area but also applicable with focus on solving crowdsourcing tasks is ontology matching based on neighboring nodes~\cite{hoffmann2010context}. Although \emph{RQ2} will be addressed directly by this task, literature study is done continuously throughout the whole thesis. 
+For a complete picture on different approaches of how contextual information can be used to improve crowdsourcing tasks, an extensive literature research is performed. For example one approach from a different research area but also applicable with focus on solving crowdsourcing tasks is ontology matching based on neighboring nodes~\cite{hoffmann2010context}. Although \emph{RQ1} is directly addressed by this task, literature study is done continuously throughout the whole thesis. 
 \paragraph{Identify requirements}
-Requirements for building an extension of the uComp Protege plugin will be collected by evaluating and extending the requirements of the existing approach~\cite{wohlgenannt2016crowd}. Grouped and evaluated requirements form a basis for choosing the most promising approach for the implementation.
+To answer \emph{RQ2}, a detailed requirement analysis which builds up the starting phase of the SDLC~\cite{ruparelia2010} is performed. Functional and non-functional requirements are gathered according to the principles released by the~\citet{ieeeSoftwareRequirements}. Well defined guidelines are key elements in successful software products. 
 \paragraph{Identify different approaches for the implementation}
-Based on the insights from literature research, various options for building the extension will be proposed. Each approach will be described in detail, concluding with estimated integration efforts. Based on this estimation, the actual development of the extension will be performed. 
+Based on the insights from literature research, various options for building the extension are proposed. Each approach is described in detail, concluding with estimated integration efforts. Based on this estimation, the actual development of the extension is performed. 
 \paragraph{Integrate approach in the uComp Protege plugin}
-The practical part of this thesis includes extending the uComp Protege plugin to take contextual information into account for performing crowdsourcing tasks. This extension implements all gathered requirements from former requirement analysis. In addition, we will give an overview of the overall plugin architecture as well as the crowdsourcing workflow. 
+The practical part of this thesis includes extending the uComp Protege plugin to take contextual information into account for performing crowdsourcing tasks. This extension implements all gathered requirements from former requirement analysis. In addition, an overview of the overall plugin architecture as well as the crowdsourcing workflow is given. 
+
+%Describe here new solution
 \paragraph{Evaluate performance metrics}
-To justify the improvements in a typical ontology engineering setting, a detailed evaluation based on the metrics in~\cite{wohlgenannt2016crowd} will be conducted. More specifically, evaluation metrics include the working time for an ontology engineer, task costs, task duration, data quality and scalability.  
+To justify the improvements asked in \emph{RQ3}, a detailed evaluation based on the metrics in~\cite{wohlgenannt2016crowd} is conducted. 
+
+% Picture of a concrete solution %
+\begin{figure}[H]
+	 \includegraphics[width=\textwidth]{graphics/new_architecture}
+	 \caption{Description}\label{fig:new_architecture}
+\end{figure}
 
 \section{State of the art}
 % Needs extension:

@@ -37,7 +37,7 @@ The advance of embedding Information Technology into all kinds of electronic dev
 		\item Games with a purpose~(GWAP) and
 		\item Creative Systems
 \end{inparaenum}. 
-First, Voting Systems like Amazon Mechanical Turk~(MTurk)~\footnote{https://www.mturk.com/} use majority voting to consider the answer with the highest number of votes as the correct one. Second, Information Sharing Systems enable users to share and distribute knowledge among the crowd. Third, Games with a purpose~(GWAP) is another application of crowdsourcing where crowd~workers contribute by playing a small game in order to solve some meaningful tasks. Fourth, Creative Systems include tasks like labeling an image, writing algorithms or editing text. 
+First, Voting Systems like Amazon Mechanical Turk~(MTurk)\footnote{\url{https://www.mturk.com/}} use majority voting to consider the answer with the highest number of votes as the correct one. Second, Information Sharing Systems enable users to share and distribute knowledge among the crowd. Third, Games with a purpose~(GWAP) is another application of crowdsourcing where crowd~workers contribute by playing a small game in order to solve some meaningful tasks. Fourth, Creative Systems include tasks like labeling an image, writing algorithms or editing text. 
 
 An inherent factor of the Semantic Web is its large amount of Linked Data~(e.g. DBpedia~\cite{lehmann2015dbpedia}). Semantic technologies have emerged in various application including domain modeling, data integration, enhanced search and content management~\cite{semantic-web-usecases}. Managing Semantic Web tasks is considered resource intensive and often requires human involvement due to its knowledge intensive and context specific nature. On the other side Crowdsourcing aims at solving simple and small tasks~(microtasks) in a cost-effective way. However, \citet{sarasua2015crowdsourcing} shows major research challenges and opportunities in combining Crowdsourcing and Semantic Web technologies. The most important challenges include 
 \begin{inparaenum}[1)]
@@ -69,13 +69,6 @@ The evaluation is based on the algorithm of \emph{RE3} and is related to the res
 
 \section{Methodological Approach}
 \label{sec:methodology}
-% 	-) Make reference to each RQs
-% 	-) Extend evaluation part 
-%		*) Add references to ontologies that we already use
-%		*) Bootstrapped based evaluation will be performed to make sure that the obtained results are generalizable 
-% 	-) Add a picture about the concrete solution (at the end of the section) as we discussed 
-
-
 The expected results are derived from the following methodology and approach:
 \paragraph{Literature Research}
 For a complete picture on different approaches of how contextual information can be used to improve crowdsourcing tasks, an extensive literature research is performed. For example one approach from a different research area but also applicable with focus on solving crowdsourcing tasks is ontology matching based on neighboring nodes~\cite{hoffmann2010context}. Although \emph{RQ1} is directly addressed by this task, literature study is done continuously throughout the whole thesis. 
@@ -84,16 +77,20 @@ To answer \emph{RQ2}, a detailed requirement analysis which builds up the starti
 \paragraph{Identify different approaches for the implementation}
 Based on the insights from literature research, various options for building the extension are proposed. Each approach is described in detail, concluding with estimated integration efforts. Based on this estimation, the actual development of the extension is performed. 
 \paragraph{Integrate approach in the uComp Protege plugin}
-The practical part of this thesis includes extending the uComp Protege plugin to take contextual information into account for performing crowdsourcing tasks. This extension implements all gathered requirements from former requirement analysis. In addition, an overview of the overall plugin architecture as well as the crowdsourcing workflow is given. 
+The practical part of this thesis includes extending the uComp Protege plugin to take contextual information into account for performing crowdsourcing tasks. This extension implements all gathered requirements from former requirement analysis.
 
-%Describe here new solution
+As a starting point,~\hyperref[fig:new_architecture]{Figure~\ref*{fig:new_architecture}} shows the basic workflow of a prototypical implementation. Based on the existing implementation it begins with collecting the required data from the input ontology to create the initial crowdsourcing task. Depending on the type of validation~(e.g. Domain Relevance Validation, Subsumption Validation, InstanceOf Validation, Relation Label Validation or Domain/Range Validation) different contexts may be necessary. Then, a novel \emph{Data Enrichment Algorithm} proposed in this thesis takes the initial crowdsourcing task together with the validation type and adds descriptions with the help of external data sources~(e.g. DBPedia\footnote{\url{http://wiki.dbpedia.org/}} and Yago\footnote{\url{https://www.mpi-inf.mpg.de/departments/databases-and-information-systems/research/yago-naga/yago/}}). Next, the actual crowdsourcing process happens by sending tasks to crowdsourcing platforms through a uniform API. Finally, harvested results are processed and presented to the ontology engineer. 
 \paragraph{Evaluate performance metrics}
 To justify the improvements asked in \emph{RQ3}, a detailed evaluation based on the metrics in~\cite{wohlgenannt2016crowd} is conducted. 
 
-% Picture of a concrete solution %
+% 	-) Extend evaluation part 
+%		*) Add references to ontologies that we already use
+%		*) Bootstrapped based evaluation will be performed to make sure that the obtained results are generalizable 
+
+
 \begin{figure}[H]
 	 \includegraphics[width=\textwidth]{graphics/new_architecture}
-	 \caption{Description}\label{fig:new_architecture}
+	 \caption{Basic workflow in adding contextual information to crowdsourcing tasks}\label{fig:new_architecture}
 \end{figure}
 
 \section{State of the art}

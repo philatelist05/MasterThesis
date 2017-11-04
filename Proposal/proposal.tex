@@ -92,24 +92,27 @@ As the main objective of the evaluation process is to deliver comparable results
 \end{figure}
 
 \section{State of the art}
-% Needs extension:
-% 	-) 1 paragraph about crowdsourcing in general
-% 	-) 1-3 paragraph about crowdsourcing in Semantic Web and concrete life-cycle stages in ontology engineering (based on SWJ table)
-%	-) Describe uComp plugin and need for context [ok]
-%	-) Add related work about context [Mortensen]
-%	-) Describe related work for proposed approaches (Solutions) [ok].
+\paragraph{Crowdsourcing}
+%1 paragraph about crowdsourcing in general
 
+\paragraph{Crowdsourcing in the Semantic Web}
+%1-3 paragraph about crowdsourcing in Semantic Web and concrete life-cycle stages in ontology engineering (based on SWJ table)
+
+\paragraph{The uComp Protege Plugin}
 The initial architecture for improving ontology engineering tasks with the help of crowdsourcing that will be used as a baseline for this thesis was introduced by \citet{wohlgenannt2016crowd}. The authors reported that \enquote{its use reduces the working times for the ontology engineers 11 times, lowers the overall task costs by 40\% to 83\% depending on the crowdsourcing settings used and leads to data quality comparable with that of tasks performed by ontology engineers.} The overall workflow ranging from task specification to result interpretation and presentation used by the tool is shown in Figure~\ref{fig:ucomp_workflow}.
-\begin{figure}[H]
-	 \includegraphics[width=\textwidth]{graphics/ucomp_workflow}
-	 \caption{Overall workflow of the uComp Protege Plugin~\cite{wohlgenannt2016crowd}}\label{fig:ucomp_workflow}
-\end{figure}
 
+\paragraph{Enrichment of crowdsourcing tasks with contextual information}
+%Add related work about context [Mortensen]%
 We limit our research to two related approaches described in the next paragraphs. Even though these were applied in different research contexts, applicability can be extended to adding contextual information to crowdsourcing tasks.
 
 An area of interest is ontology matching. \citet{hoffmann2010context} states that \enquote{the context of an ontology can be given by its relations with other ontologies}. Hence, ontology matching is the task of putting ontologies in context whereas content based matching uses its metadata~(e.g. comments, labels, properties, \ldots) to compare ontologies. The context-based matcher Scarlet, first introduced by~\citet{sabou2008scarlet} and extended by~\citet{hoffmann2010context} combines various parameters of context-based matching such as the kind of ontologies that will be used, the method to choose ontologies to anchor concepts, the method to contextualize, the method to aggregate distinct results. 
 
 Another area of interest is Question~Answering~Systems~(QA-Systems). Instead of using a formal query language like SPARQL~\cite{harris2013sparql}, QA-Systems process queries written in natural language. A rather complete overview of QA-Systems in the context of the Semantic Web covering major challenges is given by~\citet{hoffner2016survey}. They identified several challenges such as \emph{Lexical Gap}, \emph{Ambiguity}, \emph{Multilingualism}, \emph{Complex Queries}, \emph{Distributed Knowledge} and \emph{Procedural-,~Temporal-~and~Spatial~Questions}. They concluded that these challenges were subject of active research, leaving room for future improvements. 
+
+\begin{figure}[H]
+	 \includegraphics[width=\textwidth]{graphics/ucomp_workflow}
+	 \caption{Overall workflow of the uComp Protege Plugin~\cite{wohlgenannt2016crowd}}\label{fig:ucomp_workflow}
+\end{figure}
 
 \section{Relation to Software Engineering \& Internet Computing}
 Researching, evaluating, developing, analyzing and verifying are important skills in the study \emph{Software Engineering \& Internet Computing}, matching the required skillset for answering the research questions in this thesis. Moreover, the development of an extension of the uComp Protege plugin requires an in-depth understanding of all phases of the Software Development Lifecycle, including Requirement~Analysis, Design, Implementation and Maintenance. Furthermore, an overall understanding of scientific principles and approaches as well as advanced knowledge of ontologies and related concepts is necessary. Therefore the qualification profile in the study of \emph{Software Engineering \& Internet Computing} is well covered. 

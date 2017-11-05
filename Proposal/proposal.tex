@@ -19,7 +19,7 @@
 \cftsetindents{paragraph}{1cm}{0cm}
 
 
-\title{TitlePage}
+\title{Enrichment of crowdsourcing tasks with Contextual Data}
 \author{Stefan Gamerith\\\\
 		\emph{Student ID: 0925081}}
 
@@ -46,7 +46,7 @@ An inherent factor of the Semantic Web is its large amount of Linked Data~(e.g. 
 		\item handling multiple Crowdsourcing genres and 
 		\item finding and managing the right crowd
 \end{inparaenum}.
-Whereas research shows that breaking task into smaller pieces and formulating the right questions to ask the crowd has a huge impact on the outcome of overall Crowdsourcing task, it is equally important to establish a model which formally defines the required quality and skills to perform tasks. Also, there exists no general guidelines when and under which settings small crowds with domain experts, large crowds with less qualified crowd workers or a mixed approach performs better. However, \citet{mortensen2013developing} concluded that average crowds perform on par with domain experts in "common sense" application domains, if crowd workers are carefully selected by qualification tests and tasks are presented in the simplest possible form. Although their experiments revealed that solving domain specific tasks (e.g. classification of diseases) requires good context and background knowledge, it was not further investigated how contextual information can be added in an automated manner. 
+Whereas research shows that breaking task into smaller pieces and formulating the right questions to ask the crowd has a huge impact on the outcome of overall Crowdsourcing task, it is equally important to establish a model which formally defines the required quality and skills to perform tasks. Also, there exists no general guidelines when and under which settings small crowds with domain experts, large crowds with less qualified crowd workers or a mixed approach performs better. However, \citet{mortensen2013developing} concluded that average crowds perform on par with domain experts in "common sense" application domains, if crowd workers are carefully selected by qualification tests and tasks are presented in the simplest possible form. Although their experiments revealed that solving domain specific tasks (e.g. classification of diseases) requires good context and background knowledge, it was not further investigated how contextual data can be added in an automated manner. 
 
 This work investigates this limitation by examining what kind context is needed to get better results, what would be the improvements in the overall workflow and how does the architecture of a concrete implementation look like. To answer the second question, a detailed evaluation study on selected domains and ontologies is conducted.
 
@@ -54,14 +54,14 @@ As a practical part, an extension of the existing \emph{uComp~Protege~Plugin~\ci
 
 \section{Expected Results}
 Based on the problem definition above, the following results are planned:
-\paragraph{Understanding of various approaches for adding contextual information~(RE1)}~
-To get a better overview of what options for adding contexts to crowdsourcing questions exist, a detailed survey of existing approaches~\cite{hoffmann2010context, hoffner2016survey} tackling the general problem of missing explanations and ambiguous task descriptions in question answering systems is conducted. However, researchers have not investigated this problem in the context of ontology verification. Hence, this result~(RE1) is related to the research question: \emph{What approaches are applicable to facilitate the provision of contextual information for crowdsourcing tasks?~(RQ1)}
+\paragraph{Understanding of various approaches for adding contextual data~(RE1)}~
+To get a better overview of what options for adding contexts to crowdsourcing questions exist, a detailed survey of existing approaches~\cite{hoffmann2010context, hoffner2016survey} tackling the general problem of missing explanations and ambiguous task descriptions in question answering systems is conducted. However, researchers have not investigated this problem in the context of ontology verification. Hence, this result~(RE1) is related to the research question: \emph{What approaches are applicable to facilitate the provision of contextual data for crowdsourcing tasks?~(RQ1)}
 \paragraph{Requirements for building an extension of the uComp Protege plugin\cite{wohlgenannt2016crowd}~(RE2)}~
 Based on RE1, several (technical)~requirements for the implementation are of the extension are gathered. This corresponds to the first stage in the Software Development Lifecycle~(SDLC)\cite{ruparelia2010}. A key success factor for the software engineering discipline are well defined functional and non-functional requirements. Hence, the \citet{ieeeSoftwareRequirements} released several guidelines for the specification of software requirements. 
 
 As this thesis builds upon existing work, possible limitations and challenges concerning the implementation as well as the specification of requirements needs investigation. This result~(RE2) is related to the research question: \emph{What are the requirements for adding descriptions to crowdsourcing tasks?~(RQ2)}
 \paragraph{Algorithmic approach for the generation of task descriptions~(RE3)~}
-Given the lack of task descriptions in the existing implementation and the proven quality gains after adding additional explanations to crowdsourcing questions~\cite{mortensen2013developing}, it seems obvious that an approach which makes use of external data in order to add contextual information is needed. Consequently, an important outcome of this work is building an extension of the existing Protege plugin to take advantage of this opportunity.
+Given the lack of task descriptions in the existing implementation and the proven quality gains after adding additional explanations to crowdsourcing questions~\cite{mortensen2013developing}, it seems obvious that an approach which makes use of external data in order to add contextual data is needed. Consequently, an important outcome of this work is building an extension of the existing Protege plugin to take advantage of this opportunity.
 
 Besides creating a new algorithmic approach, the existing implementation is refactored according to the Agile Software Development Principles~\cite{martin2002agile}. Researchers have identified organizational, process specific, project specific, stakeholder specific and technical factors as key indicators impacting the success of software projects~\cite{chow2008survey}. Due to the limited applicability with respect to scope and resources, we focus on technical recommendations only. 
 \paragraph{Evaluation on the usefulness of contexts in crowdsourcing questions~(RE4)}~
@@ -71,13 +71,13 @@ The evaluation is based on the algorithm of \emph{RE3} and is related to the res
 \label{sec:methodology}
 The expected results are derived from the following methodology and approach:
 \paragraph{Literature Research}
-For a complete picture on different approaches of how contextual information can be used to improve crowdsourcing tasks, an extensive literature research is performed. For example one approach from a different research area but also applicable with focus on solving crowdsourcing tasks is ontology matching based on neighboring nodes~\cite{hoffmann2010context}. Although \emph{RQ1} is directly addressed by this task, literature study is done continuously throughout the whole thesis. 
+For a complete picture on different approaches of how contextual data can be used to improve crowdsourcing tasks, an extensive literature research is performed. For example one approach from a different research area but also applicable with focus on solving crowdsourcing tasks is ontology matching based on neighboring nodes~\cite{hoffmann2010context}. Although \emph{RQ1} is directly addressed by this task, literature study is done continuously throughout the whole thesis. 
 \paragraph{Identify requirements}
 To answer \emph{RQ2}, a detailed requirement analysis which builds up the starting phase of the SDLC~\cite{ruparelia2010} is performed. Functional and non-functional requirements are gathered according to the principles released by the~\citet{ieeeSoftwareRequirements}. Well defined guidelines are key elements in successful software products. 
 \paragraph{Identify different approaches for the implementation}
 Based on the insights from literature research, various options for building the extension are proposed. Each approach is described in detail, concluding with estimated integration efforts. Based on this estimation, the actual development of the extension is performed. 
 \paragraph{Integrate approach in the uComp Protege plugin}
-The practical part of this thesis includes extending the uComp Protege plugin to take contextual information into account for performing crowdsourcing tasks. This extension implements all gathered requirements from former requirement analysis.
+The practical part of this thesis includes extending the uComp Protege plugin to take contextual data into account for performing crowdsourcing tasks. This extension implements all gathered requirements from former requirement analysis.
 
 As a starting point,~\hyperref[fig:new_architecture]{Figure~\ref*{fig:new_architecture}} shows the basic workflow of a prototypical implementation. Based on the existing implementation it begins with collecting the required data from the input ontology to create the initial crowdsourcing task. Depending on the type of validation~(e.g. Domain Relevance Validation, Subsumption Validation, InstanceOf Validation, Relation Label Validation or Domain/Range Validation) different contexts may be necessary. Then, a novel \emph{Data Enrichment Algorithm} proposed in this thesis takes the initial crowdsourcing task together with the validation type and adds descriptions with the help of external data sources~(e.g. DBPedia\footnote{\url{http://wiki.dbpedia.org/}} and Yago\footnote{\url{https://www.mpi-inf.mpg.de/departments/databases-and-information-systems/research/yago-naga/yago/}}). Next, the actual crowdsourcing process happens by sending tasks to crowdsourcing platforms through a uniform API. Finally, harvested results are processed and presented to the ontology engineer. 
 \paragraph{Evaluate performance metrics}
@@ -88,7 +88,7 @@ As the main objective of the evaluation process is to deliver comparable results
 
 \begin{figure}[H]
 	 \includegraphics[width=\textwidth]{graphics/new_architecture}
-	 \caption{Basic workflow in adding contextual information to crowdsourcing tasks}\label{fig:new_architecture}
+	 \caption{Basic workflow in adding contextual data to crowdsourcing tasks}\label{fig:new_architecture}
 \end{figure}
 
 \section{State of the art}
@@ -109,7 +109,7 @@ Even though several CS~Systems have addressed these challenges, there is little 
 The initial architecture for improving ontology engineering tasks with the help of crowdsourcing that will be used as a baseline for this thesis was introduced by \citet{wohlgenannt2016crowd}. The authors reported that \enquote{its use reduces the working times for the ontology engineers 11 times, lowers the overall task costs by 40\% to 83\% depending on the crowdsourcing settings used and leads to data quality comparable with that of tasks performed by ontology engineers.} The overall workflow ranging from task specification to result interpretation and presentation used by the tool is shown in Figure~\ref{fig:ucomp_workflow}.
 % Describe the need for context [Mortensen]
 
-\paragraph{Enrichment of crowdsourcing tasks with contextual information}
+\paragraph{Enrichment of crowdsourcing tasks with contextual data}
 We limit our research to two related approaches described below. Even though these were applied in different research contexts, applicability can be broadened to include descriptions in crowdsourcing tasks.
 
 One area of interest is ontology matching. \citet{hoffmann2010context} states that \enquote{the context of an ontology can be given by its relations with other ontologies}. Hence, ontology matching is the task of putting ontologies in context whereas content based matching uses its metadata~(e.g. comments, labels, properties, \ldots) to compare ontologies. The context-based matcher Scarlet, first introduced by~\citet{sabou2008scarlet} and extended by~\citet{hoffmann2010context} combines various parameters of context-based matching such as the kind of ontologies that will be used, the method to choose ontologies to anchor concepts, the method to contextualize, the method to aggregate distinct results. 

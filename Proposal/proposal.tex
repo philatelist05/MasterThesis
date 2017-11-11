@@ -61,7 +61,7 @@ Based on RE1, several (technical)~requirements for the implementation are of the
 
 As this thesis builds upon existing work, possible limitations and challenges concerning the implementation as well as the specification of requirements needs investigation. This result~(RE2) is related to the research question: \emph{What are the requirements for adding descriptions to crowdsourcing tasks?~(RQ2)}
 \paragraph{Algorithmic approach for the generation of task descriptions~(RE3)~}
-Given the lack of task descriptions in the existing implementation and the proven quality gains after adding additional explanations to crowdsourcing questions~\cite{mortensen2013developing}, it seems obvious that an approach which makes use of external data in order to add contextual data is needed. Consequently, an important outcome of this work is building an extension of the existing Protege plugin to take advantage of this opportunity.
+Given the lack of task descriptions in the existing implementation and the proven quality gains after adding additional explanations to crowdsourcing questions~\cite{mortensen2013crowdsourcing}, it seems obvious that an approach which makes use of external data in order to add contextual data is needed. Consequently, an important outcome of this work is building an extension of the existing Protege plugin to take advantage of this opportunity.
 
 Besides creating a new algorithmic approach, the existing implementation is refactored according to the Agile Software Development Principles~\cite{martin2002agile}. Researchers have identified organizational, process specific, project specific, stakeholder specific and technical factors as key indicators impacting the success of software projects~\cite{chow2008survey}. Due to the limited applicability with respect to scope and resources, we focus on technical recommendations only. 
 \paragraph{Evaluation on the usefulness of contexts in crowdsourcing questions~(RE4)}~
@@ -114,7 +114,9 @@ Combining the two disciplines Crowdsourcing and Semantic Web is a relatively new
 
 \paragraph{The uComp Protege Plugin}
 The initial architecture for improving ontology engineering tasks with the help of crowdsourcing that will be used as a baseline for this thesis was introduced by \citet{wohlgenannt2016crowd}. The authors reported that \enquote{its use reduces the working times for the ontology engineers 11 times, lowers the overall task costs by 40\% to 83\% depending on the crowdsourcing settings used and leads to data quality comparable with that of tasks performed by ontology engineers.} The overall workflow ranging from task specification to result interpretation and presentation used by the tool is shown in Figure~\ref{fig:ucomp_workflow}.
-% Describe the need for context [Mortensen]
+
+Experiments~\cite{mortensen2013crowdsourcing} testing various task configurations revealed that the average worker performance without context drops significantly. They even concluded that results of tasks with missing qualification tests and concept definitions were only slightly better compared to plain guessing. Thus, best worker performance is achieved \enquote{with questions formulated in the most basic form, a domain-specific qualification, and concept definitions for context}. 
+
 
 \paragraph{Enrichment of crowdsourcing tasks with contextual data}
 We limit our research to two related approaches described below. Even though these were applied in different research contexts, applicability can be broadened to include descriptions in crowdsourcing tasks.

@@ -1,21 +1,19 @@
 #!/bin/sh
-# Copyright (C) 2014-2017 by Thomas Auzinger <thomas@auzinger.name>
-
 CLASS=vutinfth
-SOURCE=example
+SOURCE=thesis
 
 # Build vutinfth documentation
-pdflatex $CLASS.dtx
-pdflatex $CLASS.dtx
-makeindex -s gglo.ist -o $CLASS.gls $CLASS.glo
-makeindex -s gind.ist -o $CLASS.ind $CLASS.idx
-pdflatex $CLASS.dtx
-pdflatex $CLASS.dtx
+# pdflatex $CLASS.dtx
+# pdflatex $CLASS.dtx
+# makeindex -s gglo.ist -o $CLASS.gls $CLASS.glo
+# makeindex -s gind.ist -o $CLASS.ind $CLASS.idx
+# pdflatex $CLASS.dtx
+# pdflatex $CLASS.dtx
 
 # Build the vutinfth class file
 pdflatex $CLASS.ins
 
-# Build the vutinfth example document
+# Build the thesis document
 pdflatex $SOURCE
 bibtex   $SOURCE
 pdflatex $SOURCE
@@ -28,4 +26,4 @@ pdflatex $SOURCE
 
 echo
 echo
-echo Class file and example document compiled.
+echo Class file and Thesis document compiled.

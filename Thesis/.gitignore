@@ -1,6 +1,9 @@
 # OSX specific
 .DS_Store
 
+# Thesis PDF File
+thesis.pdf
+
 # LaTex specific 
 *.acn
 *.acr

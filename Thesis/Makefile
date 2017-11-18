@@ -28,4 +28,4 @@ thesis:
 
 .PHONY: clean
 clean:
-	rm -rf $(SOURCE).acn $(SOURCE).acr $(SOURCE).alg $(SOURCE).aux $(SOURCE).bbl $(SOURCE).blg $(SOURCE).glg $(SOURCE).glo $(SOURCE).gls $(SOURCE).glsdefs $(SOURCE).idx $(SOURCE).ilg $(SOURCE).ind $(SOURCE).ist $(SOURCE).loa $(SOURCE).lof $(SOURCE).log $(SOURCE).pdf $(SOURCE).toc $(CLASS).aux $(CLASS).glo $(CLASS).gls $(CLASS).hd $(CLASS).idx $(CLASS).ilg $(CLASS).ind $(CLASS).log $(CLASS).out $(CLASS).toc
+	rm -rf $(SOURCE).acn $(SOURCE).acr $(SOURCE).alg $(SOURCE).aux $(SOURCE).bbl $(SOURCE).blg $(SOURCE).glg $(SOURCE).glo $(SOURCE).gls $(SOURCE).glsdefs $(SOURCE).idx $(SOURCE).ilg $(SOURCE).ind $(SOURCE).ist $(SOURCE).loa $(SOURCE).lof $(SOURCE).log $(SOURCE).lot $(SOURCE).out $(SOURCE).pdf $(SOURCE).toc $(CLASS).aux $(CLASS).glo $(CLASS).gls $(CLASS).hd $(CLASS).idx $(CLASS).ilg $(CLASS).ind $(CLASS).log $(CLASS).out $(CLASS).toc

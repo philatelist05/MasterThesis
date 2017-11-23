@@ -1,5 +1,5 @@
-\documentclass[12pt, notitlepage]{article}
-\usepackage[margin=4cm]{geometry}
+\documentclass[a4paper,11pt]{memoir}
+\usepackage{geometry}
 \usepackage{hyperref}
 \usepackage[english]{babel}
 \usepackage{tocloft}
@@ -15,19 +15,113 @@
 \usepackage[style=american]{csquotes}
 \usepackage{paralist}
 
-\setcounter{tocdepth}{4}
-\cftsetindents{paragraph}{1cm}{0cm}
+\newenvironment{SFFont}[1]{%
+  \begingroup
+    \sffamily
+  \endgroup
+  \renewcommand{\sfdefault}{#1}%
+}{}%
+
+\newcommand{\mytitleheader}{%
+  \centering
+  %46bp + 25.31bp - 5.37bp
+  \begin{minipage}[b][65.94bp][t]{511bp}%
+    \includegraphics{graphics/TU_INF_header}%
+	%-511bp + 330.71bp - 4.57bp
+    \hspace*{-184.86bp}%
+	%-25.31bp + 5.37bp
+    \raisebox{-19.94bp}{%
+      \includegraphics[scale=1]{graphics/TU_INF_Logo_gray}%
+    }%
+  \end{minipage}%
+}%
+\newcommand{\myfooterheader}{%
+  \centering
+  \begin{minipage}{\textwidth}%
+    \centering\fontsize{11}{13.6}\selectfont\sffamily
+    Technische Universit\"{a}t Wien\\
+    A-1040 Wien \rule[0.47ex]{0.4ex}{0.4ex}\space
+    Karlsplatz 13 \rule[0.47ex]{0.4ex}{0.4ex}\space
+    Tel. +43-1-58801-0 \rule[0.47ex]{0.4ex}{0.4ex}\space
+    www.tuwien.ac.at%
+  \end{minipage}%
+}%
 
 
-\title{Enrichment of Crowdsourcing Tasks with Contextual Data}
-\author{Stefan Gamerith\\\\
-		\emph{Student ID: 0925081}}
+\makepagestyle{mystyle}%
+\makerunningwidth{mystyle}[\textwidth]{511bp}%
+\makeheadposition{mystyle}{center}{center}{center}{center}%
+\makeevenhead{mystyle}{}{\mytitleheader}{}%
+\makeoddhead{mystyle}{}{\mytitleheader}{}%
+\makefootrule{mystyle}{\textwidth}{0.5pt}{\footruleskip}%
+\makeevenfoot{mystyle}{}{\myfooterheader}{}%
+\makeoddfoot{mystyle}{}{\myfooterheader}{}%
 
+
+%-----BEGIN DOCUMENT-----%
 \begin{document}
-	\maketitle
-	\thispagestyle{empty}
-	\newpage
-\setcounter{page}{1}
+
+\thispagestyle{mystyle}%
+\newgeometry{%
+  left=2.4cm,right=2.4cm,bottom=2.5cm,top=2cm,
+  headsep=-41.49731pt,
+  head=265.94bp
+}%
+%head=246bp + 25.31bp - 5.37bp
+
+\newlength{\thisparindent}%
+\newlength{\thisbaselineskip}%
+\newlength{\thisparskip}%
+\setlength{\thisparindent}{\parindent}%
+\setlength{\thisbaselineskip}{\baselineskip}%
+\setlength{\thisparskip}{\parskip}%
+
+
+\setlength{\parindent}{0pt}%
+\setlength{\baselineskip}{13.6pt}%
+\setlength{\parskip}{0pt plus 1pt}%
+\begin{SFFont}{phv}%
+  \sffamily
+  {\centering
+    \vspace*{1.2cm}\par
+    \begin{minipage}[t][5cm][b]{\textwidth}%
+      \centering
+      \fontsize{30}{34}\selectfont{\bfseries Enrichment of Crowdsourcing Tasks with Contextual Data}\\
+      \bigskip
+    \end{minipage}\par
+    \vspace{6mm}\vspace{6mm}
+      {\fontsize{17}{22}\selectfont{\bfseries PROPOSAL FOR A DIPLOMA THESIS}}\par
+      \vspace{6mm}
+      {\fontsize{12}{14.5}\selectfont in}\par
+      \vspace{6mm}
+      {\fontsize{14}{18}\selectfont{\bfseries Software Engineering \& Internet Computing}}\par
+    \vspace{6mm}
+    {\fontsize{12}{14.5}\selectfont by}\par
+    \vspace{6mm}
+    {\fontsize{14}{18}\selectfont{\bfseries Stefan Gamerith}}\par
+    \smallskip
+    {\fontsize{12}{14.5}\selectfont Registration Number 0925081}\par
+  }%
+  \vspace{6mm}\vspace{6mm}%
+  \vspace*{0.38cm}%
+%  \AdvisorBlock\par
+  \vfill
+%  \ReviewerBlock\par
+%  \SignatureBlock\par
+  \vspace*{0.9cm}%
+\end{SFFont}%
+\pagestyle{empty}%
+%\cleardoublepage
+
+\setlength{\parindent}{\thisparindent}%
+\setlength{\baselineskip}{\thisbaselineskip}%
+\setlength{\parskip}{\thisparskip}%
+\restoregeometry
+
+
+
+
+%\setcounter{page}{1}
 
 \section{Problem Definition}
 The advance of embedding Information Technology in all kinds of electronic devices and connecting them to collect and exchange data imposes new challenges of handling the increasing amount of data. Although many problems can be solved by machines only, there are certain tasks where humans perform better than computers. In \emph{Crowdsourcing}, collective human intelligence~(the crowd) is used to solve these complex tasks. \citet{yuen2011survey}~grouped crowdsourcing applications in 

@@ -15,6 +15,13 @@
 \usepackage[style=american]{csquotes}
 \usepackage{paralist}
 
+%Redefine Chapter formatting
+\renewcommand{\thesection}{\arabic{section}}
+\makeatletter
+\let\l@section\l@chapter
+\makeatother
+
+
 \newenvironment{SFFont}[1]{%
   \begingroup
     \sffamily

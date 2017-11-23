@@ -2,6 +2,7 @@
 \usepackage{geometry}
 \usepackage{hyperref}
 \usepackage[english]{babel}
+\usepackage{datetime}
 \usepackage{tocloft}
 \usepackage{setspace}
 \usepackage{graphicx}
@@ -15,12 +16,14 @@
 \usepackage[style=american]{csquotes}
 \usepackage{paralist}
 
+%Define new date format
+\newdateformat{myformat}{\monthname[\THEMONTH] \ordinaldate{\THEDAY}, \THEYEAR}
+
 %Redefine Chapter formatting
 \renewcommand{\thesection}{\arabic{section}}
 \makeatletter
 \let\l@section\l@chapter
 \makeatother
-
 
 \newenvironment{SFFont}[1]{%
   \begingroup
@@ -97,7 +100,7 @@
       \bigskip
     \end{minipage}\par
     \vspace{6mm}\vspace{6mm}
-      {\fontsize{17}{22}\selectfont{\bfseries PROPOSAL FOR A DIPLOMA THESIS}}\par
+      {\fontsize{17}{22}\selectfont PROPOSAL FOR A DIPLOMA THESIS}\par
       \vspace{6mm}
       {\fontsize{12}{14.5}\selectfont in}\par
       \vspace{6mm}
@@ -109,16 +112,29 @@
     \smallskip
     {\fontsize{12}{14.5}\selectfont Registration Number 0925081}\par
   }%
-  \vspace{6mm}\vspace{6mm}%
-  \vspace*{0.38cm}%
-%  \AdvisorBlock\par
+  \vspace{5cm}
+  \begin{minipage}[t][1.6cm][t]{\textwidth}%
+    \fontsize{11}{13.6}\selectfont
+    \underline{Advisors:}\\
+    Ao.Univ.Prof. Dipl.-Ing. Mag. Mag.rer.soc.oec. Dr.techn. Stefan Biffl\\
+	PhD Marta Sabou
+  \end{minipage}\par%
+  \vspace*{3mm}
+  \begin{minipage}[t][1.6cm][t]{\textwidth}%
+    \fontsize{11}{13.6}\selectfont
+    \underline{Department:}\\
+    Institute of Software Technology and Interactive Systems\\
+	Faculty of Informatics, TU Vienna
+  \end{minipage}\par%
   \vfill
-%  \ReviewerBlock\par
-%  \SignatureBlock\par
-  \vspace*{0.9cm}%
+  \vspace*{6mm}
+  \begin{minipage}[t][2cm][t]{\textwidth}%
+    \fontsize{11}{13.6}\selectfont
+	Vienna on \myformat\today
+  \end{minipage}\par
 \end{SFFont}%
 \pagestyle{empty}%
-%\cleardoublepage
+
 
 \setlength{\parindent}{\thisparindent}%
 \setlength{\baselineskip}{\thisbaselineskip}%
@@ -159,7 +175,7 @@ As a practical part, an extension of the existing \emph{uComp~Protege~Plugin~\ci
 Based on the problem definition above, the following results are planned:
 \paragraph{Understanding various approaches for adding contextual data (RE1)}~
 To get a better overview of possible approaches, a detailed survey containing existing approaches~\cite{hoffmann2010context, hoffner2016survey} tackling the general problem of missing explanations and ambiguous task descriptions in question answering systems is conducted. However, researchers have not solved this problem in the context of ontology verification. This result is related to the research question: \emph{What approaches are applicable to facilitate the provision of contextual data for crowdsourcing tasks?~(RQ1)}
-\paragraph{Requirements for building an extension of the uComp Protege plugin \cite{wohlgenannt2016crowd}~(RE2)}~
+\paragraph{Requirements for building an extension of the uComp Protege plugin \cite{wohlgenannt2016crowd} (RE2)}~
 Based on RE1, several (technical)~requirements for the implementation are gathered. This corresponds to the first stage in the Software Development Lifecycle~(SDLC)\cite{ruparelia2010}. A key success factor for the software engineering discipline are well defined functional and non-functional requirements. Hence, the \citet{ieeeSoftwareRequirements} released several guidelines for the specification of software requirements. 
 
 As this thesis builds upon existing work, limitations and challenges concerning the implementation as well as the requirements specification are investigated. This result is related to the research question: \emph{What are the requirements for adding descriptions to crowdsourcing tasks?~(RQ2)}

@@ -1,0 +1,13 @@
+Thesis Outline:
+------------------------------
+1.) Introduction (~ 5p)
+    - Motivation
+	- Aim of the Work (e.g. Research Questions)
+	- Contributions
+	- Structure of the Work
+2.) State of the Art (~ 20p)
+3.) Methodology (~ 1-2p)
+4.) Implementation (~ 20p)
+5.) Results - Comparative Evaluation (~ 15-20p)
+6.) Discussion & Conclusion (~ 5p) --> Revisit Research Questions here
+7.) Summary & Future Work (~ 2-3p)

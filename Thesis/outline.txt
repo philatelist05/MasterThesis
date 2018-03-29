@@ -8,6 +8,12 @@ Thesis Outline:
 2.) State of the Art (~ 20p)
 3.) Methodology (~ 1-2p)
 4.) Implementation (~ 20p)
-5.) Results - Comparative Evaluation (~ 15-20p)
-6.) Discussion & Conclusion (~ 5p) --> Revisit Research Questions here
-7.) Summary & Future Work (~ 2-3p)
+(5. Code Quality Assurance 15p - 20p)
+	(- Background)
+	(- Quality Metrics)
+	(- Quality Evaluation)
+6.) Results - Comparative Evaluation (~ 15-20p)
+7.) Discussion & Conclusion (~ 5p) --> Revisit Research Questions here
+8.) Summary & Future Work (~ 2-3p)
+______________________________________________________________________________
+Total: ~ 75p - 80p (90p - 100p)

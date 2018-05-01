@@ -169,12 +169,18 @@ While in~\hyperref[chap:implementation]{Chapter~\ref*{chap:implementation}} the 
 
 First, \hyperref[sec:neighboring_nodes]{Section~\ref*{sec:neighboring_nodes}} introduces a novel Context Enrichment Method which takes neighboring nodes~(i.e. subclass relations) into account. Second, a method of embedded context using metadata is discussed in \hyperref[sec:embedded_context]{Section~\ref*{sec:embedded_context}} and last, \hyperref[sec:external_source]{Section~\ref*{sec:external_source}} contains Context Enrichment using data from external sources.
 \section{Neighboring Nodes}\label{sec:neighboring_nodes}
-This Section starts with an conceptual overview of how neighboring nodes in an ontology graph are used to generate contextual information for ontology validation. Then, existing approaches on generating textual definitions for an ontology are examined. As in the literature~\cite{soton265735} the term \textit{ontology verbalisation} is commonly used as a short-term for that task, it is used in the remainder of this Section. We conclude that even though that there exists the major tool \textit{OWL Verbalizer}\footnote{\url{https://github.com/Kaljurand/owl-verbalizer} accessed 2018/04/30} which transforms a generic OWL~ontology into english sentences, we could not integrate it into Context Enrichment process because 
+This Section starts with an conceptual overview of how neighboring nodes in an ontology graph are used to generate contextual information for ontology validation. Then, existing approaches on generating textual definitions for an ontology are examined. As in the literature~\cite{soton265735} the term \textit{ontology verbalisation} is commonly used as a short-term for that task, it is used in the remainder of this Section. We conclude that even though that there exists the major tool \textit{OWL Verbalizer}\footnote{\url{http://mcs.open.ac.uk/nlg/SWAT/Verbaliser.html} accessed 2018/04/30} which transforms a generic OWL~ontology into english sentences, we could not integrate it into Context Enrichment process because 
 \begin{inparaenum}[a)]
 		\item it was designed as a standalone tool written in SWI-Prolog\footnote{\url{http://www.swi-prolog.org/} accessed 2018/04/30} and
 		\item as input it only accepts the whole OWL~ontology 
 \end{inparaenum}.
 However, to make concept definitions and relations more understandable for non-experts, some revised rules were integrated in our enrichment process.
+
+\begin{figure}
+	 \includegraphics[width=\textwidth]{drawio/University_Ontology_Example}
+	 \caption{Simple OWL ontology graph}\label{fig:simple_owl_graph}
+\end{figure}
+
 \section{Embedded Context}\label{sec:embedded_context}
 %Get concept definition from wordnik
 \section{External Source}\label{sec:external_source}

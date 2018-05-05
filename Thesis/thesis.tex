@@ -185,7 +185,24 @@ For example, if the concept \textit{:Teacher} is taken as reference node, it mak
 
 As in the guidelines for conducting crowdsourcing research~\cite{sarasua2015crowdsourcing}, the authors recommended to avoid technical terms in crowdsourcing questions. To facilitate this need, we examined an existing approach on ontology verbalisation and how they could be integrated in the Context Enrichment process. 
 
-Despite the fact that natural language is desirable for descriptions as everybody knows and understands it with no extra learning effort, it conflicts with highly expressive, domain specific and formal knowledge representations. Formally specified ontologies on the other hand facilitate encoding complex relations in domain-specific areas. To resolve this conflict, the new language variant \textbf{ACE}~(Attempto Controlled English)~\cite{fuchs2008} was proposed. ACE is a formal language, capable of expressing domain-specific knowledge with a well-defined syntax, supporting formal reasoning and readable by specialists who are yet unfamiliar with formal languages and methods.  
+Despite the fact that natural language is desirable for descriptions as everybody knows and understands it with no extra learning effort, it conflicts with highly expressive, domain specific and formal knowledge representations. Formally specified ontologies on the other hand facilitate encoding complex relations in domain-specific areas. To resolve this conflict, the new language variant \textbf{ACE}~\textit{(Attempto Controlled English)}~\cite{fuchs2008} was proposed. ACE is a formal language, capable of expressing domain-specific knowledge with a well-defined syntax, supporting formal reasoning and readable by specialists who are yet unfamiliar with formal languages and methods.
+
+ In the following paragraphs a short overview of ACE' language structure\footnote{\url{https://tinyurl.com/yc3zhu9a} accessed 2018/05/05}\footnote{\url{https://tinyurl.com/ycst39jv} accessed 2018/05/05} is given:
+ 
+ \paragraph{Simple Sentences} A Simple Sentence derived from standard English contains a subject and a verb:
+ 
+$ subject \quad + \quad verb \quad + \quad complements \quad [ \quad + \quad adjuncts \quad ] $
+
+In addition the verb relate direct or indirect to one or more other objects~(\textit{complements}). Optionally, to add more specificity one or more adverbs and prepositional phrases can be added~(\textit{adjuncts}). 
+
+\paragraph{Composite Sentences} A Composite Sentence is recursively built from one or more Simple Sentences connected by \textit{coordination},
+\textit{subordination}, \textit{quantification} and \textit{negation}. Whereas, coordination is associates sentences either by the word \texttt{and} or \texttt{or}, subordination describes dependent sentences in some form of relation to each other~(e.g. if-then sentences). Quantification enables expressing statements about all~(universal quantification) or certain~(existential quantification) objects of a certain domain. Last, negation is a way encode negative polarity in a sentence~(e.g. sentences containing \texttt{not} or \texttt{no}). 
+
+\paragraph{Query Sentences} Query Sentences can be divided into polar questions~(e.g. with \textit{yes/no} answer) and non-polar questions, also known as \emph{wh-questions}. For those there does not exist a pre-defined answer, as in contrast to the former yes/no questions. Furthermore, wh-questions start with either of the following five W-words: \texttt{Who}, \texttt{What}, \texttt{When}, \texttt{Where} and \texttt{Why}. However, sometimes questions starting with the word \texttt{How} are added to the category of wh-questions.
+
+\paragraph{Anaphoric References} Test.
+
+
 \section{Embedded Context}\label{sec:embedded_context}
 %Get concept definition from wordnik
 \section{External Source}\label{sec:external_source}

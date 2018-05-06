@@ -178,6 +178,7 @@ However, to make concept definitions and relations more understandable for non-e
 
 To illustrate the concept of neighboring nodes and how they relate to the Context Enrichment approach explained later, a simple ontology graph is given in~\hyperref[fig:simple_owl_graph]{Figure~\ref*{fig:simple_owl_graph}} describing the teacher/pupil domain.
 \begin{figure}
+	 \centering
 	 \includegraphics[width=\textwidth]{drawio/University_Ontology_Example}
 	 \caption{Simple OWL ontology graph}\label{fig:simple_owl_graph}
 \end{figure}
@@ -187,7 +188,7 @@ As in the guidelines for conducting crowdsourcing research~\cite{sarasua2015crow
 
 Despite the fact that natural language is desirable for descriptions as everybody knows and understands it with no extra learning effort, it conflicts with highly expressive, domain specific and formal knowledge representations. Formally specified ontologies on the other hand facilitate encoding complex relations in domain-specific areas. To resolve this conflict, the new language variant \textbf{ACE}~\textit{(Attempto Controlled English)}~\cite{fuchs2008} was proposed. ACE is a formal language, capable of expressing domain-specific knowledge with a well-defined syntax, supporting formal reasoning and readable by specialists who are yet unfamiliar with formal languages and methods.
 
- In the following paragraphs a short overview of ACE' language structure\footnote{\url{https://tinyurl.com/yc3zhu9a} accessed 2018/05/05}\footnote{\url{https://tinyurl.com/ycst39jv} accessed 2018/05/05} is given:
+As our approach described later in this section is based on ACE\footnote{\url{https://tinyurl.com/yc3zhu9a} accessed 2018/05/05}\footnote{\url{https://tinyurl.com/ycst39jv} accessed 2018/05/05}, a short overview of ACE' language structure is given in the following paragraphs:
  
  \paragraph{Simple Sentences} A Simple Sentence derived from standard English contains a subject and a verb:
  
@@ -200,7 +201,17 @@ In addition the verb relate direct or indirect to one or more other objects~(\te
 
 \paragraph{Query Sentences} Query Sentences can be divided into polar questions~(e.g. with \textit{yes/no} answer) and non-polar questions, also known as \emph{wh-questions}. For those there does not exist a pre-defined answer, as in contrast to the former yes/no questions. Furthermore, wh-questions start with either of the following five W-words: \texttt{Who}, \texttt{What}, \texttt{When}, \texttt{Where} and \texttt{Why}. However, sometimes questions starting with the word \texttt{How} are added to the category of wh-questions.
 
-\paragraph{Anaphoric References} Test.
+\paragraph{Anaphoric References} In case the meaning of a word or phrase depends on the context, multiple occurrences of these expressions are called \textit{Anaphoric References}. More specifically, the referring term~(\textit{anaphor}) relates to an antecedent expression. For example in the sentence \texttt{Tom arrived, but nobody noticed him}, the pronoun \texttt{him} relates to \texttt{Tom}. To resolve ambiguities during the processing phase, Anaphoric References are replaced by encoded references. 
+
+Among others, one application areas of ACE is \textit{OWL Verbalizer}~\cite{stevens2011}, an open source tool\footnote{\url{http://mcs.open.ac.uk/nlg/SWAT/Verbaliser.html} accessed 2018/04/30} aiming at producing ACE texts from generic OWL ontologies. A description on the major concepts of OWL Verbaliser where our approach is based on is given below:
+
+To overcome the burden of manual authoring ontology definitions, the tool formally known as OWL Verbaliser and now part of the SWAT Tool Suite\footnote{\url{http://mcs.open.ac.uk/nlg/SWAT/} accessed 2018/05/06} was created. \hyperref[fig:verbaliser_architecture]{Figure~\ref*{fig:verbaliser_architecture}} shows the conceptual architecture of the verbaliser.
+\begin{figure}
+	 \centering
+	 \includegraphics[width=0.5\textwidth]{drawio/Ontology_Verbaliser_Architecture}
+	 \caption{Conceptual architecture of the OWL ontology verbaliser~\cite{stevens2011}}\label{fig:verbaliser_architecture}
+\end{figure}
+
 
 
 \section{Embedded Context}\label{sec:embedded_context}

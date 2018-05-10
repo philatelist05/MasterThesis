@@ -190,11 +190,7 @@ Despite the fact that natural language is desirable for descriptions as everybod
 
 As our approach described later in this section is based on ACE\footnote{\url{https://tinyurl.com/yc3zhu9a} accessed 2018/05/05}\footnote{\url{https://tinyurl.com/ycst39jv} accessed 2018/05/05}, a short overview of ACE' language structure is given in the following paragraphs:
  
- \paragraph{Simple Sentences} A Simple Sentence derived from standard English contains a subject and a verb:
- 
-$ subject \quad + \quad verb \quad + \quad complements \quad [ \quad + \quad adjuncts \quad ] $
-
-In addition the verb relate direct or indirect to one or more other objects~(\textit{complements}). Optionally, to add more specificity one or more adverbs and prepositional phrases can be added~(\textit{adjuncts}). 
+ \paragraph{Simple Sentences} A Simple Sentence derived from standard English contains a subject and a verb: \texttt{subject + verb + complements [ + adjuncts ]} In addition the verb relate direct or indirect to one or more other objects~(\textit{complements}). Optionally, to add more specificity one or more adverbs and prepositional phrases can be added~(\textit{adjuncts}). 
 
 \paragraph{Composite Sentences} A Composite Sentence is recursively built from one or more Simple Sentences connected by \textit{coordination},
 \textit{subordination}, \textit{quantification} and \textit{negation}. Whereas, coordination is associates sentences either by the word \texttt{and} or \texttt{or}, subordination describes dependent sentences in some form of relation to each other~(e.g. if-then sentences). Quantification enables expressing statements about all~(universal quantification) or certain~(existential quantification) objects of a certain domain. Last, negation is a way encode negative polarity in a sentence~(e.g. sentences containing \texttt{not} or \texttt{no}). 
@@ -207,24 +203,28 @@ Among others, one application areas of ACE is \textbf{OWL Verbalizer}~\cite{stev
 
 To overcome the burden of manual authoring ontology definitions, the tool formally known as OWL Verbaliser and now part of the \textbf{SWAT Tool Suite}\footnote{\url{http://mcs.open.ac.uk/nlg/SWAT/} accessed 2018/05/06} was created. Whereas producing high quality texts in restricted application domains is an active research field, this tool aims at generating understandable und useful descriptions that are of moderate quality using general-purpose methods.
 
-The high-level process of ontology verbalization depicted from \hyperref[fig:verbaliser_architecture]{Figure~\ref*{fig:verbaliser_architecture}} consists of the following steps:
+The high-level process of ontology verbalization depicted from \hyperref[fig:verbaliser_architecture]{Figure~\ref*{fig:verbaliser_architecture}} consists of the following stages:
 
-\paragraph{Transcoding from OWL to Prolog} Test.
+\paragraph{Transcoding from OWL to Prolog} Using an ontology in RDF/XML~Format as input, a file in a convenient Prolog format is generated in this
+stage. The conversation process covered by the \textit{Transcoder}, \textit{Identifier~Selector} and \textit{Label~Selector} groups identifiers~(concepts, individuals, object~properties) together with labels for further processing. In addition, ambiguous terms in identifiers are standardised. 
 
-\paragraph{Constructing a lexicon for atomic entities} Test.
+\paragraph{Constructing a lexicon for atomic entities} The output of this stage, covered by the component \textit{Lexicon Generator}, is a collection of lexicons, computed from the normalised Prolog terms in the previous stage. A lexical entry~(lexicon) is defined as a quadruple of the following form: \texttt{<identifier, part-of-speech, singular-form, plural-form>} To facilitate processing in later stages, normalised identifiers for concepts, individuals and object~properties processed in the beginning are stored together with word category, singular form and plural form. The word~category, in linguistics also known as part-of-speech, groups words based on similar properties in terms of syntax and grammar. Common categories among others are nouns, verbs and adjectives. Last, to differentiate the quantity of described by a phrase or word, the singular and plural form of a noun is associated with each lexical entry. 
+Among the storage of lexicons, the algorithm has some further rules concerning text processing implemented.  Some simple heuristics are used for pre-processing to transform the resulting word string into better readable English phrases. 
 
-\paragraph{Selecting the axioms relevant for describing each class} Test.
+\paragraph{Selecting the axioms relevant for describing each class} This stage and next stage are covered by the \textit{Planner}.
+This component has as input all axioms from the source ontology as well as the lexicons from the previous stage. In this stage axioms associated with matching lexical entries. The algorithm uses the identifier in the lexicon and the IRI~\cite{rfc3987} in ontological elements as matching criteria. 
 
-\paragraph{Aggregating axioms with a similar structure} Test.
+\paragraph{Aggregating axioms with a similar structure} This stage is optional, as it is not strictly required for text generation described in the next stage. However, some improvements over using the axioms from the previous stage are achieved by grouping similar axioms. 
 
-\paragraph{Generating sentences from axioms} Test.
-
+\paragraph{Generating sentences from axioms} The final stage is expressed by the component \textit{Realiser}, forming the central part of the
+verbalisation process. English sentences are generated for each axiom using logical rules for almost every logical pattern in OWL-DL. These rules are expressed as Prolog clauses, taking the axiom and optionally the lexicon as inputs.
 
 \begin{figure}
 	 \centering
 	 \includegraphics[width=0.5\textwidth]{drawio/Ontology_Verbaliser_Architecture}
 	 \caption{Conceptual architecture of the OWL ontology verbaliser~\cite{stevens2011}}\label{fig:verbaliser_architecture}
 \end{figure}
+
 
 \section{Embedded Context}\label{sec:embedded_context}
 %Get concept definition from wordnik

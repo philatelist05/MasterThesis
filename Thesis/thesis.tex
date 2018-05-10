@@ -203,16 +203,28 @@ In addition the verb relate direct or indirect to one or more other objects~(\te
 
 \paragraph{Anaphoric References} In case the meaning of a word or phrase depends on the context, multiple occurrences of these expressions are called \textit{Anaphoric References}. More specifically, the referring term~(\textit{anaphor}) relates to an antecedent expression. For example in the sentence \texttt{Tom arrived, but nobody noticed him}, the pronoun \texttt{him} relates to \texttt{Tom}. To resolve ambiguities during the processing phase, Anaphoric References are replaced by encoded references. 
 
-Among others, one application areas of ACE is \textit{OWL Verbalizer}~\cite{stevens2011}, an open source tool\footnote{\url{http://mcs.open.ac.uk/nlg/SWAT/Verbaliser.html} accessed 2018/04/30} aiming at producing ACE texts from generic OWL ontologies. A description on the major concepts of OWL Verbaliser where our approach is based on is given below:
+Among others, one application areas of ACE is \textbf{OWL Verbalizer}~\cite{stevens2011}, an open source tool aiming at producing ACE texts from generic OWL ontologies. A description on the major concepts of OWL Verbaliser where our approach is based on is given below:
 
-To overcome the burden of manual authoring ontology definitions, the tool formally known as OWL Verbaliser and now part of the SWAT Tool Suite\footnote{\url{http://mcs.open.ac.uk/nlg/SWAT/} accessed 2018/05/06} was created. \hyperref[fig:verbaliser_architecture]{Figure~\ref*{fig:verbaliser_architecture}} shows the conceptual architecture of the verbaliser.
+To overcome the burden of manual authoring ontology definitions, the tool formally known as OWL Verbaliser and now part of the \textbf{SWAT Tool Suite}\footnote{\url{http://mcs.open.ac.uk/nlg/SWAT/} accessed 2018/05/06} was created. Whereas producing high quality texts in restricted application domains is an active research field, this tool aims at generating understandable und useful descriptions that are of moderate quality using general-purpose methods.
+
+The high-level process of ontology verbalization depicted from \hyperref[fig:verbaliser_architecture]{Figure~\ref*{fig:verbaliser_architecture}} consists of the following steps:
+
+\paragraph{Transcoding from OWL to Prolog} Test.
+
+\paragraph{Constructing a lexicon for atomic entities} Test.
+
+\paragraph{Selecting the axioms relevant for describing each class} Test.
+
+\paragraph{Aggregating axioms with a similar structure} Test.
+
+\paragraph{Generating sentences from axioms} Test.
+
+
 \begin{figure}
 	 \centering
 	 \includegraphics[width=0.5\textwidth]{drawio/Ontology_Verbaliser_Architecture}
 	 \caption{Conceptual architecture of the OWL ontology verbaliser~\cite{stevens2011}}\label{fig:verbaliser_architecture}
 \end{figure}
-
-
 
 \section{Embedded Context}\label{sec:embedded_context}
 %Get concept definition from wordnik

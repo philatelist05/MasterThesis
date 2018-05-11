@@ -16,13 +16,18 @@
 \usepackage{multirow}   % Allows table elements to span several rows.
 \usepackage{booktabs}   % Improves the typesettings of tables.
 \usepackage{subcaption} % Allows the use of subfigures and enables their referencing.
-\usepackage[ruled,linesnumbered,algochapter]{algorithm2e} % Enables the writing of pseudo code.
+%\usepackage[ruled,linesnumbered,algochapter]{algorithm2e} % Enables the writing of pseudo code.
+\usepackage{algorithm} %For algorithms
+\usepackage[noend]{algpseudocode}%Allows pseudo-code like syntax in algorithms
+
 \usepackage[usenames,dvipsnames,table]{xcolor} % Allows the definition and use of colors. This package has to be included before tikz.
 \usepackage{nag}       % Issues warnings when best practices in writing LaTeX documents are violated.
 \usepackage{todonotes} % Provides tooltip-like todo notes.
 \usepackage{hyperref}  % Enables cross linking in the electronic document version. This package has to be included second to last.
 \usepackage[acronym,toc]{glossaries} % Enables the generation of glossaries and lists fo acronyms. This package has to be included last.
 \usepackage{paralist} %Allows usage of inline lists
+
+
 
 % Define convenience functions to use the author name and the thesis title in the PDF document properties.
 \newcommand{\authorname}{Stefan Gamerith} % The author name without titles.
@@ -227,14 +232,28 @@ verbalisation process. English sentences are generated for each axiom using logi
 
 Although OWLVerbaliser would be useful to integrate in the enrichment process, there are some major differences:
 
-The first reason is \emph{incompatibility on a language level}. Traditionally, software systems are written in many different programming languages, arising the challenge of dealing with interoperability~\cite{malone2014}. OWLVerbaliser is written in SWI-Prolog and Protege is used as the platform running on the Java Virtual Machine~(JVM), forming a conceptual mismatch in programming paradigms. Moreover, if not impossible\footnote{\url{http://www.swi-prolog.org/packages/jpl/} accessed 2018/05/11}, interoperability between conceptually different programming languages is challenging in its own and would conflict with the goal of an easily integrable solution.
+The first reason is \emph{incompatibility on a language level}. Traditionally, software systems are written in many different programming languages, arising the challenge of dealing with interoperability~\cite{malone2014}. OWLVerbaliser is written in SWI-Prolog and Protege is used as the platform running on the Java Virtual Machine~(JVM), forming a conceptual mismatch in programming paradigms. Moreover, if not impossible, interoperability between conceptually different programming languages is challenging in its own\footnote{\url{http://www.swi-prolog.org/packages/jpl/} accessed 2018/05/11} and would conflict with the goal of an easily integrable solution.
 
 Another reason is a \emph{mismatch on the operating scope}. OWLVerbaliser was implemented as a tool assisting engineers in ontology building, a process which is a time consuming manual task. It was designed as a standalone tool, launched from the command line or deployed as a web service. On the other hand ontology enrichment is embedded into Protege and part of the ontology validation process, operating only on small parts of the ontology while OWLVerbaliser takes the whole ontology as input. 
 
+Due to this complicating issues, we implemented a different approach using the insights from OWLVerbaliser:
 
-However, we used some concepts from the tool as a baseline to implement the algorithm as explained below:
+\begin{algorithm}
+	\caption{Context Enrichment based on Neighboring Nodes}\label{alg:neighbourhood}
+	\begin{algorithmic}[1]
+		\Procedure{Generate Description}{}\newline
+			\textbf{Input:} A concept $C$\newline
+			\textbf{Output:} A textual description $T$ of $C's$ neighboring nodes based on subsumption\newline
+			\State{$T=\{\}$} \Comment{$T$ is initialised as empty string}
+			\For {$ [] $}
+			\EndFor
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+
+
 %Describe here the algorithm we used
-
+%%Every <subclass> is a <superclass>
 \section{Embedded Context}\label{sec:embedded_context}
 %Get concept definition from wordnik
 \section{External Source}\label{sec:external_source}
@@ -293,8 +312,8 @@ Initial paper~\cite{liu2005semi} for evaluation data using ontology learning tec
 \listoftables % Starred version, i.e., \listoftables*, removes the toc entry.
 
 % Use an optional list of alogrithms.
-%\listofalgorithms
-%\addcontentsline{toc}{chapter}{List of Algorithms}
+\listofalgorithms
+\addcontentsline{toc}{chapter}{List of Algorithms}
 
 % Add an index.
 %\printindex

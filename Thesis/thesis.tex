@@ -225,6 +225,15 @@ verbalisation process. English sentences are generated for each axiom using logi
 	 \caption{Conceptual architecture of the OWL ontology verbaliser~\cite{stevens2011}}\label{fig:verbaliser_architecture}
 \end{figure}
 
+Although OWLVerbaliser would be useful to integrate in the enrichment process, there are some major differences:
+
+The first reason is \emph{incompatibility on a language level}. Traditionally, software systems are written in many different programming languages, arising the challenge of dealing with interoperability~\cite{malone2014}. OWLVerbaliser is written in SWI-Prolog and Protege is used as the platform running on the Java Virtual Machine~(JVM), forming a conceptual mismatch in programming paradigms. Moreover, if not impossible\footnote{\url{http://www.swi-prolog.org/packages/jpl/} accessed 2018/05/11}, interoperability between conceptually different programming languages is challenging in its own and would conflict with the goal of an easily integrable solution.
+
+Another reason is a \emph{mismatch on the operating scope}. OWLVerbaliser was implemented as a tool assisting engineers in ontology building, a process which is a time consuming manual task. It was designed as a standalone tool, launched from the command line or deployed as a web service. On the other hand ontology enrichment is embedded into Protege and part of the ontology validation process, operating only on small parts of the ontology while OWLVerbaliser takes the whole ontology as input. 
+
+
+However, we used some concepts from the tool as a baseline to implement the algorithm as explained below:
+%Describe here the algorithm we used
 
 \section{Embedded Context}\label{sec:embedded_context}
 %Get concept definition from wordnik

@@ -236,20 +236,24 @@ The first reason is \emph{incompatibility on a language level}. Traditionally, s
 
 Another reason is a \emph{mismatch on the operating scope}. OWLVerbaliser was implemented as a tool assisting engineers in ontology building, a process which is a time consuming manual task. It was designed as a standalone tool, launched from the command line or deployed as a web service. On the other hand ontology enrichment is embedded into Protege and part of the ontology validation process, operating only on small parts of the ontology while OWLVerbaliser takes the whole ontology as input. 
 
-Due to this complicating issues, we implemented a different approach using the insights from OWLVerbaliser:
-
+Due to this complicating issues, we implemented a different approach using the insights from OWLVerbaliser. The pseudocode covering the conceptual workflow is given in \hyperref[alg:neighbourhood]{Algorithm~\ref*{alg:neighbourhood}}. The notation to describe properties and relations of OWL is based on the formal Description Logic~(DL) for ontologies~\cite{baader2003} and string manipulation in formal languages~\cite{hopcroft1969}.
 \begin{algorithm}
 	\caption{Context Enrichment based on Neighboring Nodes}\label{alg:neighbourhood}
 	\begin{algorithmic}[1]
 		\Procedure{Generate Description}{}\newline
 			\textbf{Input:} A concept $C$\newline
 			\textbf{Output:} A textual description $T$ of $C's$ neighboring nodes based on subsumption\newline
-			\State{$T=\{\}$} \Comment{$T$ is initialised as empty string}
-			\For {$ [] $}
+			\State{$T=\{\}$}
+			\For {$ (c,d) \in C \sqsubseteq D $}
+				\State $T=T$ $\cup$ "Every " $\cup$ $name(c)$ $\cup$ " is a " $\cup$ $name(d)$
+			\EndFor
+			\For {$ (e,c) \in E \sqsubseteq C $}
+				\State $T=T$ $\cup$ "Every " $\cup$ $name(e)$ $\cup$ " is a " $\cup$ $name(c)$
 			\EndFor
 		\EndProcedure
 	\end{algorithmic}
 \end{algorithm}
+
 
 
 %Describe here the algorithm we used

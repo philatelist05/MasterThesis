@@ -257,12 +257,15 @@ Due to this complicating issues, we implemented a different approach using the i
 
 The main work is done in two for-loops, which calculate context descriptions based on subsumption~$(\sqsubseteq)$ and string concatenation~$(\cup)$. To handle the case of missing subsumption relations, the output text $T$ is initialised to an empty string~(\hyperref[alg:neighbourhood:text_initialisation]{Line~\ref*{alg:neighbourhood:text_initialisation}}). Next, for every subsumption relation having the input concept $C$ in its signature, either $C's$ name or the anchor node's name is appended first. For example, given the following subsumption relations $\{Car \sqsubseteq Vehicle, Cabrio \sqsubseteq Car\}$, the algorithm generates $T=\{$\textit{"Every Car is a Vehicle"}$,$ \textit{"Every Cabrio is a Car"}$\}$ under the assumption that \textit{Car} was chosen as reference node.  
 
-%Describe here the algorithm we used
-%%Every <subclass> is a <superclass>
 \section{Embedded Context}\label{sec:embedded_context}
-%Get concept definition from wordnik
+%Start with motivation from ontology authoring (e.g. why descriptions are important)
+%Give some good examples with added descriptions (e.g. medical ontology which already has some definitions; collaboratively edited;)
+%List options for manual provisioning of context (e.g. by experts, at creation time, continuously in mainentance mode)
+
+%Enrichment process: Manually add descriptions based on expert agreement
 \section{External Source}\label{sec:external_source}
-%On medical ontology which already has some definitions; collaboratively edited;
+%Get concept definition from wordnik
+
 
 
 \chapter{Experimental Evaluation}

@@ -258,9 +258,17 @@ Due to this complicating issues, we implemented a different approach using the i
 The main work is done in two for-loops, which calculate context descriptions based on subsumption~$(\sqsubseteq)$ and string concatenation~$(\cup)$. To handle the case of missing subsumption relations, the output text $T$ is initialised to an empty string~(\hyperref[alg:neighbourhood:text_initialisation]{Line~\ref*{alg:neighbourhood:text_initialisation}}). Next, for every subsumption relation having the input concept $C$ in its signature, either $C's$ name or the anchor node's name is appended first. For example, given the following subsumption relations $\{Car \sqsubseteq Vehicle, Cabrio \sqsubseteq Car\}$, the algorithm generates $T=\{$\textit{"Every Car is a Vehicle"}$,$ \textit{"Every Cabrio is a Car"}$\}$ under the assumption that \textit{Car} was chosen as reference node.  
 
 \section{Embedded Context}\label{sec:embedded_context}
+Over the years several ontologies covering a wide area of application have emerged, including general-purpose as well as highly specialised ones. It is evident that one of the most important aspects is their content. In addition, a key characteristic among others~\cite{daquin2012} of a good ontology is its documentation. To get an overview of existing approaches several ontologies were analysed~\cite{dutta2017}. The outcome was that there is no standard way to describe and document ontologies. However, some vocabularies with embedded descriptions were present. 
+
+In this Section we give an overview of existing approaches for embedding metadata in ontologies and then describe the approach we adopted to extract metadata from selected vocabularies.
+
+
+
 %Start with motivation from ontology authoring (e.g. why descriptions are important)
 %Give some good examples with added descriptions (e.g. medical ontology which already has some definitions; collaboratively edited;)
-%List options for manual provisioning of context (e.g. by experts, at creation time, continuously in mainentance mode)
+%List options for manual provisioning of context
+%	(e.g. by experts, at creation time, continuously in mainentance mode)
+%	!!Mention SKOS, Dublin-Core --> method of adding metadata to the ontology!!
 
 %Enrichment process: Manually add descriptions based on expert agreement
 \section{External Source}\label{sec:external_source}

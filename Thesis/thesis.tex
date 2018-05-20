@@ -293,7 +293,9 @@ In this Section we give an overview of existing approaches for embedding metadat
 
 To maximize interoperability among heterogeneous application among the Web, the DCMI-Metadata elements were encoded in RDF Schema\footnote{\url{http://dublincore.org/schemas/rdfs/} accessed 2018/05/20}. Each entity is identified by a Uniform Resource Identifier~(URI) starting with \emph{http://purl.org}. 
 
-\paragraph{Ontology Metadata Vocabulary~(OMV)} Test.
+\paragraph{Simple Knowledge Organisation~(SKOS)} The SKOS Core Vocabulary~\cite{skos2005} includes a set of RDF properties and RDFS classed used to express the content and structure a concept scheme, defined as a set of concepts optionally containing links between those concepts. The vocabulary is standardised by the W3C~Consortium\footnote{\url{https://www.w3.org/TR/skos-reference/} accessed 2018/05/20} and (partially) listed in~\hyperref[table:skos]{Table~\ref*{table:skos}}.
+
+There is some overlap between DC and SKOS. For example, the term \textit{dc:subject} describes similar characteristics of an entity as the property \textit{skos:subject}. However, in some usage scenarios the range of the latter is restricted to resources of type skos:concept whereas the former is completely unrestricted. Moreover, in case there exists more than one subjects, the property skos:primarySubject allows asserting the main subject of an entity or resource. 
 
 \paragraph{Metadata vocabulary for Ontology Description and Publication~(MOD)} Test.
 

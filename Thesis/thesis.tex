@@ -19,7 +19,7 @@
 %\usepackage[ruled,linesnumbered,algochapter]{algorithm2e} % Enables the writing of pseudo code.
 \usepackage{algorithm} %For algorithms
 \usepackage[noend]{algpseudocode}%Allows pseudo-code like syntax in algorithms
-
+\usepackage{tabularx}
 \usepackage[usenames,dvipsnames,table]{xcolor} % Allows the definition and use of colors. This package has to be included before tikz.
 \usepackage{nag}       % Issues warnings when best practices in writing LaTeX documents are violated.
 \usepackage{todonotes} % Provides tooltip-like todo notes.
@@ -264,7 +264,34 @@ In this Section we give an overview of existing approaches for embedding metadat
 
 \paragraph{Dublin Core~(DC)} Being one of the most prominent vocabulary in describing metadata, published and maintained by the Dublin Core Metadata Initiative~(DCMI), it originally contained 15 metadata terms\footnote{\url{http://www.dublincore.org/documents/dces/} accessed 2018/05/20} designed to express simple textual information about resources. Since its first launch the project have gained popularity, including more than 127 terms\footnote{\url{http://www.dublincore.org/documents/dcmi-terms/} accessed 2018/05/20}. The initial set of metadata terms is listed in~\hyperref[table:dublin_core]{Table~\ref*{table:dublin_core}}. 
 
+\begingroup
+\renewcommand{\arraystretch}{2}
+\begin{table}
+	\begin{tabularx}{\textwidth}{l|X}
+		\textbf{Name} & \textbf{Description} \\
+		\hline
+		\texttt{dc:contributor} & Element used to describe a person, organisation or service who is responsible for making contributions.\\
+		\texttt{dc:overage} & Term used to describe a temporal topic~(e.g. period, date, or date range), spatial topic~(e.g. location or place identified by its name or coordnates) or a jurisdiction~(e.g. an administrative entity). \\
+		\texttt{dc:creator} & A person, organisation or service who created this entity.\\
+		\texttt{dc:date} & A period or point in time associated with an event in the lifecycle.\\
+		\texttt{dc:description} & A natural-language definition.\\
+		\texttt{dc:format} & Defines the file format, physical medium or dimension.\\
+		\texttt{dc:identifier} & A unique and unambiguous reference to this entity within a defined context.\\
+		\texttt{dc:language} & The language used to describe and define this entity.\\
+		\texttt{dc:publisher} & A person, organisation or service who provides access to this entity.\\
+		\texttt{dc:relation} & Defines a link to another entity identified by name or formal identifier.\\
+		\texttt{dc:rights} & A statement about associated rights with the entity~(e.g. intellectual property rights).\\
+		\texttt{dc:source} & A related entity from which this entity is derived from.\\
+		\texttt{dc:subject} & The topic of this entity represented using keywords, key-phrases or classification codes.\\
+		\texttt{dc:title} & The name by which this entity is formally known.\\
+		\texttt{dc:type} & Defines the genre of nature. Typically a well-defined vocabulary such as DCMI Type Vocabulary\footnote{\url{http://dublincore.org/documents/dcmi-type-vocabulary/}} is recommended here.\\
+	\end{tabularx}
+	\caption{The initial set of DC-Metadata terms}
+	\label{table:dublin_core}
+\end{table}
+\endgroup
 
+To maximize interoperability among heterogeneous application among the Web, the DCMI-Metadata elements were encoded in RDF Schema\footnote{\url{http://dublincore.org/schemas/rdfs/} accessed 2018/05/20}. Each entity is identified by a Uniform Resource Identifier~(URI) starting with \emph{http://purl.org}. 
 
 \paragraph{Ontology Metadata Vocabulary~(OMV)} Test.
 

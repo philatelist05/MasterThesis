@@ -301,24 +301,24 @@ To maximize interoperability among heterogeneous application among the Web, the 
 	\begin{tabularx}{\textwidth}{l|X}
 		\textbf{Name} & \textbf{Description} \\
 		\hline
-		\texttt{skos:Concept} & \\
-		\texttt{skos:ConceptScheme} & \\
-		\texttt{skos:altLabel} & \\
-		\texttt{skos:prefLabel} & \\
-		\texttt{skos:notation} & \\
-		\texttt{skos:changeNote} & \\
-		\texttt{skos:definition} & \\
-		\texttt{skos:note} & \\
-		\texttt{skos:editorialNote} & \\
-		\texttt{skos:historyNote} & \\
-        \texttt{skos:related} & \\
+		\texttt{skos:Concept} & Describes an idea, notion or unit of thought, similar to OWL classes. However the specification does draw any relations to \textit{owl:concept}.\\
+		\texttt{skos:ConceptScheme} & A Concept Scheme can be viewed as a combination of multiple \textit{skos:Concept} instances with optional references to each other.\\
+		\texttt{skos:altLabel} & A \textit{lexical label}~(e.g. a text composed of unicode characters) adding an alternative meaning. \\
+		\texttt{skos:prefLabel} & Together with \textit{skos:altLabel} used to define the primary description if there are multiple human-readable definitions.\\
+		\texttt{skos:notation} & Is a literal string of unicode characters uniquely identifying the related concept within the given concept scheme.\\
+		\texttt{skos:changeNote} & Belongs to the class of \textit{documentation properties} and provides some information about historical changes.\\
+		\texttt{skos:definition} & Adds a human readable definition text.\\
+		\texttt{skos:note} & Some arbitrary text which may be provided by ontology engineers.\\
+		\texttt{skos:editorialNote} & A note added by creators to inform ontology maintainers.\\
+		\texttt{skos:historyNote} & A historical note~(e.g. a version string, release date, \ldots )\\
+        \texttt{skos:related} & Indicates that SKOS concepts are somewhat related to each other.\\
 	\end{tabularx}
 	\caption{A selected set of the SKOS vocabulary}
 	\label{table:skos}
 \end{table}
 \endgroup
 
-There is some overlap between DC and SKOS. For example, the term \textit{dc:subject} describes similar characteristics of an entity as the property \textit{skos:subject}. However, in some usage scenarios the range of the latter is restricted to resources of type skos:concept whereas the former is completely unrestricted. Moreover, in case there exists more than one subjects, the property skos:primarySubject allows asserting the main subject of an entity or resource. 
+There is some overlap between DC and SKOS. For example, the term \textit{dc:subject} describes similar characteristics of an entity as the property \textit{skos:subject}. However, in some usage scenarios the range of the latter is restricted to resources of type skos:concept whereas the former is completely unrestricted. Moreover, in case there exists more than one subjects, the property \textit{skos:primarySubject} allows asserting the main subject of an entity or resource. 
 
 \paragraph{Metadata vocabulary for Ontology Description and Publication~(MOD)} Test.
 

@@ -322,6 +322,22 @@ There is some overlap between DC and SKOS. For example, the term \textit{dc:subj
 
 \paragraph{Open Biomedical Ontology~(OBO)} Biological systems traditionally a complex field with increasing data sets require well defined interfaces to query, manipulate and maintain these large knowledge bases. The Open Biomedical Ontologies~(OBO)~Foundry\footnote{\url{http://obofoundry.org/} accessed 2018/05/21}, a community of ontology developers and engineers in the biomedicine domain, manage a large set of ontologies available in various formats nowadays. The most common format for biomedical ontologies is the OBO~format though, originally developed as part of the Gene Ontology~(GO)\footnote{\url{http://www.geneontology.org/} accessed 2018/05/21}. 
 
+The OBO File Format Specification~1.2~\footnote{\url{https://owlcollab.github.io/oboformat/doc/GO.format.obo-1_2.html} accessed 2018/05/22} defines the flat document structure for OBO files. Every file is composed of a header and a multiple \emph{stanzas}. A stanza is a labeled section of the document, indicating that an object of a particular type is being described. Currently there are three supported types: \textit{Term}, \textit{Typedef} and \textit{Instance}. Every stanza starts with an id tag and an unbounded list of tag-value pairs. Studying the supported tags, it follows that the definition of metadata was important to achieve the goals of \textit{readability}, \textit{ease of parsing}, \textit{extensibility} and \textit{minimal redundancy}. In particular, it allows among others specification of 
+\begin{inparaenum}[1)]
+		\item the term definition (\texttt{def}),
+		\item comments (\texttt{comment}),
+		\item editorial data~(\texttt{is\_obsolete}, \texttt{replaced\_by}, \texttt{created\_by}, \texttt{creation\_date}) and
+		\item cross references (\texttt{xref})
+\end{inparaenum}.
+
+Unfortunately the two ontology based systems the Open Biomedical Ontologies and the Semantic Web evolved independently with growing knowledge bases. To bring these two communities together, researchers have created a tool for converting OBO~ontologies to OWL and vice-versa without loosing any information during the conversion process~\cite{tirmizi2011}. It turned out that for the majority of the OBO~vocabulary the transition fits nicely into the Semantic Web Layer cake. The mapping between OBO and the Semantic Web layer cake is shown in~\hyperref[fig:semantic_obo_cake]{Figure~\ref*{fig:semantic_obo_cake}}. 
+
+\begin{figure}
+	 \centering
+	 \includegraphics[width=0.5\textwidth]{drawio/Obo2Owl}
+	 \caption{Mapping between the Open Biomedical Ontologies and the Semantic Web depicted from~\cite{tirmizi2011}}\label{fig:semantic_obo_cake}
+\end{figure}
+
 
 
 %2.) Some existing ontologies using the standards from above

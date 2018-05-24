@@ -338,6 +338,11 @@ Unfortunately the two ontology based systems the Open Biomedical Ontologies and 
 	 \caption{Mapping between the Open Biomedical Ontologies and the Semantic Web depicted from~\cite{tirmizi2011}}\label{fig:semantic_obo_cake}
 \end{figure}
 
+\emph{OBO~Core} forms the bottom layer of the OBO layer cake. It mainly handles assigning ids and namespaces to RDF related concepts. Historically OBO identifiers were limited in scope (local identifiers) while OWL requires global identifiers (URIs). This imposes some challenges on the translation process, e.g. URI need to be prepended by the scope string. 
+
+The next layer represents the \emph{OBO Vocabulary} which is mapped to the RDF-Schema. As RDF-Schema has a replacement for each of the terms in this layer, the translation process is implemented by replacing \texttt{names} with RDFS labels, \texttt{definitions} with RDFS labels, \texttt{comments} with RDFS comments, \texttt{is\_a} with subclass relations, \texttt{domains} with RDFS domain restrictions and \texttt{ranges} with RDFS range restrictions. 
+
+The top most layer is represented by the \emph{OBO Ontology Extensions} which are mapped to OWL. Besides the definition of concept-level mappings this layer defines tags for expressing metadata on the entire ontology. For example editorial metadata as \texttt{creation\_date}, \texttt{replaced\_by} or \texttt{saved\_by} are mapped to annotation properties. 
 
 
 %2.) Some existing ontologies using the standards from above

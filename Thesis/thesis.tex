@@ -344,15 +344,21 @@ The next layer represents the \emph{OBO Vocabulary} which is mapped to the RDF-S
 
 The top most layer is represented by the \emph{OBO Ontology Extensions} which are mapped to OWL. Besides the definition of concept-level mappings this layer defines tags for expressing metadata on the entire ontology. For example editorial metadata as \texttt{creation\_date}, \texttt{replaced\_by} or \texttt{saved\_by} are mapped to annotation properties. 
 
-A summary of the most important OBO tags is found in~\hyperref[table:obo]{Table~\ref*{table:obo}}. Once characteristic about the mapping process resulting in some of the tags listed in the table is worth mentioning: For some of the OBO vocabulary there is on corresponding tag in the OWL vocabulary. For this reason a dedicated OWL namespace\footnote{http://www.geneontology.org/formats/oboInOwl\#} containing the definitions of all OBO specificities was created. Additionally, as OBO features are a strict subset of OWL DL, the manipulation of converted OBO features in OWL should be restricted to allow the transformation back. A more detailed discussion on this topic is given in~\cite{tirmizi2011, tirmizi2006}.
+A summary of the most important OBO tags together with their OWL equivalents is found in~\hyperref[table:obo]{Table~\ref*{table:obo}}. Once characteristic about the mapping process resulting in some of the tags listed in the table is worth mentioning: For some of the OBO vocabulary there is on corresponding tag in the OWL vocabulary. For this reason a dedicated OWL namespace\footnote{http://www.geneontology.org/formats/oboInOwl\#} containing the definitions of all OBO specificities was created. Additionally, as OBO features are a strict subset of OWL DL, the manipulation of converted OBO features in OWL should be restricted to allow the transformation back. A more detailed discussion on this topic is given in~\cite{tirmizi2011, tirmizi2006}.
 
 \begingroup
 \renewcommand{\arraystretch}{2}
 \begin{table}
-	\begin{tabularx}{\textwidth}{l|X}
-		\textbf{Name} & \textbf{Description} \\
+	\begin{tabularx}{\textwidth}{l|l|X}
+		\textbf{Name} & \textbf{OWL Translation} & \textbf{Description} \\
 		\hline
-        \texttt{skos:related} & Indicates that SKOS concepts are somewhat related to each other.\\
+        \texttt{obo:def} & oboInOwl:Definition & The definition of the term in natural language.\\
+		\texttt{obo:synonym} & oboInOwl:Synonym & An indication that there exists a tag with the same meaning.\\
+		\texttt{obo:comment} & rdfs:comment & A remark to the term. \\
+		\texttt{obo:xref} & oboInOwl:DbXref & A reference to an analogous term in another vocabulary.\\
+		\texttt{obo:date} & oboInOwl:hasDate & The creation or modification date\\
+		\texttt{obo:saved-by} & oboInOwl:savedBy & The username of the person to last save this file.\\
+		\texttt{obo:replaced\_by} & oboInOwl:replacedBy & A reference to a newer term which replaces this obsolete term.\\
 	\end{tabularx}
 	\caption{A selected set of the SKOS vocabulary}
 	\label{table:obo}

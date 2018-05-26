@@ -236,7 +236,7 @@ The first reason is \emph{incompatibility on a language level}. Traditionally, s
 
 Another reason is a \emph{mismatch on the operating scope}. OWLVerbaliser was implemented as a tool assisting engineers in ontology building, a process which is a time consuming manual task. It was designed as a standalone tool, launched from the command line or deployed as a web service. On the other hand ontology enrichment is embedded into Protege and part of the ontology validation process, operating only on small parts of the ontology while OWLVerbaliser takes the whole ontology as input. 
 
-Due to this complicating issues, we implemented a different approach using the insights from OWLVerbaliser. The pseudocode covering the conceptual workflow is given in \hyperref[alg:neighbourhood]{Algorithm~\ref*{alg:neighbourhood}}. The notation to describe properties and relations of OWL is based on the formal Description Logic~(DL) for ontologies~\cite{baader2003} and string manipulation in formal languages~\cite{hopcroft1969}.
+\paragraph{Proposed Approach for Ontology Validation} Due to this complicating issues, we implemented a different approach using the insights from OWLVerbaliser. The pseudocode covering the conceptual workflow is given in \hyperref[alg:neighbourhood]{Algorithm~\ref*{alg:neighbourhood}}. The notation to describe properties and relations of OWL is based on the formal Description Logic~(DL) for ontologies~\cite{baader2003} and string manipulation in formal languages~\cite{hopcroft1969}.
 
 \begin{algorithm}
 	\caption{Context Enrichment based on Neighboring Nodes}\label{alg:neighbourhood}
@@ -260,7 +260,7 @@ The main work is done in two for-loops, which calculate context descriptions bas
 \section{Embedded Context}\label{sec:embedded_context}
 Over the years several ontologies covering a wide area of application have emerged, including general-purpose as well as highly specialised ones. It is evident that one of the most important aspects is their content. In addition, a key characteristic among others~\cite{daquin2012} of a good ontology is its documentation. To get an overview of existing approaches several ontologies were analysed~\cite{dutta2017}. The outcome was that there is no standard way to describe and document ontologies. However, some vocabularies with embedded descriptions were present. 
 
-In this Section we give an overview of existing approaches for embedding metadata in ontologies, then some existing ontologies with added metadata were listed and finally the approach we integrated in the validation process is discussed. In the remainder of this Section our focus lies on metadata vocabularies for ontology description. A more complete discussion on the use of metadata is given in~\cite{nilsson2010}. 
+In this Section we give an overview of existing approaches for embedding metadata in ontologies and explain the approach we integrated in the validation process in detail. In the remainder of this Section our focus lies on metadata vocabularies in the context of ontology engineering. A broader discussion on the use of metadata in general is given in~\cite{nilsson2010}. 
 
 \paragraph{Dublin Core~(DC)} Being one of the most prominent vocabulary in describing metadata, published and maintained by the Dublin Core Metadata Initiative~(DCMI), it originally contained 15 metadata terms\footnote{\url{http://www.dublincore.org/documents/dces/} accessed 2018/05/20} designed to express simple textual information about resources. Since its first launch the project have gained popularity, including more than 127 terms\footnote{\url{http://www.dublincore.org/documents/dcmi-terms/} accessed 2018/05/20}. The initial set of metadata terms is listed in~\hyperref[table:dublin_core]{Table~\ref*{table:dublin_core}}. 
 
@@ -365,8 +365,23 @@ A summary of the most important OBO tags together with their OWL equivalents is 
 \end{table}
 \endgroup
 
-%2.) Some existing ontologies using the standards from above
-%3.) Describe our approach: E.g. Manually added descriptions based on expert agreement
+\paragraph{Proposed Approach for Ontology Validation} Given the various ontology metadata formats above, \hyperref[alg:embedded_enrichment]{Algorithm~\ref*{alg:embedded_enrichment}} shows the pseudocode needed to create the textual concept descriptions extracted from the embedded concept metadata. In addition to the notation from the previous Section we define $\Phi(C) \coloneqq \{m_1, m_2, \ldots, m_i \}$ where $m_i$ is the $i'th$ metadata element embedded in concept $C$, whereas $m$ represents the textual description of some metadata element.
+
+\begin{algorithm}
+	\caption{Context Enrichment based on Embedded Metadata}\label{alg:embedded_enrichment}
+	\begin{algorithmic}[1]
+		\Procedure{Generate Description}{}\newline
+			\textbf{Input:} A concept $C$ with embedded metadata $\{m_1, m_2, \ldots, m_i \}$\newline
+			\textbf{Output:} A textual description $T$ of $C's$ metadata elements\newline
+			\State{$T=\{\}$}
+			\For {$ m_k \in \Phi(C) $}
+				\State $T=T$ $\cup$ $m_k$
+			\EndFor
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+
+While the actual enrichment is straightforward, merging just all the metadata text for a specific concept, it does not make any assumptions on how the extraction is performed because it depends on the metadata encoding. As we chose the option to encode the metadata in annotation properties, the extraction process is just a matter of selecting the appropriate annotation property for a given concept. 
 
 \section{External Source}\label{sec:external_source}
 %Get concept definition from wordnik

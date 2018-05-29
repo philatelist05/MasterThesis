@@ -26,7 +26,7 @@
 \usepackage{hyperref}  % Enables cross linking in the electronic document version. This package has to be included second to last.
 \usepackage[acronym,toc]{glossaries} % Enables the generation of glossaries and lists fo acronyms. This package has to be included last.
 \usepackage{paralist} %Allows usage of inline lists
-
+\usepackage[babel=true]{csquotes} %Just more quote handling
 
 
 % Define convenience functions to use the author name and the thesis title in the PDF document properties.
@@ -384,7 +384,17 @@ A summary of the most important OBO tags together with their OWL equivalents is 
 While the actual enrichment is straightforward, merging just all the metadata text for a specific concept, it does not make any assumptions on how the extraction is performed because it depends on the metadata encoding. As we chose the option to encode the metadata in annotation properties, the extraction process is just a matter of selecting the appropriate annotation property for a given concept. 
 
 \section{External Source}\label{sec:external_source}
-%Get concept definition from wordnik
+A different method of generating textual descriptions is by concept lookup from external sources. Whereas the connected nature of a ontology is neglected, the lookup is solely based on the concept name. Dictionaries have always been the primary resource in terms of finding the information about specific words or phrases.
+
+This Section begins with an introduction in the theory of dictionaries, lists several online dictionaries including the one we used in our approach as external source and ends with a detailed discussion on the architecture and workflow thereof. 
+
+\paragraph{Short Introduction to Lexicography}
+Typically dictionaries include the \textit{lexicon} of a language, that is a collection of words called the lexemes, in some kind of ordered form. They facilitate the looking up of words and enable the user to find information about spelling, meaning and usage. Historically written dictionaries were constrained by the alphabetised format and once printed never updated. On the other hand their online dictionaries allows the searcher to access the information on more than on path, semantics being one of them. Similarly, keeping the word up-to-date as well as adding new ones is as simple as updating or adding new records to the database compared to printing and distributing new copies of their written counterparts. 
+The science about~\enquote{the theory and practice of dictionaries, that is, dictionaries, encyclopedias, lexica, glossaries, vocabularies, terminological knowledge bases, and other information tools covering areas of knowledge and its corresponding language.}~\cite{fuertes2017}
+
+
+%List several online dictionaries/lexiographic databases (e.g. Wordnik, Corpus of Contemporary American English, Wordnet, Oxford dictionary)
+%Describe our appraoch of using Wordnik for ontology context enrichment
 
 
 

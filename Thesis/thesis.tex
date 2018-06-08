@@ -31,7 +31,7 @@
 
 % Define convenience functions to use the author name and the thesis title in the PDF document properties.
 \newcommand{\authorname}{Stefan Gamerith} % The author name without titles.
-\newcommand{\thesistitle}{Enrichment of Crowdsourcing Tasks with Contextual Data} % The title of the thesis. The English version should be used, if it exists.
+\newcommand{\thesistitle}{Context Enrichment of Crowdsourcing Tasks for Ontology Validation} % The title of the thesis. The English version should be used, if it exists.
 
 % Set PDF document properties
 \hypersetup{
@@ -418,8 +418,15 @@ Analyses revealed that responses can be partitioned into the following \textit{g
 
 \textit{Text Translation} is the process of converting text from a source language to a target language by preserving its meaning. Unfortunately there is not always a one-to-one mapping possible because of the absence of equivalent language constructs in the target language. Old-fashioned dictionaries containing exclusively consisting of word-mappings do not help either here. To introduction of online dictionaries offer new possibilities to translators as spelling correction and links to synonyms/antonyms). Not only professional translators responded that dictionaries are crucial for their business, users consider dictionary consultation to improve their vocabulary, look up pronunciation or simply find the contexts of word usage. 
 
-\paragraph{Searching in Electronic Dictionaries} A key factor in today's electronic dictionaries is its searching capabilities. In the next few paragraph we list problems that arise when searching for specific terms and strategies to overcome these issues.
+\paragraph{Searching in Electronic Dictionaries} A key factor in today's electronic dictionaries is its searching capabilities. In the next few paragraphs we discuss problems that arise when searching for specific terms and strategies to overcome these. 
 
+Several studies~\cite{pastor2010, mvechura2008} have analysed digital dictionaries, available in different languages and accessible via the Internet or compressed on a digital medium~(e.g. CD-ROM). Their evaluation is based on empirical analyses of user behaviour collected from log-files as well as literature review. The search techniques and challenges presented below tackle the problem of invalid, incomplete, misspelled and multi-word search queries.
+
+The first category are represented by \textit{inflection-aware} search algorithms which draw the connection between inflected search search queries and its corresponding uninflected counterpart in the dictionary. The central part of these algorithms are rewrite rules which transform the input query to the matching headword in the dictionary or vice-versa. A powerful but complicated technique is based on thorough understanding of the target language by applying morphologies on the word endings. For example, whereas stripping \emph{-ed} and \emph{-ing} endings for regular verbs is yet simple and achieves good results, more sophisticated algorithms with encoded mappings of irregular verbs are needed occasionally. Another approach not taking the structure of the target language into account is matching based on fuzzy search algorithms. The well-known algorithm based on the Levenshtein~Distance~\cite{levenshtein1966} is a good candidate falling into the group of fuzzy search algorithms. 
+
+The next category are techniques dealing with \textit{multi-word} search items. On the one hand search algorithms need to deal with user entered search strings containing multiple words or even complete sentences, whereas on the other hand dictionaries contain a multi-word entry~(e.g. phrasal verb) but users searched just for single words expecting all combinations thereof in the results. One solution for the latter challenge is to enumerate all possible combination of dictionary entries which contain the search query. While this seems applicable for dictionaries with small corpora, it is infeasible if performance is important. In these cases its is better to construct an index from the multi-word entries together with possible word combinations. An even better approach would be to preprocess the words before-hand by lemmatising.
+
+Another challenge in processing search queries is \textit{detecting misspellings}. 
 
 %List several online dictionaries/lexiographic databases (e.g. Wordnik, Corpus of Contemporary American English, Wordnet, Oxford dictionary)
 \paragraph{WordNet} Test.

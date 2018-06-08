@@ -386,7 +386,7 @@ While the actual enrichment is straightforward, merging just all the metadata te
 \section{External Source}\label{sec:external_source}
 A different method of generating textual descriptions is by concept lookup from external sources. Whereas the connected nature of a ontology is neglected, the lookup is solely based on the concept name. Dictionaries have always been the primary resource in terms of finding the information about specific words or phrases.
 
-This Section begins with an introduction in the theory of dictionaries, lists several online dictionaries including the one we used in our approach as external source and ends with a detailed discussion on the architecture and workflow thereof. 
+This Section begins with an introduction in the theory of dictionaries, discusses searching problems and strategies to overcome these, briefly introduces several online dictionaries including the one we used in our approach as external source and ends with a detailed discussion on the architecture and workflow thereof. 
 
 \paragraph{Short Introduction to Lexicography}
 Typically dictionaries include the \textit{lexicon} of a language, that is a collection of words called the lexemes, in some kind of ordered form. They facilitate the looking up of words and enable the user to find information about spelling, meaning and usage. Historically written dictionaries were constrained by the alphabetised format and once printed never updated. On the other hand their online dictionaries allows the searcher to access the information on more than on path, semantics being one of them. Similarly, keeping the word up-to-date as well as adding new ones is as simple as updating or adding new records to the database compared to printing and distributing new copies of their written counterparts. 
@@ -432,6 +432,7 @@ A technique especially useful for multi-lingual dictionaries is \textit{language
 
 The last technique solving the problem of unwanted characters in search strings is \textit{text normalisation}. It identifies the task of removing variation and reducing text~(words) to a simpler format. For search strings, this means that noisy characters are removed using various yet simple approaches. A simple strategy is to use lists of common characters which do not add any meaning such as hyphens, dots quotation marks and (mathematical)~symbols. Inputs are then transformed by deleting all these characters and merging consecutive occurrences of whitespace. Moreover, the Unicode standard defines several variations for the same characters\footnote{\url{http://www.unicode.org/reports/tr15/} accessed 2018/06/08 } which needs to be taken into account by a normaliser. 
 
+\paragraph{Examples of }
 %List several online dictionaries/lexiographic databases (e.g. Wordnik, Corpus of Contemporary American English, Wordnet, Oxford dictionary)
 \paragraph{WordNet} Test.
 

@@ -445,7 +445,7 @@ The WordNet architecture~\cite{fellbaum1998} as illustrated in~\hyperref[fig:wor
 		\item Lexical Source Files
 		\item the Grinder
 		\item the Lexical Database
-		\item Software Tools~(Applications)
+		\item Software Tools and Applications
 \end{enumerate}
 
 \begin{figure}
@@ -455,6 +455,11 @@ The WordNet architecture~\cite{fellbaum1998} as illustrated in~\hyperref[fig:wor
 \end{figure}
 
 \textit{Lexical source files} are written by humans, are the result of a detailed analysis of lexical semantics and represent the set of lexical knowledge. Lexical files contain synsets from one of the following syntactic categories: nouns, verbs, adjectives and adverbs. Synonym words, relational pointers, comments and example sentences may be encoded in a synset. 
+
+The \textit{Grinder} is a software who's main purpose is to compile the lexical source files info a database format that facilitates information querying. 
+The software is implemented as a multipass compiler, similar to compilers for programming languages. In addition to database files the Grinder also generates index files used for faster information retrieval and optionally statistics of the processed synsets.  
+
+The \textit{Lexical Database} forms the heart of the WordNet system. It is the result of a processing all lexical source files. Unfortunately the tools to access the database are quite outdated. They are written in ancient programming languages like Perl or awk, however there also exists an online query interface\footnote{\url{http://wordnetweb.princeton.edu/perl/webwn} accessed 2018/06/14}. The database uses several indexes to increase the performance of search queries, each serving a dedicated purpose. 
 
 
 

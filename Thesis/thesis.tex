@@ -438,6 +438,24 @@ source. Their usage is free of charge, making them ideal candidates as source of
 %WordNet
 Started as a research project in 1985 at Princeton University \textbf{WordNet}~\cite{fellbaum1998} is best characterised as dictionary browser rather than just online dictionary. It allows users to explore its contents on the basis of semantic, rather than alphabetic similarities. Its core principle fits better how users look up information along more than one path, semantics being among them. How one wants to explore the possibilities of online references depends rather on one's ideas as well as the applications one has in mind. 
 
+The building blocks of WordNet are \textit{synsets} which are linked by a number of relations. A synset is defined as a set of words with similar semantics. It is important that synonymy does not entail unrestricted interchangeability. By that criterion natural languages would have very synonyms. Instead, synonymy is typically relative to a context which is modelled as links within synsets as well as to synsets as a whole. WordNet allows several classifications for these connections. Among these are \textit{polysemy/monosemy}, \textit{hyponymy/hypernymy}, \textit{meronymy/holonymy}. Whereas polysemy in contrast to its opposite monosemy describes the facts that multiple meanings for a specific word may be associated, hyponymy and its inverse hypernymy means that words or phrases are included in the meaning of another word, meronymy and its opposite holonymy denotes to a part-of or member-of relationship.
+
+The WordNet architecture~\cite{fellbaum1998} as illustrated in~\hyperref[fig:wordnet_architecture]{Figure~\ref*{fig:wordnet_architecture}} is split into distinct parts:
+\begin{enumerate}
+		\item the lexical source files
+		\item the software to process these~(Grinder)
+		\item the lexical database
+		\item the software tools~(applications) used to access the database
+\end{enumerate}
+
+\begin{figure}
+	 \centering
+	 \includegraphics[width=0.5\textwidth]{drawio/WordNet_Architecture}
+	 \caption{The architecture of the WordNet system~\cite{fellbaum1998}}\label{fig:wordnet_architecture}
+\end{figure}
+
+
+
 %WordNik
 %Wiktionary
 

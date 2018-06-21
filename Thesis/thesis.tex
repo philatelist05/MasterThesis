@@ -515,8 +515,11 @@ A schematic overview of the overall workflow is shown in~\hyperref[fig:external_
 	 \includegraphics[width=0.9\textwidth]{drawio/External_Source_Workflow}
 	 \caption{Conceptual workflow of WordNik consultation to generate textual concept descriptions}\label{fig:external_source_workflow}
 \end{figure}
+The idea is to use the concept name as the baseline for any further processing. Often, the name can not be used directly as input to WordNik because it contains unwanted characters such as excessive spaces, quotes, dots or just non-printable characters. This is especially true for learned ontologies, generated from textual sources. Our algorithm uses the built-in text manipulation capabilities of the JDK to pre-process concept names. Among the other approaches introduced earlier in this Section it is one of the simpler ones, but still providing good results. 
 
 
+
+To conclude, this approach is rather simple and easy to implement while it may have the potential to generate wrong results especially for ambiguous concept names.
 %Describe our approach of using Wordnik for ontology context enrichment
 %Explain why we decided to chose WordNik
 

@@ -365,7 +365,7 @@ A summary of the most important OBO tags together with their OWL equivalents is 
 \end{table}
 \endgroup
 
-\paragraph{Proposed Approach for Ontology Validation} Given the various ontology metadata formats above, \hyperref[alg:embedded_enrichment]{Algorithm~\ref*{alg:embedded_enrichment}} shows the pseudocode needed to create the textual concept descriptions extracted from the embedded concept metadata. In addition to the notation from the previous Section we define $\Phi(C) \coloneqq \{m_1, m_2, \ldots, m_i \}$ where $m_i$ is the $i'th$ metadata element embedded in concept $C$, whereas $m$ represents the textual description of some metadata element.
+\paragraph{Proposed Approach for Ontology Validation} Given the high number on ontology metadata formats above, \hyperref[alg:embedded_enrichment]{Algorithm~\ref*{alg:embedded_enrichment}} shows the pseudocode needed to create the textual concept descriptions extracted from the embedded concept metadata. In addition to the notation from the previous Section we define $\Phi(C) \coloneqq \{m_1, m_2, \ldots, m_i \}$ where $m_i$ is the $i'th$ metadata element embedded in concept $C$, whereas $m$ represents the textual description of some metadata element.
 
 \begin{algorithm}
 	\caption{Context Enrichment based on Embedded Metadata}\label{alg:embedded_enrichment}
@@ -507,7 +507,16 @@ From a technical perspective Wiktionary is based on MediaWiki\footnote{\url{http
 
 The majority of wiki features are accessible via public API calls. Clients request features or send commands over the \textit{MediaWiki~Action~API}\footnote{\url{https://www.mediawiki.org/wiki/API:Main_page} accessed 2018/06/17}. It provides querying, searching, parsing and manipulating capabilities.
 
-\paragraph{Proposed Approach for Ontology Validation} Test
+\paragraph{Proposed Approach for Ontology Validation} Intuitively, the idea of generating textual descriptions using a dictionary lookup is simple: starting from a concept name, descriptions are built from consulting an online dictionary through a coherent interface. 
+
+A schematic overview of the overall workflow is shown in~\hyperref[fig:external_source_workflow]{Figure~\ref*{fig:external_source_workflow}}.
+\begin{figure}
+	 \centering
+	 \includegraphics[width=0.9\textwidth]{drawio/External_Source_Workflow}
+	 \caption{Conceptual workflow of WordNik consultation to generate textual concept descriptions}\label{fig:external_source_workflow}
+\end{figure}
+
+
 %Describe our approach of using Wordnik for ontology context enrichment
 %Explain why we decided to chose WordNik
 

@@ -170,32 +170,33 @@
 
 
 \chapter{Context Enrichment Methods}\label{chap:context_enrichment_methods}
-While in~\hyperref[chap:implementation]{Chapter~\ref*{chap:implementation}} the technical foundation for implementing the Context Enrichment Methods was built, this Chapter describes these on a more conceptual level. There was no limitation on the used settings or data. Instead, the context used for ontology validation was created from general purpose internal and external sources. 
+While in~\hyperref[chap:implementation]{Chapter~\ref*{chap:implementation}} the technical foundation for implementing the context enrichment methods was built, this chapter describes these on a more conceptual level. All approaches of context enrichment in this chapter do not rely on some pre-defined settings or data, instead they are applicable to general purpose ontologies as well as specialised ones of arbitrary size.
 
-First, \hyperref[sec:neighboring_nodes]{Section~\ref*{sec:neighboring_nodes}} introduces a novel Context Enrichment Method which takes neighboring nodes~(i.e. subclass relations) into account. Second, a method of embedded context using metadata is discussed in \hyperref[sec:embedded_context]{Section~\ref*{sec:embedded_context}} and last, \hyperref[sec:external_source]{Section~\ref*{sec:external_source}} contains Context Enrichment using data from external sources.
-\section{Neighboring Nodes}\label{sec:neighboring_nodes}
-This Section starts with an conceptual overview of how neighboring nodes in an ontology graph are used to generate contextual information for ontology validation. Then, existing approaches on generating textual definitions for an ontology are examined. As in the literature~\cite{soton265735} the term \textit{ontology verbalisation} is commonly used as a short-term for that task, it is used in the remainder of this Section. We conclude that even though that there exists the major tool \textit{OWL Verbalizer}\footnote{\url{http://mcs.open.ac.uk/nlg/SWAT/Verbaliser.html} accessed 2018/04/30} which transforms a generic OWL~ontology into english sentences, we could not integrate it into Context Enrichment process because 
+In this chapter, we present three context enrichment methods for ontology validation. While the first one, introduced in \hyperref[sec:neighboring_nodes]{Section~\ref*{sec:neighboring_nodes}}, takes neighbouring nodes~(i.e. subclass relations) into account, the second one, discussed in \hyperref[sec:embedded_context]{Section~\ref*{sec:embedded_context}}, is based on embedded context and the last one, explained in \hyperref[sec:external_source]{Section~\ref*{sec:external_source}}, uses external sources. 
+
+\section{Neighbouring Nodes}\label{sec:neighboring_nodes}
+This section starts with a conceptual overview of how neighbouring nodes in an ontology graph are used to generate contextual information. Then, existing approaches on generating textual definitions are examined. In the literature~\cite{soton265735} this task is also known under the term \textit{ontology verbalisation}. Even though that there exists \textit{OWL Verbalizer}\footnote{\url{http://mcs.open.ac.uk/nlg/SWAT/Verbaliser.html} accessed 2018/04/30}, a tool which already transforms generic ontologies into English sentences, we could not integrate it into the context enrichment process because 
 \begin{inparaenum}[a)]
 		\item it was designed as a standalone tool written in SWI-Prolog\footnote{\url{http://www.swi-prolog.org/} accessed 2018/04/30} and
-		\item as input it only accepts the whole OWL~ontology 
+		\item it only accepts the whole ontology as input
 \end{inparaenum}.
-However, to make concept definitions and relations more understandable for non-experts, some revised rules were integrated in our enrichment process.
+However, in our approach we adopted some rules and integrated them in the enrichment process.
 
-To illustrate the concept of neighboring nodes and how they relate to the Context Enrichment approach explained later, a simple ontology graph is given in~\hyperref[fig:simple_owl_graph]{Figure~\ref*{fig:simple_owl_graph}} describing the teacher/pupil domain.
+To illustrate the concept of neighbouring nodes and how they relate to the context enrichment approach explained later, a simple ontology graph describing the teacher/pupil domain is given in~\hyperref[fig:simple_owl_graph]{Figure~\ref*{fig:simple_owl_graph}}.
 \begin{figure}
 	 \centering
 	 \includegraphics[width=\textwidth]{drawio/University_Ontology_Example}
-	 \caption{Simple OWL ontology graph}\label{fig:simple_owl_graph}
+	 \caption{Simple Ontology Graph}\label{fig:simple_owl_graph}
 \end{figure}
-For example, if the concept \textit{:Teacher} is taken as reference node, it makes sense to not only consider the concept itself, but instead include connected nodes~(e.g. the concept \textit{:Person} and the object property \textit{:teaches}) in the enrichment process. 
+For example, if the concept \textit{:Teacher} is taken as reference node, it makes sense to not only include the concept itself, but instead connected nodes~(e.g. the concept \textit{:Person} and the object property \textit{:teaches}) as well. 
 
-As in the guidelines for conducting crowdsourcing research~\cite{sarasua2015crowdsourcing}, the authors recommended to avoid technical terms in crowdsourcing questions. To facilitate this need, we examined an existing approach on ontology verbalisation and how they could be integrated in the Context Enrichment process. 
+As in the guidelines for conducting crowdsourcing research~\cite{sarasua2015crowdsourcing}, the authors recommended to avoid technical terms in crowdsourcing questions. In the next paragraphs we explain how \textit{ontology verbalisation} helps to achieve this goal. 
 
-Despite the fact that natural language is desirable for descriptions as everybody knows and understands it with no extra learning effort, it conflicts with highly expressive, domain specific and formal knowledge representations. Formally specified ontologies on the other hand facilitate encoding complex relations in domain-specific areas. To resolve this conflict, the new language variant \textbf{ACE}~\textit{(Attempto Controlled English)}~\cite{fuchs2008} was proposed. ACE is a formal language, capable of expressing domain-specific knowledge with a well-defined syntax, supporting formal reasoning and readable by specialists who are yet unfamiliar with formal languages and methods.
+Despite the fact that natural language is desirable for descriptions as everybody knows and understands with no extra learning effort, it conflicts in terms of expressiveness and specificity with well defined ontologies which can encode complex data and relations in domain-specific areas. To resolve this conflict, a new language variant named \textbf{ACE}~\textit{(Attempto Controlled English)}~\cite{fuchs2008} was created. ACE is a formal language, capable of expressing domain-specific knowledge with a well defined syntax, supporting formal reasoning and readable by specialists who are yet unfamiliar with formal languages and methods.
 
-As our approach described later in this section is based on ACE\footnote{\url{https://tinyurl.com/yc3zhu9a} accessed 2018/05/05}\footnote{\url{https://tinyurl.com/ycst39jv} accessed 2018/05/05}, a short overview of ACE' language structure is given in the following paragraphs:
+To get a better understanding of ACE\footnote{\url{https://tinyurl.com/yc3zhu9a} accessed 2018/05/05}\footnote{\url{https://tinyurl.com/ycst39jv} accessed 2018/05/05}, a short overview of its language structure is given in the next paragraphs:
  
- \paragraph{Simple Sentences} A Simple Sentence derived from standard English contains a subject and a verb: \texttt{subject + verb + complements [ + adjuncts ]} In addition the verb relate direct or indirect to one or more other objects~(\textit{complements}). Optionally, to add more specificity one or more adverbs and prepositional phrases can be added~(\textit{adjuncts}). 
+\paragraph{Simple Sentences} A Simple Sentence derived from standard English contains a subject and a verb: \texttt{subject + verb + complements [ + adjuncts ]} In addition the verb relate direct or indirect to one or more other objects~(\textit{complements}). Optionally, to add more specificity one or more adverbs and prepositional phrases can be added~(\textit{adjuncts}). 
 
 \paragraph{Composite Sentences} A Composite Sentence is recursively built from one or more Simple Sentences connected by \textit{coordination},
 \textit{subordination}, \textit{quantification} and \textit{negation}. Whereas, coordination is associates sentences either by the word \texttt{and} or \texttt{or}, subordination describes dependent sentences in some form of relation to each other~(e.g. if-then sentences). Quantification enables expressing statements about all~(universal quantification) or certain~(existential quantification) objects of a certain domain. Last, negation is a way encode negative polarity in a sentence~(e.g. sentences containing \texttt{not} or \texttt{no}). 

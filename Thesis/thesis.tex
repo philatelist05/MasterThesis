@@ -211,19 +211,18 @@ This tool, being now part of the \textbf{SWAT Tool Suite}\footnote{\url{http://m
 
 The high-level process of ontology verbalisation shown in \hyperref[fig:verbaliser_architecture]{Figure~\ref*{fig:verbaliser_architecture}} consists of the following stages:
 
-\paragraph{Transcoding from OWL to Prolog} Using an ontology in RDF/XML~Format as input, a file in a convenient Prolog format is generated in this
-stage. The conversation process covered by the \textit{Transcoder}, \textit{Identifier~Selector} and \textit{Label~Selector} groups identifiers~(concepts, individuals, object~properties) together with labels for further processing. In addition, ambiguous terms in identifiers are standardised. 
+\paragraph{Transcoding from OWL to Prolog} The output of this stage is a file in a convenient Prolog format which was generated from an ontology in RDF/XML format. The conversation process covered by the \textit{Transcoder}, \textit{Identifier~Selector} and \textit{Label~Selector} combines identifiers~(concepts, individuals, object~properties) and labels. In addition, ambiguous terms in identifiers are normalised. 
 
-\paragraph{Constructing a lexicon for atomic entities} The output of this stage, covered by the component \textit{Lexicon Generator}, is a collection of lexicons, computed from the normalised Prolog terms in the previous stage. A lexical entry~(lexicon) is defined as a quadruple of the following form: \texttt{<identifier, part-of-speech, singular-form, plural-form>} To facilitate processing in later stages, normalised identifiers for concepts, individuals and object~properties processed in the beginning are stored together with word category, singular form and plural form. The word~category, in linguistics also known as part-of-speech, groups words based on similar properties in terms of syntax and grammar. Common categories among others are nouns, verbs and adjectives. Last, to differentiate the quantity of described by a phrase or word, the singular and plural form of a noun is associated with each lexical entry. 
-Among the storage of lexicons, the algorithm has some further rules concerning text processing implemented.  Some simple heuristics are used for pre-processing to transform the resulting word string into better readable English phrases. 
+\paragraph{Constructing a lexicon for atomic entities} The output of this stage, covered by the component \textit{Lexicon Generator}, is a collection of lexicons, computed from the normalised Prolog terms in the previous stage. A lexical entry~(lexicon) is defined as a quadruple having the following form: \texttt{<identifier, part-of-speech, singular-form, plural-form>} To facilitate processing in later stages, normalised identifiers for concepts, individuals and object~properties are stored together with word category, singular form and plural form. The word~category, also known as part-of-speech, groups words based on similar properties in terms of syntax and grammar. Common categories are nouns, verbs and adjectives. Last, to differentiate the quantity of a phrase or word, singular and plural form of a noun are associated with each lexical entry. 
+Among the storage of lexicons, the algorithm also implements other rules regarding text processing. Some simple heuristics are used for pre-processing to transform the resulting word string into better readable English sentences. 
 
-\paragraph{Selecting the axioms relevant for describing each class} This stage and next stage are covered by the \textit{Planner}.
-This component has as input all axioms from the source ontology as well as the lexicons from the previous stage. In this stage axioms associated with matching lexical entries. The algorithm uses the identifier in the lexicon and the IRI~\cite{rfc3987} in ontological elements as matching criteria. 
+\paragraph{Selecting the axioms relevant for describing each class} This stage and the next stage are covered by the \textit{Planner}.
+This component has as input all axioms from the source ontology as well as the lexicons from the previous stage. In this stage, axioms are mapped to matching lexical entries. As matching criteria the algorithm uses the lexicon identifier and the IRI~\cite{rfc3987}. 
 
-\paragraph{Aggregating axioms with a similar structure} This stage is optional, as it is not strictly required for text generation described in the next stage. However, some improvements over using the axioms from the previous stage are achieved by grouping similar axioms. 
+\paragraph{Aggregating axioms with a similar structure} This stage is optional, as it is not strictly required for text generation which is described in the next stage. However, some improvements are achieved if similar axioms are aligned. 
 
-\paragraph{Generating sentences from axioms} The final stage is expressed by the component \textit{Realiser}, forming the central part of the
-verbalisation process. English sentences are generated for each axiom using logical rules for almost every logical pattern in OWL-DL. These rules are expressed as Prolog clauses, taking the axiom and optionally the lexicon as inputs.
+\paragraph{Generating sentences from axioms} The final stage is covered by the component named \textit{Realiser} which forms the central part of the
+verbalisation process. English sentences are generated for each axiom using logical rules for almost every logical pattern in OWL-DL. These rules are expressed in Prolog clauses, taking the axiom and optionally the lexicon as input.
 
 \begin{figure}
 	 \centering
@@ -231,20 +230,20 @@ verbalisation process. English sentences are generated for each axiom using logi
 	 \caption{Conceptual architecture of the OWL ontology verbaliser~\cite{stevens2011}}\label{fig:verbaliser_architecture}
 \end{figure}
 
-Although OWLVerbaliser would be useful to integrate in the enrichment process, there are some major differences:
+Although OWL~Verbaliser would be useful to integrate in the enrichment process, there are some major obstacles:
 
-The first reason is \emph{incompatibility on a language level}. Traditionally, software systems are written in many different programming languages, arising the challenge of dealing with interoperability~\cite{malone2014}. OWLVerbaliser is written in SWI-Prolog and Protege is used as the platform running on the Java Virtual Machine~(JVM), forming a conceptual mismatch in programming paradigms. Moreover, if not impossible, interoperability between conceptually different programming languages is challenging in its own\footnote{\url{http://www.swi-prolog.org/packages/jpl/} accessed 2018/05/11} and would conflict with the goal of an easily integrable solution.
+The first is \textbf{incompatibility on a language level}. Traditionally, software systems are written in many different programming languages, leading to the challenge of dealing with interoperability~\cite{malone2014}. While OWL~Verbaliser was written in SWI-Prolog, Protege runs on the Java Virtual Machine~(JVM), causing a conceptual mismatch in programming languages and paradigms. Moreover, interoperability between conceptually different programming languages is challenging in its own\footnote{\url{http://www.swi-prolog.org/packages/jpl/} accessed 2018/05/11} and would conflict with the goal of an easy-to-integrate solution.
 
-Another reason is a \emph{mismatch on the operating scope}. OWLVerbaliser was implemented as a tool assisting engineers in ontology building, a process which is a time consuming manual task. It was designed as a standalone tool, launched from the command line or deployed as a web service. On the other hand ontology enrichment is embedded into Protege and part of the ontology validation process, operating only on small parts of the ontology while OWLVerbaliser takes the whole ontology as input. 
+Another obstacle is a \textbf{mismatch on the scope of operation}. OWL~Verbaliser was implemented as a tool assisting engineers in ontology creation, a very time consuming task. It was designed as a standalone tool, launched from the command line or deployed as a web service. On the other hand, ontology enrichment is embedded in Protege and part of the ontology validation process, operating only on small parts of the ontology. In contrast, OWL~Verbaliser takes the whole ontology as input. 
 
-\paragraph{Proposed Approach for Ontology Validation} Due to this complicating issues, we implemented a different approach using the insights from OWLVerbaliser. The pseudocode covering the conceptual workflow is given in \hyperref[alg:neighbourhood]{Algorithm~\ref*{alg:neighbourhood}}. The notation to describe properties and relations of OWL is based on the formal Description Logic~(DL) for ontologies~\cite{baader2003} and string manipulation in formal languages~\cite{hopcroft1969}.
+\paragraph{Proposed Approach for Ontology Validation} Due to this complicating issues, we implemented a different approach using some insights from OWL~Verbaliser. The pseudocode of the overall workflow is given in \hyperref[alg:neighbourhood]{Algorithm~\ref*{alg:neighbourhood}}. The notation to describe properties and relations is based on a formal Ontology~Description Logic~(DL)~\cite{baader2003}, string manipulations were formally defined in~\cite{hopcroft1969}.
 
 \begin{algorithm}
-	\caption{Context Enrichment based on Neighboring Nodes}\label{alg:neighbourhood}
+	\caption{Context Enrichment based on Neighbouring Nodes}\label{alg:neighbourhood}
 	\begin{algorithmic}[1]
 		\Procedure{Generate Description}{}\newline
 			\textbf{Input:} A concept $C$\newline
-			\textbf{Output:} A textual description $T$ of $C's$ neighboring nodes based on subsumption\newline
+			\textbf{Output:} A textual description $T$ of $C's$ neighbouring nodes based on subsumption\newline
 			\State{$T=\{\}$} \label{alg:neighbourhood:text_initialisation}
 			\For {$ (c,d) \in C \sqsubseteq D $}
 				\State $T=T$ $\cup$ "Every " $\cup$ $name(c)$ $\cup$ " is a " $\cup$ $name(d)$
@@ -256,7 +255,7 @@ Another reason is a \emph{mismatch on the operating scope}. OWLVerbaliser was im
 	\end{algorithmic}
 \end{algorithm}
 
-The main work is done in two for-loops, which calculate context descriptions based on subsumption~$(\sqsubseteq)$ and string concatenation~$(\cup)$. To handle the case of missing subsumption relations, the output text $T$ is initialised to an empty string~(\hyperref[alg:neighbourhood:text_initialisation]{Line~\ref*{alg:neighbourhood:text_initialisation}}). Next, for every subsumption relation having the input concept $C$ in its signature, either $C's$ name or the anchor node's name is appended first. For example, given the following subsumption relations $\{Car \sqsubseteq Vehicle, Cabrio \sqsubseteq Car\}$, the algorithm generates $T=\{$\textit{"Every Car is a Vehicle"}$,$ \textit{"Every Cabrio is a Car"}$\}$ under the assumption that \textit{Car} was chosen as reference node.  
+The main work is done in two for-loops, which calculate context descriptions based on subsumption~$(\sqsubseteq)$ and string concatenation~$(\cup)$. To handle the case of missing subsumption relations, the output text $T$ is initialised to an empty string~(\hyperref[alg:neighbourhood:text_initialisation]{Line~\ref*{alg:neighbourhood:text_initialisation}}). Next, for every subsumption relation having the input concept $C$ in its signature, either $C's$ name or the anchor node's name is appended first. For example, given the following subsumption relations $\{Car \sqsubseteq Vehicle, Cabrio \sqsubseteq Car\}$, the algorithm generates $T=\{$\textit{"Every Car is a Vehicle"}$,$ \textit{"Every Cabrio is a Car"}$\}$ under the assumption that \textit{Car} was chosen as anchor node.
 
 \section{Embedded Context}\label{sec:embedded_context}
 Over the years several ontologies covering a wide area of application have emerged, including general-purpose as well as highly specialised ones. It is evident that one of the most important aspects is their content. In addition, a key characteristic among others~\cite{daquin2012} of a good ontology is its documentation. To get an overview of existing approaches several ontologies were analysed~\cite{dutta2017}. The outcome was that there is no standard way to describe and document ontologies. However, some vocabularies with embedded descriptions were present. 

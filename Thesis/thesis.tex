@@ -293,7 +293,8 @@ In this section we give an overview of these approaches and explain in detail ho
 
 To maximise interoperability in heterogeneous environments, an RDF-Schema with DCMI-Metadata\footnote{\url{http://dublincore.org/schemas/rdfs/} accessed 2018/05/20} elements was created, in which each entity is identified by a Uniform Resource Identifier~(URI) starting with the prefix \emph{http://purl.org}. 
 
-\paragraph{Simple Knowledge Organisation~(SKOS)} The SKOS Core Vocabulary~\cite{skos2005} includes a set of RDF properties and RDFS classed used to express the content and structure a concept scheme, defined as a set of concepts optionally containing links between those concepts. The vocabulary is standardised by the W3C~Consortium\footnote{\url{https://www.w3.org/TR/skos-reference/} accessed 2018/05/20}. The most important terms related to meta-data definition are listed in~\hyperref[table:skos]{Table~\ref*{table:skos}}.
+\paragraph{Simple Knowledge Organisation~(SKOS)} The SKOS Core Vocabulary~\cite{skos2005} defines a set of RDF properties and RDFS classes
+used to express the content and structure of a concept scheme, which describes sets of concepts with optionally linked concepts. The vocabulary is standardised by the W3C~Consortium\footnote{\url{https://www.w3.org/TR/skos-reference/} accessed 2018/05/20}. Relevant terms are listed in~\hyperref[table:skos]{Table~\ref*{table:skos}}.
 
 \begingroup
 \renewcommand{\arraystretch}{2}
@@ -303,14 +304,14 @@ To maximise interoperability in heterogeneous environments, an RDF-Schema with D
 		\hline
 		\texttt{skos:Concept} & Describes an idea, notion or unit of thought, similar to OWL classes. However the specification does draw any relations to \textit{owl:concept}.\\
 		\texttt{skos:ConceptScheme} & A Concept Scheme can be viewed as a combination of multiple \textit{skos:Concept} instances with optional references to each other.\\
-		\texttt{skos:altLabel} & A \textit{lexical label}~(e.g. a text composed of unicode characters) adding an alternative meaning. \\
-		\texttt{skos:prefLabel} & Together with \textit{skos:altLabel} used to define the primary description if there are multiple human-readable definitions.\\
-		\texttt{skos:notation} & Is a literal string of unicode characters uniquely identifying the related concept within the given concept scheme.\\
+		\texttt{skos:altLabel} & A \textit{lexical label}~(e.g. a text composed of unicode characters) which adds an alternative meaning to an entity. \\
+		\texttt{skos:prefLabel} & Used in combination with \textit{skos:altLabel} to define the primary description in case there are multiple human-readable definitions.\\
+		\texttt{skos:notation} & A literal string of unicode characters, it identifies the related concept within the given concept scheme.\\
 		\texttt{skos:changeNote} & Belongs to the class of \textit{documentation properties} and provides some information about historical changes.\\
-		\texttt{skos:definition} & Adds a human readable definition text.\\
+		\texttt{skos:definition} & Adds a human-readable definition to the entity.\\
 		\texttt{skos:note} & Some arbitrary text which may be provided by ontology engineers.\\
 		\texttt{skos:editorialNote} & A note added by creators to inform ontology maintainers.\\
-		\texttt{skos:historyNote} & A historical note~(e.g. a version string, release date, \ldots )\\
+		\texttt{skos:historyNote} & A historical note~(e.g. a version string, release date, \ldots ).\\
         \texttt{skos:related} & Indicates that SKOS concepts are somewhat related to each other.\\
 	\end{tabularx}
 	\caption{A subset of the SKOS vocabulary}
@@ -318,7 +319,7 @@ To maximise interoperability in heterogeneous environments, an RDF-Schema with D
 \end{table}
 \endgroup
 
-There is some overlap between DC and SKOS. For example, the term \textit{dc:subject} describes similar characteristics of an entity as the property \textit{skos:subject}. However, in some usage scenarios the range of the latter is restricted to resources of type skos:concept whereas the former is completely unrestricted. Moreover, in case there exists more than one subjects, the property \textit{skos:primarySubject} allows asserting the main subject of an entity or resource. 
+There is some overlap between DC and SKOS. For example, the terms \textit{dc:subject} and \textit{skos:subject} describes similar characteristics of an entity. However, in some usage scenarios the range of skos:subject is limited to resources of type skos:concept compared to the unrestricted range of dc:subject. Moreover, in case there is more than one subject, the property \textit{skos:primarySubject} allows assertions of the entities or resources main subject. 
 
 \paragraph{Open Biomedical Ontology~(OBO)} Biological systems traditionally a complex field with increasing data sets require well defined interfaces to query, manipulate and maintain these large knowledge bases. The Open Biomedical Ontologies~(OBO)~Foundry\footnote{\url{http://obofoundry.org/} accessed 2018/05/21}, a community of ontology developers and engineers in the biomedicine domain, manage a large set of ontologies available in various formats nowadays. The most common format for biomedical ontologies is the OBO~format though, originally developed as part of the Gene Ontology~(GO)\footnote{\url{http://www.geneontology.org/} accessed 2018/05/21}. 
 

@@ -367,14 +367,14 @@ A summary of the most important OBO tags together with their OWL equivalents is 
 \end{table}
 \endgroup
 
-\paragraph{Proposed Approach for Ontology Validation} Given the high number on ontology meta-data formats above, \hyperref[alg:embedded_enrichment]{Algorithm~\ref*{alg:embedded_enrichment}} shows the pseudocode needed to create the textual concept descriptions extracted from the embedded concept meta-data. In addition to the notation from the previous Section we define $\Phi(C) \coloneqq \{m_1, m_2, \ldots, m_i \}$ where $m_i$ is the $i'th$ meta-data element embedded in concept $C$, whereas $m$ represents the textual description of some meta-data element.
+\paragraph{Proposed Approach for Ontology Validation} Given the high number on ontology meta-data formats from above, \hyperref[alg:embedded_enrichment]{Algorithm~\ref*{alg:embedded_enrichment}} shows the pseudocode to create concept descriptions extracted from embedded meta-data. In addition to the notation used in the previous section we define $\Phi(C) \coloneqq \{m_1, m_2, \ldots, m_i \}$ where $m_i$ is the $i'th$ meta-data element embedded in concept $C$ and $T$ is the description of some meta-data element.
 
 \begin{algorithm}
-	\caption{Context Enrichment based on Embedded Metadata}\label{alg:embedded_enrichment}
+	\caption{Context Enrichment based on embedded meta-data}\label{alg:embedded_enrichment}
 	\begin{algorithmic}[1]
 		\Procedure{Generate Description}{}\newline
 			\textbf{Input:} A concept $C$ with embedded meta-data $\{m_1, m_2, \ldots, m_i \}$\newline
-			\textbf{Output:} A textual description $T$ of $C's$ meta-data elements\newline
+			\textbf{Output:} A description $T$ of $C's$ meta-data elements\newline
 			\State{$T=\{\}$}
 			\For {$ m_k \in \Phi(C) $}
 				\State $T=T$ $\cup$ $m_k$
@@ -383,7 +383,8 @@ A summary of the most important OBO tags together with their OWL equivalents is 
 	\end{algorithmic}
 \end{algorithm}
 
-While the actual enrichment is straightforward, merging just all the meta-data text for a specific concept, it does not make any assumptions on how the extraction is performed because it depends on the meta-data encoding. As we chose the option to encode the meta-data in annotation properties, the extraction process is just a matter of selecting the appropriate annotation property for a given concept. 
+While the actual enrichment is straightforward, it collects all descriptions for a determined concept, the details of extracting the meta-data from annotation properties is omitted here because it highly depends on the chosen meta-data encoding.
+As we decided to encode the meta-data in annotation properties, the extraction process works by selecting the related annotation properties for a specified concept. 
 
 \section{External Source}\label{sec:external_source}
 A different method of generating textual descriptions is by concept lookup from external sources. Whereas the connected nature of a ontology is neglected, the lookup is solely based on the concept name. Dictionaries have always been the primary resource in terms of finding the information about specific words or phrases.

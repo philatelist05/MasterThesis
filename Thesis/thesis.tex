@@ -258,11 +258,11 @@ Another obstacle is a \textbf{mismatch on the scope of operation}. OWL~Verbalise
 The main work is done in two for-loops, which calculate context descriptions based on subsumption~$(\sqsubseteq)$ and string concatenation~$(\cup)$. To handle the case of missing subsumption relations, the output text $T$ is initialised to an empty string~(\hyperref[alg:neighbourhood:text_initialisation]{Line~\ref*{alg:neighbourhood:text_initialisation}}). Next, for every subsumption relation having the input concept $C$ in its signature, either $C's$ name or the anchor node's name is appended first. For example, given the following subsumption relations $\{Car \sqsubseteq Vehicle, Cabrio \sqsubseteq Car\}$, the algorithm generates $T=\{$\textit{"Every Car is a Vehicle"}$,$ \textit{"Every Cabrio is a Car"}$\}$ under the assumption that \textit{Car} was chosen as anchor node.
 
 \section{Embedded Context}\label{sec:embedded_context}
-Over the years ontologies used in many domain contexts, including general-purpose as well as highly specialised ones, have emerged. Obviously, what separates good ontologies from poor ones is how well they are documented~\cite{daquin2012}. Studies~\cite{dutta2017} analysed various approaches of embedding meta-data in ontologies. The outcome was that there is no standard way to describe and document ontologies, albeit a few vocabularies that describe semantic meta-data exist. 
+Over the years ontologies were used in many domain contexts, including general-purpose as well as highly specialised ones. Obviously, what separates good ontologies from poor ones is how well they are documented~\cite{daquin2012}. Studies~\cite{dutta2017} analysed various approaches of embedding meta-data in ontologies. The outcome was that there is no standard way to describe and document ontologies, albeit a few vocabularies that describe semantic meta-data exist. 
 
-In this section we give an overview of these approaches and explain in detail how we used that for ontology validation. In the remainder of this section our focus lies on semantic meta-data in the context of ontology engineering. A broader discussion on the use of metadata in general is given in~\cite{nilsson2010}. 
+In this section we give an overview of these approaches and explain in detail how we used that for ontology validation. In the remainder of this section our focus lies on semantic meta-data in the context of ontology engineering. A broader discussion on the use of meta-data in general is given in~\cite{nilsson2010}. 
 
-\paragraph{Dublin Core~(DC)} Being one of the most prominent vocabulary in describing metadata, published and maintained by the Dublin Core Metadata Initiative~(DCMI), it originally contained 15 metadata terms\footnote{\url{http://www.dublincore.org/documents/dces/} accessed 2018/05/20} designed to express simple textual information about resources. Since its first launch the project have gained popularity, including more than 127 terms\footnote{\url{http://www.dublincore.org/documents/dcmi-terms/} accessed 2018/05/20}. The initial set of metadata terms is listed in~\hyperref[table:dublin_core]{Table~\ref*{table:dublin_core}}. 
+\paragraph{Dublin Core~(DC)} Being one of the most prominent vocabulary in describing semantic meta-data, published and maintained by the Dublin Core Metadata Initiative~(DCMI), it originally contained 15 meta-data terms\footnote{\url{http://www.dublincore.org/documents/dces/} accessed 2018/05/20},  designed to annotate resources with simple, textual information. Since its first launch, the project have gained popularity, including more than 127 terms\footnote{\url{http://www.dublincore.org/documents/dcmi-terms/} accessed 2018/05/20}. The initial set of terms is listed in~\hyperref[table:dublin_core]{Table~\ref*{table:dublin_core}}. 
 
 \begingroup
 \renewcommand{\arraystretch}{2}
@@ -274,7 +274,7 @@ In this section we give an overview of these approaches and explain in detail ho
 		\texttt{dc:overage} & Term used to describe a temporal topic~(e.g. period, date, or date range), spatial topic~(e.g. location or place identified by its name or coordnates) or a jurisdiction~(e.g. an administrative entity). \\
 		\texttt{dc:creator} & A person, organisation or service who created this entity.\\
 		\texttt{dc:date} & A period or point in time associated with an event in the lifecycle.\\
-		\texttt{dc:description} & A natural-language definition.\\
+		\texttt{dc:description} & A definition in natural-language.\\
 		\texttt{dc:format} & Defines the file format, physical medium or dimension.\\
 		\texttt{dc:identifier} & A unique and unambiguous reference to this entity within a defined context.\\
 		\texttt{dc:language} & The language used to describe and define this entity.\\
@@ -284,16 +284,16 @@ In this section we give an overview of these approaches and explain in detail ho
 		\texttt{dc:source} & A related entity from which this entity is derived from.\\
 		\texttt{dc:subject} & The topic of this entity represented using keywords, key-phrases or classification codes.\\
 		\texttt{dc:title} & The name by which this entity is formally known.\\
-		\texttt{dc:type} & Defines the genre of nature. Typically a well-defined vocabulary such as DCMI Type Vocabulary\footnote{\url{http://dublincore.org/documents/dcmi-type-vocabulary/}} is recommended here.\\
+		\texttt{dc:type} & Defines the genre of nature. Usually, a well-defined vocabulary such as DCMI Type Vocabulary\footnote{\url{http://dublincore.org/documents/dcmi-type-vocabulary/}} is recommended here.\\
 	\end{tabularx}
 	\caption{The initial set of DC-Metadata terms}
 	\label{table:dublin_core}
 \end{table}
 \endgroup
 
-To maximize interoperability among heterogeneous application among the Web, the DCMI-Metadata elements were encoded in RDF Schema\footnote{\url{http://dublincore.org/schemas/rdfs/} accessed 2018/05/20}. Each entity is identified by a Uniform Resource Identifier~(URI) starting with \emph{http://purl.org}. 
+To maximise interoperability in heterogeneous environments, an RDF-Schema with DCMI-Metadata\footnote{\url{http://dublincore.org/schemas/rdfs/} accessed 2018/05/20} elements was created, in which each entity is identified by a Uniform Resource Identifier~(URI) starting with the prefix \emph{http://purl.org}. 
 
-\paragraph{Simple Knowledge Organisation~(SKOS)} The SKOS Core Vocabulary~\cite{skos2005} includes a set of RDF properties and RDFS classed used to express the content and structure a concept scheme, defined as a set of concepts optionally containing links between those concepts. The vocabulary is standardised by the W3C~Consortium\footnote{\url{https://www.w3.org/TR/skos-reference/} accessed 2018/05/20}. The most important terms related to metadata definition are listed in~\hyperref[table:skos]{Table~\ref*{table:skos}}.
+\paragraph{Simple Knowledge Organisation~(SKOS)} The SKOS Core Vocabulary~\cite{skos2005} includes a set of RDF properties and RDFS classed used to express the content and structure a concept scheme, defined as a set of concepts optionally containing links between those concepts. The vocabulary is standardised by the W3C~Consortium\footnote{\url{https://www.w3.org/TR/skos-reference/} accessed 2018/05/20}. The most important terms related to meta-data definition are listed in~\hyperref[table:skos]{Table~\ref*{table:skos}}.
 
 \begingroup
 \renewcommand{\arraystretch}{2}
@@ -322,7 +322,7 @@ There is some overlap between DC and SKOS. For example, the term \textit{dc:subj
 
 \paragraph{Open Biomedical Ontology~(OBO)} Biological systems traditionally a complex field with increasing data sets require well defined interfaces to query, manipulate and maintain these large knowledge bases. The Open Biomedical Ontologies~(OBO)~Foundry\footnote{\url{http://obofoundry.org/} accessed 2018/05/21}, a community of ontology developers and engineers in the biomedicine domain, manage a large set of ontologies available in various formats nowadays. The most common format for biomedical ontologies is the OBO~format though, originally developed as part of the Gene Ontology~(GO)\footnote{\url{http://www.geneontology.org/} accessed 2018/05/21}. 
 
-The OBO File Format Specification~1.2~\footnote{\url{https://owlcollab.github.io/oboformat/doc/GO.format.obo-1_2.html} accessed 2018/05/22} defines the flat document structure for OBO files. Every file is composed of a header and a multiple \emph{stanzas}. A stanza is a labeled section of the document, indicating that an object of a particular type is being described. Currently there are three supported types: \textit{Term}, \textit{Typedef} and \textit{Instance}. Every stanza starts with an id tag and an unbounded list of tag-value pairs. Studying the supported tags, it follows that the definition of metadata was important to achieve the goals of \textit{readability}, \textit{ease of parsing}, \textit{extensibility} and \textit{minimal redundancy}. In particular, it allows among others specification of 
+The OBO File Format Specification~1.2~\footnote{\url{https://owlcollab.github.io/oboformat/doc/GO.format.obo-1_2.html} accessed 2018/05/22} defines the flat document structure for OBO files. Every file is composed of a header and a multiple \emph{stanzas}. A stanza is a labeled section of the document, indicating that an object of a particular type is being described. Currently there are three supported types: \textit{Term}, \textit{Typedef} and \textit{Instance}. Every stanza starts with an id tag and an unbounded list of tag-value pairs. Studying the supported tags, it follows that the definition of meta-data was important to achieve the goals of \textit{readability}, \textit{ease of parsing}, \textit{extensibility} and \textit{minimal redundancy}. In particular, it allows among others specification of 
 \begin{inparaenum}[1)]
 		\item the term definition (\texttt{def}),
 		\item comments (\texttt{comment}),
@@ -342,7 +342,7 @@ Unfortunately the two ontology based systems the Open Biomedical Ontologies and 
 
 The next layer represents the \emph{OBO Vocabulary} which is mapped to the RDF-Schema. As RDF-Schema has a replacement for each of the terms in this layer, the translation process is implemented by replacing \texttt{names} with RDFS labels, \texttt{definitions} with RDFS labels, \texttt{comments} with RDFS comments, \texttt{is\_a} with subclass relations, \texttt{domains} with RDFS domain restrictions and \texttt{ranges} with RDFS range restrictions. 
 
-The top most layer is represented by the \emph{OBO Ontology Extensions} which are mapped to OWL. Besides the definition of concept-level mappings this layer defines tags for expressing metadata on the entire ontology. For example editorial metadata as \texttt{creation\_date}, \texttt{replaced\_by} or \texttt{saved\_by} are mapped to annotation properties. 
+The top most layer is represented by the \emph{OBO Ontology Extensions} which are mapped to OWL. Besides the definition of concept-level mappings this layer defines tags for expressing meta-data on the entire ontology. For example editorial meta-data as \texttt{creation\_date}, \texttt{replaced\_by} or \texttt{saved\_by} are mapped to annotation properties. 
 
 A summary of the most important OBO tags together with their OWL equivalents is found in~\hyperref[table:obo]{Table~\ref*{table:obo}}. Once characteristic about the mapping process resulting in some of the tags listed in the table is worth mentioning: For some of the OBO vocabulary there is on corresponding tag in the OWL vocabulary. For this reason a dedicated OWL namespace\footnote{http://www.geneontology.org/formats/oboInOwl\#} containing the definitions of all OBO specificities was created. Additionally, as OBO features are a strict subset of OWL DL, the manipulation of converted OBO features in OWL should be restricted to allow the transformation back. A more detailed discussion on this topic is given in~\cite{tirmizi2011, tirmizi2006}.
 
@@ -360,19 +360,19 @@ A summary of the most important OBO tags together with their OWL equivalents is 
 		\texttt{obo:saved-by} & oboInOwl:savedBy & The username of the person to last save this file.\\
 		\texttt{obo:replaced\_by} & oboInOwl:replacedBy & A reference to a newer term which replaces this obsolete term.\\
 	\end{tabularx}
-	\caption{A subset of the OBO vocabulary used as metadata}
+	\caption{A subset of the OBO vocabulary used as meta-data}
 	\label{table:obo}
 \end{table}
 \endgroup
 
-\paragraph{Proposed Approach for Ontology Validation} Given the high number on ontology metadata formats above, \hyperref[alg:embedded_enrichment]{Algorithm~\ref*{alg:embedded_enrichment}} shows the pseudocode needed to create the textual concept descriptions extracted from the embedded concept metadata. In addition to the notation from the previous Section we define $\Phi(C) \coloneqq \{m_1, m_2, \ldots, m_i \}$ where $m_i$ is the $i'th$ metadata element embedded in concept $C$, whereas $m$ represents the textual description of some metadata element.
+\paragraph{Proposed Approach for Ontology Validation} Given the high number on ontology meta-data formats above, \hyperref[alg:embedded_enrichment]{Algorithm~\ref*{alg:embedded_enrichment}} shows the pseudocode needed to create the textual concept descriptions extracted from the embedded concept meta-data. In addition to the notation from the previous Section we define $\Phi(C) \coloneqq \{m_1, m_2, \ldots, m_i \}$ where $m_i$ is the $i'th$ meta-data element embedded in concept $C$, whereas $m$ represents the textual description of some meta-data element.
 
 \begin{algorithm}
 	\caption{Context Enrichment based on Embedded Metadata}\label{alg:embedded_enrichment}
 	\begin{algorithmic}[1]
 		\Procedure{Generate Description}{}\newline
-			\textbf{Input:} A concept $C$ with embedded metadata $\{m_1, m_2, \ldots, m_i \}$\newline
-			\textbf{Output:} A textual description $T$ of $C's$ metadata elements\newline
+			\textbf{Input:} A concept $C$ with embedded meta-data $\{m_1, m_2, \ldots, m_i \}$\newline
+			\textbf{Output:} A textual description $T$ of $C's$ meta-data elements\newline
 			\State{$T=\{\}$}
 			\For {$ m_k \in \Phi(C) $}
 				\State $T=T$ $\cup$ $m_k$
@@ -381,7 +381,7 @@ A summary of the most important OBO tags together with their OWL equivalents is 
 	\end{algorithmic}
 \end{algorithm}
 
-While the actual enrichment is straightforward, merging just all the metadata text for a specific concept, it does not make any assumptions on how the extraction is performed because it depends on the metadata encoding. As we chose the option to encode the metadata in annotation properties, the extraction process is just a matter of selecting the appropriate annotation property for a given concept. 
+While the actual enrichment is straightforward, merging just all the meta-data text for a specific concept, it does not make any assumptions on how the extraction is performed because it depends on the meta-data encoding. As we chose the option to encode the meta-data in annotation properties, the extraction process is just a matter of selecting the appropriate annotation property for a given concept. 
 
 \section{External Source}\label{sec:external_source}
 A different method of generating textual descriptions is by concept lookup from external sources. Whereas the connected nature of a ontology is neglected, the lookup is solely based on the concept name. Dictionaries have always been the primary resource in terms of finding the information about specific words or phrases.

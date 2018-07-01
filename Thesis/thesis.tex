@@ -492,23 +492,23 @@ Linguistic knowledge is organised in separate sections as explained in the next 
 
 It may sound surprising that each page starts with the \emph{language} of the term or phrase because each page belongs to a specific translation of Wiktionary anyway. However, this is necessary because the same term can be encoded in multiple languages. For example, the term \texttt{boat} is used in five languages\footnote{\url{https://en.wiktionary.org/wiki/boat} accessed 2018/06/16}. 
 
-The \textit{Etymology} section describes origin and history of a word. It helps linguists in exploring linguistic relations such as synonymy/antonymy, hypernymy/hyponymy and homonymy/polysemy. They are also interested, whether and how the meaning has changed over time. 
+The \textit{etymology} section describes origin and history of a word. It helps linguists in exploring linguistic relations such as synonymy/antonymy, hypernymy/hyponymy and homonymy/polysemy. They are also interested, whether and how the meaning has changed over time. 
 
-\textit{Phonetic references} are appreciated not only by language learners but also by readers who are unfamiliar with particular terms. The term's pronunciation is encoded using a variant of a phonetic notation or via audio samples. 
+\textit{Phonetic references} are appreciated not only by language learners but also by readers who are unfamiliar with particular terms. The term's pronunciation is encoded using audio samples or phonetic notations. 
 
-In contract to other dictionaries which focus on canonical word forms, Wiktionary also contains entries for inflected word forms. For example, the English verb \texttt{go} and its \textit{morphology} \texttt{went} are encoded as separate entries. Additionally, it may include the declension of an adjective or the conjunction of a verb.
+In contrast to other dictionaries which focus on canonical word forms, Wiktionary also contains entries for inflected word forms. For example, the English verb \texttt{go} and its \textit{morphology} \texttt{went} are encoded as separate entries. Additionally, it may include the declension of an adjective or the conjunction of a verb.
 
-Each term is associated with a \textit{syntactic category}, that is part of speech tags for single words and idiom, proverb and so forth for multi-word expressions. Apart from these, there are also other tags available. For example, nouns are tagged as countable/uncountable or marked as singular/plural. 
+Each term is associated with a \textit{syntactic category} which includes part of speech tags for single words, idioms, proverbs and multi-word expressions. Apart from these, there are also other tags available. For example, nouns are marked as countable/uncountable or singular/plural. 
 
-The most interesting part for dictionary readers is probably its section about \textit{semantic knowledge} which describes the meaning of a term. It is explained by example sentences, quotations, links to other terms, glosses and linguistic labels. The gloss of a word is either a marginal or interlinear notation of the meaning of a word. Non-linguists are eventually more familiar with its inflected form glossary, denoting to a collection of glosses. 
+The most interesting part for dictionary readers is probably the section \textit{semantic knowledge} which describes the meaning of a term. It includes example sentences, quotations, links to other terms, glosses and linguistic labels. The gloss of a word is either a marginal or interlinear notation of the word's meaning. Non-linguists are eventually more familiar with the term \emph{glossary} which denotes to collections of glosses. 
 
-Especially useful for translators and educators are \textit{cross-lingual knowledge}, represented as interconnecting links between pages written in differing languages. For example, the page describing the English noun boat contains sections denoted to water~craft, full-house and conformation of cyclohexane. Each of these has links to translations in other languages. 
+\textit{Cross-lingual knowledge} is especially important for translators and educators who are interested in multilingual realtions. This is expressed as links between pages of differing language. For example, descriptions of the English word \texttt{boat} are contained in a page with links to \texttt{water~craft}, \texttt{full-house} and conformation to \texttt{cyclohexane}.
 
-A valuable feature for non-native speakers are \emph{graphical knowledge}. It is obvious that humans grasp the meaning of a term quicker by just looking at a picture or photograph than reading through possibly long textual descriptions. Apparently, not all terms can be illustrated as pictures or photographs. 
+A valuable feature for non-native speakers is \emph{graphical knowledge}. It is obvious that humans grasp the meaning of a term faster by just looking at a picture or photograph than reading through long textual descriptions. Unfortunately, not all terms can be expressed in pictures or photographs though. 
 
-From a technical perspective Wiktionary is based on MediaWiki\footnote{\url{https://www.mediawiki.org/wiki/MediaWiki} accessed 2018/06/17}, a free and open source software written in PHP\footnote{\url{http://www.php.net/} accessed 2018/06/17} and distributed under the GNU~General~Public~License~(GPL). It maintained by the WikiMedia~Foundation\footnote{\url{https://wikimediafoundation.org/wiki/Home} accessed 2018/06/17}, a non-profit organisation aimed at supporting free, multilingual, educational content, and used by many other wikis\footnote{\url{https://wikistats.wmflabs.org/} accessed 2018/06/17}.
+From a technical perspective Wiktionary is based on MediaWiki\footnote{\url{https://www.mediawiki.org/wiki/MediaWiki} accessed 2018/06/17}, a free and open source software written in PHP\footnote{\url{http://www.php.net/} accessed 2018/06/17}. The software is distributed under the GNU~General~Public~License~(GPL) and maintained by the WikiMedia~Foundation\footnote{\url{https://wikimediafoundation.org/wiki/Home} accessed 2018/06/17}, a non-profit organisation aimed at supporting free, multilingual, educational content. MediaWiki is also used by many other wikis\footnote{\url{https://wikistats.wmflabs.org/} accessed 2018/06/17}.
 
-The majority of wiki features are accessible via public API calls. Clients request features or send commands over the \textit{MediaWiki~Action~API}\footnote{\url{https://www.mediawiki.org/wiki/API:Main_page} accessed 2018/06/17}. It provides querying, searching, parsing and manipulating capabilities.
+The majority of wiki features are accessible via public API. Clients can request features or send commands over the \textit{MediaWiki~Action~API}\footnote{\url{https://www.mediawiki.org/wiki/API:Main_page} accessed 2018/06/17}. It has querying, searching, parsing and manipulation capabilities.
 
 \paragraph{Proposed Approach for Ontology Validation} Intuitively, the idea of generating textual descriptions using a dictionary lookup is simple: starting from a concept name, descriptions are built from consulting an online dictionary through a coherent interface. 
 
@@ -516,7 +516,7 @@ A schematic overview of the overall workflow is shown in~\hyperref[fig:external_
 \begin{figure}
 	 \centering
 	 \includegraphics[width=0.9\textwidth]{drawio/External_Source_Workflow}
-	 \caption{Conceptual workflow of WordNik consultation to generate textual concept descriptions}\label{fig:external_source_workflow}
+	 \caption{Conceptual workflow of WordNik consultation to generate concept descriptions}\label{fig:external_source_workflow}
 \end{figure}
 The idea is to use the concept name as the baseline for any further processing. Often, the name can not be used directly as input to WordNik because it contains unwanted characters such as excessive spaces, quotes, dots or just non-printable characters. This is especially true for learned ontologies, generated from textual sources. Our algorithm uses the built-in text manipulation capabilities of the JDK to pre-process concept names. Among the other approaches introduced earlier in this Section it is one of the simpler ones, but still providing good results. 
 

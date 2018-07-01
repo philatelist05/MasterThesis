@@ -510,7 +510,7 @@ From a technical perspective Wiktionary is based on MediaWiki\footnote{\url{http
 
 The majority of wiki features are accessible via public API. Clients can request features or send commands over the \textit{MediaWiki~Action~API}\footnote{\url{https://www.mediawiki.org/wiki/API:Main_page} accessed 2018/06/17}. It has querying, searching, parsing and manipulation capabilities.
 
-\paragraph{Proposed Approach for Ontology Validation} Intuitively, the idea of generating textual descriptions using a dictionary lookup is simple: starting from a concept name, descriptions are built from consulting an online dictionary through a coherent interface. 
+\paragraph{Proposed Approach for Ontology Validation} Intuitively, the idea of generating descriptions using dictionary lookups is simple: starting from a concept name, descriptions are built from consulting an online dictionary. 
 
 A schematic overview of the overall workflow is shown in~\hyperref[fig:external_source_workflow]{Figure~\ref*{fig:external_source_workflow}}.
 \begin{figure}
@@ -518,16 +518,14 @@ A schematic overview of the overall workflow is shown in~\hyperref[fig:external_
 	 \includegraphics[width=0.9\textwidth]{drawio/External_Source_Workflow}
 	 \caption{Conceptual workflow of WordNik consultation to generate concept descriptions}\label{fig:external_source_workflow}
 \end{figure}
-The idea is to use the concept name as the baseline for any further processing. Often, the name can not be used directly as input to WordNik because it contains unwanted characters such as excessive spaces, quotes, dots or just non-printable characters. This is especially true for learned ontologies, generated from textual sources. Our algorithm uses the built-in text manipulation capabilities of the JDK to pre-process concept names. Among the other approaches introduced earlier in this Section it is one of the simpler ones, but still providing good results. 
+The idea is to use the concept name as a baseline for any further processing. Often, the name can not be used directly as input to WordNik because it contains unwanted characters such as excessive spaces, quotes, dots or just non-printable characters. This is especially true for learned ontologies, generated from textual sources. Our algorithm uses the built-in text manipulation capabilities of the JDK to pre-process concept names. Among the other approaches introduced earlier in this section, it is yet simple but still provides good results. 
 
-Next, WordNik is consulted to find example usages for given, normalised concept names. In contrast to traditional dictionaries, WordNik searches in all kinds of available online content including newspapers, journals, scientific publications, tweets and others. Searching functionality together with several other features such as commenting is protected against unauthorised access, however unrestricted access is granted in isolated Sandbox~Mode\footnote{\url{https://developer.wordnik.com/docs} accessed  2018/06/21} to get a better feeling of API usage. For example, in our approach example sentences for the word \texttt{bird} are fetched from the postfix \texttt{/word.json/bird/examples}.
+Next, WordNik is consulted to find example sentences for normalised concept names. In contrast to traditional dictionaries, WordNik searches in all kinds of available online content, including newspapers, journals, scientific publications, tweets and others. 
+All API interaction is protected against unauthorised access, however, to help developers learning the API, some features are available in isolated Sandbox~Mode\footnote{\url{https://developer.wordnik.com/docs} accessed  2018/06/21}. For instance, example sentences for the word \texttt{bird} can be fetched from the URL \texttt{/word.json/bird/examples}.
 
-Depending on wether a single concept is validated or multiple concepts, example sentences need to be harmonised, which we realised by storing intermediate results and mapping these to the initial concept set. 
+Depending on wether a single concept or multiple concepts are validated, example sentences need to be harmonised, which is realised by storing intermediate results and mapping these to the initial concepts. 
 
-To conclude, this approach is rather simple and easy to implement while it may have the potential to generate wrong results especially for ambiguous concept names. 
-%Describe our approach of using Wordnik for ontology context enrichment
-%Explain why we decided to chose WordNik
-
+To conclude, this approach is rather simple and easy to implement, however, it may have the potential to generate wrong results, especially for ambiguous concept names. 
 
 
 \chapter{Experimental Evaluation}

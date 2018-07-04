@@ -528,9 +528,28 @@ Depending on wether a single concept or multiple concepts are validated, example
 To conclude, this approach is rather simple and easy to implement, however, it may have the potential to generate wrong results, especially for ambiguous concept names. 
 
 
-\chapter{Experimental Evaluation}
-Initial paper~\cite{liu2005semi} for evaluation data using ontology learning techniques.
-\todo{Enter your text here.}
+\chapter{Empirical Evaluation}
+This chapter starts by stating the expected outcome of the empirical evaluation, describes the evaluation setup, discusses used datasets~(e.g. ontologies) and briefly explains relevant evaluation metrics. 
+
+
+%Initial paper~\cite{liu2005semi} for evaluation data using ontology learning techniques.
+
+
+%MEETING MINUTES:
+%Evaluation Setup:
+%	1.) Define the goal for evaluation --> So the Inter-rater Agreement increase, and precision and recall increase
+%			*) Depends on the actual data if these goals are feasible/reachable. 
+%	2.) Data --> What Ontologies can be used as a source for evaluation (O1, O2, ...)
+%	3.) Setup --> How the actual test setup look like.
+%			*) Should we use the very same ontology for all context enrichment methods? 
+%				--> Then the results would be of general applicability (preferable solution)
+%			*) Or could we use different learned ontologies (e.g. finance/climate) or generic ontologies (e.g. pizza) 
+%			   for specific context enrichment methods (e.g. concept metadata extraction on Biomed ontology)
+%	4.) Measures/Metrics --> What Metrics to use?
+%		*) Precision (needs baseline --> e.g. a correct, golden standard ontology)
+%		*) Recall (needs baseline --> e.g. a correct, golden standard ontology)
+%		*) Inter-rater Agreement
+%		*) a combination of the above / all of the above
 
 
 \chapter{Implementation}\label{chap:implementation}

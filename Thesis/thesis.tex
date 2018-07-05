@@ -531,10 +531,15 @@ To conclude, this approach is rather simple and easy to implement, however, it m
 \chapter{Empirical Evaluation}
 This chapter starts by stating the expected outcome of the empirical evaluation, describes the evaluation setup, discusses used datasets~(e.g. ontologies) and briefly explains relevant evaluation metrics. 
 
-Based on existing efforts for ontology validation with the help of crowdsourcing~(see section~\ref{sec:ucomp_protege_plugin}) we formulate the following \textit{evaluation hypothesis}:
+Based on existing efforts for ontology validation using crowdsourcing~(see section~\ref{sec:ucomp_protege_plugin}), we formulate the following \textit{evaluation hypothesis}:
 \begin{quotation}
 	The crowd performs better if context is added to crowdsourcing tasks.
 \end{quotation}
+To justify the improvements stated in the hypothesis, detailed evaluation based on the \textit{metrics} described in the next paragraphs is performed. 
+
+When is comes to measuring the performance of the crowd, evaluators can chose from two approaches. The first one requires some reference data which is compared against empirical data collected from experiments. This approach, originating from Information Retrieval~(IR), is called the \textit{Golden~Standard} approach~\cite{brank2005}. To quantify the improvements/degradations using this approach for crowdsourcing evaluation, several metrics have been invented:
+
+
 
 %Initial paper~\cite{liu2005semi} for evaluation data using ontology learning techniques.
 

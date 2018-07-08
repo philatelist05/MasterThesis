@@ -540,7 +540,7 @@ Based on existing efforts for ontology validation using crowdsourcing~(see secti
 \end{quotation}
 To justify the improvements stated in the hypothesis, detailed evaluation based on the \textit{metrics} described in the next paragraphs is performed. 
 
-When is comes to measuring the performance of the crowd, evaluators can chose from two approaches. The first one requires some reference data which is compared against empirical data collected from experiments. This approach, originating from Information Retrieval~(IR), is called the \textit{Golden~Standard} approach~\cite{brank2005}.  To quantify the improvements/degradations using this approach for crowdsourcing evaluation, several metrics have been invented. On a binary classification scheme as illustrated in \hyperref[fig:binary_classification_metrics]{Figure~\ref*{fig:binary_classification_metrics}} these metrics are defined as fractions of \emph{True~Positives~(TP)}, \emph{True~Negatives~(TN)}, \emph{False~Positives~(FP)} and \emph{False~Negatives~(FN)}.
+When is comes to measuring the performance of the crowd, evaluators can chose from two approaches. The first one requires some reference data which is compared against empirical data collected from experiments. This approach, originating from Information Retrieval~(IR), is called the \textbf{Golden~Standard~Approach}~\cite{brank2005}. To quantify the improvements/degradations using this approach for crowdsourcing evaluation, several metrics have been invented. On a binary classification scheme as illustrated in \hyperref[fig:binary_classification_metrics]{Figure~\ref*{fig:binary_classification_metrics}} these metrics are defined as fractions of \emph{True~Positives~(TP)}, \emph{True~Negatives~(TN)}, \emph{False~Positives~(FP)} and \emph{False~Negatives~(FN)}.
 \begin{figure}
 	 \centering
 	 \includegraphics[width=0.5\textwidth]{drawio/Binary_Classification_Scheme}
@@ -564,6 +564,7 @@ In some situations researchers have criticised this metric that it may be biased
 \[ F_\beta = (1 + \beta^2) \cdot \frac{P \cdot R}{\beta^2 \cdot P + R} \]
 Depending on the importance of Precision or Recall, $\beta$ can be set to a higher value~(e.g.~$F_2$), which weights Recall higher, or to a lower value~(e.g.~$F_{0.5}$), which puts more emphasis on Precision. Mostly, the generic F-Measure, also known as $F_1$ measure, is sufficient though, in which $\beta$ is set to $1$ to weight Precision and Recall evenly. 
 
+The other approach in measuring the crowd's performance does not rely on reference values, instead the metric reflects the \textbf{Agreement Ratio} among the crowd workers. Therefore, the inter-rater agreement or concordance measures, to what extend consensus is reached by judges. 
 
 %Data:
 %Initial paper~\cite{liu2005semi} for evaluation data using ontology learning techniques.

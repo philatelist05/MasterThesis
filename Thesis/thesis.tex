@@ -572,12 +572,13 @@ The other approach in measuring the crowd's performance does not rely on referen
 
 Several metrics exist to measure inter-rater reliability~\cite{zhao2013}. They primarily differ in to what the degree judgements made by chance are taken into account. In our evaluation though, the following metric is used:
 \paragraph{Percentage Agreement}
-This is the simplest and most commonly used metric, in which the the number of agreeing raters~($A$) is divided by the total rater count~($N$).
+This is the simplest and most commonly used metric, which is calculated by dividing the number of agreeing raters~($A$) by the total rater count~($N$).
 \[ Agreement = \frac{A}{N} \]
 Despite its intuitive appeal, it has been criticised, that it does not take the agreements made by chance into account~\cite{hunt1986}. On the other hand, calculation of chance-adjusted metrics is more complex and have the potential to over- or undervalue the corrections for chance.  
 Moreover, reliability is assumed to be very high because crowdsourcing settings were adjusted to sort out random answers. A more detailed discussion on this topic is given, when the evaluation setup is described.  
 
 
+Within the next paragraphs, the \textbf{datasets} for the evaluation are described in more detail. 
 %Data:
 %Initial paper~\cite{liu2005semi} for evaluation data using ontology learning techniques.
 
@@ -601,7 +602,6 @@ Moreover, reliability is assumed to be very high because crowdsourcing settings 
 
 
 \chapter{Implementation}\label{chap:implementation}
-%Include also methods for spam detection
 \section{Environment}
 \section{Conceptual Architecture}
 

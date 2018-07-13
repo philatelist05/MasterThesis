@@ -20,7 +20,7 @@
 %\usepackage[ruled,linesnumbered,algochapter]{algorithm2e} % Enables the writing of pseudo code.
 \usepackage{algorithm} %For algorithms
 \usepackage[noend]{algpseudocode}%Allows pseudo-code like syntax in algorithms
-\usepackage{tabularx}
+\usepackage{tabularx, booktabs} %Better Table support
 \usepackage[usenames,dvipsnames,table]{xcolor} % Allows the definition and use of colors. This package has to be included before tikz.
 \usepackage{nag}       % Issues warnings when best practices in writing LaTeX documents are violated.
 \usepackage{todonotes} % Provides tooltip-like todo notes.
@@ -32,6 +32,9 @@
 % Define convenience functions to use the author name and the thesis title in the PDF document properties.
 \newcommand{\authorname}{Stefan Gamerith} % The author name without titles.
 \newcommand{\thesistitle}{Context Enrichment of Crowdsourcing Tasks for Ontology Validation} % The title of the thesis. The English version should be used, if it exists.
+
+%Evenly distribute Y colum types%
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
 
 %Define hyphen in math-mode
 \mathchardef\mhyphen="2D
@@ -583,28 +586,46 @@ Moreover, reliability is assumed to be very high because crowdsourcing settings 
 \subsubsection{Datasets}
 Within the next paragraphs, ontologies used as the input for evaluation tasks are described in more detail. As this thesis builds upon existing work~\cite{wohlgenannt2016}, it makes sense to use the same evaluation sources. Also, we had access to the raw evaluation data, used for their evaluation purposes. 
 
+The main characteristics of the three ontologies used for evaluation are summarised in \hyperref[table:dataset_ontologies]{Table~\ref*{table:dataset_ontologies}}. 
+\begingroup
+\renewcommand{\arraystretch}{1.5}
+\begin{table}
+	\begin{tabularx}{\textwidth}{l c *{3}{Y}}
+		\toprule
+		\multirow{2}{*}{\emph{Number of}} & \multicolumn{3}{c}{\emph{Ontology}}\\
+		\cmidrule(l){2-4} 
+		  & Climate Change & Tennis & Finance \\
+		\midrule
+		 Classes  & 101 & 52 &  77 \\
+		 Properties  & 28 & 34 &  29 \\
+		 SubClass Relations  & 84 & 35 & 78 \\
+		 Individuals  & 64 & 33 & 47 \\
+		\bottomrule
+	\end{tabularx}
+	\caption{Characteristics of the used ontologies}
+	\label{table:dataset_ontologies}
+\end{table}
+\endgroup
+Two of these ontologies, covering the domains \emph{climate change} and \emph{tennis}, emerged from seed ontologies used in an ontology learning algorithm~\cite{liu2005semi}. They evolved from several rounds of adding more input data~\cite{wohlgenannt2012}. The other ontology covers the finance domains and represents a small subset of the vocabulary defined by the Multilingual Thesaurus of the European Union~(EuroVoc)\footnote{\url{http://eurovoc.europa.eu/drupal/?q=evontology} accessed 2018/07/13}.
 
-
-%Data:
-%Initial paper~\cite{liu2005semi} for evaluation data using ontology learning techniques.
-
+The tested ontologies are of limited size which makes evaluation easier, but still has significance for testing the impact of context enrichment in ontology validation. 
 
 %MEETING MINUTES:
 % Evaluation Setup:
 %
-% DONE 1.) Define the goal for evaluation --> So the Inter-rater Agreement increase, and Precision and Recall increase
-%			*) Depends on the actual data if these goals are feasible/reachable. 
-%	   2.) Data --> What Ontologies can be used as a source for evaluation (O1, O2, ...)
-%	   3.) Setup --> How the actual test setup look like.
-%	   		*) Should we use the very same ontology for all context enrichment methods? 
-%	   			--> Then the results would be of general applicability (preferable solution)
-%	   		*) Or could we use different learned ontologies (e.g. finance/climate) or generic ontologies (e.g. pizza) 
-%	   		   for specific context enrichment methods (e.g. concept metadata extraction on Biomed ontology)
-% DONE 4.) Measures/Metrics --> What Metrics to use?
-%		    *) Precision (needs baseline --> e.g. a correct, golden standard ontology)
-%		    *) Recall (needs baseline --> e.g. a correct, golden standard ontology)
-%		    *) Inter-rater Agreement
-%		    *) a combination of the above / all of the above
+% DONE     1.) Define the goal for evaluation --> So the Inter-rater Agreement increase, and Precision and Recall increase
+%	       		*) Depends on the actual data if these goals are feasible/reachable. 
+% PROGRESS 2.) Data --> What Ontologies can be used as a source for evaluation (O1, O2, ...)
+% MISSING  3.) Setup --> How the actual test setup look like.
+%	       		*) Should we use the very same ontology for all context enrichment methods? 
+%	       			--> Then the results would be of general applicability (preferable solution)
+%	       		*) Or could we use different learned ontologies (e.g. finance/climate) or generic ontologies (e.g. pizza) 
+%	       		   for specific context enrichment methods (e.g. concept metadata extraction on Biomed ontology)
+% DONE     4.) Measures/Metrics --> What Metrics to use?
+%	       	    *) Precision (needs baseline --> e.g. a correct, golden standard ontology)
+%	       	    *) Recall (needs baseline --> e.g. a correct, golden standard ontology)
+%	       	    *) Inter-rater Agreement
+%	       	    *) a combination of the above / all of the above
 
 
 \chapter{Implementation}\label{chap:implementation}

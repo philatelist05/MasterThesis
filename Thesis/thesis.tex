@@ -534,10 +534,13 @@ To conclude, this approach is rather simple and easy to implement, however, it m
 \chapter{Empirical Evaluation}
 This chapter starts by stating the expected outcome of the empirical evaluation, describes the evaluation setup, discusses used datasets~(e.g. ontologies) and briefly explains relevant evaluation metrics. 
 
-Based on existing efforts for ontology validation using crowdsourcing~(see section~\ref{sec:ucomp_protege_plugin}), we formulate the following \textbf{evaluation hypothesis}:
+\subsubsection{Evaluation Hypothesis}
+Based on existing efforts for ontology validation using crowdsourcing~(see section~\ref{sec:ucomp_protege_plugin}), we formulate the following \textit{evaluation hypothesis}:
 \begin{quotation}
 	The crowd performs better if context is added to crowdsourcing tasks.
 \end{quotation}
+
+\subsubsection{Evaluation Metrics}
 To justify the improvements stated in the hypothesis, detailed evaluation based on the \textit{metrics} described in the next paragraphs is performed. 
 
 When is comes to measuring the performance of the crowd, evaluators can chose from two approaches. The first one requires some reference data which is compared against empirical data collected from experiments. This approach, originating from Information Retrieval~(IR), is called the \textbf{Golden~Standard~Approach}~\cite{brank2005}. To quantify the improvements/degradations using this approach for crowdsourcing evaluation, several metrics have been invented. On a binary classification scheme as illustrated in \hyperref[fig:binary_classification_metrics]{Figure~\ref*{fig:binary_classification_metrics}} these metrics are defined as fractions of \emph{True~Positives~(TP)}, \emph{True~Negatives~(TN)}, \emph{False~Positives~(FP)} and \emph{False~Negatives~(FN)}.
@@ -577,8 +580,11 @@ This is the simplest and most commonly used metric, which is calculated by divid
 Despite its intuitive appeal, it has been criticised, that it does not take the agreements made by chance into account~\cite{hunt1986}. On the other hand, calculation of chance-adjusted metrics is more complex and have the potential to over- or undervalue the corrections for chance.  
 Moreover, reliability is assumed to be very high because crowdsourcing settings were adjusted to sort out random answers. A more detailed discussion on this topic is given, when the evaluation setup is described.  
 
+\subsubsection{Datasets}
+Within the next paragraphs, ontologies used as the input for evaluation tasks are described in more detail. As this thesis builds upon existing work~\cite{wohlgenannt2016}, it makes sense to use the same evaluation sources. Also, we had access to the raw evaluation data, used for their evaluation purposes. 
 
-Within the next paragraphs, the \textbf{datasets} for the evaluation are described in more detail. 
+
+
 %Data:
 %Initial paper~\cite{liu2005semi} for evaluation data using ontology learning techniques.
 

@@ -613,15 +613,24 @@ The tested ontologies are of limited size which makes evaluation easier, but sti
 \subsubsection{Evaluation Setup}
 For calculation evaluation metrics the ontologies from above need to be enriched with annotations. From previous experiments~\cite{wohlgenannt2016} existing evaluation data was consolidated and annotations were generated thereof. Unfortunately, for some concepts we had ambiguous data sets or none at all. We manually verified the enriched ontologies by excluding incorrect annotations and adding missing ones where appropriate. This was an important task, particularity because learned ontologies often contain inconsistent and inaccurate data. 
 
-Concerning the crowdsourcing tasks, Figure Eight\footnote{}~(former CrowdFlower) allows adjusting a variety of settings before the initial launch.   
+Concerning the crowdsourcing tasks, Figure Eight\footnote{\url{https://www.figure-eight.com/} accessed 2018/07/16}~(former CrowdFlower) allows adjusting a variety of settings before the initial launch. We paid $\$0.05$ per task, required 5 judgements per unit, restricted judgements to Level 3 crowd workers only. While restricting contribution to more experienced crowd workers would have a negative impact on task duration, for compensation, we did not set any constraints on contributor's language or geography. 
+%Also briefly describe here quality control (e.g. Quiz)
+
+
+%Next paragraph: Also define here evaluation task (e.g. verify concept relevance)
+
+
+
+
+
 
 %MEETING MINUTES:
 % Evaluation Setup:
 %
 % DONE     1.) Define the goal for evaluation --> So the Inter-rater Agreement increase, and Precision and Recall increase
 %	       		*) Depends on the actual data if these goals are feasible/reachable. 
-% PROGRESS 2.) Data --> What Ontologies can be used as a source for evaluation (O1, O2, ...)
-% MISSING  3.) Setup --> How the actual test setup look like.
+% DONE     2.) Data --> What Ontologies can be used as a source for evaluation (O1, O2, ...)
+% PROGRESS 3.) Setup --> How the actual test setup look like.
 %	       		*) Should we use the very same ontology for all context enrichment methods? 
 %	       			--> Then the results would be of general applicability (preferable solution)
 %	       		*) Or could we use different learned ontologies (e.g. finance/climate) or generic ontologies (e.g. pizza) 

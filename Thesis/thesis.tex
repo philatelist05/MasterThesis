@@ -579,7 +579,7 @@ Despite its intuitive appeal, it has been criticised, that it does not take the 
 Moreover, reliability is assumed to be very high because crowdsourcing settings were adjusted to sort out random answers. A more detailed discussion on this topic is given, when the evaluation setup is described.  
 
 \subsubsection{Datasets}
-Within the next paragraphs, ontologies used as the input for evaluation tasks are described in more detail. As this thesis builds upon existing work~\cite{wohlgenannt2016}, it makes sense to use the same evaluation sources. Also, we had access to the raw evaluation data, used for their evaluation purposes. 
+Within the next paragraphs, ontologies used as the input for evaluation tasks are described in more detail. As this thesis builds upon existing work~\cite{wohlgenannt2016}, it makes sense to use the same ontologies as evaluation source. Also, we had access to the raw evaluation data which they had used in their experiments. 
 
 The main characteristics of the three ontologies used for evaluation are summarised in \hyperref[table:dataset_ontologies]{Table~\ref*{table:dataset_ontologies}}. 
 \begingroup
@@ -603,7 +603,7 @@ The main characteristics of the three ontologies used for evaluation are summari
 \endgroup
 Two of these ontologies, covering the domains \emph{climate change} and \emph{tennis}, emerged from seed ontologies used in an ontology learning algorithm~\cite{liu2005semi}. They evolved from several rounds of adding more input data~\cite{wohlgenannt2012}. The other ontology covers the finance domain and represents a small subset of the vocabulary defined by the Multilingual Thesaurus of the European Union~(EuroVoc)\footnote{\url{http://eurovoc.europa.eu/drupal/?q=evontology} accessed 2018/07/13}.
 
-The tested ontologies are of limited size which makes evaluation easier, but still has significance for testing the impact of context enrichment in ontology validation. Whereas the \emph{Climate Change} ontology contains 101 concepts, 28 object properties, 64 individuals and 84 subclass relations, the Finance ontology is of smaller size, containing 77 concepts, 29 object properties, 47 individuals and 78 subclass relations. The Tennis ontology has 119 entities in total, 52 of which are concepts, 34 object properties and 33 individuals. 
+The tested ontologies are of limited size which makes evaluation easier, but still has significance for testing the impact of context enrichment in ontology validation. Whereas the \emph{Climate Change} ontology contains 101 concepts, 28 object properties, 64 individuals and 84 subclass relations, the \emph{Finance} ontology is of smaller size, containing 77 concepts, 29 object properties, 47 individuals and 78 subclass relations. The \emph{Tennis} ontology has 119 entities in total, 52 of which are concepts, 34 object properties and 33 individuals. 
 
 \subsubsection{Evaluation Setup}
 For calculation evaluation metrics the ontologies from above need to be enriched with annotations. From previous experiments~\cite{wohlgenannt2016} existing evaluation data was consolidated and annotations were generated thereof. Unfortunately, for some concepts we had ambiguous data sets or none at all. We manually verified the enriched ontologies by excluding incorrect annotations and adding missing ones where appropriate. This was an important task, particularly because learned ontologies often contain inconsistent and inaccurate data. 

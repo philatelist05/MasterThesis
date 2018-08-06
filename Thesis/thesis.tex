@@ -250,11 +250,20 @@ Although the life cycle for semantic content starts with conceptual modelling~(e
 representation formalism need to be mapped to the semantic data model so that further processing according to the Linked Data Life-Cycle is possible. 
 There exist several approaches for the extraction process. When considering unstructured sources, especially text, \emph{natural language processing}~(NLP) as well as \emph{information extraction}~(IE) techniques have been applied successfully for decades to gather relevant information. More precisely, 3 sub-disciples of NLP have emerged: \emph{Named~Entity~Recognition} for discovering instances of entities, \emph{Keyword/Keyphrase~Extraction} for recognising common topics and \emph{Relationship~Extraction} for the definition of links between found entities and keywords. For data originating from structured sources such as XML or databases different approaches are required. For example, the World Wide Web Consortium~(W3C) specified the W3C~recommendation R2RML\footnote{\url{http://www.w3.org/TR/r2rml/} accessed 2018/08/06} exhibiting a RDF notation for mapping relational tables, views and queries to RDF. 
 
-
-Introducing Wikidata to the Linked Data Web~\cite{erxleben2014}
-
-Urbanopoly - A Social and Location-Based Game with a Purpose to Crowdsource Your Urban Data~\cite{celino2012} (data collection \& verification \& correction)
-
+Probably the most popular example of community created/maintained knowledge base is Wikipedia\footnote{\url{https://www.wikipedia.org/} accessed 2018/08/06}. A less known fact is that its central data management platform is Wikidata\footnote{\url{https://www.wikidata.org/wiki/Wikidata:Main_Page} accessed 2018/08/06}, a knowledge base containing millions of entities, labels and descriptions. For example, the item page for Tim~Berners-Lee, a computer scientist and the "author" of the World Wide Web, contains properties in different languages~(excerpt shown in~\hyperref[fig:wikidata_tim_berners_lee_lang]{Figure~\ref*{fig:wikidata_tim_berners_lee_lang}}) as well as statements of him as a person~(excerpt shown in~\hyperref[fig:wikidata_tim_berners_lee_stat]{Figure~\ref*{fig:wikidata_tim_berners_lee_stat}}). 
+\begin{figure}
+	 \centering
+	 \includegraphics[width=0.75\textwidth]{graphics/wikidata_tim_berners_lee_lang}
+	 \caption{Excerpt of a Wikidata page showing language properties of Tim~Berners-Lee}\label{fig:wikidata_tim_berners_lee_lang}
+\end{figure}
+\begin{figure}
+	 \centering
+	 \includegraphics[width=0.75\textwidth]{graphics/wikidata_tim_berners_lee_stat}
+	 \caption{Excerpt of a Wikidata page showing statements of Tim~Berners-Lee}\label{fig:wikidata_tim_berners_lee_stat}
+\end{figure}
+Every item~(page) has a unique identifier~(e.g. \texttt{Q80}), containing a label~(e.g. \texttt{Tim~Berners-Lee}), a brief description~(e.g. \texttt{British computer scientist, inventor of the World Wide Web}), a list of aliases~(e.g. \texttt{TimBLSir, Tim Berners-LeeTimothy, John Berners-Lee, \ldots}), a list of statements~(e.g. \texttt{instanceof, image, \ldots}) and some links. 
+It is obvious that these data would perfectly fit into the Linked Data model, mapping the properties from above to RDF triples~\cite{erxleben2014}.
+Wikidata content is also available in RDF encoding which is accessible at \url{http://tools.wmflabs.org/wikidata-exports/rdf/}. Unfortunately, this data is only provided via dump files\footnote{\url{https://tools.wmflabs.org/wikidata-exports/rdf/exports.html} accessed 2018/08/06} which are regularly (re-)generated. 
 
 
 

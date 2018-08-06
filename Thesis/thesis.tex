@@ -244,19 +244,25 @@ Over the years many tools and practices were developed that cover the full life 
 	 \includegraphics[width=0.75\textwidth]{drawio/Linked_Data_Life_Cycle}
 	 \caption{The Linked Data Life-Cycle~(consolidated from~\cite{auer2011, auer2012, siorpaes2008})}\label{fig:linked_data_life_cycle}
 \end{figure}  
+Although the life cycle for semantic content starts with conceptual modelling~(e.g. mapping unstructured data to structured or semi-structured formalisms), this is not always the case, especially if existing linked data should be managed as well. In that case, the first stage~(Extraction) can be omitted. Likewise, the different stages of the life cycle do not exist in isolation of each other or are passed in strict order as shown in~\hyperref[fig:linked_data_life_cycle]{Figure~\ref*{fig:linked_data_life_cycle}}, instead they are mutually complementary. Consequently, the Crowdsourcing examples that were given in each stage~\cite{simperl2013} may also be relevant for other stages. 
+
+\paragraph{Extraction} When starting from scratch, e.g. no existing linked data sources, unstructured data or structured data adhering to a different
+representation formalism need to be mapped to the semantic data model so that further processing according to the Linked Data Life-Cycle is possible. 
+There exist several approaches for the extraction process. When considering unstructured sources, especially text, \emph{natural language processing}~(NLP) as well as \emph{information extraction}~(IE) techniques have been applied successfully for decades to gather relevant information. More precisely, 3 sub-disciples of NLP have emerged: \emph{Named~Entity~Recognition} for discovering instances of entities, \emph{Keyword/Keyphrase~Extraction} for recognising common topics and \emph{Relationship~Extraction} for the definition of links between found entities and keywords. For data originating from structured sources such as XML or databases different approaches are required. For example, the World Wide Web Consortium~(W3C) specified the W3C~recommendation R2RML\footnote{\url{http://www.w3.org/TR/r2rml/} accessed 2018/08/06} exhibiting a RDF notation for mapping relational tables, views and queries to RDF. 
+
+
+Introducing Wikidata to the Linked Data Web~\cite{erxleben2014}
+
+Urbanopoly - A Social and Location-Based Game with a Purpose to Crowdsource Your Urban Data~\cite{celino2012} (data collection \& verification \& correction)
+
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%TODO: ADD CONTENT BELOW%%%
-Distinguish between collection, analysis, and problem-solving (e.g. what the crowd can do).
-
-Examples from below are taken from~\cite{simperl2013}.
 
 
-\paragraph{Extraction} 
-Introducing Wikidata to the Linked Data Web~\cite{erxleben2014}
-
-Urbanopoly - A Social and Location-Based Game with a Purpose to Crowdsource Your Urban Data~\cite{celino2012} (data collection \& verification \& correction)
 
 \paragraph{Data Storage and Indexing}
 

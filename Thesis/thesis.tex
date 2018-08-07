@@ -265,18 +265,35 @@ Every item~(page) has a unique identifier~(e.g. \texttt{Q80}), containing a labe
 It is obvious that these data would perfectly fit into the Linked Data model, mapping the properties from above to RDF triples~\cite{erxleben2014}.
 Wikidata content is also available in RDF encoding which is accessible at \url{http://tools.wmflabs.org/wikidata-exports/rdf/}. Unfortunately, this data is only provided via dump files\footnote{\url{https://tools.wmflabs.org/wikidata-exports/rdf/exports.html} accessed 2018/08/06} which are regularly (re-)generated. 
 
+\paragraph{Data Storage and Indexing}
+%% TODO: This needs to be done %%
+
+\paragraph{Data Revision and Authoring} In this stage users are given the opportunity to create new or modify existing semantic information. 
+Specifically, this is referred as \textit{Semantic~Content~Authoring~(SCA)} which researchers have defined as \textit{"a tool-supported
+manual composition process aiming at the creation of semantic documents."}~\cite{khalili2013} More generally speaking, SCA it actually embedded in a broader ecosystem for semantic content authoring as shown in~\hyperref[fig:authoring_semantic_ecosystem]{Figure~\ref*{fig:authoring_semantic_ecosystem}}). 
+\begin{figure}
+	 \centering
+	 \includegraphics[width=1\textwidth]{drawio/authoring_semantic_ecosystem}
+	 \caption{The ecosystem for semantic content authoring}\label{fig:authoring_semantic_ecosystem}
+\end{figure}
+The central entity of the semantic ecosystem is a semantic document which holds semantically enriched information. 
+In information management, semantic documents serve a number of purposes such as information searching, information retrieval, information presentation, information integration, personalisation, reusability and interoperability.~\cite{khalili2013} For this reason there exists a research field dealing with major aspects of semantic content management. In particular, it covers the manipulation, creation and processing of semantic content. Users do not directly interact with semantic documents, but rather through a uniform user interface. A number of quality attributes for the assessment of UI-features of SCA-systems have been invented~\cite{khalili2013}. They are all aimed at improving the usability, a measure for the effectiveness, efficiency and satisfaction a user achieves in particular environments. 
+
+A number of tools for authoring semantic content have been developed. A prominent example is OntoWiki~\cite{auer2006}, an open-source Semantic Wiki originally emphasising on collaboration but evolved as an ontology editor as well as a platform for knowledge acquisition. It is inspired by other Wiki systems but specifically focusing on managing knowledge bases adhering to the RDF data model. 
+
+
+
+Mechanical Protege\footnote{\url{http://people.aifb.kit.edu/yt2652/mechanicalProtege/}} - add documentation (create or correct structured information)
+
+
+
+
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%TODO: ADD CONTENT BELOW%%%
 
-
-
-\paragraph{Data Storage and Indexing}
-
-\paragraph{Data Revision and Authoring}
-Mechanical Protege\footnote{\url{http://people.aifb.kit.edu/yt2652/mechanicalProtege/}} - add documentation (create or correct structured information)
 
 \paragraph{Data Linking}
 TripleCheckMate: A Tool for Crowdsourcing the Quality Assessment of Linked Data, created at~\cite{acosta2013} and refined by~\cite{kontokostas2013}  (users can detect interlinking problems and others)

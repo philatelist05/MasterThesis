@@ -281,9 +281,13 @@ In information management, semantic documents serve a number of purposes such as
 
 A number of tools for authoring semantic content have been developed. A prominent example is OntoWiki~\cite{auer2006}, an open-source Semantic Wiki originally emphasising on collaboration but evolved as an ontology editor as well as a platform for knowledge acquisition. It is inspired by other Wiki systems but specifically focusing on managing knowledge bases adhering to the RDF data model. 
 
-
-
-Mechanical Protege\footnote{\url{http://people.aifb.kit.edu/yt2652/mechanicalProtege/}} - add documentation (create or correct structured information)
+A different tool, incorporating Crowdsourcing capabilities in ontology development activities is Mechanical~Protege\footnote{\url{http://people.aifb.kit.edu/yt2652/mechanicalProtege/}}, which was realised as a plug-in for the ontology editor Protégé\footnote{\url{https://protege.stanford.edu/} accessed 2018/08/07}. Concretely, the following tasks are supported by the plug-in:
+\begin{itemize}
+	\item Creating Human Intelligence Tasks~(HIT) and submitting them to Amazon Mechanical Turk\footnote{\url{https://www.mturk.com/} accessed 2018/08/07}
+	\item Monitoring the HIT's status
+	\item Applying the received results to the loaded ontology
+	\item Paying contributors for successful completion
+\end{itemize}
 
 
 
@@ -316,7 +320,8 @@ CrowdQ: Crowdsourced Query Understanding~\cite{demartini2013}
 
 RDF-Hunter: Automatically Crowdsourcing the Execution of Queries Against RDF Data Sets~\cite{acosta2015}
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% END CONTENT %%
 
 
 
@@ -790,8 +795,28 @@ Using domain relevance, we evaluated our proposed methods of context enrichment 
 
 
 \chapter{Results}
-\todo{Enter your text here.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Data Collection %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%1.) Take the described 3 ontologies
+%2.) Check the annotations (whether they are relevant in the respective domain or not)
+%3.) Check and manually add context descriptions (as described using the SKOS metadata set)
+%4.) Alter the implementation of "Embedded context" to use the SKOS metadata set instead of the OBO metadata set
+%5.) Run the Plugin to generate Figure Eight tasks (IMPORTANT: TAKE SCREENSHOTS FOR EACH OF THE CONTEXT ENRICHMENT METHODS)
+%6.) Also take screenshots when receiving the judgements from Figure Eight
+%7.) Download and collect the raw set of judgements
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Data Visualisation %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%1.) Run experiments with context enrichment and without context enrichment
+	%2.1) Calculate overall Precision, Recall, F-measure and Agreement ratio
+	%2.2) Calculate metrics for each question (to show outliers)
+	%2.3) Calculate metrics for each crowd worker (to show spammers)
+	%2.3) Draw RoC plots (https://en.wikipedia.org/wiki/Receiver_operating_characteristic)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \chapter{Discussion \& Conclusion}

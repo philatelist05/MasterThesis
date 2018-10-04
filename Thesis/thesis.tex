@@ -740,7 +740,7 @@ This is the simplest and most commonly used metric, which is calculated by divid
 Despite its intuitive appeal, it has been criticised, that it does not take the agreements made by chance into account~\cite{hunt1986}. On the other hand, calculation of chance-adjusted metrics is more complex and have the potential to over- or undervalue the corrections for chance.  
 Moreover, reliability is assumed to be very high because crowdsourcing settings were adjusted to sort out random answers. A more detailed discussion on this topic is given, when the evaluation setup is described.  
 
-\subsubsection{Datasets}
+\subsubsection{Datasets}\label{sec:evaluation_datasets}
 Within the next paragraphs, ontologies used as the input for evaluation tasks are described in more detail. As this thesis builds upon existing work~\cite{wohlgenannt2016}, it makes sense to use the same ontologies as evaluation source. Also, we had access to the raw evaluation data which they had used in their experiments. 
 
 The main characteristics of the three ontologies used for evaluation are summarised in \hyperref[table:dataset_ontologies]{Table~\ref*{table:dataset_ontologies}}. 
@@ -821,7 +821,26 @@ This chapter is divided along the used datasets for evaluation, that is, \hyperr
 
 
 \section{Climate Change Ontology}\label{sec:result_cc_ontology}
+In this section results from the crowdsourced ontology validation in the field of climate change are presented. The ontology used as a baseline for all calculations in this section is introduced in detail in \hyperref[sec:evaluation_datasets]{Section~\ref*{sec:evaluation_datasets}}. 
 
+The results of the benchmark are presented in~\hyperref[table:bench_p_r_f]{Table~\ref*{table:bench_p_r_f}}. For comparison we also performed ontology validation without any of the discussed context enrichment methods~(indicated as \emph{None}). Given the relatively small set number concepts, any of the context enrichment method perform better than having no context at all. Surprisingly, in terms of recall the contrary holds.  
+\begingroup
+\renewcommand{\arraystretch}{1.5}
+\begin{table}
+	\begin{tabularx}{\textwidth}{l c*{3}{Y}}
+		\toprule
+		Method & Precision & Recall & F-Measure \\
+		\midrule
+		 Neighbouring Nodes & 0.758 & 0.805 & 0.781 \\
+		 Embedded Context & 0.732 & 0.831 & 0.778 \\
+		 External Source & 0.724 & 0.821 & 0.769 \\
+		 None & 0.549 & 0.837 & 0.663 \\
+		\bottomrule
+	\end{tabularx}
+	\caption{Aggregated results on the Climate Change Ontology~(ranked by F-Measure)}
+	\label{table:bench_p_r_f}
+\end{table}
+\endgroup
 
 
 

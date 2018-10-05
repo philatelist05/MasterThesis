@@ -823,7 +823,7 @@ This chapter is divided along the used datasets for evaluation, that is, \hyperr
 \section{Climate Change Ontology}\label{sec:result_cc_ontology}
 In this section results from the crowdsourced ontology validation in the field of climate change are presented. The ontology used as a baseline for all calculations in this section is introduced in detail in \hyperref[sec:evaluation_datasets]{Section~\ref*{sec:evaluation_datasets}}. 
 
-The results of the benchmark are presented in~\hyperref[table:bench_p_r_f]{Table~\ref*{table:bench_p_r_f}}. For comparison we also performed ontology validation without any of the discussed context enrichment methods~(indicated as \emph{None}). Given the relatively small set number concepts, any of the context enrichment method perform better than having no context at all. Surprisingly, in terms of recall the contrary holds.  
+The results of the benchmark are presented in~\hyperref[table:bench_p_r_f]{Table~\ref*{table:bench_p_r_f}}. For comparison we also performed ontology validation without any of the discussed context enrichment methods~(indicated as \emph{None}). Given the relatively small set number concepts, any of the context enrichment method perform better than having no context at all. Surprisingly, in terms of recall the contrary holds. Indeed, crowd workers tend to positively answer questions in case of uncertainty and no additional information other than the concept name is present. 
 \begingroup
 \renewcommand{\arraystretch}{1.5}
 \begin{table}
@@ -841,6 +841,35 @@ The results of the benchmark are presented in~\hyperref[table:bench_p_r_f]{Table
 	\label{table:bench_p_r_f}
 \end{table}
 \endgroup
+
+We also measured the average agreement ratio~(inter-rater agreement) in this dataset. \hyperref[table:bench_p_r_f]{Figure~\ref*{table:bench_p_r_f}} shows the distribution of the agreement ratio among all validated concepts in this dataset. 
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\textwidth]{plots/hist_agreement_nn}
+        \caption{Neighbouring Nodes}
+        \label{fig:hist_agreement_nn}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\textwidth]{plots/hist_agreement_ec}
+        \caption{Embedded Context}
+        \label{fig:hist_agreement_ec}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\textwidth]{plots/hist_agreement_es}
+        \caption{External Source}
+        \label{fig:hist_agreement_es}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\textwidth]{plots/hist_agreement_none}
+        \caption{None}
+        \label{fig:hist_agreement_none}
+    \end{subfigure}
+    \caption{Histogram plots of the Inter-rater Agreement}\label{fig:hist_agreement_all}
+\end{figure}
 
 
 

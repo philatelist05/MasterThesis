@@ -842,7 +842,7 @@ The results of the benchmark are presented in~\hyperref[table:bench_p_r_f]{Table
 \end{table}
 \endgroup
 
-We also measured the average agreement ratio~(inter-rater agreement) in this dataset. \hyperref[table:bench_p_r_f]{Figure~\ref*{table:bench_p_r_f}} shows the distribution of the agreement ratio among all validated concepts. As we required 5 judgements for every concept, giving $5/0$, $4/1$ or $3/2$ levels of agreement which equates to an agreement ratio of $1.0$, $0.8$ and $0.6$ respectively. 
+We also measured the average agreement ratio~(inter-rater agreement) in this dataset. \hyperref[fig:hist_agreement_all]{Figure~\ref*{fig:hist_agreement_all}} shows the distribution of the agreement ratio among all validated concepts. As we required 5 judgements for every concept, giving $5/0$, $4/1$ or $3/2$ levels of agreement which equates to an agreement ratio of $1.0$, $0.8$ and $0.6$ respectively. 
 
 \begin{figure}
     \centering
@@ -874,7 +874,35 @@ We also measured the average agreement ratio~(inter-rater agreement) in this dat
 
 The highest agreement exhibits \emph{External~Source}, followed by \emph{None}. This is somewhat interesting as these are the methods with the lowest performance with regard to F-measure. In fact, the agreement ratio just describes to what extent the responses of crowd workers coincide. From the observations in this dataset~(and among all experiments), it is hard if not impossible to draw conclusions exclusively based on agreement. In fact, when looking closely at the judgements with the highest agreement~ratio~($1.0$) among the incorrect answers, $16$ of $17$ judgements for External~Source and $3$ of $6$ judgements for Neighbouring~Nodes had context added, indicating that in this case crowd workers agreed on incorrect values even though that concept descriptions were added. 
 
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\textwidth]{plots/hist_level_nn}
+        \caption{Neighbouring Nodes}
+        \label{fig:hist_level_nn}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\textwidth]{plots/hist_level_ec}
+        \caption{Embedded Context}
+        \label{fig:hist_level_ec}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\textwidth]{plots/hist_level_es}
+        \caption{External Source}
+        \label{fig:hist_level_es}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\textwidth]{plots/hist_level_none}
+        \caption{None}
+        \label{fig:hist_level_none}
+    \end{subfigure}
+    \caption{Histogram plots of the correct/incorrect judgements}\label{fig:hist_level_all}
+\end{figure}
 
+Indeed, \hyperref[fig:hist_level_all]{Figure~\ref*{fig:hist_level_all}}
 
 \section{Finance Ontology}\label{sec:result_f_ontology}
 

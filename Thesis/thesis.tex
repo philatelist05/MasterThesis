@@ -814,16 +814,15 @@ Using domain relevance, we evaluated our proposed methods of context enrichment 
 	%2.3) Draw plots																												DONE
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Based on the metrics discussed in \hyperref[sec:evaluation_metrics]{Section~\ref*{sec:evaluation_metrics}}, the results of the crowdsourced ontology
-validation jobs are presented. 
+Based on the metrics discussed in \hyperref[sec:evaluation_metrics]{Section~\ref*{sec:evaluation_metrics}}, this chapter highlights the results of the context enrichment methods.
 
 This chapter is divided along the used datasets for evaluation, that is, \hyperref[sec:result_cc_ontology]{Section~\ref*{sec:result_cc_ontology}} covers the \emph{climate~change} domain, \hyperref[sec:result_f_ontology]{Section~\ref*{sec:result_f_ontology}} is dedicated to \emph{finance} and \emph{tennis} is handled in \hyperref[sec:result_t_ontology]{Section~\ref*{sec:result_t_ontology}}. Finally, an overall \emph{comparison} of all evaluation domains is done in \hyperref[sec:result_comparison]{Section~\ref*{sec:result_comparison}}.
 
 
 \section{Climate Change Ontology}\label{sec:result_cc_ontology}
-In this section results from the crowdsourced ontology validation in the field of climate change are presented. The ontology used as a baseline for all calculations in this section is introduced in detail in \hyperref[sec:evaluation_datasets]{Section~\ref*{sec:evaluation_datasets}}. 
+In this section, results from the crowdsourced ontology validation in the field of climate change are presented. A detailed discussion of the ontology used as a baseline for all calculations is done in \hyperref[sec:evaluation_datasets]{Section~\ref*{sec:evaluation_datasets}}. 
 
-The results of the benchmark are presented in~\hyperref[table:bench_p_r_f]{Table~\ref*{table:bench_p_r_f}}. For comparison we also performed ontology validation without any of the discussed context enrichment methods~(indicated as \emph{None}). Given the relatively small set number concepts, any of the context enrichment method perform better than having no context at all. Surprisingly, in terms of recall the contrary holds. Indeed, crowd workers tend to positively answer questions in case of uncertainty and no additional information other than the concept name is present. 
+The results of the benchmark are presented in~\hyperref[table:bench_p_r_f]{Table~\ref*{table:bench_p_r_f}}. For comparison, we also performed ontology validation without any of the discussed context enrichment methods~(indicated as \emph{None}). Given the relatively small number of concepts, any of the context enrichment method perform better than having no context at all. Surprisingly, in terms of recall the contrary holds. Indeed, crowd workers tend to positively answer questions in case of uncertainty when no additional information other than the concept name is present. 
 \begingroup
 \renewcommand{\arraystretch}{1.5}
 \begin{table}
@@ -842,7 +841,7 @@ The results of the benchmark are presented in~\hyperref[table:bench_p_r_f]{Table
 \end{table}
 \endgroup
 
-We also measured the average agreement ratio~(inter-rater agreement) in this dataset. \hyperref[fig:hist_agreement_all]{Figure~\ref*{fig:hist_agreement_all}} shows the distribution of the agreement ratio among all validated concepts. As we required 5 judgements for every concept, giving $5/0$, $4/1$ or $3/2$ levels of agreement which equates to an agreement ratio of $1.0$, $0.8$ and $0.6$ respectively. 
+We also measured the agreement ratio~(inter-rater agreement) in this dataset. \hyperref[fig:hist_agreement_all]{Figure~\ref*{fig:hist_agreement_all}} shows the distribution of the agreement ratio among all validated concepts. We required 5 judgements for every concept, giving $5/0$, $4/1$ or $3/2$ levels of agreement, which is equivalent to $1.0$, $0.8$ and $0.6$ respectively. 
 
 \begin{figure}
     \centering
@@ -872,7 +871,7 @@ We also measured the average agreement ratio~(inter-rater agreement) in this dat
     \caption{Histogram plots of the Inter-rater Agreement}\label{fig:hist_agreement_all}
 \end{figure}
 
-The highest agreement exhibits \emph{External~Source}, followed by \emph{None}. This is somewhat interesting as these are the methods with the lowest performance with regard to F-measure. In fact, the agreement ratio just describes to what extent the responses of crowd workers coincide. From the observations in this dataset~(and among all experiments), it is hard if not impossible to draw conclusions exclusively based on agreement. In fact, when looking closely at the judgements with the highest agreement~ratio~($1.0$) among the incorrect answers, $16$ of $17$ judgements for External~Source and $3$ of $6$ judgements for Neighbouring~Nodes had context added, indicating that in this case crowd workers agreed on incorrect values even though that concept descriptions were added. 
+The highest agreement exhibits \emph{External~Source}, followed by \emph{None}. This is somewhat interesting as these are the methods with the lowest performance with regard to F-measure. In fact, the agreement ratio just describes to what extent the responses of crowd workers coincide. From the observations in this dataset, it is hard, if not impossible, to draw conclusions solely based on agreement. In fact, when looking closely at the judgements with the highest agreement~ratio among incorrect answers, $16$ of $17$ judgements for External~Source and $3$ of $6$ judgements for Neighbouring~Nodes had context added. Apparently, crowd workers agreed here on incorrect values even though that concept descriptions were available. 
 
 \begin{figure}
     \centering
@@ -902,9 +901,26 @@ The highest agreement exhibits \emph{External~Source}, followed by \emph{None}. 
     \caption{Histogram plots of the correct/incorrect judgements}\label{fig:hist_level_all}
 \end{figure}
 
-To manifest the observations from above, a bar-plot~(illustrated in \hyperref[fig:hist_level_all]{Figure~\ref*{fig:hist_level_all}}) was created. It combines the agreement ratio with the amount of correct/incorrect judgements. Whereas a negative score indicates that more contributors agreed on the incorrect answer, a positive score shows that the majority of crowd worker's responses were correct. Indeed, when comparing the performance on level $-5$ \emph{External~Source} is on the same level as the omission of context. On the other hand, it exhibits the highest score on correct answers of level $5$. No other interpretations can be drawn from the other plots. 
+To manifest the observations from above, a bar-plot~(illustrated in \hyperref[fig:hist_level_all]{Figure~\ref*{fig:hist_level_all}}) was created. It combines the agreement ratio with the amount of correct/incorrect judgements. Whereas a negative score indicates that more contributors agreed on the incorrect answer, a positive score shows that the majority of crowd worker's responses were correct. Indeed, when comparing the performance on level $-5$ \emph{External~Source} is on the same level as the omission of context. On the other hand, it exhibits the highest score on correct answers of level $5$.
 
-
+Given the plots on the distribution of the correct/incorrect judgements from above, \hyperref[table:level_corr_incorr]{Table~\ref*{table:level_corr_incorr}} shows the summary statistics concerning agreement level for each context enrichment method. It confirms the observations made so far.
+\begingroup
+\renewcommand{\arraystretch}{1.5}
+\begin{table}
+	\begin{tabularx}{\textwidth}{l c*{4}{Y}}
+		\toprule
+		Method & mean & median & $1^{st}$ quartile & $3^{rd}$ quartile \\
+		\midrule
+		 Neighbouring Nodes & 1.98 & 3.00 & 1.00 & 5.00 \\
+		 Embedded Context & 2.04 & 3.00 & -1.00 & 5.00 \\
+		 External Source & 1.92 & 5.00 & -1.00 & 5.00 \\
+		 None & 1.04 & 1.00 & -3.00 & 5.00 \\
+		\bottomrule
+	\end{tabularx}
+	\caption{Summary statistics concerning agreement level on the Climate Change Ontology}
+	\label{table:level_corr_incorr}
+\end{table}
+\endgroup
 
 \section{Finance Ontology}\label{sec:result_f_ontology}
 

@@ -1,0 +1,174 @@
+\chapter{State of the Art}\label{chap:state_of_the_art}
+In this chapter, we give a general introduction into Crowdsourcing and continue by describing its relevance in the Semantic Web area. Next, we discuss the existing approach of ontology validation using Crowdsourcing where this thesis is based on. This chapter ends with alternative approaches which add context to Crowdsourcing tasks to get better results. 
+
+\section{Crowdsourcing}
+The term \emph{'Crowdsourcing'} was initially mentioned by Jeff Howe in Wired Magazine~\cite{howe2006} where he described as novel model of efficiently solving problems by online workers. Specifically, Crowdsourcing is defined there as:
+\begin{quotation}
+	\textit{"[\ldots] the act of taking a task traditionally performed by a designated agent (such as an employee or a contractor) and outsourcing it by making an open call to an undefined but large group of people.  Crowdsourcing allows the power of the crowd to accomplish tasks that were once the province of just a specialised few."}\cite{howe2008}
+\end{quotation}
+In other words, it means outsourcing the work to an undefined, outer workforce using an open call for participation. But in contrast to the traditional meaning of \emph{outsourcing}, work is distributed to a large, mostly anonymous crowds of human workers, often called the \emph{Human Cloud}. Additionally, it sets no restrictions on the users being addressed, hence speaking of an \emph{open call} to many people. Consequently, crowd workers are people with mixed skills and possibly coming from places across the globe. This does not necessarily mean that they are uneducated, instead, the crowd primarily consists of professional amateurs with valuable knowledge, education and commitment. Indeed, it needs extra motivation as the monetary reward is neglectable, being not more than a few Cents per task. They rather strive for intrinsic incentives as gaining reputation or extending their skill set. 
+
+\subsubsection{Potentials and Opportunities}
+Crowdsourcing has been applied successfully by many companies. Harnessing the human computation through Crowdsourcing and integrating it in machine computation opens up entirely new opportunities for them. Researchers have identified the following benefits of Crowdsourcing~\cite{schenk2012}:
+
+First, it can drastically \textbf{reduce costs} it workforce is not done by expensive in-house workers. As stated earlier, participants are mostly amateurs such as students or young graduates who want to spend their spare time doing something useful. In most cases Crowdsourcing is considered a source of additional income rather than their primary source of income. 
+
+Second, it opens \textbf{new perspectives for innovators}, especially when considering creative tasks, Crowdsourcing have positive impacts with respect to the originality of the solutions. One of the first major companies leveraging worldwide human resources was Procter~\&~Gamble~(P\&G). They created a platform\footnote{\url{https://www.pgconnectdevelop.com/} accessed 2018/07/26} which helps innovators in submitting new ideas to P\&G's development program. Submission is open for everyone, they only require a clear and concise description of the unique features of one's solution and the status of the intellectual property. 
+
+Crowdsourcing can also have a \textbf{positive impact on network externalities} which describes the effect, when the value of a product depends on the number of users who interact with it~\cite{shapiro1998}. A prime example here is OpenStreetMap\footnote{\url{https://www.openstreetmap.org/} accessed 2018/07/26} which dramatically profited from using Crowdsourcing, primarily because their value highly depends on the richness of the geographical content and up-to-dateness of the map data~\cite{chilton2009}. 
+
+Another positive aspect is that it \textbf{eliminates the risk of dependence} to a client company if work it outsourced. Companies are often lacking an overall strategy for defining contractual and transitional elements of an outsourcing initiative which can possibly ruin their business. These issues are not present as there is no strong connection between the company and the crowd workers. In many Crowdsourcing platforms, contributors are not even identified by their names, but by an artificial identifier. 
+
+Crowdsourcing enables \textbf{data collection on a large scale}. This is particularity important in academics and scientific contexts where experiments are performed with as many participants as possible to facilitate generalisation of drawn conclusions~\cite{gadiraju2017}. 
+
+Last, it \textbf{reduces coordination efforts} within a company. By definition, Crowdsourcing implies voluntary participation of individuals with no hierarchy or contract related constraints. Consequently, coordination by authorities as practiced in traditional working relationships is not needed anymore. Crowd workers are free to complete their tasks with a high degree of autonomy. 
+
+\subsubsection{Challenges and Risks}
+Though many benefits can be brought through Crowdsourcing, being successful in the adoption of Crowdsourcing techniques requires awareness of its challenges and risks. In the next paragraphs major risks and challenges are presented~\cite{hossfeld2013}:
+
+Probably one of the biggest challenge is related to \textbf{quality assurance}. There is plenty of literature investigating the challenges of \emph{quality control} and \emph{quality assessment}~\cite{allahbakhsh2013, daniel2018, hansen2013, hsueh2009}.
+
+Before considering measures improving the quality of the results, some metrics are needed which assign concrete values to quality attributes. For example, measuring the worker's required skills to complete certain tasks is done on a scale from 1, indicating little or now skills, to 10, requiring expert level skills. Unfortunately, this classification is often too generic and rather subjective. Substantial work has been done to improve worker classification. A worker's profile includes one's professional experiences, number of completed tasks, personal attributes such as location, and others~\cite{daniel2018}. 
+
+In terms of quality control several respective methods have been proposed, aimed at having a positive impact on the output quality. 
+For our experiments we used a \emph{qualification test} to differentiate between useful inputs and spamming. This test was realised as a questionnaire workers are required to fill out and answer correctly. Another valid method is restricting access to a determined group of workers with a specific skill set, expressed by a \emph{rating scheme}. For example, Figure~Eight\footnote{\url{https://www.figure-eight.com/} accessed 2018/07/27} uses a 3-level scale, ranging from level~1, setting no constraints, to level~3, selecting the most experienced contributors only. A more costly method is \emph{reviewing}. It is either done by experts who are not members of the crowd~(expert~review) or by a group of workers who are part of the crowd~(peer~review). Expert reviews are rather expensive and time consuming but ensuring high quality results. On the other hand, peer reviews are low-cost, require less time but achieve results of moderate quality. A good strategy is to use peer reviews in those situations where experts would not be able to review alone all outputs because of the sheer amount of data. 
+The next method is used primarily for tasks with \emph{voting} involved. For this method, workers reaching a higher agreement ratio achieve a higher value than  
+others often disagreeing. A study~\cite{waggoner2014} showed that this technique is particularly useful to elicit common knowledge and fails in situations which require expert knowledge. 
+
+An equally important challenge is \textbf{keeping workers motivated}. Techniques targeting the worker's motivation can be split into two groups, those trying to increase the \emph{intrinsic~motivation} and those trying to raise \emph{extrinsic~motivation}. While people motivated by intrinsic motivation are driven by personal reasons, extrinsic motivation occurs when people engage in an activity triggered by external factors. 
+
+One way of motivating crowd workers are \textit{tailored rewards} and \textit{payed bonuses}. There exists different rewarding schemes such as volunteering, pay per time, pay per task, pay per each data unit in a task, paying tasks in bulks, to name just a few. Studies~\cite{faradani2011, ho2015} showed that choosing the right amount and form of reward is essential for achieving good results. However, researchers have not yet agreed on a common strategy, guiding task designers in tweaking rewarding options to increase the worker's motivation. 
+Paying a bonus adds extra motivation to incite contributors to deliver top results. A bonus is added to the base reward of a task and is usually granted for reaching some defined goals or exceeding a predetermined threshold value of a performance indicator. 
+
+A completely different approach to increase the worker's motivation is to embed Crowdsourcing in a game. Games with a purpose~(GWAP) was first introduced by Luis von Ahn\cite{ahn2006} where he had the vision of solving large-scale computational problems through online games. Participants perform tasks for joy and entertainment rather than monetary reward. Additionally, designing games that induce curiosity boosts motivation even more~\cite{law2016}. 
+
+As mentioned earlier, quantifying the worker's performance on a scale from poor to excellent helps creators to better estimate the expected results. This comes into play when triggering the worker's motivation to reach a higher level. This is especially useful in those environments that strive for long-lasting worker engagement. 
+
+It is not enough to properly design a task and leave completion to the crowd. \emph{Tasks with a purpose} go beyond that, they add context so that workers understand and get a clear picture of their contribution. These tasks are typically less attractive for spammers or adversarial workers because monetary reward is comparably low. 
+
+Not only assuring quality and keeping contributors motivated is challenging, evidence showed that a \textbf{proper task design} reduces the risk of incorrect or erroneous responses. One strategy is to narrow down the tasks dimensions in terms of \emph{complexity and granularity}. Designing tasks in such a way that reduces cognitive complexity, that is the perceived complexity by humans, positively impacts the quality while it may lead to longer completion times. The other way to decrease task complexity is to organise work in a way that workers can concentrate on a single task rather than a sequence of related tasks.  
+
+Figure~Eight\footnote{\url{https://www.figure-eight.com/} accessed 2018/07/28} has a feature controlling the minimum time per page which gives creators the ability to control the \emph{task duration}. It is recommended to carefully adjust this value as a contributor exceeding this limit will be rejected to complete the task. On the other hand, in certain scenarios faster completion is preferred over higher quality of each individual worker's judgement. Errors may even be desired to some extend because they will be analysed by some automated post-processing steps~\cite{krishna2016}. 
+
+\subsubsection{Types of Crowdsourcing Approaches}
+Despite the sheer amount of Crowdsourcing use cases, we focus on efforts that have been made on data processing. The common term describing that concept is \emph{Data~Mining}, defined as \emph{"the extraction of implicit, previously unknown, potentially useful information from data."}~\cite{witten2016}
+Indeed, that term primarily relates to tasks involving Artificial Intelligence~(AI), which is also reflected by the fact that the book's~\cite{witten2000} original title, \emph{Practical machine learning}, was changed to \emph{Data Mining: Practical Machine Learning Tools and Techniques with Java Implementations}.~\cite{bouckaert2010} Although considerable effort has been invested in developing new and improving existing algorithms and approaches in AI, there are still situations in which Crowdsourcing performs better. Researchers have identified various types of data mining tasks that can be crowdsourced which were discussed in the paragraphs below~\cite{xintong2014, barbier2012, sabou2012}:
+
+\paragraph{Classification} The first category utilising Crowdsourcing solves classification problems. From a data mining perspective, a classifier is created to extract features from original datasets which is then used for classification. A widely known example is \emph{"Completely Automated Public Turing test to tell Computers and Humans Apart"}, better known under the acronym CAPTCHA~\cite{ahn2003} which is an automated test to determine whether or not the user is a human. 
+It is realised as a challenge-response test in which users were asked to read and decipher a distorted word or phrase such as shown in~\hyperref[fig:captcha]{Figure~\ref*{fig:captcha}}.
+\begin{figure}
+	 \centering
+	 \includegraphics[width=0.3\textwidth]{drawio/CAPCHA}
+	 \caption{A CAPTCHA for the word \emph{pump}~(depicted from~\cite{ahn2003})}\label{fig:captcha}
+\end{figure}  
+CAPTCHAs are mainly used for security purposes such as preventing bots from performing certain actions~(e.g. spamming). They were successfully applied in many applications including online polls, free email services and search engines, to name just a few. 
+
+\paragraph{Clustering} Clustering is a more sophisticated problem compared to the classification problem from above. It is characterised by assigning items to
+pre-defined categories. Crowd workers need to decide on the similarity between items which may lead to incorrect results if done differently by contributors. A variation of this approach is allowing users to define new categories if none seems appropriate, however, it may have the potential to create many categories containing the same or similar items. A good example is analysing Tweets and assigning them to one or more topics. In a study~\cite{huang2013} $6496$ tweets, crawled from 8/31/2010 to 4/26/2011, were analysed to find the \emph{sentiment} of a tweet, capturing the subjective mood of a user such as "positive" or "negative", as well as the \emph{topic} of a tweet. They concluded, that Crowdsourcing helped them to accurately classify both sentiments and topics of tweets on a large scale. 
+
+\paragraph{Semi-Supervised Learning} Here, a subset of some labeled data together with a subset of some unlabeled data is used as input to a learning
+algorithm. The algorithm is then required to label the unlabeled data set using the information acquired from the labeled data, which is considered the training data. Semi-supervised learning is located in between unsupervised learning, containing no training data, and supervised learning, consisting exclusively of training data. It has been successfully applied in Crowdsourcing settings where requesters can provide instructions or essential knowledge of how the given task
+can be performed correctly. For example, researchers~\cite{sorokin2008} experimented with a set of images in order to annotate pictured humans. Their strategy for quality assurance was threefold: First, they require every worker to score every other annotation. Second, images with trusted annotations were presented which contributors need to verify and last, multiple annotations were collected for every image. This way, quality assessment is performed by the crowd itself with no additional costs.  
+
+\paragraph{Validation} Likewise, humans can verify the correctness of an algorithm or predicts its result on a large scale. Validation is performed by crowd workers for a task which was formerly done using an algorithmic approach. The outcomes are then compared, giving estimates on the accuracy for the automated technique performed on a larger scale. As an example, \cite{agarwal2008} analysed $535$ blog posts, finding the most active/inactive/influential/non-influential posts and comparing them against the top 100 voted posts on Digg\footnote{\url{http://digg.com/} accessed 2018/08/02}. Digg's content is submitted and voted by the community which served as reasonable alternative of the ground-truth compared to other techniques.  
+
+\section{Crowdsourcing in the Semantic Web}
+This section starts by briefly introducing the Semantic Web and the driving ideas in it's early stages. The central part of this section is dedicated to discussing the interplay between the Semantic Web and Crowdsourcing by means of the \textit{Linked~Data~Life-Cycle}. 
+
+The Word Wide Web was probably one of the most influential and World changing innovation, allowing users to exchange documents without caring about the details of how they are processed or stored. The Semantic Web adds another layer on-top, enabling the use of references to real-world objects without concerning about the underlying documents in which these things are described. In this sense the Semantic Web can be seen as an extension of the World Wide Web. It provides means to process data in machine-readable formats, linking related properties to globally accessible schemas, offering a wide range of data inferences in scalable ways and matching local entities against those with standard names.~\cite{hendler2010} 
+The adoption of Semantic Web technologies is still ongoing, many applications were developed that exploit these principles, but its full potential is just starting to be explored. This is especially true as many tasks can not be fully automated or it would be too costly. Crowdsourcing, on the other hand, facilitates distribution of tasks to a large number of contributors in a scalable and affordable way. In the remainder of this section we analyse, how Crowdsourcing can encourage the adoption of Semantic Web technologies and vice-versa. 
+
+\subsubsection{The Linked Data Life-Cycle}
+Over the years many tools and practices were developed that cover the full life cycle of weaving the Semantic Web. The stages of the Linked Data Life-Cycle are illustrated in~\hyperref[fig:linked_data_life_cycle]{Figure~\ref*{fig:linked_data_life_cycle}}. It shows the overall process of Linked Data management, starting from adding links and ending in manual authoring. 
+\begin{figure}
+	 \centering
+	 \includegraphics[width=0.75\textwidth]{drawio/Linked_Data_Life_Cycle}
+	 \caption{The Linked Data Life-Cycle~(consolidated from~\cite{auer2011, auer2012, siorpaes2008})}\label{fig:linked_data_life_cycle}
+\end{figure}  
+Although the life cycle for semantic content starts with conceptual modelling~(e.g. mapping unstructured data to structured or semi-structured formalisms), this is not always the case, especially if existing linked data should be managed as well. In that case, the first stage~(Extraction) can be omitted. Likewise, the different stages of the life cycle do not exist in isolation of each other or are passed in strict order as shown in~\hyperref[fig:linked_data_life_cycle]{Figure~\ref*{fig:linked_data_life_cycle}}, instead they are mutually complementary. Consequently, the Crowdsourcing examples that were given in each stage~\cite{simperl2013} may also be relevant for other stages. 
+
+\paragraph{Extraction} When starting from scratch, e.g. no existing linked data sources, unstructured data or structured data adhering to a different
+representation formalism need to be mapped to the semantic data model so that further processing according to the Linked Data Life-Cycle is possible. 
+There exist several approaches for the extraction process. When considering unstructured sources, especially text, \emph{natural language processing}~(NLP) as well as \emph{information extraction}~(IE) techniques have been applied successfully for decades to gather relevant information. More precisely, 3 sub-disciples of NLP have emerged: \emph{Named~Entity~Recognition} for discovering instances of entities, \emph{Keyword/Keyphrase~Extraction} for recognising common topics and \emph{Relationship~Extraction} for the definition of links between found entities and keywords. For data originating from structured sources such as XML or databases different approaches are required. For example, the World Wide Web Consortium~(W3C) specified the W3C~recommendation R2RML\footnote{\url{http://www.w3.org/TR/r2rml/} accessed 2018/08/06} exhibiting a RDF notation for mapping relational tables, views and queries to RDF. 
+
+Probably the most popular example of community created/maintained knowledge base is Wikipedia\footnote{\url{https://www.wikipedia.org/} accessed 2018/08/06}. A less known fact is that its central data management platform is Wikidata\footnote{\url{https://www.wikidata.org/wiki/Wikidata:Main_Page} accessed 2018/08/06}, a knowledge base containing millions of entities, labels and descriptions. For example, the item page for Tim~Berners-Lee, a computer scientist and the "author" of the World Wide Web, contains properties in different languages~(excerpt shown in~\hyperref[fig:wikidata_tim_berners_lee_lang]{Figure~\ref*{fig:wikidata_tim_berners_lee_lang}}) as well as statements of him as a person~(excerpt shown in~\hyperref[fig:wikidata_tim_berners_lee_stat]{Figure~\ref*{fig:wikidata_tim_berners_lee_stat}}). 
+\begin{figure}
+	 \centering
+	 \includegraphics[width=0.75\textwidth]{graphics/wikidata_tim_berners_lee_lang}
+	 \caption{Excerpt of a Wikidata page showing language properties of Tim~Berners-Lee}\label{fig:wikidata_tim_berners_lee_lang}
+\end{figure}
+\begin{figure}
+	 \centering
+	 \includegraphics[width=0.75\textwidth]{graphics/wikidata_tim_berners_lee_stat}
+	 \caption{Excerpt of a Wikidata page showing statements of Tim~Berners-Lee}\label{fig:wikidata_tim_berners_lee_stat}
+\end{figure}
+Every item~(page) has a unique identifier~(e.g. \texttt{Q80}), containing a label~(e.g. \texttt{Tim~Berners-Lee}), a brief description~(e.g. \texttt{British computer scientist, inventor of the World Wide Web}), a list of aliases~(e.g. \texttt{TimBLSir, Tim Berners-LeeTimothy, John Berners-Lee, \ldots}), a list of statements~(e.g. \texttt{instanceof, image, \ldots}) and some links. 
+It is obvious that these data would perfectly fit into the Linked Data model, mapping the properties from above to RDF triples~\cite{erxleben2014}.
+Wikidata content is also available in RDF encoding which is accessible at \url{http://tools.wmflabs.org/wikidata-exports/rdf/}. Unfortunately, this data is only provided via dump files\footnote{\url{https://tools.wmflabs.org/wikidata-exports/rdf/exports.html} accessed 2018/08/06} which are regularly (re-)generated. 
+
+\paragraph{Data Storage and Indexing}
+%% TODO: This needs to be done %%
+
+\paragraph{Data Revision and Authoring} In this stage users are given the opportunity to create new or modify existing semantic information. 
+Specifically, this is referred as \textit{Semantic~Content~Authoring~(SCA)} which researchers have defined as \textit{"a tool-supported
+manual composition process aiming at the creation of semantic documents."}~\cite{khalili2013} More generally speaking, SCA it actually embedded in a broader ecosystem for semantic content authoring as shown in~\hyperref[fig:authoring_semantic_ecosystem]{Figure~\ref*{fig:authoring_semantic_ecosystem}}). 
+\begin{figure}
+	 \centering
+	 \includegraphics[width=1\textwidth]{drawio/authoring_semantic_ecosystem}
+	 \caption{The ecosystem for semantic content authoring}\label{fig:authoring_semantic_ecosystem}
+\end{figure}
+The central entity of the semantic ecosystem is a semantic document which holds semantically enriched information. 
+In information management, semantic documents serve a number of purposes such as information searching, information retrieval, information presentation, information integration, personalisation, reusability and interoperability.~\cite{khalili2013} For this reason there exists a research field dealing with major aspects of semantic content management. In particular, it covers the manipulation, creation and processing of semantic content. Users do not directly interact with semantic documents, but rather through a uniform user interface. A number of quality attributes for the assessment of UI-features of SCA-systems have been invented~\cite{khalili2013}. They are all aimed at improving the usability, a measure for the effectiveness, efficiency and satisfaction a user achieves in particular environments. 
+
+A number of tools for authoring semantic content have been developed. A prominent example is OntoWiki~\cite{auer2006}, an open-source Semantic Wiki originally emphasising on collaboration but evolved as an ontology editor as well as a platform for knowledge acquisition. It is inspired by other Wiki systems but specifically focusing on managing knowledge bases adhering to the RDF data model. 
+
+A different tool, incorporating Crowdsourcing capabilities in ontology development activities is Mechanical~Protege\footnote{\url{http://people.aifb.kit.edu/yt2652/mechanicalProtege/}}, which was realised as a plug-in for the ontology editor Protégé\footnote{\url{https://protege.stanford.edu/} accessed 2018/08/07}. Concretely, the following tasks are supported by the plug-in:
+\begin{itemize}
+	\item Creating Human Intelligence Tasks~(HIT) and submitting them to Amazon Mechanical Turk\footnote{\url{https://www.mturk.com/} accessed 2018/08/07}
+	\item Monitoring the HIT's status
+	\item Applying the received results to the loaded ontology
+	\item Paying contributors for successful completion
+\end{itemize}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%TODO: ADD CONTENT BELOW%%%
+
+
+\paragraph{Data Linking}
+TripleCheckMate: A Tool for Crowdsourcing the Quality Assessment of Linked Data, created at~\cite{acosta2013} and refined by~\cite{kontokostas2013}  (users can detect interlinking problems and others)
+
+CrowdSPARQL - Entity resolution and Interlinking~\cite{acosta2012}
+
+ZenCrowd: leveraging probabilistic reasoning and crowdsourcing techniques for large-scale entity linking~\cite{demartini2012}
+
+\paragraph{Classification and Enrichment}
+CrowdMap: Crowdsourcing Ontology Alignment with Microtasks~\cite{sarasua2012} (post-processing ontology alignment)
+
+\paragraph{Data Analysis and Quality}
+Urbanopoly - A Social and Location-Based Game with a Purpose to Crowdsource Your Urban Data~\cite{celino2012} (data collection \& verification \& correction)
+
+\paragraph{Data Cleansing and Evolution}
+Urbanopoly - A Social and Location-Based Game with a Purpose to Crowdsource Your Urban Data~\cite{celino2012} (data collection \& verification \& correction)
+
+\paragraph{Data Browsing and Querying}
+CrowdQ: Crowdsourced Query Understanding~\cite{demartini2013}
+
+RDF-Hunter: Automatically Crowdsourcing the Execution of Queries Against RDF Data Sets~\cite{acosta2015}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% END CONTENT %%
+
+
+
+\section{The uComp Protege Plugin}\label{sec:ucomp_protege_plugin}
+\todo{Enter your text here.}
+\section{Context Enrichment of Crowdsourcing tasks}
+\todo{Enter your text here.}
+
+

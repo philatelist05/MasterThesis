@@ -1,69 +1,18 @@
 \section{Embedded Context}\label{sec:embedded_context}
 Over the years ontologies were used in many domain contexts, including general-purpose as well as highly specialised ones. Obviously, what separates good ontologies from poor ones is how well they are documented~\cite{daquin2012}. Studies~\cite{dutta2017} analysed various approaches of embedding meta-data in ontologies. The outcome was that there is no standard way to describe and document ontologies, albeit a few vocabularies that describe semantic meta-data exist. 
 
-In this section we give an overview of these approaches and explain in detail how we used that for ontology validation. In the remainder of this section our focus lies on semantic meta-data in the context of ontology engineering. A broader discussion on the use of meta-data in general is given in~\cite{nilsson2010}. 
+In this section we give an overview of these approaches and explain in detail how we used them for ontology validation. In the remainder of this section our focus lies on semantic meta-data in the context of ontology engineering. A broader discussion on the use of meta-data in general is given in~\cite{nilsson2010}. 
 
-\paragraph{Dublin Core~(DC)} Being one of the most prominent vocabulary in describing semantic meta-data, published and maintained by the Dublin Core Metadata Initiative~(DCMI), it originally contained 15 meta-data terms\footnote{\url{http://www.dublincore.org/documents/dces/} accessed 2018/05/20},  designed to annotate resources with simple, textual information. Since its first launch, the project have gained popularity, including more than 127 terms\footnote{\url{http://www.dublincore.org/documents/dcmi-terms/} accessed 2018/05/20}. The initial set of terms is listed in~\hyperref[table:dublin_core]{Table~\ref*{table:dublin_core}}. 
-
-\begingroup
-\renewcommand{\arraystretch}{2}
-\begin{table}
-	\begin{tabularx}{\textwidth}{l|X}
-		\textbf{Name} & \textbf{Description} \\
-		\hline
-		\texttt{dc:contributor} & Element used to describe a person, organisation or service who is responsible for making contributions.\\
-		\texttt{dc:overage} & Term used to describe a temporal topic~(e.g. period, date, or date range), spatial topic~(e.g. location or place identified by its name or coordnates) or a jurisdiction~(e.g. an administrative entity). \\
-		\texttt{dc:creator} & A person, organisation or service who created this entity.\\
-		\texttt{dc:date} & A period or point in time associated with an event in the lifecycle.\\
-		\texttt{dc:description} & A definition in natural-language.\\
-		\texttt{dc:format} & Defines the file format, physical medium or dimension.\\
-		\texttt{dc:identifier} & A unique and unambiguous reference to this entity within a defined context.\\
-		\texttt{dc:language} & The language used to describe and define this entity.\\
-		\texttt{dc:publisher} & A person, organisation or service who provides access to this entity.\\
-		\texttt{dc:relation} & Defines a link to another entity identified by name or formal identifier.\\
-		\texttt{dc:rights} & A statement about associated rights with the entity~(e.g. intellectual property rights).\\
-		\texttt{dc:source} & A related entity from which this entity is derived from.\\
-		\texttt{dc:subject} & The topic of this entity represented using keywords, key-phrases or classification codes.\\
-		\texttt{dc:title} & The name by which this entity is formally known.\\
-		\texttt{dc:type} & Defines the genre of nature. Usually, a well-defined vocabulary such as DCMI Type Vocabulary\footnote{\url{http://dublincore.org/documents/dcmi-type-vocabulary/}} is recommended here.\\
-	\end{tabularx}
-	\caption{The initial set of DC-Metadata terms}
-	\label{table:dublin_core}
-\end{table}
-\endgroup
+\paragraph{Dublin Core~(DC)} Being one of the most prominent vocabulary in describing semantic meta-data, published and maintained by the Dublin Core Metadata Initiative~(DCMI), it originally contained 15 meta-data terms\footnote{\url{http://www.dublincore.org/documents/dces/} accessed 2018/05/20},  designed to annotate resources with simple, textual information. Since its first launch, the project have gained popularity, including more than 127 terms\footnote{\url{http://www.dublincore.org/documents/dcmi-terms/} accessed 2018/05/20}. The initial set of terms is listed in~\hyperref[app:dc_terms]{Appendix~\ref*{app:dc_terms}}. 
 
 To maximise interoperability in heterogeneous environments, an RDF-Schema with DCMI-Metadata\footnote{\url{http://dublincore.org/schemas/rdfs/} accessed 2018/05/20} elements was created, in which each entity is identified by a Uniform Resource Identifier~(URI) starting with the prefix \emph{http://purl.org}. 
 
 \paragraph{Simple Knowledge Organisation~(SKOS)} The SKOS Core Vocabulary~\cite{skos2005} defines a set of RDF properties and RDFS classes
-used to express the content and structure of a concept scheme, which describes sets of concepts with optionally linked concepts. The vocabulary is standardised by the W3C~Consortium\footnote{\url{https://www.w3.org/TR/skos-reference/} accessed 2018/05/20}. Relevant terms are listed in~\hyperref[table:skos]{Table~\ref*{table:skos}}.
-
-\begingroup
-\renewcommand{\arraystretch}{2}
-\begin{table}
-	\begin{tabularx}{\textwidth}{l|X}
-		\textbf{Name} & \textbf{Description} \\
-		\hline
-		\texttt{skos:Concept} & Describes an idea, notion or unit of thought, similar to OWL classes. However the specification does draw any relations to \textit{owl:concept}.\\
-		\texttt{skos:ConceptScheme} & A Concept Scheme can be viewed as a combination of multiple \textit{skos:Concept} instances with optional references to each other.\\
-		\texttt{skos:altLabel} & A \textit{lexical label}~(e.g. a text composed of unicode characters) which adds an alternative meaning to an entity. \\
-		\texttt{skos:prefLabel} & Used in combination with \textit{skos:altLabel} to define the primary description in case there are multiple human-readable definitions.\\
-		\texttt{skos:notation} & A literal string of unicode characters, it identifies the related concept within the given concept scheme.\\
-		\texttt{skos:changeNote} & Belongs to the class of \textit{documentation properties} and provides some information about historical changes.\\
-		\texttt{skos:definition} & Adds a human-readable definition to the entity.\\
-		\texttt{skos:note} & Some arbitrary text which may be provided by ontology engineers.\\
-		\texttt{skos:editorialNote} & A note added by creators to inform ontology maintainers.\\
-		\texttt{skos:historyNote} & A historical note~(e.g. a version string, release date, \ldots ).\\
-        \texttt{skos:related} & Indicates that SKOS concepts are somewhat related to each other.\\
-	\end{tabularx}
-	\caption{A subset of the SKOS vocabulary}
-	\label{table:skos}
-\end{table}
-\endgroup
-
+used to express the content and structure of a concept scheme, which describes sets of concepts with optionally linked concepts. The vocabulary is standardised by the W3C~Consortium\footnote{\url{https://www.w3.org/TR/skos-reference/} accessed 2018/05/20}. Relevant terms are listed in~\hyperref[app:skos_terms]{Appendix~\ref*{app:skos_terms}}.
+	
 There is some overlap between DC and SKOS. For example, the terms \textit{dc:subject} and \textit{skos:subject} describes similar characteristics of an entity. However, in some usage scenarios the range of skos:subject is limited to resources of type skos:concept compared to the unrestricted range of dc:subject. Moreover, in case there is more than one subject, the property \textit{skos:primarySubject} allows assertions of the entities or resources main subject. 
 
-\paragraph{Open Biomedical Ontology~(OBO)} Biomedical systems are inherently complex and process large amounts of data. Managing these is
-expensive and often requires expert knowledge. The Open Biomedical Ontologies~(OBO)~Foundry\footnote{\url{http://obofoundry.org/} accessed 2018/05/21}, a community of experienced ontology developers and engineers for biomedical environments, manages many specialised biomedical ontologies. These are available in various formats, including the OBO~format, which was originally developed as part of the Gene Ontology~(GO)\footnote{\url{http://www.geneontology.org/} accessed 2018/05/21}. 
+\paragraph{Open Biomedical Ontology~(OBO)} Most biomedical ontologies are semantically rich and contain tens of thousands of classes. Managing these is expensive and often requires expert knowledge. The Open Biomedical Ontologies~(OBO)~Foundry\footnote{\url{http://obofoundry.org/} accessed 2018/05/21}, a community of experienced ontology developers and engineers for biomedical environments, manages many specialised biomedical ontologies. These are available in various formats, including the OBO~format, which was originally developed as part of the Gene Ontology~(GO)\footnote{\url{http://www.geneontology.org/} accessed 2018/05/21}. 
 
 The OBO File Format Specification~1.2~\footnote{\url{https://owlcollab.github.io/oboformat/doc/GO.format.obo-1_2.html} accessed 2018/05/22} defines a flat document structure for OBO files. A file contains a header and one or more \emph{stanzas}. A stanza is a labeled section of a document, indicating that an object of a particular type is being described. Currently, there are three supported types: \textit{Term}, \textit{Typedef} and \textit{Instance}. Every stanza starts with an id-tag and an unbounded list of tag-value pairs. Looking at the supported tags, it is clear that the definition of meta-data is important to achieve the goals of \textit{readability}, \textit{ease of parsing}, \textit{extensibility} and \textit{minimal redundancy}. In particular, it allows, among others, the specification of 
 \begin{inparaenum}[1)]
@@ -73,7 +22,7 @@ The OBO File Format Specification~1.2~\footnote{\url{https://owlcollab.github.io
 		\item cross references (\texttt{xref})
 \end{inparaenum}.
 
-Although the Open Biomedical Ontologies and the Semantic Web have overlapping objectives, they evolved independently. To bring these two communities together, researchers have created a tool for converting OBO~ontologies to OWL and vice-versa without loosing any information during the conversion process~\cite{tirmizi2011}. It turned out that the majority of the OBO~vocabulary fits nicely into the Semantic Web Layer Cake. The mapping between the OBO Layer Cake and the Semantic Web Layer Cake is shown in~\hyperref[fig:semantic_obo_cake]{Figure~\ref*{fig:semantic_obo_cake}}. 
+Although the Open Biomedical Ontologies and Semantic Web representation languages have overlapping objectives, they evolved independently. To bring these two communities together, researchers have created a tool for converting OBO~ontologies to OWL and vice-versa without loosing any information during the conversion process~\cite{tirmizi2011}. It turned out that the majority of the OBO~vocabulary fits nicely into the Semantic Web Layer Cake. The mapping between the OBO Layer Cake and the Semantic Web Layer Cake is shown in~\hyperref[fig:semantic_obo_cake]{Figure~\ref*{fig:semantic_obo_cake}}. 
 
 \begin{figure}
 	 \centering
@@ -87,26 +36,7 @@ The next layer represents the \emph{OBO Vocabulary} which is mapped to RDF-Schem
 
 The top most layer is represented by the \emph{OBO Ontology Extensions} which are mapped to OWL. Besides the definition of concept-level mappings, this layer defines tags for expressing meta-data on the entire ontology. For example, editorial meta-data (\texttt{creation\_date}, \texttt{replaced\_by} and \texttt{saved\_by}) is mapped to annotation properties. 
 
-A summary of the most important OBO tags together with their OWL equivalents is given in~\hyperref[table:obo]{Table~\ref*{table:obo}}. However, for some OBO vocabulary there is no corresponding OWL tag. Therefore, a dedicated OWL namespace\footnote{http://www.geneontology.org/formats/oboInOwl\#} containing all OBO definitions was created. Furthermore, a recommended practice to preserve compatibility between OBO features and OWL features is to restrict editing of mapped OBO tags. A more detailed discussion on this topic is given in~\cite{tirmizi2011, tirmizi2006}.
-
-\begingroup
-\renewcommand{\arraystretch}{2}
-\begin{table}
-	\begin{tabularx}{\textwidth}{l|l|X}
-		\textbf{Name} & \textbf{OWL Translation} & \textbf{Description} \\
-		\hline
-        \texttt{obo:def} & oboInOwl:Definition & The definition of the term in natural language.\\
-		\texttt{obo:synonym} & oboInOwl:Synonym & An indication that there exists a tag with the same meaning.\\
-		\texttt{obo:comment} & rdfs:comment & A remark to the term. \\
-		\texttt{obo:xref} & oboInOwl:DbXref & A reference to an analogous term in another vocabulary.\\
-		\texttt{obo:date} & oboInOwl:hasDate & The creation or modification date.\\
-		\texttt{obo:saved-by} & oboInOwl:savedBy & The username of the person who edited the file last.\\
-		\texttt{obo:replaced\_by} & oboInOwl:replacedBy & A reference to a newer term which replaces the obsolete one.\\
-	\end{tabularx}
-	\caption{A subset of the OBO vocabulary used as meta-data}
-	\label{table:obo}
-\end{table}
-\endgroup
+A summary of the most important OBO tags together with their OWL equivalents is given in~\hyperref[app:obo_terms]{Appendix~\ref*{app:obo_terms}}. However, for some OBO vocabulary there is no corresponding OWL tag. Therefore, a dedicated OWL namespace\footnote{http://www.geneontology.org/formats/oboInOwl\#} containing all OBO definitions was created. Furthermore, a recommended practice to preserve compatibility between OBO features and OWL features is to restrict editing of mapped OBO tags. A more detailed discussion on this topic is given in~\cite{tirmizi2011, tirmizi2006}.
 
 \paragraph{Proposed Approach for Ontology Validation} Given the high number on ontology meta-data formats from above, \hyperref[alg:embedded_enrichment]{Algorithm~\ref*{alg:embedded_enrichment}} shows the pseudocode to create concept descriptions extracted from embedded meta-data. In addition to the notation used in the previous section we define $\Phi(C) \coloneqq \{m_1, m_2, \ldots, m_i \}$ where $m_i$ is the $i'th$ meta-data element embedded in concept $C$ and $T$ is the description of some meta-data element.
 

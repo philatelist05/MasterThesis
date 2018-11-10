@@ -1,0 +1,69 @@
+\appendix
+\chapter{Dublin Core Metadata Terms}\label{app:dc_terms}
+\begingroup
+\renewcommand{\arraystretch}{2}
+\begin{table}
+	\begin{tabularx}{\textwidth}{l|X}
+		\textbf{Name} & \textbf{Description} \\
+		\hline
+		\texttt{dc:contributor} & Element used to describe a person, organisation or service who is responsible for making contributions.\\
+		\texttt{dc:overage} & Term used to describe a temporal topic~(e.g. period, date, or date range), spatial topic~(e.g. location or place identified by its name or coordnates) or a jurisdiction~(e.g. an administrative entity). \\
+		\texttt{dc:creator} & A person, organisation or service who created this entity.\\
+		\texttt{dc:date} & A period or point in time associated with an event in the lifecycle.\\
+		\texttt{dc:description} & A definition in natural-language.\\
+		\texttt{dc:format} & Defines the file format, physical medium or dimension.\\
+		\texttt{dc:identifier} & A unique and unambiguous reference to this entity within a defined context.\\
+		\texttt{dc:language} & The language used to describe and define this entity.\\
+		\texttt{dc:publisher} & A person, organisation or service who provides access to this entity.\\
+		\texttt{dc:relation} & Defines a link to another entity identified by name or formal identifier.\\
+		\texttt{dc:rights} & A statement about associated rights with the entity~(e.g. intellectual property rights).\\
+		\texttt{dc:source} & A related entity from which this entity is derived from.\\
+		\texttt{dc:subject} & The topic of this entity represented using keywords, key-phrases or classification codes.\\
+		\texttt{dc:title} & The name by which this entity is formally known.\\
+		\texttt{dc:type} & Defines the genre of nature. Usually, a well-defined vocabulary such as DCMI Type Vocabulary\footnote{\url{http://dublincore.org/documents/dcmi-type-vocabulary/}} is recommended here.\\
+	\end{tabularx}
+	\caption{The initial set of DC-Metadata terms}
+\end{table}
+\endgroup
+
+\chapter{SKOS Metadata Terms}\label{app:skos_terms}
+\begingroup
+\renewcommand{\arraystretch}{2}
+\begin{table}
+	\begin{tabularx}{\textwidth}{l|X}
+		\textbf{Name} & \textbf{Description} \\
+		\hline
+		\texttt{skos:Concept} & Describes an idea, notion or unit of thought, similar to OWL classes. However the specification does draw any relations to \textit{owl:concept}.\\
+		\texttt{skos:ConceptScheme} & A Concept Scheme can be viewed as a combination of multiple \textit{skos:Concept} instances with optional references to each other.\\
+		\texttt{skos:altLabel} & A \textit{lexical label}~(e.g. a text composed of unicode characters) which adds an alternative meaning to an entity. \\
+		\texttt{skos:prefLabel} & Used in combination with \textit{skos:altLabel} to define the primary description in case there are multiple human-readable definitions.\\
+		\texttt{skos:notation} & A literal string of unicode characters, it identifies the related concept within the given concept scheme.\\
+		\texttt{skos:changeNote} & Belongs to the class of \textit{documentation properties} and provides some information about historical changes.\\
+		\texttt{skos:definition} & Adds a human-readable definition to the entity.\\
+		\texttt{skos:note} & Some arbitrary text which may be provided by ontology engineers.\\
+		\texttt{skos:editorialNote} & A note added by creators to inform ontology maintainers.\\
+		\texttt{skos:historyNote} & A historical note~(e.g. a version string, release date, \ldots ).\\
+        \texttt{skos:related} & Indicates that SKOS concepts are somewhat related to each other.\\
+	\end{tabularx}
+	\caption{A subset of the SKOS vocabulary}
+\end{table}
+\endgroup
+
+\chapter{OBO Metadata Terms}\label{app:obo_terms}
+\begingroup
+\renewcommand{\arraystretch}{1.5}
+\begin{table}
+	\begin{tabularx}{\textwidth}{l|l|X}
+		\textbf{Name} & \textbf{OWL Translation} & \textbf{Description} \\
+		\hline
+        \texttt{obo:def} & oboInOwl:Definition & The definition of the term in natural language.\\
+		\texttt{obo:synonym} & oboInOwl:Synonym & An indication that there exists a tag with the same meaning.\\
+		\texttt{obo:comment} & rdfs:comment & A remark to the term. \\
+		\texttt{obo:xref} & oboInOwl:DbXref & A reference to an analogous term in another vocabulary.\\
+		\texttt{obo:date} & oboInOwl:hasDate & The creation or modification date.\\
+		\texttt{obo:saved-by} & oboInOwl:savedBy & The username of the person who edited the file last.\\
+		\texttt{obo:replaced\_by} & oboInOwl:replacedBy & A reference to a newer term which replaces the obsolete one.\\
+	\end{tabularx}
+	\caption{A subset of the OBO vocabulary used as meta-data}
+\end{table}
+\endgroup

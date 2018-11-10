@@ -1,10 +1,10 @@
 \section{Neighbouring Nodes}\label{sec:neighboring_nodes}
-This section starts with a conceptual overview of how neighbouring nodes in an ontology graph are used to generate contextual information. Then, existing approaches on generating textual definitions are examined. In the literature~\cite{soton265735} this task is also known under the term \textit{ontology verbalisation}. Even though that there exists \textit{OWL Verbalizer}\footnote{\url{http://mcs.open.ac.uk/nlg/SWAT/Verbaliser.html} accessed 2018/04/30}, a tool which already transforms generic ontologies into English sentences, we could not integrate it into the context enrichment process because 
+This section starts with a conceptual overview of how neighbouring nodes in an ontology graph are used to generate contextual information. Then, existing approaches on generating textual definitions are examined. In the literature~\cite{soton265735} this task is also known under the term \textit{ontology verbalisation}. Even though there exists \textit{OWL Verbalizer}\footnote{\url{http://mcs.open.ac.uk/nlg/SWAT/Verbaliser.html} accessed 2018/04/30}, a tool which already transforms generic ontologies into English sentences, we could not integrate it into the context enrichment process because 
 \begin{inparaenum}[a)]
 		\item it was designed as a standalone tool written in SWI-Prolog\footnote{\url{http://www.swi-prolog.org/} accessed 2018/04/30} and
 		\item it only accepts the whole ontology as input
 \end{inparaenum}.
-However, in our approach we adopted some rules and integrated them in the enrichment process.
+However, in our approach we adopted some of the rules proposed by OWL~Verbalizer and integrated them in the enrichment process.
 
 To illustrate the concept of neighbouring nodes and how they relate to the context enrichment approach explained later, a simple ontology graph describing the teacher/pupil domain is given in~\hyperref[fig:simple_owl_graph]{Figure~\ref*{fig:simple_owl_graph}}.
 \begin{figure}
@@ -12,7 +12,7 @@ To illustrate the concept of neighbouring nodes and how they relate to the conte
 	 \includegraphics[width=\textwidth]{drawio/University_Ontology_Example}
 	 \caption{Simple Ontology Graph}\label{fig:simple_owl_graph}
 \end{figure}
-For example, if the concept \textit{:Teacher} is taken as reference node, it makes sense to not only include the concept itself, but instead connected nodes~(e.g. the concept \textit{:Person} and the object property \textit{:teaches}) as well. 
+For example, if the concept \textit{:Teacher} is taken as reference node, it makes sense to not only include the concept itself, but to also consider connected nodes~(e.g. the concept \textit{:Person} and the object property \textit{:teaches}) as well. 
 
 As in the guidelines for conducting crowdsourcing research~\cite{sarasua2015crowdsourcing}, the authors recommended to avoid technical terms in crowdsourcing questions. In the next paragraphs we explain how \textit{ontology verbalisation} helps to achieve this goal. 
 
@@ -20,7 +20,7 @@ Despite the fact that natural language is desirable for descriptions as everybod
 
 To get a better understanding of ACE\footnote{\url{https://tinyurl.com/yc3zhu9a} accessed 2018/05/05}\footnote{\url{https://tinyurl.com/ycst39jv} accessed 2018/05/05}, a short overview of its language structure is given in the next paragraphs:
  
-\paragraph{Simple Sentences} A Simple Sentence derived from standard English language contains a subject, a verb and additional elements: \texttt{subject + verb + complements [ + adjuncts ]} The verb relates direct or indirect to one or more other objects~(\textit{complements}). Optionally, to add more specificity, one or more adverbs and prepositional phrases can be added~(\textit{adjuncts}). 
+\paragraph{Simple Sentences} A Simple Sentence derived from standard English language contains a subject, a verb and additional elements: \texttt{subject + verb + complements~[~+~adjuncts~]}. The verb relates directly or indirectly to one or more other objects~(\textit{complements}). Optionally, to add more specificity, one or more adverbs and prepositional phrases can be added~(\textit{adjuncts}). 
 
 \paragraph{Composite Sentences} A Composite Sentence is composed of one or more Simple~Sentences, connected by \textit{coordination},
 \textit{subordination}, \textit{quantification} and \textit{negation}. Whereas coordination links sentences either by the word \texttt{and} or \texttt{or}, subordination relates dependent sentences in some way~(e.g. if-then sentences). Quantification allows statements about all~(universal quantification) or certain~(existential quantification) objects of a certain domain. Last, encoding negative polarity in a sentence~(e.g. sentences containing \texttt{not} or \texttt{no}) is defined as negation. 

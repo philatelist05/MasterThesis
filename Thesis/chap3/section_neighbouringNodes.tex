@@ -60,7 +60,8 @@ The first is \textbf{incompatibility on a language level}. Traditionally, softwa
 
 Another obstacle is a \textbf{mismatch on the scope of operation}. OWL~Verbaliser was implemented as a tool assisting engineers in ontology creation, a very time consuming task. It was designed as a standalone tool, launched from the command line or deployed as a web service. On the other hand, ontology enrichment is embedded in Protege and part of the ontology validation process, operating only on small parts of the ontology. In contrast, OWL~Verbaliser takes the whole ontology as input. 
 
-\paragraph{Proposed Approach for Ontology Validation} Due to this complicating issues, we implemented a different approach using some insights from OWL~Verbaliser. The pseudocode of the overall workflow is given in \hyperref[alg:neighbourhood]{Algorithm~\ref*{alg:neighbourhood}}. The notation to describe properties and relations is based on a formal Ontology~Description Logic~(DL)~\cite{baader2003}, string manipulations were formally defined in~\cite{hopcroft1969}.
+\paragraph{Ontology based Approach}\label{sec:enrichment_ontology_approach}
+Due to this complicating issues, we implemented a different approach using some insights from OWL~Verbaliser. The pseudocode of the overall workflow is given in \hyperref[alg:neighbourhood]{Algorithm~\ref*{alg:neighbourhood}}. The notation to describe properties and relations is based on a formal Ontology~Description Logic~(DL)~\cite{baader2003}, string manipulations were formally defined in~\cite{hopcroft1969}.
 
 \begin{algorithm}
 	\caption{Context Enrichment based on Neighbouring Nodes}\label{alg:neighbourhood}

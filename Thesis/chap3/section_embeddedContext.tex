@@ -38,7 +38,8 @@ The top most layer is represented by the \emph{OBO Ontology Extensions} which ar
 
 A summary of the most important OBO tags together with their OWL equivalents is given in~\hyperref[app:obo_terms]{Appendix~\ref*{app:obo_terms}}. However, for some OBO vocabulary there is no corresponding OWL tag. Therefore, a dedicated OWL namespace\footnote{http://www.geneontology.org/formats/oboInOwl\#} containing all OBO definitions was created. Furthermore, a recommended practice to preserve compatibility between OBO features and OWL features is to restrict editing of mapped OBO tags. A more detailed discussion on this topic is given in~\cite{tirmizi2011, tirmizi2006}.
 
-\paragraph{Proposed Approach for Ontology Validation} Given the high number on ontology meta-data formats from above, \hyperref[alg:embedded_enrichment]{Algorithm~\ref*{alg:embedded_enrichment}} shows the pseudocode to create concept descriptions extracted from embedded meta-data. In addition to the notation used in the previous section we define $\Phi(C) \coloneqq \{m_1, m_2, \ldots, m_i \}$ where $m_i$ is the $i'th$ meta-data element embedded in concept $C$ and $T$ is the description of some meta-data element.
+\paragraph{Meta-Data based Approach}\label{sec:enrichment_metaData_approach}
+Given the high number on ontology meta-data formats from above, \hyperref[alg:embedded_enrichment]{Algorithm~\ref*{alg:embedded_enrichment}} shows the pseudocode to create concept descriptions extracted from embedded meta-data. In addition to the notation used in the previous section we define $\Phi(C) \coloneqq \{m_1, m_2, \ldots, m_i \}$ where $m_i$ is the $i'th$ meta-data element embedded in concept $C$ and $T$ is the description of some meta-data element.
 
 \begin{algorithm}
 	\caption{Context Enrichment based on embedded meta-data}\label{alg:embedded_enrichment}

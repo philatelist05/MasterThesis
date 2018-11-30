@@ -1,18 +1,18 @@
 \section{Neighbouring Nodes}\label{sec:neighboring_nodes}
-This section starts with a conceptual overview of how neighbouring nodes in an ontology graph are used to generate contextual information. Then, existing approaches on generating textual definitions are examined. In the literature~\cite{soton265735} this task is also known under the term \textit{ontology verbalisation}. Even though there exists \textit{OWL Verbalizer}\footnote{\url{http://mcs.open.ac.uk/nlg/SWAT/Verbaliser.html} accessed 2018/04/30}, a tool which already transforms generic ontologies into English sentences, we could not integrate it into the context enrichment process because 
-\begin{inparaenum}[a)]
-		\item it was designed as a standalone tool written in SWI-Prolog\footnote{\url{http://www.swi-prolog.org/} accessed 2018/04/30} and
-		\item it only accepts the whole ontology as input
-\end{inparaenum}.
-However, in our approach we adopted some of the rules proposed by OWL~Verbalizer and integrated them in the enrichment process.
-
+This section starts with a conceptual overview of how neighbouring nodes in an ontology graph are used to generate contextual information.
+For that, we give a short introduction into Attempto~Controlled~English~(ACE) which is a formal language, capable of expressing domain-specific knowledge by human readable sentences. In the literature~\cite{soton265735} this task is also known under the term \textit{ontology verbalisation}. Even though there exists \textit{OWL~Verbalizer}\footnote{\url{http://mcs.open.ac.uk/nlg/SWAT/Verbaliser.html} accessed 2018/04/30}, a tool which transforms generic ontologies into English sentences, we could not integrate it into the context enrichment process because 
+\begin{inparaenum}[1)]
+		\item \label{itm:owl_verbalizer_integration_problems_standalone} it was designed as a standalone tool written in SWI-Prolog\footnote{\url{http://www.swi-prolog.org/} accessed 2018/04/30} and
+		\item \label{itm:owl_verbalizer_integration_problems_ontology} it only accepts the whole ontology as input
+\end{inparaenum}. While~\ref{itm:owl_verbalizer_integration_problems_standalone} could be solved using JPL\footnote{\url{http://www.swi-prolog.org/packages/jpl/} accessed 2018/11/30}, a library written in SWI-Prolog providing a bidirectional interface between Java and Prolog, it is still considered experimental and would require considerable integration efforts. We could not think of a reasonable solution of~\ref{itm:owl_verbalizer_integration_problems_ontology} because crowdsourcing jobs could also be generated from a subset of the concepts defined in an ontology. However, in future versions of OWL~Verbalizer this limitations might be solved as there exists a ticket\footnote{\url{https://github.com/Kaljurand/owl-verbalizer/issues/13} accessed 2018/11/30} for mitigation. 
+ 
 To illustrate the concept of neighbouring nodes and how they relate to the context enrichment approach explained later, a simple ontology graph describing the teacher/pupil domain is given in~\hyperref[fig:simple_owl_graph]{Figure~\ref*{fig:simple_owl_graph}}.
 \begin{figure}
 	 \centering
 	 \includegraphics[width=\textwidth]{drawio/University_Ontology_Example}
 	 \caption{Simple Ontology Graph}\label{fig:simple_owl_graph}
 \end{figure}
-For example, if the concept \textit{:Teacher} is taken as reference node, it makes sense to not only include the concept itself, but to also consider connected nodes~(e.g. the concept \textit{:Person} and the object property \textit{:teaches}) as well. 
+For example, if the concept \textit{:Teacher} is taken as reference node, it makes sense to not only include the concept itself, but to also consider connected nodes~(e.g. the concept \textit{:Person} and the object property \textit{:teaches}). 
 
 As in the guidelines for conducting crowdsourcing research~\cite{sarasua2015crowdsourcing}, the authors recommended to avoid technical terms in crowdsourcing questions. In the next paragraphs we explain how \textit{ontology verbalisation} helps to achieve this goal. 
 

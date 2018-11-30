@@ -16,6 +16,7 @@ For example, if the concept \textit{:Teacher} is taken as reference node, it mak
 
 As in the guidelines for conducting crowdsourcing research~\cite{sarasua2015crowdsourcing}, the authors recommended to avoid technical terms in crowdsourcing questions. In the next paragraphs we explain how \textit{ontology verbalisation} helps to achieve this goal. 
 
+\subsection{Attempto Controlled English (ACE)}
 Despite the fact that natural language is desirable for descriptions as everybody knows and understands with no extra learning effort, it conflicts in terms of expressiveness and specificity with well defined ontologies which can encode complex data and relations in domain-specific areas. To resolve this conflict, a new language variant named \textbf{ACE}~\textit{(Attempto Controlled English)}~\cite{fuchs2008} was created. ACE is a formal language, capable of expressing domain-specific knowledge with a well defined syntax, supporting formal reasoning and readable by specialists who are yet unfamiliar with formal languages and methods.
 
 To get a better understanding of ACE\footnote{\url{https://tinyurl.com/yc3zhu9a} accessed 2018/05/05}\footnote{\url{https://tinyurl.com/ycst39jv} accessed 2018/05/05}, a short overview of its language structure is given in the next paragraphs:
@@ -29,7 +30,8 @@ To get a better understanding of ACE\footnote{\url{https://tinyurl.com/yc3zhu9a}
 
 \paragraph{Anaphoric References} If the meaning of a word or phrase is context dependent, recurring occurrences of these expressions are called \textit{Anaphoric References}. More specifically, the referring term~(\textit{anaphor}) relates to an antecedent expression. For example, given the sentence: \texttt{Tom arrived, but nobody noticed him}, the pronoun \texttt{him} relates to \texttt{Tom}. To resolve ambiguities during the processing phase, Anaphoric References are replaced by encoded references. 
 
-\textbf{OWL Verbalizer}~\cite{stevens2011}, an open source tool aimed at producing texts from generic OWL ontologies, is a good example of a successful integration of ACE. A description of the basic concepts of OWL Verbaliser is given below:
+\subsection{OWL Verbalizer}
+OWL~Verbalizer~\cite{stevens2011}, an open source tool aimed at producing texts from generic OWL ontologies, is a good example of a successful integration of ACE. A description of the basic concepts of OWL Verbaliser is given below:
 
 This tool, being now part of the \textbf{SWAT Tool Suite}\footnote{\url{http://mcs.open.ac.uk/nlg/SWAT/} accessed 2018/05/06}, was created to overcome the burden of maintaining ontology definitions by hand. Whereas producing high quality texts in restricted application domains is under active research, this tool produces understandable descriptions using general-purpose methods that are of moderate quality.
 
@@ -60,7 +62,7 @@ The first is \textbf{incompatibility on a language level}. Traditionally, softwa
 
 Another obstacle is a \textbf{mismatch on the scope of operation}. OWL~Verbaliser was implemented as a tool assisting engineers in ontology creation, a very time consuming task. It was designed as a standalone tool, launched from the command line or deployed as a web service. On the other hand, ontology enrichment is embedded in Protege and part of the ontology validation process, operating only on small parts of the ontology. In contrast, OWL~Verbaliser takes the whole ontology as input. 
 
-\paragraph{Ontology based Approach}\label{sec:enrichment_ontology_approach}
+\subsection{Ontology based Approach}\label{sec:enrichment_ontology_approach}
 Due to this complicating issues, we implemented a different approach using some insights from OWL~Verbaliser. The pseudocode of the overall workflow is given in \hyperref[alg:neighbourhood]{Algorithm~\ref*{alg:neighbourhood}}. The notation to describe properties and relations is based on a formal Ontology~Description Logic~(DL)~\cite{baader2003}, string manipulations were formally defined in~\cite{hopcroft1969}.
 
 \begin{algorithm}

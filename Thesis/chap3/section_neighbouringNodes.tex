@@ -1,18 +1,9 @@
 \section{Neighbouring Nodes}\label{sec:neighboring_nodes}
-This section starts with a conceptual overview of how neighbouring nodes in an ontology graph are used to generate contextual information.
-For that, we give a short introduction into Attempto~Controlled~English~(ACE) which is a formal language, capable of expressing domain-specific knowledge by human readable sentences. In the literature~\cite{soton265735} this task is also known under the term \textit{ontology verbalisation}. Even though there exists \textit{OWL~Verbalizer}\footnote{\url{http://mcs.open.ac.uk/nlg/SWAT/Verbaliser.html} accessed 2018/04/30}, a tool which transforms generic ontologies into English sentences, we could not integrate it into the context enrichment process because 
+This section starts with a short introduction into Attempto~Controlled~English~(ACE) which is a formal language, capable of expressing domain-specific knowledge by human readable sentences. In the literature~\cite{soton265735} this task is also known under the term \textit{ontology verbalisation}. Even though there exists \textit{OWL~Verbalizer}\footnote{\url{http://mcs.open.ac.uk/nlg/SWAT/Verbaliser.html} accessed 2018/04/30}, a tool which transforms generic ontologies into English sentences, we could not integrate it into the context enrichment process because 
 \begin{inparaenum}[1)]
 		\item \label{itm:owl_verbalizer_integration_problems_standalone} it was designed as a standalone tool written in SWI-Prolog\footnote{\url{http://www.swi-prolog.org/} accessed 2018/04/30} and
 		\item \label{itm:owl_verbalizer_integration_problems_ontology} it only accepts the whole ontology as input
-\end{inparaenum}. While~\ref{itm:owl_verbalizer_integration_problems_standalone} could be solved using JPL\footnote{\url{http://www.swi-prolog.org/packages/jpl/} accessed 2018/11/30}, a library written in SWI-Prolog providing a bidirectional interface between Java and Prolog, it is still considered experimental and would require considerable integration efforts. We could not think of a reasonable solution of~\ref{itm:owl_verbalizer_integration_problems_ontology} because crowdsourcing jobs could also be generated from a subset of the concepts defined in an ontology. However, in future versions of OWL~Verbalizer this limitations might be solved as there exists a ticket\footnote{\url{https://github.com/Kaljurand/owl-verbalizer/issues/13} accessed 2018/11/30} for mitigation. 
- 
-To illustrate the concept of neighbouring nodes and how they relate to the context enrichment approach explained later, a simple ontology graph describing the teacher/pupil domain is given in~\hyperref[fig:simple_owl_graph]{Figure~\ref*{fig:simple_owl_graph}}.
-\begin{figure}
-	 \centering
-	 \includegraphics[width=\textwidth]{drawio/University_Ontology_Example}
-	 \caption{Simple Ontology Graph}\label{fig:simple_owl_graph}
-\end{figure}
-For example, if the concept \textit{:Teacher} is taken as reference node, it makes sense to not only include the concept itself, but to also consider connected nodes~(e.g. the concept \textit{:Person} and the object property \textit{:teaches}). 
+\end{inparaenum}. While~\ref{itm:owl_verbalizer_integration_problems_standalone} could be solved using JPL\footnote{\url{http://www.swi-prolog.org/packages/jpl/} accessed 2018/11/30}, a library written in SWI-Prolog providing a bidirectional interface between Java and Prolog, it is still considered experimental and would require considerable integration efforts. We could not think of a reasonable solution to~\ref{itm:owl_verbalizer_integration_problems_ontology} because crowdsourcing jobs could also be generated from a subset of the concepts defined in an ontology. However, in future versions of OWL~Verbalizer this limitations might be solved as there exists a ticket\footnote{\url{https://github.com/Kaljurand/owl-verbalizer/issues/13} accessed 2018/11/30} for mitigation. 
 
 As in the guidelines for conducting crowdsourcing research~\cite{sarasua2015crowdsourcing}, the authors recommended to avoid technical terms in crowdsourcing questions. In the next paragraphs we explain how \textit{ontology verbalisation} helps to achieve this goal. 
 
@@ -31,7 +22,7 @@ To get a better understanding of ACE\footnote{\url{https://tinyurl.com/yc3zhu9a}
 \paragraph{Anaphoric References} If the meaning of a word or phrase is context dependent, recurring occurrences of these expressions are called \textit{Anaphoric References}. More specifically, the referring term~(\textit{anaphor}) relates to an antecedent expression. For example, given the sentence: \texttt{Tom arrived, but nobody noticed him}, the pronoun \texttt{him} relates to \texttt{Tom}. To resolve ambiguities during the processing phase, Anaphoric References are replaced by encoded references. 
 
 \subsection{Ontology based Approach}\label{sec:enrichment_ontology_approach}
-Due to this complicating issues, we implemented a different approach using some insights from OWL~Verbaliser. The pseudocode of the overall workflow is given in \hyperref[alg:neighbourhood]{Algorithm~\ref*{alg:neighbourhood}}. The notation to describe properties and relations is based on a formal Ontology~Description Logic~(DL)~\cite{baader2003}, string manipulations were formally defined in~\cite{hopcroft1969}.
+Based on the ACE~rules describes above we implemented an algorithm which generates context descriptions based on subsumption relations. The pseudocode of the overall workflow is given in \hyperref[alg:neighbourhood]{Algorithm~\ref*{alg:neighbourhood}}. The notation to describe properties and relations is based on a formal Ontology~Description Logic~(DL)~\cite{baader2003}, string manipulations were formally defined in~\cite{hopcroft1969}.
 
 \begin{algorithm}
 	\caption{Context Enrichment based on Neighbouring Nodes}\label{alg:neighbourhood}
@@ -50,4 +41,22 @@ Due to this complicating issues, we implemented a different approach using some 
 	\end{algorithmic}
 \end{algorithm}
 
-The main work is done in two for-loops, which calculate context descriptions based on subsumption~$(\sqsubseteq)$ and string concatenation~$(\cup)$. To handle the case of missing subsumption relations, the output text $T$ is initialised to an empty string~(\hyperref[alg:neighbourhood:text_initialisation]{Line~\ref*{alg:neighbourhood:text_initialisation}}). Next, for every subsumption relation having the input concept $C$ in its signature, either $C's$ name or the anchor node's name is appended first. For example, given the following subsumption relations $\{Car \sqsubseteq Vehicle, Cabrio \sqsubseteq Car\}$, the algorithm generates $T=\{$\textit{"Every Car is a Vehicle"}$,$ \textit{"Every Cabrio is a Car"}$\}$ under the assumption that \textit{Car} was chosen as anchor node.
+The main work is done in two for-loops, which calculate context descriptions based on subsumption~$(\sqsubseteq)$ and string concatenation~$(\cup)$. To handle the case of missing subsumption relations, the output text $T$ is initialised to an empty string~(\hyperref[alg:neighbourhood:text_initialisation]{Line~\ref*{alg:neighbourhood:text_initialisation}}). Next, for every subsumption relation having the input concept $C$ in its signature, either $C's$ name or the anchor node's name is appended first.
+
+A simple ontology graph describing the university domain is given in~\hyperref[fig:simple_owl_graph]{Figure~\ref*{fig:simple_owl_graph}}. It will
+be used to illustrate the concept of the context generation algorithm.
+\begin{figure}
+	 \centering
+	 \includegraphics[width=\textwidth]{drawio/University_Ontology_Example-Professor-Student}
+	 \caption{Simple Ontology Graph describing the student/professor relationship}\label{fig:simple_owl_graph}
+\end{figure}
+If the concept \emph{Student} is taken as reference node, the algorithm first collects all subsumption relations having \emph{Student} as child node which gives $\{Person\}$ and generates $T=\{$ \emph{"Every Student is a Person"} $\}$. Next, all subsumption relations having \emph{Student} as parent node were collected which gives $\{$ \emph{Bachelor Student, Master Student, PhD Student} $\}$ and generates $T=\{$ \emph{"Every Student is a Person", "Every Bachelor Student is a Student", "Every Master Student is a Student", "Every PhD Student is a Student"} $\}$. 
+
+After context generation, our platform creates the questionnaire for crowd workers which also includes the actual question for ontology validation and some instructions for guidance. 
+\hyperref[fig:university_ontology_questionaire]{Figure~\ref*{fig:university_ontology_questionaire}} depicts the questionnaire presented to crowd workers for the university domain described above. 
+\begin{figure}
+	 \centering
+	 \includegraphics[width=\textwidth]{screenshots/questionaire_university_example}
+	 \caption{Questionnaire presented to crowd workers for the university domain example}\label{fig:university_ontology_questionaire}
+\end{figure}
+

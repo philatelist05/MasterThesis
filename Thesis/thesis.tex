@@ -28,11 +28,21 @@
 \usepackage{hyperref}  % Enables cross linking in the electronic document version. This package has to be included second to last.
 \usepackage[acronym,toc]{glossaries} % Enables the generation of glossaries and lists fo acronyms. This package has to be included last.
 \usepackage[babel=true]{csquotes} %Just more quote handling
+\usepackage{listings} % General purpose package for e.g. code listings
 %\usepackage[toc,page]{appendix} % Better appendix handling %
 
 % Define convenience functions to use the author name and the thesis title in the PDF document properties.
 \newcommand{\authorname}{Stefan Gamerith} % The author name without titles.
 \newcommand{\thesistitle}{Context Enrichment of Crowdsourcing Tasks for Ontology Validation} % The title of the thesis. The English version should be used, if it exists.
+
+% Make listings look exactily like verbatim environment
+\lstset{
+  basicstyle=\footnotesize\ttfamily,
+  columns=fixed,
+  fontadjust=true,
+  keepspaces=true,
+  basewidth=0.5em
+}
 
 %Evenly distribute Y colum types%
 \newcolumntype{Y}{>{\centering\arraybackslash}X}

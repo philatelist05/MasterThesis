@@ -4,8 +4,29 @@ Over the years ontologies were used in many domain contexts, including general-p
 This section starts by introducing annotation properties which are defined as part of the \hyperref[sec:OWL_annotation_properties]{Web~Ontology~Language~(OWL)\footnote{\url{https://www.w3.org/OWL/} accessed 2018/18/12}}. We used annotations to encode the context descriptions. Next, an overview of the \hyperref[sec:dublin_core_metadata_vocabulary]{Dublin~Core~Metadata~Set} is given as some parts were used for the definition of context properties. Then, in the remainder of this section our \hyperref[sec:enrichment_metaData_approach]{Meta-Data~based~Approach} is discussed.
 
 \subsection{OWL Annotation Properties}\label{sec:OWL_annotation_properties}
+Annotation properties first defined by OWL~1\footnote{\url{https://www.w3.org/TR/owl-ref/\#Annotations} accessed 2018/20/12} and then extended by OWL~2\footnote{\url{https://www.w3.org/TR/owl2-syntax/\#Annotation_Properties} accessed 2018/20/12} are used enhance concepts, properties, individuals and ontology headers with meta data such as labels, comments, creation date and so forth. This information does not alter the semantics of the ontology in any way, it is merely intended for documentation purposes and therefore ignored by reasoning engines. 
 
-\subsection{Dublin Core~(DC)}\label{sec:dublin_core_metadata_vocabulary} Being one of the most prominent vocabulary in describing semantic meta-data, published and maintained by the Dublin Core Metadata Initiative~(DCMI), it originally contained 15 meta-data terms\footnote{\url{http://www.dublincore.org/documents/dces/} accessed 2018/05/20},  designed to annotate resources with simple, textual information. Since its first launch, the project have gained popularity, including more than 127 terms\footnote{\url{http://www.dublincore.org/documents/dcmi-terms/} accessed 2018/05/20}. The initial set of terms is listed in~\hyperref[app:dc_terms]{Appendix~\ref*{app:dc_terms}}. 
+Besides the built-in annotation properties OWL~1 also offers the ability to create user-defined annotation properties. An example of using \emph{owl:AnnotationProperty} to declare a user-defined annotation property is given in~\hyperref[lst:user_defined_annotation_property]{Listing~\ref*{lst:user_defined_annotation_property}}.
+\begin{lstlisting}[frame=single,caption=Declaration of user-defined annotation property in OWL~1,label=lst:user_defined_annotation_property]
+	<rdf:RDF
+		xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+		xmlns:dc="http://www.purl.org/metadata/dublin-core#"
+		xmlns:owl="http://www.w3.org/2002/07/owl#">
+		
+		<owl:AnnotationProperty 
+			rdf:about="http://purl.org/metadata/dublin-core#date"/>
+		
+		<owl:Class rdf:about="http://www.photo.org/camera#Lens"
+			<dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">
+				2018-12-20
+			</dc:date>
+		</owl:Class>
+		
+	</rdf>
+\end{lstlisting}
+
+
+\subsection{Dublin Core Metadata Set~(DC)}\label{sec:dublin_core_metadata_vocabulary} Being one of the most prominent vocabulary in describing semantic meta-data, published and maintained by the Dublin Core Metadata Initiative~(DCMI), it originally contained 15 meta-data terms\footnote{\url{http://www.dublincore.org/documents/dces/} accessed 2018/05/20},  designed to annotate resources with simple, textual information. Since its first launch, the project have gained popularity, including more than 127 terms\footnote{\url{http://www.dublincore.org/documents/dcmi-terms/} accessed 2018/05/20}. The initial set of terms is listed in~\hyperref[app:dc_terms]{Appendix~\ref*{app:dc_terms}}. 
 
 To maximise interoperability in heterogeneous environments, an RDF-Schema with DCMI-Metadata\footnote{\url{http://dublincore.org/schemas/rdfs/} accessed 2018/05/20} elements was created, in which each entity is identified by a Uniform Resource Identifier~(URI) starting with the prefix \emph{http://purl.org}. A broader discussion on the use of meta-data in general is given in~\cite{nilsson2010}.  
 

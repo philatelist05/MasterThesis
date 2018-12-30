@@ -1,7 +1,9 @@
 \section{Embedded Context}\label{sec:embedded_context}
-Over the years ontologies were used in many domain contexts, including general-purpose as well as highly specialised ones. Obviously, what separates good ontologies from poor ones is how well they are documented~\cite{daquin2012}. Studies~\cite{dutta2017} analysed various approaches of embedding meta-data in ontologies. The outcome was that there is no standard way to describe and document ontologies, albeit a few vocabularies that describe semantic meta-data exist. 
+Over the years ontologies were used in many domain contexts, including general-purpose as well as highly specialised ones. Obviously, what separates good ontologies from poor ones is how well they are documented~\cite{daquin2012}. Studies~\cite{dutta2017} analysed various approaches of embedding metadata in ontologies. The outcome was that there is no standard way to describe and document ontologies, albeit a few vocabularies that describe semantic metadata exist. 
 
-This section starts by introducing annotation properties which are defined as part of the \hyperref[sec:OWL_annotation_properties]{Web~Ontology~Language~(OWL)\footnote{\url{https://www.w3.org/OWL/} accessed 2018/18/12}}. We used annotations to encode the context descriptions. Next, an overview of the \hyperref[sec:dublin_core_metadata_vocabulary]{Dublin~Core~Metadata~Set} is given as some parts were used for the definition of context properties. Then, in the remainder of this section our \hyperref[sec:enrichment_metaData_approach]{Meta-Data~based~Approach} is discussed.
+In this section we describe another approach of generating context descriptions based on semantic metadata. For that, we used \hyperref[sec:OWL_annotation_properties]{Annotation~Properties} which were defined as part of OWL. To maximise interoperability with existing libraries for ontology processing and manipulation we made use of the \hyperref[sec:dublin_core_metadata_vocabulary]{Dublin~Core~Metadata~Set}, a standard vocabulary designed to annotate resources with simple, textual information. A prerequisite for context generation is that presence such metadata information. However, as none of the ontologies we used for evaluation contained such metadata, we had to add them manually. 
+
+This section starts by introducing annotation properties which are defined as part of the \hyperref[sec:OWL_annotation_properties]{Web~Ontology~Language~(OWL)\footnote{\url{https://www.w3.org/OWL/} accessed 2018/18/12}}. We used annotations to encode the context descriptions. Next, an overview of the \hyperref[sec:dublin_core_metadata_vocabulary]{Dublin~Core~Metadata~Set} is given as some parts were used for the definition of context properties. Then, in the remainder of this section our \hyperref[sec:enrichment_metaData_approach]{Metadata~based~Approach} is discussed.
 
 \subsection{OWL Annotation Properties}\label{sec:OWL_annotation_properties}
 Annotation properties first defined by OWL~1\footnote{\url{https://www.w3.org/TR/owl-ref/\#Annotations} accessed 2018/20/12} and then extended by OWL~2\footnote{\url{https://www.w3.org/TR/owl2-syntax/\#Annotation_Properties} accessed 2018/20/12} are used enhance concepts, properties, individuals and ontology headers with meta data such as labels, comments, creation date and so forth. This information does not alter the semantics of the ontology in any way, it is merely intended for documentation purposes and therefore ignored by reasoning engines. 
@@ -25,20 +27,29 @@ Besides the built-in annotation properties OWL~1 also offers the ability to crea
 	</rdf>
 \end{lstlisting}
 
+\subsection{Ontology Metadata Standards}\label{sec:ontology_metadata_standards}
+%Add introductory words to ontology metadata standards here%
 
-\subsection{Dublin Core Metadata Set~(DC)}\label{sec:dublin_core_metadata_vocabulary} Being one of the most prominent vocabulary in describing semantic meta-data, published and maintained by the Dublin Core Metadata Initiative~(DCMI), it originally contained 15 meta-data terms\footnote{\url{http://www.dublincore.org/documents/dces/} accessed 2018/05/20},  designed to annotate resources with simple, textual information. Since its first launch, the project have gained popularity, including more than 127 terms\footnote{\url{http://www.dublincore.org/documents/dcmi-terms/} accessed 2018/05/20}. The initial set of terms is listed in~\hyperref[app:dc_terms]{Appendix~\ref*{app:dc_terms}}. 
+\paragraph{Dublin Core Metadata Set~(DC)}\label{sec:dublin_core_metadata_vocabulary} Being one of the most prominent vocabulary in describing semantic metadata, published and maintained by the Dublin Core Metadata Initiative~(DCMI), it originally contained 15 metadata terms\footnote{\url{http://www.dublincore.org/documents/dces/} accessed 2018/05/20},  designed to annotate resources with simple, textual information. Since its first launch, the project have gained popularity, including more than 127 terms\footnote{\url{http://www.dublincore.org/documents/dcmi-terms/} accessed 2018/05/20}. The initial set of terms is listed in~\hyperref[app:dc_terms]{Appendix~\ref*{app:dc_terms}}. 
 
-To maximise interoperability in heterogeneous environments, an RDF-Schema with DCMI-Metadata\footnote{\url{http://dublincore.org/schemas/rdfs/} accessed 2018/05/20} elements was created, in which each entity is identified by a Uniform Resource Identifier~(URI) starting with the prefix \emph{http://purl.org}. A broader discussion on the use of meta-data in general is given in~\cite{nilsson2010}.  
+To maximise interoperability in heterogeneous environments, an RDF-Schema with DCMI-Metadata\footnote{\url{http://dublincore.org/schemas/rdfs/} accessed 2018/05/20} elements was created, in which each entity is identified by a Uniform Resource Identifier~(URI) starting with the prefix \emph{http://purl.org}. A broader discussion on the use of metadata in general is given in~\cite{nilsson2010}.  
 
-\subsection{Meta-Data based Approach}\label{sec:enrichment_metaData_approach}
-Given the high number on ontology meta-data formats from above, \hyperref[alg:embedded_enrichment]{Algorithm~\ref*{alg:embedded_enrichment}} shows the pseudocode to create concept descriptions extracted from embedded meta-data. In addition to the notation used in the previous section we define $\Phi(C) \coloneqq \{m_1, m_2, \ldots, m_i \}$ where $m_i$ is the $i'th$ meta-data element embedded in concept $C$ and $T$ is the description of some meta-data element.
+\paragraph{Simple Knowledge Organisation~(SKOS)}
+The SKOS Core Vocabulary~\cite{skos2005} defines a set of RDF properties and RDFS classes
+used to express the content and structure of a concept scheme, which describes sets of concepts with optionally linked concepts. The vocabulary is standardised by the W3C~Consortium\footnote{\url{https://www.w3.org/TR/skos-reference/} accessed 2018/05/20}. Relevant terms are listed in~\hyperref[app:skos_terms]{Appendix~\ref*{app:skos_terms}}.
+	
+There is some overlap between DC and SKOS. For example, the terms \textit{dc:subject} and \textit{skos:subject} describes similar characteristics of an entity. However, in some usage scenarios the range of skos:subject is limited to resources of type skos:concept compared to the unrestricted range of dc:subject. Moreover, in case there is more than one subject, the property \textit{skos:primarySubject} allows assertions of the entities or resources main subject. 
+
+
+\subsection{Metadata based Approach}\label{sec:enrichment_metaData_approach}
+Given the high number on ontology metadata formats from above, \hyperref[alg:embedded_enrichment]{Algorithm~\ref*{alg:embedded_enrichment}} shows the pseudocode to create concept descriptions extracted from embedded metadata. In addition to the notation used in the previous section we define $\Phi(C) \coloneqq \{m_1, m_2, \ldots, m_i \}$ where $m_i$ is the $i'th$ metadata element embedded in concept $C$ and $T$ is the description of some metadata element.
 
 \begin{algorithm}
-	\caption{Context Enrichment based on embedded meta-data}\label{alg:embedded_enrichment}
+	\caption{Context Enrichment based on embedded metadata}\label{alg:embedded_enrichment}
 	\begin{algorithmic}[1]
 		\Procedure{Generate Description}{}\newline
-			\textbf{Input:} A concept $C$ with embedded meta-data $\{m_1, m_2, \ldots, m_i \}$\newline
-			\textbf{Output:} A description $T$ of $C's$ meta-data elements\newline
+			\textbf{Input:} A concept $C$ with embedded metadata $\{m_1, m_2, \ldots, m_i \}$\newline
+			\textbf{Output:} A description $T$ of $C's$ metadata elements\newline
 			\State{$T=\{\}$}
 			\For {$ m_k \in \Phi(C) $}
 				\State $T=T$ $\cup$ $m_k$
@@ -47,5 +58,5 @@ Given the high number on ontology meta-data formats from above, \hyperref[alg:em
 	\end{algorithmic}
 \end{algorithm}
 
-While the actual enrichment is straightforward, it collects all descriptions for a determined concept, the details of extracting the meta-data from annotation properties is omitted here because it highly depends on the chosen meta-data encoding.
-As we decided to encode the meta-data in annotation properties, the extraction process works by selecting the related annotation properties for a specified concept. 
+While the actual enrichment is straightforward, it collects all descriptions for a determined concept, the details of extracting the metadata from annotation properties is omitted here because it highly depends on the chosen metadata encoding.
+As we decided to encode the metadata in annotation properties, the extraction process works by selecting the related annotation properties for a specified concept. 

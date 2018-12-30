@@ -58,3 +58,32 @@ Given the high number on ontology metadata formats from above, \hyperref[alg:emb
 
 While the actual enrichment is straightforward, it collects all descriptions for a determined concept, the details of extracting the metadata from annotation properties is omitted here because it highly depends on the chosen metadata encoding.
 As we decided to encode the metadata in annotation properties, the extraction process works by selecting the related annotation properties for a specified concept. 
+
+To illustrate the concept of the context generation algorithm a simple example of an OWL~Class enriched with metadata is shown in~\hyperref[lst:metadata_based_rdf_example]{Listing~\ref*{lst:metadata_based_rdf_example}}.
+For that, the algorithms generates $T=\{$ \emph{"Greenhouse gas (GHG) is one of several gases, especially carbon dioxide, that prevent heat from the earth escaping into space, causing the greenhouse effect. Greenhouse gases from human activities are the most significant driver of observed climate change since the mid-20th century.", "greenhouse gas"} $\}$. 
+\hyperref[fig:metadata_rdf_example_questionaire]{Figure~\ref*{fig:metadata_rdf_example_questionaire}} depicts the questionnaire presented to crowd workers for the example from above. 
+
+\begin{lstlisting}[frame=single,breaklines=true,postbreak=\mbox{\textcolor{black}{$\hookrightarrow$}\space},caption=An OWL Class enriched with metadata,label=lst:metadata_based_rdf_example]
+	<rdf:RDF
+		xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+		xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+		xmlns:dc="http://www.purl.org/metadata/dublin-core#"
+		xmlns:owl="http://www.w3.org/2002/07/owl#">
+		
+		<owl:Class rdf:about="http://www.climatechange.org/greenhouse_gas"
+			<dc:description>
+				Greenhouse gas (GHG) is one of several gases, especially carbon dioxide, that prevent heat from the earth escaping into space, causing the greenhouse effect. Greenhouse gases from human activities are the most significant driver of observed climate change since the mid-20th century.
+			</dc:description>
+			<rdfs:label>
+				greenhouse gas
+			</rdfs:label>
+		</owl:Class>
+		
+	</rdf>
+\end{lstlisting}
+
+\begin{figure}
+	 \centering
+	 \includegraphics[width=\textwidth]{screenshots/questionaire_metadata_example}
+	 \caption{Questionnaire presented to crowd workers for the OWL Class example}\label{fig:metadata_rdf_example_questionaire}
+\end{figure}

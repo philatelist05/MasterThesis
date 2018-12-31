@@ -3,51 +3,6 @@ An alternative method of context enrichment is based on fetching concept definit
 
 This section begins with an introduction in the theory of dictionaries, discusses searching problems and strategies to overcome these and briefly describes several online dictionaries including the one we used in our approach.
 
-\paragraph{Short Introduction into Lexicography}
-Dictionaries, as most humans are familiar with, contain the \textit{lexicon} of a language, that is a collection of words or phrases, called the lexemes. 
-They are designed for word lookups and facilitate finding information about spelling, meaning and usage. Historically, written dictionaries were constrained by the alphabetised format and once printed, never updated. On the other hand, online dictionaries facilitate accessing the information on more than one path, semantics being one of them. Similarly, keeping the word up-to-date as well as adding new ones is as simple as updating or adding new records to the database, compared to printing and distributing new copies of their written pedants. 
-
-Lexicography is defined as the science about~\enquote{the theory and practice of dictionaries, that is, dictionaries, encyclopaedias, lexica, glossaries, vocabularies, terminological knowledge bases, and other information tools covering areas of knowledge and its corresponding language.}~\cite{fuertes2017}
-Among other definitions, they share the understanding that lexicography is an interdisciplinary science with characteristics of linguistic science, information science and others. 
-
-When it comes to classifying electronic dictionaries, it is obvious that they are more than just machine-readable copies of their printed counterparts, but rather comprehensive software conglomerates only limited by technological, economical and/or practical constraints. The key defining elements of electronic dictionaries are 
-\begin{inparaenum}[i)]
-		\item the access principle,
-		\item the construction principle and
-		\item the distinction between information databases and information tools
-\end{inparaenum}~\cite{fuertes2011}.
-Whereas the \textit{access principle} deals with providing quick and easy access to the needed information, the \textit{construction principle} differentiates dictionaries based on the technical and economical aspects when building the dictionary. Special attention should be paid to the division between information databases and information tools, that is, separating user concerns~(searching and viewing the results) from the underlying data organisation. 
-
-Depending on the usage scenarios, several types of dictionaries have emerged over the years. A recent study~\cite{mueller_spitzer2013} evaluated, how dictionaries are being used or, in other words, the external conditions or situations in which a dictionary consultation is embedded.  
-In their research, participants with professional and academic background were asked about the circumstances of dictionary usage. 
-Analyses revealed that responses can be partitioned into the following \textit{groups of usage} situations: 
-\begin{enumerate}
-	\item Text Production
-	\item Text Reception
-	\item Text Translation
-\end{enumerate}
-
-\textit{Text Production} is the action of writing texts in professional or personal contexts. Dictionary content vary in many ways, depending on writer's profession and text category. For example, passive speech using domain specific vocabularies are dominant in academic literature over active speech and simple language constructs in short-term, informal texts~\cite{o2010routledge}~(e.g. emails, tweets, Facebook posts, \ldots).
-
-\textit{Text Reception} is the process or theory that emphasises the meaning and interpretation of existing literature. Readers focus on writing reviews and understanding texts. The user's motivation of dictionary interaction is finding the word definition as well as looking for samples~(e.g. example sentences), synonyms/antonyms and links to external information. 
-
-\textit{Text Translation} is the process of converting text from a source language to a target language by preserving its meaning. Unfortunately there is not always a one-to-one mapping possible because of lacking equivalent language constructs in the target language. Old-fashioned dictionaries containing translations for specific words do not help either because words are lacking context. With the advent of online dictionaries, new opportunities for translators appeared such as spelling correction and links to synonyms/antonyms. Not only professional translators responded that dictionaries are crucial for their business, students and teachers consult dictionaries to improve their vocabulary, look up pronunciation or simply find the contexts of word usage. 
-
-\paragraph{Searching in Electronic Dictionaries} Searching is probably the most important feature of today's electronic dictionaries. In the next paragraphs we discuss problems that arise when searching for specific terms and strategies to overcome these. 
-
-Several studies~\cite{pastor2010, mvechura2008} have analysed digital dictionaries, available in different languages and accessible via the Internet or compressed on a digital medium~(e.g. CD-ROM). Their evaluation is based on empirical analyses of user behaviour collected from log-files as well as literature review. All searching techniques listed below tackle the problem of invalid, incomplete, misspelled and multi-word search queries.
-
-The first category are \textit{inflection-aware} search algorithms which accept inflected and uninflected search queries. The central part of these algorithms are rewrite rules which transform the input query to the matching headword or vice-versa. A powerful but complicated technique is based on a deep understanding of the target language. It is based on morphologies of the word endings. For example, stripping \emph{-ed} and \emph{-ing} endings for regular verbs is yet simple but only manageable for regular verbs, more complicated algorithms are needed for irregular verbs. Other algorithms, not taking the structure of the target language into account, are based on fuzzy string searching, a technique based on approximate string matching. A simple metric measuring the difference between two strings is the Levenshtein~Distance~\cite{levenshtein1966}. It is defined as the number of single character manipulations necessary to transform one string into the other. 
-
-The next category are algorithms dealing with \textit{multi-word} search items. Search algorithms need to deal with user entered search strings, containing multiple words or even complete sentences. The situation is even more complicated, for a single-word search query users expect not only matching single-word entries but also matching multi-word entries~(e.g. phrasal verb). Enumerating all possible word combinations might be acceptable in dictionaries with small corpora, but it is infeasible in dictionaries with millions of entries and performance is important. In these cases it is better to construct an index from single-word entries and multi-word entries. An even better approach, also known by the term \emph{lemmatising}, would be to analyse and process the words before-hand.
-
-Another challenge in processing search queries is \textit{detecting misspellings}. User input is inherently prone to errors. Smart algorithms guide the user to the intended word by offering corrections and suggestions, similar to what a spellchecker does. A naive approach would be to collect lists of common misspelled words and continue with matching. This has the disadvantage that not all possible combinations are included and processing takes longer, especially for long word lists. A better but yet more complicated technique is based on word similarity which is discussed in the previous paragraph. 
-
-A technique especially useful for multi-lingual dictionaries is \textit{language selection and detection}. As there already exists much literature in this area~\cite{mcnamee2005, lodhi2002, vatanen2010, selamat2016}, we decided to just outline two approaches here. The first group of algorithms is purely based on statistical models. The detection of the target language works by building probabilistic models of the inferred statistics and the pre-trained statistics. The second group works by counting common words or character sequences~(called n-grams) and comparing the obtained frequency counts against reference values~\cite{mcnamee2005}.
-
-The last technique is \textit{text normalisation}. It solves the problem of unwanted characters in search strings by removing variation and reducing words to simpler formats. For search strings, this means that noisy characters are removed. A simple strategy is to delete characters which do not add any meaning such as hyphens, dots quotation marks and (mathematical)~symbols. Additionally, consecutive occurrences of whitespaces are merged. 
-The normaliser also need to consider some character variations as defined by the Unicode~Standard\footnote{\url{http://www.unicode.org/reports/tr15/} accessed 2018/06/08 }. 
-
 \paragraph{Online Dictionary Examples} We have chosen some well-known, freely accessible online dictionaries that were used in various research
 fields.
 
@@ -124,7 +79,7 @@ From a technical perspective Wiktionary is based on MediaWiki\footnote{\url{http
 
 The majority of wiki features are accessible via public API. Clients can request features or send commands over the \textit{MediaWiki~Action~API}\footnote{\url{https://www.mediawiki.org/wiki/API:Main_page} accessed 2018/06/17}. It has querying, searching, parsing and manipulation capabilities.
 
-\paragraph{Dictionary based Approach}\label{sec:enrichment_dictionary_approach}
+\subsection{Dictionary based Approach}\label{sec:enrichment_dictionary_approach}
 Intuitively, the idea of generating descriptions using dictionary lookups is simple: starting from a concept name, descriptions are built from consulting an online dictionary. 
 
 A schematic overview of the overall workflow is shown in~\hyperref[fig:external_source_workflow]{Figure~\ref*{fig:external_source_workflow}}.

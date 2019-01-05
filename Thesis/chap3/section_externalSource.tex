@@ -42,7 +42,14 @@ A schematic overview of the overall workflow is shown in~\hyperref[fig:external_
 		  have a definition in traditional dictionaries, the API response is illustrated
 		  in~\hyperref[lst:WordNik_response_for_chartjunk]{Listing~\ref*{lst:WordNik_response_for_chartjunk}}. The
 		  output is encoded in JavaScript Object Notation~(JSON)\footnote{\url{https://tools.ietf.org/html/rfc7159} accessed 2019/01/05}
-		  which defines a common, human-readable format for data transmission. 
+		  which defines a common, human-readable format for data transmission. The example shows one \emph{example
+		  sentence}~(the others were omitted because they share the same structure) including various other
+		  properties besides the actual title and text. Our algorithm just skips these other properties because they were
+		  not needed for the final concept description. However, it might be useful in certain scenarios to differentiate 
+		  duplicate entries by exampleId or exploring further details by adding the source URL.
+	\item \emph{(Text Buffering)} Depending on wether a single concept or multiple concepts are validated, example sentences
+	      need to be harmonised, which is realised by storing intermediate results and mapping these to the initial concepts.
+	\item \emph{(Crowdsourcing Submission)} 
 \end{enumerate}
 
 \begin{lstlisting}[frame=single,breaklines=true,postbreak=\mbox{\textcolor{black}{$\hookrightarrow$}\space},caption=WordNik API response for the word \guillemotright chartjunk\guillemotleft,label=lst:WordNik_response_for_chartjunk]
@@ -67,8 +74,6 @@ A schematic overview of the overall workflow is shown in~\hyperref[fig:external_
 	}
 \end{lstlisting}
 
-Depending on wether a single concept or multiple concepts are validated, example sentences need to be harmonised, which is realised by storing intermediate results and mapping these to the initial concepts. 
 
 %TODO: Add here the questionaire%
-
 To conclude, this approach is rather simple and easy to implement, however, it may have the potential to generate wrong results, especially for ambiguous concept names. 

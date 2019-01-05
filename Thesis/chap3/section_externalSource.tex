@@ -9,23 +9,66 @@ WordNik targets native English speakers who look up words that are rare~(technic
 
 The driving force behind WordNik was contribution. It processes and aggregates external user-generated content such as tweets, newspaper articles, scientific articles or uploaded Flickr\footnote{\url{https://www.flickr.com/} accessed 2018/06/15} images. This is similar to what search engines do, but with restricted scope. The creators of WordNik observed that very few people write word definitions, they rather add meta linguistic information such as lists of their favourite words, comments or tags. WordNik additionally collects statistics about lexicographical terms, more or less frequently searched words and most commented words. 
 
-WordNik also offers an API for programmatically accessing their resources\footnote{\url{https://developer.wordnik.com/} accessed 2018/06/15}. At the time of writing this thesis free access is granted for non-profit, non-commercial use with a limitation on the number of API calls. 
+WordNik also offers an API for programmatically accessing their resources\footnote{\url{https://developer.wordnik.com/} accessed 2018/06/15}. Besides the word definition, it also provides access to audio metadata, etymology, word usage, syllable information, bi-gram phrases, text pronunciations, relation diagrams to other words, example sentences and others. At the time of writing this thesis free access is granted for non-profit, non-commercial use with a limitation on the number of API calls. 
 After a successful registration process, an API token is provided which is a prerequisite for API interaction. Besides Web access, a handful of libraries\footnote{\url{https://developer.wordnik.com/libraries} accessed 2018/06/15}, available in many programming languages, were created to facilitate integration with third-party applications. 
 
 \subsection{Dictionary based Approach}\label{sec:enrichment_dictionary_approach}
-Intuitively, the idea of generating descriptions using dictionary lookups is simple: starting from a concept name, descriptions are built from consulting an online dictionary. 
+Intuitively, the idea of generating descriptions using dictionary lookups is simple: starting from a concept name, descriptions are built from consulting the online dictionary \hyperref[sec:wordnik]{WordNik}. 
 
-A schematic overview of the overall workflow is shown in~\hyperref[fig:external_source_workflow]{Figure~\ref*{fig:external_source_workflow}}.
+A schematic overview of the overall workflow is shown in~\hyperref[fig:external_source_workflow]{Figure~\ref*{fig:external_source_workflow}} and described below:
 \begin{figure}
 	 \centering
 	 \includegraphics[width=0.9\textwidth]{drawio/External_Source_Workflow}
 	 \caption{Conceptual workflow of WordNik consultation to generate concept descriptions}\label{fig:external_source_workflow}
 \end{figure}
-The idea is to use the concept name as a baseline for any further processing. Often, the name can not be used directly as input to WordNik because it contains unwanted characters such as excessive spaces, quotes, dots or just non-printable characters. This is especially true for learned ontologies, generated from textual sources. Our algorithm uses the built-in text manipulation capabilities of the JDK to pre-process concept names. Among the other approaches introduced earlier in this section, it is yet simple but still provides good results. 
 
-Next, WordNik is consulted to find example sentences for normalised concept names. In contrast to traditional dictionaries, WordNik searches in all kinds of available online content, including newspapers, journals, scientific publications, tweets and others. 
-All API interaction is protected against unauthorised access, however, to help developers learning the API, some features are available in isolated Sandbox~Mode\footnote{\url{https://developer.wordnik.com/docs} accessed  2018/06/21}. For instance, example sentences for the word \texttt{bird} can be fetched from the URL \texttt{/word.json/bird/examples}.
+\begin{enumerate}[label=\textbf{[Step \Roman*]},leftmargin=\widthof{[Step III]}+\labelsep]
+	\item \emph{(Concept Selection)} The first step in the workflow is the selection of the concept(s)
+	      for generating the description. For that, the ontology engineer selects the concepts and
+		  starts the enrichment process. 
+	\item \emph{(Text Normalisation)} The idea is to use the concept name as a baseline for any further
+	      processing. Often, the name can not be used directly as input to WordNik because it
+		  contains unwanted characters such as excessive spaces, quotes, dots or just non-printable
+		  characters. This is especially true for learned ontologies, generated from textual sources.
+		  Our algorithm uses the built-in text manipulation capabilities of the JDK to pre-process
+		  concept names.
+	\item \emph{(Dictionary Lookup)} Next, WordNik is consulted to find example sentences for normalised
+	      concept names. In contrast to traditional dictionaries, WordNik searches in all kinds of available
+		  online content, including newspapers, journals, scientific publications, tweets and others. All
+		  API interaction is protected against unauthorised access, however, to help developers learning
+		  the API, some features are available in isolated Sandbox~Mode\footnote{\url{https://developer.wordnik.com/docs} accessed  2018/06/21}.
+		  
+		  For example, when searching for the word \guillemotright chartjunk\guillemotleft~which does not
+		  have a definition in traditional dictionaries, the API response is illustrated
+		  in~\hyperref[lst:WordNik_response_for_chartjunk]{Listing~\ref*{lst:WordNik_response_for_chartjunk}}. The
+		  output is encoded in JavaScript Object Notation~(JSON)\footnote{\url{https://tools.ietf.org/html/rfc7159} accessed 2019/01/05}
+		  which defines a common, human-readable format for data transmission. 
+\end{enumerate}
+
+\begin{lstlisting}[frame=single,breaklines=true,postbreak=\mbox{\textcolor{black}{$\hookrightarrow$}\space},caption=WordNik API response for the word \guillemotright chartjunk\guillemotleft,label=lst:WordNik_response_for_chartjunk]
+	{
+	  "examples": [
+	    {
+	      "provider": {
+	        "name": "spinner",
+	        "id": 712
+	      },
+	      "year": 2008,
+	      "rating": 185,
+	      "url": "http://www.emersonprocessxperts.com/archives/2008/10/improving_how_y.html",
+	      "word": "chartjunk",
+	      "text": "Marshall described \"chartjunk\" as additional graphics not related to the data in a quest to make the chart more aesthetically pleasing.",
+	      "title": "Emerson Process Experts",
+	      "documentId": 15463705,
+	      "exampleId": 289744774
+	    },
+		...
+	  ]
+	}
+\end{lstlisting}
 
 Depending on wether a single concept or multiple concepts are validated, example sentences need to be harmonised, which is realised by storing intermediate results and mapping these to the initial concepts. 
+
+%TODO: Add here the questionaire%
 
 To conclude, this approach is rather simple and easy to implement, however, it may have the potential to generate wrong results, especially for ambiguous concept names. 

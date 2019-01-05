@@ -49,7 +49,11 @@ A schematic overview of the overall workflow is shown in~\hyperref[fig:external_
 		  duplicate entries by exampleId or exploring further details by adding the source URL.
 	\item \emph{(Text Buffering)} Depending on wether a single concept or multiple concepts are validated, example sentences
 	      need to be harmonised, which is realised by storing intermediate results and mapping these to the initial concepts.
-	\item \emph{(Crowdsourcing Submission)} 
+	\item \emph{(Crowdsourcing Submission)} The last step of the workflow is the creation of the questionnaire for the actual
+	      ontology validation. As for all enrichment methods, the only part that varies for each approach is the concept
+		  description, shown as top part of the template.
+		  \hyperref[fig:wordnik_example_questionaire]{Figure~\ref*{fig:wordnik_example_questionaire}} depicts the
+		  questionnaire presented to crowd workers for the example from above.
 \end{enumerate}
 
 \begin{lstlisting}[frame=single,breaklines=true,postbreak=\mbox{\textcolor{black}{$\hookrightarrow$}\space},caption=WordNik API response for the word \guillemotright chartjunk\guillemotleft,label=lst:WordNik_response_for_chartjunk]
@@ -74,6 +78,9 @@ A schematic overview of the overall workflow is shown in~\hyperref[fig:external_
 	}
 \end{lstlisting}
 
-
-%TODO: Add here the questionaire%
-To conclude, this approach is rather simple and easy to implement, however, it may have the potential to generate wrong results, especially for ambiguous concept names. 
+\begin{figure}
+	 \centering
+	 \includegraphics[width=\textwidth]{screenshots/questionaire_wordnik_example}
+	 \caption{Questionnaire presented to crowd workers for searching \guillemotright chartjunk\guillemotleft~on WordNik}\label{fig:wordnik_example_questionaire}
+\end{figure}
+% To conclude, this approach is rather simple and easy to implement, however, it may have the potential to generate wrong results, especially for ambiguous concept names. 

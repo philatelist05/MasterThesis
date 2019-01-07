@@ -23,32 +23,10 @@ The results of the benchmark are presented in~\hyperref[table:bench_p_r_f]{Table
 We also measured the agreement ratio~(inter-rater agreement) in this dataset. \hyperref[fig:hist_agreement_all]{Figure~\ref*{fig:hist_agreement_all}} shows the distribution of the agreement ratio among all validated concepts. We required 5 judgements for every concept, giving $5/0$, $4/1$ or $3/2$ levels of agreement, which is equivalent to $1.0$, $0.8$ and $0.6$ respectively. 
 
 \begin{figure}
-    \centering
-    \begin{subfigure}[b]{0.4\textwidth}
-        \includegraphics[width=\textwidth]{plots/hist_agreement_nn}
-        \caption{Neighbouring Nodes}
-        \label{fig:hist_agreement_nn}
-    \end{subfigure}
-    ~
-    \begin{subfigure}[b]{0.4\textwidth}
-        \includegraphics[width=\textwidth]{plots/hist_agreement_ec}
-        \caption{Embedded Context}
-        \label{fig:hist_agreement_ec}
-    \end{subfigure}
-    ~
-    \begin{subfigure}[b]{0.4\textwidth}
-        \includegraphics[width=\textwidth]{plots/hist_agreement_es}
-        \caption{External Source}
-        \label{fig:hist_agreement_es}
-    \end{subfigure}
-    ~
-    \begin{subfigure}[b]{0.4\textwidth}
-        \includegraphics[width=\textwidth]{plots/hist_agreement_none}
-        \caption{None}
-        \label{fig:hist_agreement_none}
-    \end{subfigure}
-    \caption{Histogram plots of the Inter-rater Agreement}\label{fig:hist_agreement_all}
-\end{figure}
+	 \centering
+	 \includegraphics[width=\textwidth]{plots/hist_agreement}
+	 \caption{Histogram plots of the Inter-rater Agreement}\label{fig:hist_agreement_all}
+\end{figure} 
 
 The highest agreement exhibits \emph{External~Source}, followed by \emph{None}. This is somewhat interesting as these are the methods with the lowest performance with regard to F-measure. In fact, the agreement ratio just describes to what extent the responses of crowd workers coincide. From the observations in this dataset, it is hard, if not impossible, to draw conclusions solely based on agreement. In fact, when looking closely at the judgements with the highest agreement~ratio among incorrect answers, $16$ of $17$ judgements for External~Source and $3$ of $6$ judgements for Neighbouring~Nodes had context added. Apparently, crowd workers agreed here on incorrect values even though that concept descriptions were available. 
 

@@ -1,5 +1,22 @@
 \section{Finance Ontology}\label{sec:result_f_ontology}
-
+Reference to aggregated results~\hyperref[table:bench_p_r_f_finance]{Table~\ref*{table:bench_p_r_f_finance}}.
+\begingroup
+\renewcommand{\arraystretch}{1.5}
+\begin{table}
+	\begin{tabularx}{\textwidth}{l c*{3}{Y}}
+		\toprule
+		Method & Precision & Recall & F-Measure \\
+		\midrule
+		 Embedded Context & 0.797 & 0.985 & 0.881 \\
+		 External Source & 0.794 & 0.944 & 0.862 \\
+		 Neighbouring Nodes & 0.756 & 0.949 & 0.842 \\
+		 None & 0.734 & 0.963 & 0.833 \\
+		\bottomrule
+	\end{tabularx}
+	\caption{Aggregated results on the Finance Ontology~(ranked by F-Measure)}
+	\label{table:bench_p_r_f_finance}
+\end{table}
+\endgroup
 
 Reference to Inter-rater agreement plot~\hyperref[fig:hist_agreement_finance_all]{Figure~\ref*{fig:hist_agreement_finance_all}}.
 \begin{sidewaysfigure}
@@ -37,3 +54,22 @@ Reference to Histogram plots~\hyperref[fig:hist_level_finance_all]{Figure~\ref*{
     \end{subfigure}
     \caption{Histogram plots of the correct/incorrect judgements}\label{fig:hist_level_finance_all}
 \end{figure}
+
+Reference to agreement level~~\hyperref[table:level_corr_incorr_finance]{Table~\ref*{table:level_corr_incorr_finance}}.
+\begingroup
+\renewcommand{\arraystretch}{1.5}
+\begin{table}
+	\begin{tabularx}{\textwidth}{l c*{4}{Y}}
+		\toprule
+		Method & mean & median & $1^{st}$ quartile & $3^{rd}$ quartile \\
+		\midrule
+		 Embedded Context & 3.18 & 5.00 & 3.00 & 5.00 \\
+		 External Source & 2.87 & 5.00 & 1.00 & 5.00 \\
+		 Neighbouring Nodes & 2.61 & 5.00 & 2.50 & 5.00 \\
+		 None & 2.53 & 5.00 & 1.00 & 5.00 \\
+		\bottomrule
+	\end{tabularx}
+	\caption{Summary statistics concerning agreement level on the Finance Ontology~(ranked by mean value)}
+	\label{table:level_corr_incorr_finance}
+\end{table}
+\endgroup

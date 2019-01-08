@@ -1,5 +1,22 @@
 \section{Tennis Ontology}\label{sec:result_t_ontology}
-
+Reference to aggregated results~\hyperref[table:bench_p_r_f_tennis]{Table~\ref*{table:bench_p_r_f_tennis}}.
+\begingroup
+\renewcommand{\arraystretch}{1.5}
+\begin{table}
+	\begin{tabularx}{\textwidth}{l c*{3}{Y}}
+		\toprule
+		Method & Precision & Recall & F-Measure \\
+		\midrule
+		 Embedded Context & 0.896 & 0.976 & 0.934 \\
+		 Neighbouring Nodes & 0.874 & 0.939 & 0.905 \\ 
+		 None & 0.783 & 0.933 & 0.851 \\
+		 External Source & 0.648 & 0.980 & 0.780 \\
+		\bottomrule
+	\end{tabularx}
+	\caption{Aggregated results on the Tennis Ontology~(ranked by F-Measure)}
+	\label{table:bench_p_r_f_tennis}
+\end{table}
+\endgroup
 
 Reference to Inter-rater agreement plot~\hyperref[fig:hist_agreement_tennis_all]{Figure~\ref*{fig:hist_agreement_tennis_all}}.
 \begin{sidewaysfigure}
@@ -37,3 +54,22 @@ Reference to Histogram plots~\hyperref[fig:hist_level_tennis_all]{Figure~\ref*{f
     \end{subfigure}
     \caption{Histogram plots of the correct/incorrect judgements}\label{fig:hist_level_tennis_all}
 \end{figure}
+
+Reference to agreement level~~\hyperref[table:level_corr_incorr_tennis]{Table~\ref*{table:level_corr_incorr_tennis}}.
+\begingroup
+\renewcommand{\arraystretch}{1.5}
+\begin{table}
+	\begin{tabularx}{\textwidth}{l c*{4}{Y}}
+		\toprule
+		Method & mean & median & $1^{st}$ quartile & $3^{rd}$ quartile \\
+		\midrule
+		 Embedded Context & 3.89 & 5.00 & 3.00 & 5.00 \\
+		 Neighbouring Nodes & 3.39 & 5.00 & 3.00 & 5.00 \\
+		 None & 2.58 & 5.00 & 1.00 & 5.00 \\
+		 External Source & 1.77 & 3.00 & -1.00 & 5.00 \\
+		\bottomrule
+	\end{tabularx}
+	\caption{Summary statistics concerning agreement level on the Finance Ontology~(ranked by mean value)}
+	\label{table:level_corr_incorr_tennis}
+\end{table}
+\endgroup

@@ -1,7 +1,7 @@
 \section{Climate Change Ontology}\label{sec:result_cc_ontology}
 In this section, results from the crowdsourced ontology validation in the field of climate change are presented. A detailed discussion of the ontology used as a baseline for all calculations is done in \hyperref[sec:evaluation_datasets]{Section~\ref*{sec:evaluation_datasets}}. 
 
-The results of the benchmark are presented in~\hyperref[table:bench_p_r_f]{Table~\ref*{table:bench_p_r_f}}. For comparison, we also performed ontology validation without any of the discussed context enrichment methods~(indicated as \emph{None}). Given the relatively small number of concepts, any of the context enrichment method perform better than having no context at all. Surprisingly, in terms of recall the contrary holds. Indeed, crowd workers tend to positively answer questions in case of uncertainty when no additional information other than the concept name is present. 
+The results of the benchmark are presented in~\hyperref[table:bench_p_r_f]{Table~\ref*{table:bench_p_r_f}}. For comparison, we also performed ontology validation without any of the discussed context enrichment methods~(indicated as \emph{None}). Given the relatively small number of concepts, all context enrichment methods performed better than having no context at all. Surprisingly, in terms of recall the contrary holds. Indeed, crowd workers tend to positively answer questions in case of uncertainty when no additional information other than the concept name was present. 
 \begingroup
 \renewcommand{\arraystretch}{1.5}
 \begin{table}
@@ -20,7 +20,7 @@ The results of the benchmark are presented in~\hyperref[table:bench_p_r_f]{Table
 \end{table}
 \endgroup
 
-We also measured the agreement ratio~(inter-rater agreement) in this dataset. \hyperref[fig:hist_agreement_all]{Figure~\ref*{fig:hist_agreement_all}} shows the distribution of the agreement ratio among all validated concepts. We required 5 judgements for every concept, giving $5/0$, $4/1$ or $3/2$ levels of agreement, which is equivalent to $1.0$, $0.8$ and $0.6$ respectively. 
+We also measured the agreement ratio~(inter-rater agreement) in this dataset. \hyperref[fig:hist_agreement_all]{Figure~\ref*{fig:hist_agreement_all}} shows the distribution of the agreement ratio among all validated concepts. We required 5 judgements for every concept, giving $5/0$, $4/1$ or $3/2$ levels of agreement, which is equivalent to a ratio of $1.0$, $0.8$ and $0.6$ respectively. 
 
 \begin{sidewaysfigure}
   	 \includegraphics[width=\textwidth]{plots/hist_agreement}
@@ -57,9 +57,9 @@ The highest agreement exhibits \emph{External~Source}, followed by \emph{None}. 
     \caption{Histogram plots of the correct/incorrect judgements}\label{fig:hist_level_all}
 \end{figure}
 
-To manifest the observations from above, a bar-plot~(illustrated in \hyperref[fig:hist_level_all]{Figure~\ref*{fig:hist_level_all}}) was created. It combines the agreement ratio with the amount of correct/incorrect judgements. Whereas a negative score indicates that more contributors agreed on the incorrect answer, a positive score shows that the majority of crowd worker's responses were correct. Indeed, when comparing the performance on level $-5$ \emph{External~Source} is on the same level as the omission of context. On the other hand, it exhibits the highest score on correct answers of level $5$.
+To manifest the observations from above, a bar-plot~(illustrated in \hyperref[fig:hist_level_all]{Figure~\ref*{fig:hist_level_all}}) was created. It combines the agreement ratio with the amount of correct/incorrect judgements. Whereas a negative score indicates that more contributors agreed on the incorrect answer, a positive score shows that the majority of crowd worker's responses were correct. Indeed, when comparing the performance on level $-5$ \emph{External~Source} is on the same level as if context were omitted. On the other hand, it exhibits the highest score on correct answers of level $5$.
 
-Given the plots on the distribution of the correct/incorrect judgements from above, \hyperref[table:level_corr_incorr]{Table~\ref*{table:level_corr_incorr}} shows the summary statistics concerning agreement level for each context enrichment method. It confirms the observations made so far.
+Given the plots on the distribution of the correct/incorrect judgements from above, \hyperref[table:level_corr_incorr]{Table~\ref*{table:level_corr_incorr}} shows the summary statistics showing the agreement level for each context enrichment method. It confirms the observations made so far.
 \begingroup
 \renewcommand{\arraystretch}{1.5}
 \begin{table}

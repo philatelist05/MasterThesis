@@ -1,7 +1,7 @@
 \section{Climate Change Ontology}\label{sec:result_cc_ontology}
 In this section, results from the crowdsourced ontology validation in the field of climate change are presented. A detailed discussion of the ontology used as a baseline for all calculations is done in \hyperref[sec:evaluation_datasets]{Section~\ref*{sec:evaluation_datasets}}. 
 
-The results of the benchmark are presented in~\hyperref[table:bench_p_r_f_climate_change]{Table~\ref*{table:bench_p_r_f_climate_change}}. For comparison, we also performed ontology validation without any of the discussed context enrichment methods~(indicated as \emph{None}). Given the relatively small number of concepts, all context enrichment methods performed better than having no context at all. Surprisingly, in terms of recall the contrary holds. Indeed, crowd workers tend to positively answer questions in case of uncertainty when no additional information other than the concept name was present. 
+The results of the benchmark are presented in~\hyperref[table:bench_p_r_f_climate_change]{Table~\ref*{table:bench_p_r_f_climate_change}}. For comparison, we also performed ontology validation without any of the discussed context enrichment methods~(indicated as \emph{None}). Given the relatively small number of concepts, all context enrichment methods performed better than having no context at all. Surprisingly, in terms of recall the contrary holds. Indeed, crowd workers tend to negatively answer questions in case of uncertainty when no additional information other than the concept name was present. 
 \begingroup
 \renewcommand{\arraystretch}{1.5}
 \begin{table}
@@ -20,8 +20,7 @@ The results of the benchmark are presented in~\hyperref[table:bench_p_r_f_climat
 \end{table}
 \endgroup
 
-We also measured the agreement ratio~(inter-rater agreement) in this dataset. \hyperref[fig:hist_agreement_climate_change_all]{Figure~\ref*{fig:hist_agreement_climate_change_all}} shows the distribution of the agreement ratio among all validated concepts. We required 5 judgements for every concept, giving $5/0$, $4/1$ or $3/2$ levels of agreement, which is equivalent to a ratio of $1.0$, $0.8$ and $0.6$ respectively. 
-
+We also measured the agreement ratio~(inter-rater agreement) in this dataset. \hyperref[fig:hist_agreement_climate_change_all]{Figure~\ref*{fig:hist_agreement_climate_change_all}} shows the distribution of the agreement ratio among all validated concepts. We required 5 judgements for every concept, giving $5/0$, $4/1$ or $3/2$ levels of agreement, which is equivalent to a ratio of full agreement~($1.0$), partial agreement~($0.8$) and little agreement~($0.6$) respectively. 
 \begin{sidewaysfigure}
   	 \includegraphics[width=\textwidth]{plots/climate_change/hist_agreement}
   	 \caption{Histogram plots of the Inter-rater Agreement}\label{fig:hist_agreement_climate_change_all}

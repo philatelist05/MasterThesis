@@ -1,5 +1,7 @@
 \section{Tennis Ontology}\label{sec:result_t_ontology}
-Reference to aggregated results~\hyperref[table:bench_p_r_f_tennis]{Table~\ref*{table:bench_p_r_f_tennis}}.
+In this section, results from the crowdsourced ontology validation in the domain of tennis are presented. A detailed discussion of the ontology used as a baseline for all calculations was done previously in \hyperref[sec:evaluation_datasets]{Section~\ref*{sec:evaluation_datasets}}.
+
+The worker performance for this datasets is the highest among all evaluated ontologies. In fact, for the highest ranked method~\emph{(Embedded Context)} at least 2 out of 5 contributors correctly identified relevant concepts or declined unrelated ones is equivalent to a precision of $0.896$ and recall of $0.976$, or combined $0.934$ of F-Measure. A detailed comparison of all methods for this dataset is given in~\hyperref[table:bench_p_r_f_tennis]{Table~\ref*{table:bench_p_r_f_tennis}}. Interestingly, the method \emph{External~Source} performed worse than omitting concept descriptions. This, we noticed by the relatively high discrepancy of the precision value. That is, $0.648$ with descriptions constructed from WordNik consultation~\emph{(External~Source)} compared to $0.783$ without any context. 
 \begingroup
 \renewcommand{\arraystretch}{1.5}
 \begin{table}
@@ -18,15 +20,15 @@ Reference to aggregated results~\hyperref[table:bench_p_r_f_tennis]{Table~\ref*{
 \end{table}
 \endgroup
 
-Reference to Inter-rater agreement plot~\hyperref[fig:hist_agreement_tennis_all]{Figure~\ref*{fig:hist_agreement_tennis_all}}.
+\hyperref[fig:hist_agreement_tennis_all]{Figure~\ref*{fig:hist_agreement_tennis_all}} depicts the distribution of the agreement ratio among all validated concepts. To the contrary, by the method \emph{Neighbouring~Nodes}, crowd workers reached the most consensus, albeit they were wrong in some cases. They declined 2 relevant concepts while there were at least 2 who were correct for \emph{Embedded~Context}. 
 \begin{sidewaysfigure}
   	 \includegraphics[width=\textwidth]{plots/tennis/hist_agreement}
   	 \caption{Histogram plots of the Inter-rater Agreement}\label{fig:hist_agreement_tennis_all}
 \end{sidewaysfigure}
 
 
+The observations from above were also reflected by the bar plots in~\hyperref[fig:hist_level_tennis_all]{Figure~\ref*{fig:hist_level_tennis_all}}. 
 
-Reference to Histogram plots~\hyperref[fig:hist_level_tennis_all]{Figure~\ref*{fig:hist_level_tennis_all}}.
 \begin{figure}
     \centering
     \begin{subfigure}[b]{0.4\textwidth}

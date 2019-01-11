@@ -1,10 +1,30 @@
 \section{Evaluation Comparison}\label{sec:result_comparison}
 
 \paragraph{Which Context Enrichment Method performed best in general?}
-% Acuracy is important here (precision, recall or F-mesure)?? %
-% Create dot plot with (precision, recall and F-mesure) in different colors (https://rud.is/b/2013/10/27/alternative-to-grouped-bar-charts-in-r/)%
-% Create stacked bar-plot (y-axis: total number of judgements, x-axis: methods) with stacks in green=correct, red=incorrect judgements%
-	% https://www.r-graph-gallery.com/48-grouped-barplot-with-ggplot2/ %
+\begingroup
+\renewcommand{\arraystretch}{1.5}
+\begin{table}
+	\begin{tabularx}{\textwidth}{l c*{3}{Y}}
+		\toprule
+		Method & Precision & Recall & F-Measure \\
+		\midrule
+		 Embedded Context & 0.797 & 0.921 & 0.854 \\
+		 Neighbouring Nodes & 0.787 & 0.887 & 0.834 \\
+		 External Source & 0.729 & 0.899 & 0.805 \\
+		 None & 0.674 & 0.910 & 0.775 \\
+		\bottomrule
+	\end{tabularx}
+	\caption{Aggregated results of all datasets~(ranked by F-Measure)}
+	\label{table:bench_p_r_f_combined}
+\end{table}
+\endgroup
+
+\begin{figure}
+	 \centering
+	 \includegraphics[width=0.75\textwidth]{plots/comparison/barplot_all_judgements}
+	 \caption{Combined accuracy of crowdsourcing methods}\label{fig:results_accuracy_combined}
+\end{figure}
+
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \paragraph{Did the crowd perform better with context?}

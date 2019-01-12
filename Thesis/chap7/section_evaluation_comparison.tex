@@ -1,8 +1,10 @@
 \section{Evaluation Comparison}\label{sec:result_comparison}
-In the final evaluation step we take a broader look on the overall performance of context enrichment. For that, we combined the results from each dataset. This has the advantage of reducing the sensibility to a particular dataset which is desirable for unbiased conclusions. 
+In the final evaluation step we take a broader look on the overall performance of context enrichment. For that, we combined the results from each dataset. This has the advantage of reducing the sensibility to a particular dataset which is recommended for unbiased interpretations. 
 
-Based on our initial hypothesis which motivates adding context to ontology validation we formulated a couple of questions that were answered next:
+Based on our initial hypothesis which motivates context enrichment, we formulated a couple of questions that were answered next:
 \paragraph{Which Context Enrichment Method performed best in general?}
+Our observations confirmed our initial hypothesis which suggests extending basic crowd-based ontology validation with context. From the combined results of all datasets as shown in~\hyperref[table:bench_p_r_f_combined]{Table~\ref*{table:bench_p_r_f_combined}} it is evident that embedded context worked best. In fact, it had not only the highest value of F-Measure but also the highest precision and recall. Indeed, this was rather expected due to the fact that context being manually added. Obviously no one has a better domain knowledge than the creators or maintainers of the ontology. 
+On the bottom end of the table is the existing approach with missing context. 
 \begingroup
 \renewcommand{\arraystretch}{1.5}
 \begin{table}
@@ -21,13 +23,14 @@ Based on our initial hypothesis which motivates adding context to ontology valid
 \end{table}
 \endgroup
 
+\hyperref[fig:results_accuracy_combined]{Figure~\ref*{fig:results_accuracy_combined}} depicts the combined accuracy of all methods which is represented
+by the ratio of correct and incorrect judgements. For easier comparability, the exact number of judgements was written in labels. The performance of the top ranked method~(Embedded Context) is quite impressive. Concepts were judged correctly for nearly eighty percent~($78.4\%$), being an improvement of over $14\%$ compared to omitting concept descriptions. Even for the least ranked method~(External Source), judgements were $4.6\%$ more accurate.   
 \begin{figure}
 	 \centering
 	 \includegraphics[width=0.75\textwidth]{plots/comparison/barplot_all_judgements}
 	 \caption{Combined accuracy of crowdsourcing methods}\label{fig:results_accuracy_combined}
 \end{figure}
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \paragraph{Did the crowd perform better with context?}
 % No chart needed, the charts from the question above can be used %
@@ -59,4 +62,5 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \paragraph{What other observations were found?}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+A general phenomenon of all approaches was the exceptionally high value of precision indicating that the crowd tends to rather reject concepts in case 
+of uncertainty or lack of knowledge. 

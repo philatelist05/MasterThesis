@@ -32,16 +32,29 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \paragraph{For which concepts were the crowd wrong?}
-% Table show 1st, 2nd and 3rd of overall concepts that were judged incorrectly by the crowd for any dataset. %
-% Table layout --> see notes %
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\begingroup
+\renewcommand{\arraystretch}{1.5}
+\begin{table}
+	\begin{tabularx}{\textwidth}{l c*{4}{Y}}
+		\toprule
+		\multirow{2}{*}{\emph{Concept}} & \multicolumn{4}{c}{\emph{Methods}} & \emph{Accuracy}\\
+		\cmidrule(lr){2-5} \cmidrule(lr){6-6} 
+		 & EC & NN & ES & NONE & Total\\
+		\midrule
+		sceptic & 0/5 & 0/5 & 0/5 & 0/5 & 0/20 \\
+		greenhouse & 0/5 & 1/5 & 0/5 & 0/5 & 1/20 \\
+		pipeline & 0/5 & 0/5 & 1/5 & 0/5 & 1/20 \\
+		consensus & 2/5 & 0/5 & 0/5 & 0/5 & 2/20 \\
+		denier & 2/5 & 0/5 & 0/5 & 0/5 & 2/20 \\
+		production & 1/5 & 1/5 & 0/5 & 0/5 & 2/20 \\
+		\bottomrule
+	\end{tabularx}
+	\caption{Concepts where most crowd workers had problems~(EC=Embedded Context, NN=Neighbouring Nodes, ES=External Source, NONE=No Context)}
+	\label{table:bench_p_r_f_combined}
+\end{table}
+\endgroup
 
-\paragraph{Was there a correlation between Inter-rater Agreement and Accuracy}
-% Scatterplot of discrete values (http://www.r-graph-gallery.com/5-correlation-of-discrete-variables/) %
-% y-axis: Agreement ratio (0.6, 0.8, 1) ; x-axis: Accuracy (0, 1, 2, 3, 4, 5) $
-% Merge all datasets and create plot for each method %
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \paragraph{What other observations were found?}
-% No plots/tables needed, just description %
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

@@ -33,6 +33,15 @@ by the ratio of correct and incorrect judgements. For easier comparability, the 
 \end{figure}
 
 \paragraph{For which concepts were the crowd wrong?}
+Even though the results underlined the usefulness of context for crowds-sourced ontology validation, we were also interested under which circumstances they failed. In particular, we evaluated for which concepts the crowd had most problems with. The goal was to identify common patterns to guide future improvements. 
+
+\hyperref[table:combined_evaluation_bad_concepts]{Table~\ref*{table:combined_evaluation_bad_concepts}} lists 6 concepts that had the highest number of erroneous judgements. The concept \emph{sceptic} is located on the top-most row of the table. None of the judgements were correct for that concept. 
+Consequently, for the climate change ontology, the concept was rejected even with context being present. An explanation of that could be the fact
+the context was too generic or inappropriate. Clearly, the concept could be associated with climate change, meaning someone who doubts global warming.
+Unfortunately, we were not able to adapt context because we had not access to the sources where the ontologies were learned from. 
+In most cases though, we expect ontology engineers to have enough knowledge for providing more accurate descriptions that support the crowd.
+
+For the remaining concepts the situation is similar. We identified a common pattern among the descriptions of these concepts: They were either missing, especially for very specific concepts or too generic. The only solution to both problems we see is collaboration between ontology engineers and domain experts to improve context. 
 \begingroup
 \renewcommand{\arraystretch}{1.5}
 \begin{table}
@@ -51,11 +60,9 @@ by the ratio of correct and incorrect judgements. For easier comparability, the 
 		\bottomrule
 	\end{tabularx}
 	\caption{Concepts where most crowd workers had problems~(EC=Embedded Context, NN=Neighbouring Nodes, ES=External Source, NONE=No Context)}
-	\label{table:bench_p_r_f_combined}
+	\label{table:combined_evaluation_bad_concepts}
 \end{table}
 \endgroup
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \paragraph{What other observations were found?}
 A general phenomenon of all approaches was the exceptionally high value of precision indicating that the crowd tends to rather reject concepts in case 

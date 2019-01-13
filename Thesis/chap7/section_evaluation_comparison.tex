@@ -64,11 +64,13 @@ In most cases though, we expect ontology engineers to have enough knowledge for 
 
 For the remaining concepts the situation is similar. We identified a common pattern among the descriptions of these concepts: They were either missing, especially for very specific concepts or too generic. The only solution to both problems we see is collaboration between ontology engineers and domain experts to improve context. 
 
-\paragraph{What other observations were found?}
+\paragraph{What other issues were found?}
 A general phenomenon of all approaches was the relatively high value of precision indicating that the crowd tends to rather reject concepts in case 
 of uncertainty or lack of knowledge. However, in ontology engineering recall is often more important than precision. Domain experts and ontology maintainers prefer deleting a few concepts rather than missing some important concepts. 
 
-The second observation was that not all enrichment methods worked best in all scenarios: 
+Another observation was that not all enrichment methods worked in all scenarios.
+For some concepts~($17\%$) no context was found when fetching from the online dictionary WordNik~(External Source). Most of these concepts had names that were composed of multiple words as it was the case for \emph{interest rate}. Compound words were treated as if words were searched separately, the final result being merged from each subquery. Unfortunately, the API does not support changing this behaviour to treat compound words as a whole. 
 
+The number of concepts with missing context was even worse when descriptions were generated from the ontology structure~(Neighbouring Nodes). $30\%$ of the concepts had missing context. Obviously, the algorithm failed when the concept was not part of a subsumption relation. In such situations, other approaches that do not rely on the ontology structure should be preferred. 
 
-The third observation was that context can be even distracting in rare cases: 
+Strangely, context was not always helpful, in certain situations it can also be distracting, mainly if it provides useless or even misleading information. Regrettably, some content fetched from WordNik was rather lengthy and diffuse. That was certainly due to the fact that content originated from blogs or tweets that were not well suited for word definitions. Future versions of the framework could try to use a different content provider which provides more concise information.

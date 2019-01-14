@@ -1,7 +1,7 @@
 \section{Climate Change Ontology}\label{sec:result_cc_ontology}
 In this section, results from the crowdsourced ontology validation in the field of climate change are presented. A detailed discussion of the ontology used as a baseline for all calculations was done previously in \hyperref[sec:evaluation_datasets]{Section~\ref*{sec:evaluation_datasets}}. 
 
-The results of the benchmark are presented in~\hyperref[table:bench_p_r_f_climate_change]{Table~\ref*{table:bench_p_r_f_climate_change}}. For comparison, we also performed ontology validation without any of the discussed context enrichment methods~\emph{(None)}. Given the relatively small number of concepts, all context enrichment methods performed better than having no context at all. Surprisingly, in terms of recall the contrary holds. Indeed, crowd workers tend to negatively answer questions in case of uncertainty when no additional information other than the concept name was present. 
+The results of the benchmark are presented in~\hyperref[table:bench_p_r_f_climate_change]{Table~\ref*{table:bench_p_r_f_climate_change}}. For comparison, we also performed ontology validation without any of the discussed context enrichment methods~\emph{(None)}. Given the relatively small number of concepts, all context enrichment methods performed better than having no context at all. Surprisingly, in terms of recall the contrary holds. Indeed, crowd workers tend to negatively answer questions in case of uncertainty or when no additional information other than the concept name is present. 
 \begingroup
 \renewcommand{\arraystretch}{1.5}
 \begin{table}
@@ -27,7 +27,7 @@ We also measured the agreement ratio~(Inter-rater Agreement) in this dataset. \h
   	 \caption{Histogram plots of the Inter-rater Agreement}\label{fig:hist_agreement_climate_change_all}
 \end{sidewaysfigure}
 
-The highest agreement exhibits \emph{External~Source}, followed by \emph{None}. This is somewhat interesting as these are the methods with the lowest performance with regard to F-measure. In fact, the agreement ratio just describes to what extent the responses of crowd workers coincide. From the observations in this dataset, it is hard, if not impossible, to draw conclusions solely based on agreement. In fact, when looking closely at the judgements with the highest agreement~ratio among incorrect answers, $16$ of $17$ judgements for External~Source and $3$ of $6$ judgements for Neighbouring~Nodes had context added. Apparently, crowd workers agreed here on incorrect values even though that concept descriptions were available. 
+The highest agreement exhibits \emph{External~Source}, followed by \emph{None}. This is somewhat interesting as these are the methods with the lowest performance with regard to F-Measure. In fact, the agreement ratio just describes to what extent the responses coincide. From the observations in this dataset, it is hard, if not impossible, to draw conclusions solely based on agreement. In fact, when looking closely at the judgements with the highest agreement~ratio among incorrect answers, $16$ of $17$ judgements for External~Source and $3$ of $6$ judgements for Neighbouring~Nodes had context added. Apparently, crowd workers agreed here on incorrect values even though that concept descriptions were available. 
 
 \begin{figure}
     \centering
@@ -57,9 +57,9 @@ The highest agreement exhibits \emph{External~Source}, followed by \emph{None}. 
     \caption{Histogram plots of the correct/incorrect judgements}\label{fig:hist_level_climate_change_all}
 \end{figure}
 
-To manifest our observations from above, bar plots~(illustrated in \hyperref[fig:hist_level_climate_change_all]{Figure~\ref*{fig:hist_level_climate_change_all}}) were created. It combines the agreement ratio with the amount of correct/incorrect judgements. Whereas a negative score indicates that more contributors agreed on incorrect answers or declined relevant concepts, a positive score shows that the majority of crowd worker's responses were correct. Indeed, when comparing the performance on level $-5$ \emph{External~Source} is on the same level as if context were omitted. On the other hand, it shows the highest score on correct answers on level $5$.
+To manifest our observations from above, bar plots~(illustrated in \hyperref[fig:hist_level_climate_change_all]{Figure~\ref*{fig:hist_level_climate_change_all}}) were created. It combines the agreement ratio with the amount of correct/incorrect judgements. Whereas a negative score indicates that more contributors agreed on incorrect answers or declined relevant concepts, a positive score shows that the majority of crowd worker's responses were correct. Indeed, when comparing the performance on level $-5$ \emph{External~Source} is on the same level as if context were omitted. On the other hand, it shows the highest score of correct answers on level $5$.
 
-Given the plots on the distribution of the correct/incorrect judgements from above, \hyperref[table:level_corr_incorr_climate_change]{Table~\ref*{table:level_corr_incorr_climate_change}} shows the summary statistics of the agreement level for each context enrichment method. It confirms our observations made so far.
+Given the plots on the distribution of the correct/incorrect judgements from above, \hyperref[table:level_corr_incorr_climate_change]{Table~\ref*{table:level_corr_incorr_climate_change}} shows the summary statistics of agreement levels for each context enrichment method. It confirms our observations made so far.
 \begingroup
 \renewcommand{\arraystretch}{1.5}
 \begin{table}

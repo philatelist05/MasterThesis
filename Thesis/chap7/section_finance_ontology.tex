@@ -1,7 +1,7 @@
 \section{Finance Ontology}\label{sec:result_f_ontology}
 In this section, results from the crowdsourced ontology validation in the domain of finance are presented. A detailed discussion of the ontology used as a baseline for all calculations was done previously in \hyperref[sec:evaluation_datasets]{Section~\ref*{sec:evaluation_datasets}}.
 
-As with the other datasets the method~\emph{Embedded Context} performed quite well. In fact, it outperformed all other approaches, both in terms of precision and recall, yielding the highest value of F-Measure. A detailed comparison of all methods for this dataset is given in~\hyperref[table:bench_p_r_f_finance]{Table~\ref*{table:bench_p_r_f_finance}}. On the other end of the table is ontology validation without any context enrichment~(\emph{None}). This is in line with our initial hypothesis that motivated the use of concept descriptions. We also noticed the relatively high number of recall for all ontology validation approaches. The same observation was made for the other datasets as well. Indeed, crowd workers tend to decline concepts in case of uncertainty or lack of additional information.
+As with the other datasets the method~\emph{Embedded Context} performed quite well. In fact, it outperformed all other approaches, both in terms of precision and recall, yielding the highest value of F-Measure. A detailed comparison of all methods for this dataset is given in~\hyperref[table:bench_p_r_f_finance]{Table~\ref*{table:bench_p_r_f_finance}}. On the other end of the table is ontology validation without any context enrichment~(\emph{None}). This is in line with our initial hypothesis that motivated the use of concept descriptions. We also noticed the relatively high number of recall for all approaches. The same observation was made for the other datasets as well. Indeed, crowd workers tend to decline concepts in case of uncertainty or lack of additional information.
 \begingroup
 \renewcommand{\arraystretch}{1.5}
 \begin{table}
@@ -57,7 +57,7 @@ Another metric we used to measure the performance of ontology validation was Int
 
 To get a different view of the overall worker performance, \hyperref[fig:hist_level_finance_all]{Figure~\ref*{fig:hist_level_finance_all}} 
 shows bar plots of the performance levels. Each level combines the agreement ratio with the amount of correct/incorrect judgements, yielding a higher score when most contributors agreed on correct answers and a lower score when they disagreed or answered incorrectly.
-A common phenomena of all approaches was the high level of correct answers with highest agreement across contributors. Indeed, this holds for the other datasets too. However, after analysing the concepts that were accepted and those that were declined, this is rather related to the generic nature of the used datasets. For example, whereas a positive judgement of the concept \emph{budget} for the finance domain is comparatively easy even if no additional information is provided, judging the concept \emph{world} is much more challenging. Therefore, judging generic concepts should be done better by domain experts who share a common understanding of the used vocabulary. 
+A common phenomena of all approaches was the high level of correct answers with high agreement across contributors. Indeed, this holds for the other datasets too. However, after analysing the concepts that were accepted and those that were declined, this is rather related to the generic nature of the used datasets. For example, whereas accepting the concept \emph{budget} for the finance domain is relatively easy even with no additional information, judging the concept \emph{world} is much more challenging. Therefore, judging generic concepts should be done better by domain experts who share a common understanding of the used vocabulary. 
 
 \begingroup
 \renewcommand{\arraystretch}{1.5}
@@ -77,5 +77,4 @@ A common phenomena of all approaches was the high level of correct answers with 
 \end{table}
 \endgroup
 
-The summary statistics in~\hyperref[table:level_corr_incorr_finance]{Table~\ref*{table:level_corr_incorr_finance}} manifest the observations made so far. It shows the statistics of each method ranked by mean value. Judging the worker performance based on the 
-combined mean of agreement level and number of correct/incorrect judgements, the order is no different than ranked by F-Measure. 
+The summary statistics in~\hyperref[table:level_corr_incorr_finance]{Table~\ref*{table:level_corr_incorr_finance}} confirm our observations made so far. It shows the statistics of each method ranked by mean value. Judging the worker performance by the level of agreement and the ratio of correct/incorrect judgements, the order is no different than ranked by F-Measure. 

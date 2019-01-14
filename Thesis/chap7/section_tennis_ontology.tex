@@ -1,7 +1,7 @@
 \section{Tennis Ontology}\label{sec:result_t_ontology}
 In this section, results from the crowdsourced ontology validation in the domain of tennis are presented. A detailed discussion of the ontology used as a baseline for all calculations was done previously in \hyperref[sec:evaluation_datasets]{Section~\ref*{sec:evaluation_datasets}}.
 
-The worker performance for this datasets is the highest among all evaluated ontologies. In fact, for the highest ranked method~\emph{(Embedded Context)} at least 2 out of 5 contributors correctly identified relevant concepts or declined unrelated ones. This corresponds to a precision of $0.896$ and recall of $0.976$, or combined $0.934$ of F-Measure. A detailed comparison of all methods for this dataset is given in~\hyperref[table:bench_p_r_f_tennis]{Table~\ref*{table:bench_p_r_f_tennis}}. Interestingly, the method \emph{External~Source} performed worse than omitting concept descriptions at all. This, we noticed by the high discrepancy of precision. More precisely, $0.648$ with descriptions constructed from WordNik consultation~\emph{(External~Source)} compared to $0.783$ without any context. 
+The worker performance for this dataset was the highest among all evaluated ontologies. In fact, for the highest ranked method~\emph{(Embedded Context)} at least 2 out of 5 contributors correctly identified relevant concepts or declined unrelated ones. This corresponds to a precision of $0.896$ and recall of $0.976$, or combined F-Measure of $0.934$. A detailed comparison of all methods for this dataset is given in~\hyperref[table:bench_p_r_f_tennis]{Table~\ref*{table:bench_p_r_f_tennis}}. Interestingly, the method \emph{External~Source} performed worse than omitting concept descriptions at all. This, we noticed by the high discrepancy of precision. More precisely, $0.648$ with descriptions constructed from WordNik consultation~\emph{(External~Source)} compared to $0.783$ without any context. 
 \begingroup
 \renewcommand{\arraystretch}{1.5}
 \begin{table}
@@ -28,8 +28,7 @@ The worker performance for this datasets is the highest among all evaluated onto
 
 The observations from above were also reflected by the bar plots in~\hyperref[fig:hist_level_tennis_all]{Figure~\ref*{fig:hist_level_tennis_all}}. 
 There were no judgments on level $-5$ and $-3$ for \emph{Embedded~Context}.
-The summary statistics in~\hyperref[table:level_corr_incorr_tennis]{Table~\ref*{table:level_corr_incorr_tennis}} confirm that finding. Based on the 
-combined mean of agreement level and number of correct/incorrect judgements, it preserves the ranking of each method. 
+The summary statistics in~\hyperref[table:level_corr_incorr_tennis]{Table~\ref*{table:level_corr_incorr_tennis}} confirm that finding. Based on the agreement level and correct/incorrect judgement ratio, the rankings of each method were preserved. 
  
 \begin{figure}
     \centering

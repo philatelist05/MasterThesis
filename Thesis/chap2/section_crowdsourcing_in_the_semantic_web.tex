@@ -31,8 +31,11 @@ Every page has a unique identifier~(e.g. \texttt{Q80}), a label~(e.g. \texttt{Ti
 It is obvious that these data would perfectly fit into the Linked Data model~\cite{erxleben2014}.
 Wikidata content is also available in RDF which is accessible at \url{http://tools.wmflabs.org/wikidata-exports/rdf/}. Unfortunately, this data is accessible by dump files\footnote{\url{https://tools.wmflabs.org/wikidata-exports/rdf/exports.html} accessed 2018/08/06} only.
 
-\paragraph{Data Storage and Indexing}
-%% TODO: This needs to be done %%
+\paragraph{Data Storage and Indexing} 
+Up to this stage, the data was already mapped to the RDF data model but needs to be stored and indexed efficiently. Researchers have put a lot
+of effort into this field because efficient storage and indexing mechanisms are fundamental for the adoption of Linked Data. Due to efficient querying and storage capabilities of relational databases resulting from decades of research in this area, it makes sense adopt these approaches for Linked Data as well~\cite{abadi2007}. However, to support storing very large quantities of data there exist custom solutions too~\cite{broekstra2002}. 
+
+Targeting Linked Data indexing, various approaches and principles have been applied successfully. The common aspects of all approaches is their focus on \emph{Data Compression} and \emph{Data Pruning}~\cite{svoboda2011}. Whereas the basic idea of Data Compression is to minimise the footprint of the index, Data Pruning is a technique for avoiding unnecessary data processing. 
 
 \paragraph{Data Revision and Authoring} In this stage users are given the opportunity to create new or modify existing semantic information. 
 This is called \textit{Semantic~Content~Authoring~(SCA)} which is defined in the literature as~\textit{"a tool-supported
@@ -49,23 +52,23 @@ A number of tools for semantic content authoring were developed. A prominent exa
 
 %* EDIT CONTENT BELOW: *%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\paragraph{Data Linking}
+\paragraph{Data Linking} %In Paper --> checked%
 TripleCheckMate: A Tool for Crowdsourcing the Quality Assessment of Linked Data, created at~\cite{acosta2013} and refined by~\cite{kontokostas2013}  (users can detect interlinking problems and others)
 
 CrowdSPARQL - Entity resolution and Interlinking~\cite{acosta2012}
 
 ZenCrowd: leveraging probabilistic reasoning and crowdsourcing techniques for large-scale entity linking~\cite{demartini2012}
 
-\paragraph{Classification and Enrichment}
+\paragraph{Classification and Enrichment} %In Paper --> checked%
 CrowdMap: Crowdsourcing Ontology Alignment with Microtasks~\cite{sarasua2012} (post-processing ontology alignment)
 
-\paragraph{Data Analysis and Quality}
+\paragraph{Data Analysis and Quality} %In Paper --> checked%
 Urbanopoly - A Social and Location-Based Game with a Purpose to Crowdsource Your Urban Data~\cite{celino2012} (data collection \& verification \& correction)
 
-\paragraph{Data Cleansing and Evolution}
+\paragraph{Data Cleansing and Evolution} % OMITTED %
 Urbanopoly - A Social and Location-Based Game with a Purpose to Crowdsource Your Urban Data~\cite{celino2012} (data collection \& verification \& correction)
 
-\paragraph{Data Browsing and Querying}
+\paragraph{Data Browsing and Querying} % OMITTED % 
 CrowdQ: Crowdsourced Query Understanding~\cite{demartini2013}
 
 RDF-Hunter: Automatically Crowdsourcing the Execution of Queries Against RDF Data Sets~\cite{acosta2015}

@@ -50,15 +50,15 @@ In information management, semantic documents serve a number of purposes such as
 
 A number of tools for semantic content authoring were developed. A prominent example is OntoWiki~\cite{auer2006}, an open-source Semantic Wiki originally focusing on collaboration but evolved as an ontology editor and platform for knowledge acquisition. It was inspired by other Wiki systems but primarily focusing on managing RDF knowledge bases.  Another tool, adding Crowdsourcing capabilities to ontology development activities is Mechanical~Protege\footnote{\url{http://people.aifb.kit.edu/yt2652/mechanicalProtege/}}. The tool is actually a plug-in for the ontology editor Protégé\footnote{\url{https://protege.stanford.edu/} accessed 2018/08/07}. 
 
-%* EDIT CONTENT BELOW: *%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Data Linking}
 The next principle according to the Linked Data Life-Cycle is the Data Linking principle. It is by far the most important principle because it 
 underlines the distributed nature of Linked Data. Instead of the traditional definition of data where information is stored in silos with little or no 
 relations to the outside, Linked Data sources are distributed, containing many links to other data sources. This paradigm perfectly fits into the distributed nature of the Web, turning it into a source of distributed information optimised for querying and browsing. 
 
-\paragraph{Classification and Enrichment} %In Paper --> checked%
-CrowdMap: Crowdsourcing Ontology Alignment with Microtasks~\cite{sarasua2012} (post-processing ontology alignment)
+\paragraph{Classification and Enrichment}
+Over time, Linked Data sources grow in size and expressiveness. This principle refers to the process of extending the expressiveness and richness 
+of semantic knowledge bases. It means that instead of creating the structure upfront, the knowledge base evolves over time. For that, the knowledge 
+base is typically enriched by analysing existing data to improve or extend its schema. A variety of (semi-)~automatic enrichment approaches emerged over time. The methods span across several research areas, including machine learning, statistics, natural language processing, to name just a few. 
 
 \paragraph{Data Analysis and Quality} %In Paper --> checked%
 Urbanopoly - A Social and Location-Based Game with a Purpose to Crowdsource Your Urban Data~\cite{celino2012} (data collection \& verification \& correction)
@@ -70,6 +70,3 @@ After the quality is analysed and problems are detected, strategies for fixing t
 Last, users have the opportunity to explore the Linked Data available on the Web in a fast and efficient way. A prominent way to query Linked Data is
 SPARQL\footnote{\url{https://www.w3.org/TR/rdf-sparql-query/} accessed 2019/01/17}, a query language specifically designed to retrieve and manipulate Linked Data. There are similarities between SQL and SPARQL in terms of query structure, but there are also differences. For example, SQL
 has no equivalent for Recursive Common Table Expressions which direct the SPARQL query engine to recursively traverse the Linked Data hierarchy. 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% END CONTENT %%

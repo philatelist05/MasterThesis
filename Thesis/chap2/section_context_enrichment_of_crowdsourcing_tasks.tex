@@ -5,10 +5,17 @@
 % -) Use table with references provided by MS
 
 \subsection{Context}
-When analysing the use of context enriched crowdsourcing tasks, we noticed that there exists no formal definition of that term. Instead, all approaches that were found use a different notion of context. 
-This section first investigates what definitions of context these approaches were used. After that, we give a consolidated definition of context that fits our approach of crowd-based ontology validation.
+When analysing the use of context in crowdsourcing tasks, we noticed that there exists no formal definition of the term \guillemotright context\guillemotleft~. In fact, all approaches that were found use a different notion of that term. 
+This section first investigates what context definitions these approaches use. After that, we give a consolidated definition that fits our approach of crowd-based ontology validation.
 
-When investigating the use of context in crowdsourcing tasks, a good start is to look at~\cite{sarasua2015crowdsourcing}. In this work, the authors did an extensive literature study to find challenges in the context of crowdsourcing and the Semantic Web. One of the challenges they found was a proper definition of context as part of a complete task design. Concretely, they asked but did not answer the minimum required context a crowd needs to finish a task correctly. Unfortunately, during our studies we could not find an answer either. It seems that there exists no generic answer which is applies in all contexts, it rather depends on the concrete type of task that needs to be solved. 
+When investigating the use of context in crowdsourcing tasks, a good start is to look at~\cite{sarasua2015crowdsourcing}. In this work, the authors did an extensive literature study to find challenges in the context of Crowdsourcing and the Semantic Web. One of the challenges they found was a proper definition of context as part of a complete task design. Concretely, they asked but did not answer the minimum required context a crowd needs to finish a task correctly. Unfortunately, during our studies we could not find an answer either. It seems that there exists no generic answer which applies in all contexts, it rather depends on the concrete type of task that needs to be solved. 
+
+During our literature research we found that approaches can be categorised as tasks with \emph{explicit context}, tasks with \emph{implicit context} and those with \emph{no context} at all. 
+
+The most obvious work supplying \emph{no context} in crowdsourcing tasks is actually~\cite{wohlgenannt2016}. It represents the baseline of our work and motives our use of context. A detailed explanation of this paper is out of scope for this section. However, a detailed explanation was already done in~\hyperref[sec:ucomp_protege_plugin]{Section~\ref*{sec:ucomp_protege_plugin}}. The authors of the second candidate of context omission proposed a method of collaborative ontology construction~\cite{zhitomirsky2017}. The actual definition of the ontology was implemented by a hybrid approach containing the definition of RDF-triples by non-experts~(e.g. students) and their classification by the crowd.
+
+Clearly, the omission of context does not need to be problematic. Whereas crowd-based ontology validation without context clearly has its drawbacks, it would not be beneficial if the crowd had additional information in the ontology construction example because the entities that formed the statements that were judged were simple and easy understandable by the crowd. 
+
 
 
 \subsection{Approaches that use Context for Ontology Validation}

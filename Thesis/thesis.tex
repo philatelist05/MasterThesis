@@ -11,6 +11,7 @@
 % Extended LaTeX functionality is enables by including packages with \usepackage{...}.
 \usepackage{amsmath}    % Extended typesetting of mathematical expression.
 \usepackage{amssymb}    % Provides a multitude of mathematical symbols.
+\usepackage{amsthm}     % Provides environments for theorems, definitions, ...
 \usepackage{mathtools}  % Further extensions of mathematical typesetting.
 \usepackage{microtype}  % Small-scale typographic enhancements.
 \usepackage{paralist} %Allows usage of inline lists
@@ -30,7 +31,8 @@
 \usepackage[babel=true]{csquotes} %Just more quote handling
 \usepackage{listings} % General purpose package for e.g. code listings
 \usepackage{rotating} % Used to handle landscape orientation of large graphics
-%\usepackage[toc,page]{appendix} % Better appendix handling %
+
+
 
 % Define convenience functions to use the author name and the thesis title in the PDF document properties.
 \newcommand{\authorname}{Stefan Gamerith} % The author name without titles.
@@ -60,6 +62,15 @@
     pdfsubject      = {Subject},              % The document's subject in the document properties (optional).
     pdfkeywords     = {a, list, of, keywords} % The document's keywords in the document properties (optional).
 }
+
+%% THEOREM, DEFINITION, EXAMPLE handling  %%
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[chapter] % reset theorem numbering for each chapter
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition} % definition numbers are dependent on theorem numbers
+\newtheorem{exmp}[thm]{Example} % same for example numbers
+
 
 \setpnumwidth{2.5em}        % Avoid overfull hboxes in the table of contents (see memoir manual).
 \setsecnumdepth{subsection} % Enumerate subsections.

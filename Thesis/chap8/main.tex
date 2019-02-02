@@ -26,7 +26,10 @@ is based on metadata that is encoded within the ontology. In contrast to the oth
 the metadata needs to be added by experts in a standardised format which is then provided as Context in Crowdsourcing tasks. Because the additional costs of manual preprocessing might not outweigh the benefits of high quality concept descriptions, it makes sense to preferable use this approach in very specialised areas such as in biomedical domains where ontologies are typically well documented and already contain explanations.
 
 The idea of the Dictionary based Approach~(see \hyperref[sec:enrichment_dictionary_approach]{Section~\ref*{sec:enrichment_dictionary_approach}}))
-is that starting from a concept name, descriptions are built from consulting an online dictionary.
+is that starting from a concept name, descriptions are built from consulting an online dictionary. WordNik was chosen as provider of concept descriptions which are formed from example sentences that contain the requested concept name. This approach has its strengths in situations where 
+ontologies are validated that cover novel domains or were created from sources that arise just recently. We also noticed that the lookup failed
+when concept names contained special characters or their multiple meanings were associated. 
+To conclude, this approach is rather simple and was easy to implement, however, it may have the potential to generate wrong results, especially for ambiguous concept names. 
 
 
 \textbf{RQ-III} \emph{To what extent is it possible to transfer the investigated methods to different datasets?}

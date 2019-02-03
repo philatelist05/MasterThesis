@@ -1,7 +1,11 @@
 \chapter{Discussion \& Conclusion}\label{chap:discussion_and_conclusion}
-% Describe briefly what this thesis is about
-% Relate to chapter2 (e.g. related work) - context and approaches in particular
-% Desribe then what this thesis tries to solve (e.g. briefly describe each of the 3 methods )
+In this thesis we investigated the impacts of Crowdsourcing tasks containing contextual information. Our contributions
+is based on previous work for the uComp Protege plugin~(see \hyperref[sec:ucomp_protege_plugin]{Section~\ref*{sec:ucomp_protege_plugin}})) which adds ontology validation capabilities using Crowdsourcing techniques~(see \hyperref[sec:state_of_the_art_crowdsourcing]{Section~\ref*{sec:state_of_the_art_crowdsourcing}})) to the Protege ontology editor.  
+
+While this particular research topic is relatively undefined by the literature, e.g. no common definition of the term \guillemotright Context\guillemotleft~exist yet~(see \hyperref[sec:context_in_crowdsourcing_tasks_context]{Section~\ref*{sec:context_in_crowdsourcing_tasks_context}})),
+we identified a few approaches that experimented with Crowdsourcing tasks containing explanations~(see \hyperref[sec:context_in_crowdsourcing_tasks_approaches]{Section~\ref*{sec:context_in_crowdsourcing_tasks_approaches}})). 
+
+This work presents three novel methods that enrich Crowdsourcing tasks with contextual information to validate the relevance of concepts for a particular domain of interest. Whereas the Ontology~based~Approach processes hierarchical relations, the Metadata~based~Approach generates descriptions based on annotations that are encoded within the ontology, the idea of the Dictionary~based~Approach is forming the explanations from example sentences by conducting the online dictionary \hyperref[sec:wordnik]{WordNik}.
 
 In the remainder of this chapter each research question is revisited by taken together all the results from the experimental evaluation~(see \hyperref[chap:results]{Chapter~\ref*{chap:results}}) and drawing final conclusions that point future research in new directions. 
 
@@ -26,7 +30,7 @@ is based on metadata that is encoded within the ontology. In contrast to the oth
 the metadata needs to be added by experts in a standardised format which is then provided as Context in Crowdsourcing tasks. Because the additional costs of manual preprocessing might not outweigh the benefits of high quality concept descriptions, it makes sense to preferable use this approach in very specialised areas such as in biomedical domains where ontologies are typically well documented and already contain explanations.
 
 The idea of the Dictionary based Approach~(see \hyperref[sec:enrichment_dictionary_approach]{Section~\ref*{sec:enrichment_dictionary_approach}}))
-is that starting from a concept name, descriptions are built from consulting an online dictionary. \hyperref[sec:wordnik]{WordNik} was chosen as provider of concept descriptions which are formed from example sentences that contain the requested concept name. This approach has its strengths in situations where ontologies are validated that cover novel domains or were created from sources that arise just recently. We also noticed that the lookup failed when concept names contained special characters or their multiple meanings were associated. 
+is that starting from a concept name, descriptions are built from consulting an online dictionary. WordNik was chosen as provider of concept descriptions which are formed from example sentences that contain the requested concept name. This approach has its strengths in situations where ontologies are validated that cover novel domains or were created from sources that arise just recently. We also noticed that the lookup failed when concept names contained special characters or their multiple meanings were associated. 
 To conclude, this approach is rather simple and was easy to implement, however, it may have the potential to generate wrong results, especially for ambiguous concept names. 
 
 

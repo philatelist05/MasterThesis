@@ -39,7 +39,7 @@ for flat hierarchies containing little or no parent-child relations. However, th
 
 At the core of the Metadata based Approach are the processing of annotations that reside within the ontology. Unfortunately, none of our evaluated ontologies contained these metadata by nature which required us to add them by hand. We think though, that this requirement is rather feasible because our experiments showed that this approach outputs concepts descriptions of high quality.  In fact, in very specialised areas such as in biomedical domains ontologies are already contain such explanations. 
 
-For the Dictionary based Approach the situation is different because the design of the algorithm does not impose any restrictions on the internals of the validated dataset. The outcome rather depends on the responses from conducting the online dictionary \hyperref[sec:wordnik]{WordNik}. We observed two pecularities that may be considered when choosing a dataset:
+For the Dictionary based Approach the situation is different because the design of the algorithm does not impose any restrictions on the internals of the validated dataset. The outcome rather depends on the responses from conducting the online dictionary \hyperref[sec:wordnik]{WordNik}. We observed two peculiarities that may be considered when choosing a dataset:
 \begin{inparaenum}[i)]
 	\item the lookup failed when concept names contained special characters~(for example quotes), and
 	\item the response contained irrelevant example sentences when the meaning of the requested concept is ambiguous.
@@ -47,4 +47,14 @@ For the Dictionary based Approach the situation is different because the design 
 
 
 \textbf{RQ-IV} \emph{Which of the proposed methods work best? What are potential shortcomings and why?} 
+
+Based on the results presented in~\hyperref[chap:results]{Chapter~\ref*{chap:results}}, the Metadata~based~Approach outperformed all other methods even though it was only ranked second in terms of F-Measure for the Climate Change dataset. A cleared picture can be drawn when looking at statistics combining the level of agreement and the judgment accuracy. In all these rankings this approach was ranked as the best performing method. This outcome was rather expected because, compared to the other approaches, concept descriptions were of highest quality while keeping the number of missing explanations at zero. Indeed, allowing expert participation produces qualitative results but is also very costly.  
+
+In contrast to our expectations the Dictionary~based~Approach has the most problems finding relevant descriptions. It performed even worse than having no Context at all when experiments used the tennis dataset. This has several reasons: From analysing the traffic of WordNik consultation, we know that some of the responses were irrelevant or were even missing for certain concepts. This is certainly true for concepts having special characters~(e.g. quotes) in their names or concepts which have multiple meanings associated. 
+
+One restriction that should be considered especially when validation large ontologies with several hundreds or even thousands of concepts is that WordNik limits the number API calls/requests in the basic setup we used. However, they offer paid plans\footnote{\url{https://developer.wordnik.com/pricing} accessed 2019/02/03} to users who need more calls or more data.
+
+A common phenomenon over all datasets was the relatively high number of Recall, even when omitting concept descriptions at all. This means that the crowd predominately declined relevant concepts, however, as mentioned earlier, this is relatively unproblematic because domain experts and ontology engineers rather prefer deleting a few concepts rather than missing some important ones. 
+
+Surprisingly, the Ontology based Approach worked pretty well even though it could not reach the top ranked method. 
 

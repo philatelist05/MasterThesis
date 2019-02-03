@@ -37,7 +37,13 @@ Unfortunately, none of our proposed methods can be applied in all contexts. Each
 The Ontology based Approach is highly influenced by the structure of the ontology because it processes subsumption relations. The algorithm fails 
 for flat hierarchies containing little or no parent-child relations. However, this restriction seems reasonable because limiting our viewpoint to subsumption relations was caused by some obstacles the hindered the integration of OWL~Verbalizer, a tool which also takes other relation types into account. 
 
+At the core of the Metadata based Approach are the processing of annotations that reside within the ontology. Unfortunately, none of our evaluated ontologies contained these metadata by nature which required us to add them by hand. We think though, that this requirement is rather feasible because our experiments showed that this approach outputs concepts descriptions of high quality.  In fact, in very specialised areas such as in biomedical domains ontologies are already contain such explanations. 
 
+For the Dictionary based Approach the situation is different because the design of the algorithm does not impose any restrictions on the internals of the validated dataset. The outcome rather depends on the responses from conducting the online dictionary \hyperref[sec:wordnik]{WordNik}. We observed two pecularities that may be considered when choosing a dataset:
+\begin{inparaenum}[i)]
+	\item the lookup failed when concept names contained special characters~(for example quotes), and
+	\item the response contained irrelevant example sentences when the meaning of the requested concept is ambiguous.
+\end{inparaenum}
 
 
 \textbf{RQ-IV} \emph{Which of the proposed methods work best? What are potential shortcomings and why?} 

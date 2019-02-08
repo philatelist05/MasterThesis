@@ -29,3 +29,7 @@ Then the question arises, how the results of this thesis can contribute to this 
 
 While this work tried to advance research, covering the intersection between Semantic Web technologies and Crowdsourcing, there are still several open questions that could not be addressed, because these new questions that are discussed in the remainder of this chapter arose during the course of this work.
 
+Unfortunately, the Dictionary~based~Approach had problems in situations when multiple meanings were associated with the same concept or names contained special characters. The reason for that was that \hyperref[sec:wordnik]{WordNik} could not handle theses cases properly. One could try to integrate other content providers to overcome these limitations. 
+
+At the time of writing this thesis we were unable to integrate OWL-Verbalizer, an open source tool aimed at producing texts from generic OWL ontologies, because it was originally written in was written in SWI-Prolog but our platform code requires the Java Virtual Machine~(JVM). Even though the tool authors are aware of this problem\footnote{\url{https://github.com/Kaljurand/owl-verbalizer/issues/13} accessed 2019/02/08}, the lack of compatibility with other programming languages still remains. Future research could possibly take a closer look at the Java~Interface~to~Prolog\footnote{\url{http://www.swi-prolog.org/packages/jpl/} accessed 2018/05/11} which offers a bidirectional interface between Java and Prolog that can be used to embed Prolog in Java as well as for embedding Java in Prolog. 
+

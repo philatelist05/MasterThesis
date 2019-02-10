@@ -3,8 +3,8 @@
 	% ROADMAP for the Abstract (1 page):
 	% 1st paragraph: Problem statement																		DONE
 	% 2ns paragraph: Motivation for writing the thesis														DONE
-	% 3rd paragraph: The contributions of the thesis (e.g. the proposed approaches)
-	% 4th paragraph: Evaluation (metrics, used datasets, RESULTS --- outcome of the evaluation part)
+	% 3rd paragraph: The contributions of the thesis (e.g. the proposed approaches)							DONE
+	% 4th paragraph: Evaluation (used datasets, RESULTS --- outcome of the evaluation part)					DONE
 	
 	
 	Validating the relevance of ontologies is considered an important task in the Semantic Web Lifecycle. This holds especially for 
@@ -21,5 +21,14 @@
 	were encoded within the ontology, the idea of the Dictionary~based~Approach is to form the explanations from example sentences by conducting the
 	online dictionary WordNik.
 	
+	For the analysis of all three approaches, we integrated these approaches into the existing uComp Protege Plugin which facilitates the
+	integration of crowdsourcing tasks for ontology validation from within the Protege ontology editor. The evaluation was performed on three
+	ontologies covering the domains of climate change, tennis and finance. For each dataset, the performance metrics Precision, Recall and F-Measure
+	were calculated to compare the methods against the existing approach. 
+	The results showed that the Metadata~based~Approach outperformed all other methods. The other two approaches had some difficulties in certain
+	situations, for example the Dictionary~based~Approach sometimes added inappropriate explanations, especially for concepts with multiple meanings
+	associated. Likewise, the Ontology~based~Approach had problems with loosely connected ontologies containing just a few subsumption relations.
+	However, all three approaches delivered results of higher quality than omitting descriptions, indicating that Context in Crowdsourcing tasks
+	is a cost-effective alternative of improving the performance of the crowd. 
 	
 \end{abstract}

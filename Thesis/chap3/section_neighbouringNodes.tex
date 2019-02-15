@@ -1,8 +1,9 @@
 \newacronym{ace}{ACE}{Attempto Controlled English}
 \newacronym{owl}{OWL}{Web Ontology Language}
+\newacronym{dl}{DL}{Description Logic}
 
 \section{Neighbouring Nodes}\label{sec:neighboring_nodes}
-This section starts with a short introduction into \gls{ace} which is a formal language, capable of expressing domain-specific knowledge by human readable sentences. In the literature~\cite{soton265735} this task is also known under the term \textit{ontology verbalisation}. Even though there exists \textit{\gls{owl}~Verbalizer}\footnote{\url{http://mcs.open.ac.uk/nlg/SWAT/Verbaliser.html} accessed 2018/04/30}, a tool which transforms generic ontologies into English sentences, we could not integrate it into the context enrichment process because 
+This section starts with a short introduction into \gls{ace} which is a formal language, capable of expressing domain-specific knowledge by human readable sentences. In the literature~\cite{soton265735} this task is also known under the term \textit{ontology verbalisation}. Even though there exists \textit{\gls{owl}~Verbalizer}\footnote{\url{http://mcs.open.ac.uk/nlg/SWAT/Verbaliser.html} accessed 2018/04/30}, a tool which transforms generic ontologies into English sentences, we could not integrate it into the Context enrichment process because 
 \begin{inparaenum}[1)]
 		\item \label{itm:owl_verbalizer_integration_problems_standalone} it was designed as a standalone tool written in SWI-Prolog\footnote{\url{http://www.swi-prolog.org/} accessed 2018/04/30} and
 		\item \label{itm:owl_verbalizer_integration_problems_ontology} it only accepts the whole ontology as input
@@ -25,7 +26,7 @@ To get a better understanding of \gls{ace}\footnote{\url{https://tinyurl.com/yc3
 \paragraph{Anaphoric References} If the meaning of a word or phrase is context dependent, recurring occurrences of these expressions are called \textit{Anaphoric References}. More specifically, the referring term~(\textit{anaphor}) relates to an antecedent expression. For example, given the sentence: \texttt{Tom arrived, but nobody noticed him}, the pronoun \texttt{him} relates to \texttt{Tom}. 
 
 \subsection{Ontology based Approach}\label{sec:enrichment_ontology_approach}
-Based on the \gls{ace}~rules describes above we implemented an algorithm which generates context descriptions based on subsumption relations. The pseudocode of the overall workflow is given in \hyperref[alg:neighbourhood]{Algorithm~\ref*{alg:neighbourhood}}. The notation to describe properties and relations is based on a formal Ontology~Description Logic~(DL)~\cite{baader2003}, string manipulations were formally defined in~\cite{hopcroft1969}.
+Based on the \gls{ace}~rules described above we implemented an algorithm which generates Context descriptions based on subsumption relations. The pseudocode of the overall workflow is given in \hyperref[alg:neighbourhood]{Algorithm~\ref*{alg:neighbourhood}}. The notation to describe properties and relations is based on a formal Ontology \gls{dl}~\cite{baader2003}, string manipulations were formally defined in~\cite{hopcroft1969}.
 
 \begin{algorithm}
 	\caption{Context Enrichment based on Neighbouring Nodes}\label{alg:neighbourhood}
@@ -44,10 +45,10 @@ Based on the \gls{ace}~rules describes above we implemented an algorithm which g
 	\end{algorithmic}
 \end{algorithm}
 
-The main work is done in two for-loops, which calculate context descriptions based on subsumption~$(\sqsubseteq)$ and string concatenation~$(\cup)$. To handle the case of missing subsumption relations, the output text $T$ is initialised to an empty string~(\hyperref[alg:neighbourhood:text_initialisation]{Line~\ref*{alg:neighbourhood:text_initialisation}}). Next, for every subsumption relation having the input concept $C$ in its signature, either $C's$ name or the anchor node's name is appended first.
+The main work is done in two for-loops, which calculate Context descriptions based on subsumption~$(\sqsubseteq)$ and string concatenation~$(\cup)$. To handle the case of missing subsumption relations, the output text $T$ is initialised to an empty string~(\hyperref[alg:neighbourhood:text_initialisation]{Line~\ref*{alg:neighbourhood:text_initialisation}}). Next, for every subsumption relation having the input concept $C$ in its signature, either $C's$ name or the anchor node's name is appended first.
 
 A simple ontology graph describing the university domain is given in~\hyperref[fig:simple_owl_graph]{Figure~\ref*{fig:simple_owl_graph}}. It will
-be used to illustrate the concept of the context generation algorithm.
+be used to illustrate the concept of the Context generation algorithm.
 \begin{figure}
 	 \centering
 	 \includegraphics[width=\textwidth]{drawio/University_Ontology_Example-Professor-Student}
@@ -55,7 +56,7 @@ be used to illustrate the concept of the context generation algorithm.
 \end{figure}
 If the concept \emph{Student} is taken as reference node, the algorithm first collects all subsumption relations having \emph{Student} as child node which gives $\{Person\}$ and generates $T=\{$ \emph{"Every Student is a Person"} $\}$. Next, all subsumption relations having \emph{Student} as parent node were collected which gives $\{$ \emph{Bachelor Student, Master Student, PhD Student} $\}$ and generates $T=\{$ \emph{"Every Student is a Person", "Every Bachelor Student is a Student", "Every Master Student is a Student", "Every PhD Student is a Student"} $\}$. 
 
-After context generation, our platform creates the questionnaire for crowd workers which also includes the actual question for ontology validation and some instructions for guidance. 
+After Context generation, our platform creates the questionnaire for crowd workers which also includes the actual question for ontology validation and some instructions for guidance. 
 \hyperref[fig:university_ontology_questionaire]{Figure~\ref*{fig:university_ontology_questionaire}} depicts the questionnaire presented to crowd workers for the university domain example. 
 \begin{figure}
 	 \centering

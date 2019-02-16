@@ -1,13 +1,15 @@
+\newacronym{ir}{IR}{Information Retrieval}
+
 \section{Evaluation Metrics}\label{sec:evaluation_metrics}
 To justify the improvements stated in the hypothesis, a detailed evaluation based on the metrics described below was performed. 
 
-We used two approaches to measure the performance of the crowd. The first one requires some reference data which is compared against empirical data. This approach, originating from Information Retrieval~(IR), is called the \textbf{Golden~Standard~Approach}~\cite{brank2005}. To quantify the improvements/degradations, several metrics exist. On a binary classification scheme, as illustrated in \hyperref[fig:binary_classification_metrics]{Figure~\ref*{fig:binary_classification_metrics}}, these metrics are defined as fractions of \emph{True~Positives~(TP)}, \emph{True~Negatives~(TN)}, \emph{False~Positives~(FP)} and \emph{False~Negatives~(FN)}.
+We used two approaches to measure the performance of the crowd. The first one requires some reference data which is compared against empirical data. This approach, originating from \gls{ir}, is called the \textbf{Golden~Standard~Approach}~\cite{brank2005}. To quantify the improvements/degradations, several metrics exist. On a binary classification scheme, as illustrated in \hyperref[fig:binary_classification_metrics]{Figure~\ref*{fig:binary_classification_metrics}}, these metrics are defined as fractions of \emph{True~Positives~(TP)}, \emph{True~Negatives~(TN)}, \emph{False~Positives~(FP)} and \emph{False~Negatives~(FN)}.
 \begin{figure}
 	 \centering
 	 \includegraphics[width=0.5\textwidth]{drawio/Binary_Classification_Scheme}
-	 \caption{Binary classification scheme for evaluation metrics of crowdsourcing tasks}\label{fig:binary_classification_metrics}
+	 \caption{Binary classification scheme for evaluation metrics of Crowdsourcing tasks}\label{fig:binary_classification_metrics}
 \end{figure}
-In crowdsourcing contexts this means that yes-questions are either correctly~(TP) or incorrectly~(FN) answered and no-questions are either correctly answered~(TN) or incorrectly~(FP).
+In Crowdsourcing contexts this means that yes-questions are either correctly~(TP) or incorrectly~(FN) answered and no-questions are either correctly answered~(TN) or incorrectly~(FP).
 
 \paragraph{Precision} Precision is interpreted as the ratio of correctly answered yes-questions over the total number of answered yes-questions:
 \[ Precision = \frac{TP}{TP + FP} \]
@@ -31,9 +33,9 @@ The other approach in measuring the crowd's performance does not rely on referen
 	 \caption{2x2 outcome table on Inter-rater Agreement for binary tasks}\label{fig:2x2_inter_rater_table}
 \end{figure}
 
-Several metrics exist to measure inter-rater reliability~\cite{zhao2013}. They primarily differ in to what extent judgements made by chance are taken into account. In our evaluation though, the following metric is used:
+Several metrics exist to measure inter-rater reliability~\cite{zhao2013}. They primarily differ to what extent judgements made by chance are taken into account. In our evaluation though, the following metric is used:
 \paragraph{Percentage Agreement}
 This is the simplest and most commonly used metric, which is calculated by dividing the number of agreeing raters~($A$) by the total rater count~($N$).
 \[ Agreement = \frac{A}{N} \]
 Despite its intuitive appeal, it has been criticised, that it does not take the agreements made by chance into account~\cite{hunt1986}. On the other hand, calculation of chance-adjusted metrics is more complex and have the potential to over- or undervalue the corrections for chance.  
-Moreover, reliability is assumed to be very high because crowdsourcing settings were adjusted to sort out random answers. A more detailed discussion on this topic is given, when the evaluation setup is described.  
+Moreover, reliability is assumed to be very high because Crowdsourcing settings were adjusted to sort out random answers.

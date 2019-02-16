@@ -1,15 +1,17 @@
+\newacronym{owl}{OWL}{Web Ontology Language}
+
 \section{Summary}\label{sec:approaches_summary}
 In this chapter we investigated three approaches that generate descriptions for selected concepts. The motivation was 
 the limitations imposed by the existing platform for crowd-sourced ontology validation~(uComp Protege Plugin). All our approaches
 were integrated as an extension of the platform which facilitates comparability of crowd worker performance, described extensively in
-the~\hyperref[chap:results]{Results chapter}. 
+the~\hyperref[chap:results]{Results Chapter}. 
 
 This first method~\hyperref[sec:enrichment_ontology_approach]{(\emph{Ontology based Approach})} uses the ontology graph, more precisely
 subsumption relations, to generate concept descriptions. For the second method~\hyperref[sec:enrichment_metaData_approach]{\emph{(Metadata
 based Approach)}} additional metadata encoded within the ontology is processed. Therefore, some parts of the Dublin~Core~Metadata~Set were used
-which define a standard set of OWL annotations that were extended with common semantics. The basic principle of the third 
+which define a standard set of \gls{owl} annotations that were extended with common semantics. The basic principle of the third 
 method~\hyperref[sec:enrichment_dictionary_approach]{(\emph{Dictionary based Approach})} was the retrieval of definitions from external sources. For that, WordNik, a freely available online dictionary for the English language which aggregates results from across the Web, was consulted to find example sentences for some selected concepts.
 
 To conclude, while all approaches presented in this chapter generate descriptions for selected concepts, for the \emph{Ontology~based~Approach}
 no additional preprocessing of the input ontology or dependency to an external service is required. On the other hand, the \emph{Metadata~based~Approach} requires little to significant human intervention depending on the number of annotations that were present in an ontology. Even though the \emph{Dictionary based Approach}
-requires registration and availability of an external service~(WordNik), showing the word usage by example sentences can be really helpful.
+requires availability of an external service~(WordNik), showing the word usage by example sentences can be really helpful.

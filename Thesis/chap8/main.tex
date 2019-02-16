@@ -1,6 +1,10 @@
+\newacronym{owl}{OWL}{Web Ontology Language}
+\newacronym{ace}{ACE}{Attempto Controlled English}
+\newacronym{api}{API}{Application Programming Interface}
+
 \chapter{Discussion \& Conclusion}\label{chap:discussion_and_conclusion}
 In this thesis we investigated the impacts of Crowdsourcing tasks containing contextual information. Our contributions
-are based on existing work covering the uComp Protege plugin~(see \hyperref[sec:ucomp_protege_plugin]{Section~\ref*{sec:ucomp_protege_plugin}}). It extends the Protege ontology editor by adding validation capabilities using Crowdsourcing techniques~(see \hyperref[sec:state_of_the_art_crowdsourcing]{Section~\ref*{sec:state_of_the_art_crowdsourcing}}).  
+are based on previous work covering the uComp Protege plugin~(see \hyperref[sec:ucomp_protege_plugin]{Section~\ref*{sec:ucomp_protege_plugin}}). It extends the Protege ontology editor by adding validation capabilities using Crowdsourcing techniques~(see \hyperref[sec:state_of_the_art_crowdsourcing]{Section~\ref*{sec:state_of_the_art_crowdsourcing}}).  
 
 While our specific research topic is relatively unexplored by current literature, e.g. no common definition of the term \guillemotright Context\guillemotleft~exist yet~(see \hyperref[sec:context_in_crowdsourcing_tasks_context]{Section~\ref*{sec:context_in_crowdsourcing_tasks_context}}),
 we identified a few approaches that experimented with Crowdsourcing tasks that had Context~(see \hyperref[sec:context_in_crowdsourcing_tasks_approaches]{Section~\ref*{sec:context_in_crowdsourcing_tasks_approaches}}). 
@@ -11,26 +15,26 @@ In the remainder of this chapter each research question is revisited by taken to
 
 The main research question examined in this thesis was:
  
-\textbf{RQ-I} \emph{Does the crowd perform better on context enriched Crowdsourcing tasks?}
+\textbf{RQ-I} \emph{Does the crowd perform better on Context enriched Crowdsourcing tasks?}
 
 Answering this question might seem difficult at first because measuring the crowd's performance depends on the metrics of measurement as well as the concrete evaluation settings. However, all proposed methods performed better with regard to F-Measure than omitting Context. Indeed all our experiments showed that in each dataset the number of correct classifications is considerably higher. 
 
-Clearly, the most important performance metric is F-Measure because it combines the benefits and minimises the drawbacks of both metrics at the same time. We observed that crowd workers tend to decline relevant concepts if they were unsure and Context was either missing or not relevant. Considering our approach is embedded in an ontology learning framework, this seems unproblematic because domain experts and ontology engineers rather prefer deleting a few concepts instead of missing some important ones~\cite{sabou2006}. 
+Clearly, the most important performance metric is F-Measure because it combines the benefits and minimises the drawbacks of Precision and Recall at the same time. We observed that crowd workers tend to decline relevant concepts if they were unsure and Context was either missing or not relevant. Considering our approach is embedded in an ontology learning framework, this seems unproblematic because domain experts and ontology engineers rather prefer deleting a few concepts instead of missing some important ones~\cite{sabou2006}. 
 
-Our experiments that were performed on three datasets including tennis, climate change and finance showed that our approach is feasible and improves the results of the ontology validation process. It has already been mentioned~\cite{mortensen2015, mortensen2016, wohlgenannt2016} that crowd-based ontology validation is a good alternative to manual validation, especially in situations where experts are unavailable, budget is limited or the ontology is just too large. 
+Our experiments that were performed on three datasets including tennis, climate change and finance showed that our approach is feasible and improves the results of the ontology validation process. It was already mentioned~\cite{mortensen2015, mortensen2016, wohlgenannt2016} that crowd-based ontology validation is a good alternative to manual validation, especially in situations where experts are unavailable, budget is limited or the ontology is just too large. 
 
 \textbf{RQ-II} \emph{What methods can be applied that generate Context?}
 
 We measured the performance of the crowd using three methods that generate concept descriptions requiring either manual intervention or being fully automated. All of our proposed approaches are discussed in detail in~\hyperref[chap:context_enrichment_methods]{Chapter~\ref*{chap:context_enrichment_methods}}. 
 
-The Ontology based Approach~(see \hyperref[sec:enrichment_ontology_approach]{Section~\ref*{sec:enrichment_ontology_approach}}) processes hierarchical relations that were encoded within the ontology. The biggest advantage of this approach is that it does not have any external dependencies and works fully automated. This algorithmic approach is recommended for ontologies containing a large number of concepts that are connected by subsumption relations. A potential pitfall of this method is that the full potential of ACE~(Attempto Controlled English) could not be leveraged because we identified certain obstacles that hinder the integration of OWL~Verbalizer, a tool that converts an ontology into a set of ACE sentences. Consequently, our algorithm generates the text by simple string replacement, not taking the word category~(e.g. singular or plural) into account. 
+The Ontology based Approach~(see \hyperref[sec:enrichment_ontology_approach]{Section~\ref*{sec:enrichment_ontology_approach}}) processes hierarchical relations that were encoded within the ontology. The biggest advantage of this approach is that it does not have any external dependencies and works fully automated. This algorithmic approach is recommended for ontologies containing a large number of concepts that are connected by subsumption relations. A potential pitfall of this method is that the full potential of \gls{ace} could not be leveraged because we identified certain obstacles that hinder the integration of \gls{owl}~Verbalizer, a tool that converts an ontology into a set of \gls{ace} sentences. Consequently, our algorithm generates the text by simple string replacement, not taking the word category~(e.g. singular or plural) into account. 
 
 The second approach~(Metadata based Approach --- see \hyperref[sec:enrichment_metaData_approach]{Section~\ref*{sec:enrichment_metaData_approach}})
 is based on metadata that resides within the ontology. In contrast to the other methods this approach requires some manual work. As a precondition 
 the metadata needs to be added by experts in a standardised format which served then as Context in Crowdsourcing tasks. Because the additional costs of manual preprocessing might not outweigh the benefits of high quality concept descriptions, it makes sense to preferably use this approach in very specialised areas such as in biomedical domains where ontologies are typically well documented and already contain explanations.
 
 The idea of the Dictionary based Approach~(see \hyperref[sec:enrichment_dictionary_approach]{Section~\ref*{sec:enrichment_dictionary_approach}})
-is that starting from a concept name, descriptions are built from consulting an online dictionary. WordNik was chosen as the provider of concept descriptions. These are formed from example sentences that contain the requested concept name. This approach has its strengths when concepts were created from sources that arise just recently. We also noticed that the lookup failed when concept names contained special characters or had multiple meanings associated. 
+is that starting from a concept name, descriptions are built from consulting an online dictionary. WordNik was chosen as the provider of concept descriptions. These are formed from example sentences that contain the requested concept name. This approach has its strengths when concepts are relatively generic. We also noticed that the lookup failed when concept names contained special characters or had multiple meanings associated. 
 To conclude, this approach is rather simple and easy to implement, however, it may have the potential to generate wrong results, especially for ambiguous concepts. 
 
 
@@ -38,9 +42,9 @@ To conclude, this approach is rather simple and easy to implement, however, it m
 
 Unfortunately, none of our proposed methods can be applied in all contexts. Each method has its own prerequisites:
 
-The Ontology based Approach highly depends on the ontology structure because it processes subsumption relations. The algorithm fails for flat hierarchies that contain little or no subsumption relation. However, this restriction seems reasonable because limiting our viewpoint to subsumption relations was caused by major obstacles that prevented the integration of OWL~Verbalizer, a tool which also takes other relation types into account. 
+The Ontology based Approach highly depends on the ontology structure because it processes subsumption relations. The algorithm fails for flat hierarchies that contain little or no subsumption relation. However, this restriction seems reasonable because limiting our viewpoint to subsumption relations was caused by major obstacles that prevented the integration of \gls{owl}~Verbalizer, a tool which also takes other relation types into account. 
 
-At the core of the Metadata based Approach are annotations that reside within the ontology. Unfortunately, none of our evaluated ontologies contained these metadata by nature which required us to add them by hand. We think though, that this requirement is rather feasible because our experiments showed that this approach generates concepts descriptions of high quality.  In fact, in very specialised areas such as in biomedical domains ontologies already contain such explanations. 
+At the core of the Metadata based Approach are annotations that reside within the ontology. Unfortunately, none of our evaluated ontologies contained these metadata by nature which required us to add them by hand. We think though, that this requirement is rather feasible because our experiments showed that this approach generates concept descriptions of high quality.  In fact, in very specialised areas such as in biomedical domains ontologies already contain such explanations. 
 
 For the Dictionary based Approach the situation is different because the design of the algorithm does not impose any restrictions on the internals of the validated dataset. The outcome rather depends on the responses from conducting the online dictionary \hyperref[sec:wordnik]{WordNik}. We observed two peculiarities that may be considered when choosing a dataset:
 \begin{inparaenum}[i)]
@@ -55,11 +59,11 @@ Based on the results presented in~\hyperref[chap:results]{Chapter~\ref*{chap:res
 
 In contrast to our expectations the Dictionary~based~Approach had the most problems in finding relevant descriptions. It performed even worse than omitting descriptions in the tennis dataset. This has several reasons: From analysing the traffic of WordNik consultation, we know that some of the responses were irrelevant or were even missing for certain concepts. This is certainly true for concepts having special characters~(e.g. quotes) in their names or concepts which have multiple meanings associated. 
 
-One restriction that should be considered especially when validating large ontologies containing several hundreds or even thousands of concepts is that WordNik limits the number API calls/requests in the basic setup. However, they offer paid plans\footnote{\url{https://developer.wordnik.com/pricing} accessed 2019/02/03} to users who need more calls or more data.
+One restriction that should be considered especially when validating large ontologies containing several hundreds or even thousands of concepts is that WordNik limits the number \gls{api} calls/requests in the basic setup. However, they offer paid plans\footnote{\url{https://developer.wordnik.com/pricing} accessed 2019/02/03} to users who need more calls or more data.
 
 A common phenomenon over all datasets was the relatively high number of Recall, even when omitting concept descriptions at all. This means that the crowd predominately declined relevant concepts, however, as mentioned earlier, this is relatively unproblematic because domain experts and ontology engineers rather prefer deleting a few concepts instead of missing some important ones. 
 
 Surprisingly, the Ontology~based~Approach worked pretty well even though its performance could not reach the top ranked method. Unquestionably,
-the quality of the descriptions directly correlates to the number of subsumption relations in an ontology. This works especially for learned ontologies because learning frameworks naturally create ontologies with deep hierarchies. But not all concepts were connected by subsumption relations, explanations were missing for those isolated concepts. 
+the quality of the descriptions directly correlates to the number of subsumption relations. This works especially for learned ontologies because learning frameworks naturally create ontologies with deep hierarchies. But not all concepts were connected by subsumption relations, explanations were missing for those isolated concepts. 
 
 

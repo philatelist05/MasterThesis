@@ -9,9 +9,9 @@ The results of the benchmark are presented in~\hyperref[table:bench_p_r_f_climat
 		\toprule
 		Method & Precision & Recall & F-Measure \\
 		\midrule
-		 Neighbouring Nodes & 0.758 & 0.805 & 0.781 \\
-		 Embedded Context & 0.732 & 0.831 & 0.778 \\
-		 External Source & 0.724 & 0.821 & 0.769 \\
+		 Ontology based Approach & 0.758 & 0.805 & 0.781 \\
+		 Metadata based Approach & 0.732 & 0.831 & 0.778 \\
+		 Dictionary based Approach & 0.724 & 0.821 & 0.769 \\
 		 None & 0.549 & 0.837 & 0.663 \\
 		\bottomrule
 	\end{tabularx}
@@ -27,25 +27,25 @@ We also measured the agreement ratio~(Inter-rater Agreement) in this dataset. \h
   	 \caption{Histogram plots of the Inter-rater Agreement}\label{fig:hist_agreement_climate_change_all}
 \end{sidewaysfigure}
 
-The highest agreement exhibits \emph{External~Source}, followed by \emph{None}. This is somewhat interesting as these are the methods with the lowest performance with regard to F-Measure. In fact, the agreement ratio just describes to what extent the responses coincide. From the observations in this dataset, it is hard, if not impossible, to draw conclusions solely based on agreement. In fact, when looking closely at the judgements with the highest agreement~ratio among incorrect answers, $16$ of $17$ judgements for External~Source and $3$ of $6$ judgements for Neighbouring~Nodes had Context added. Apparently, crowd workers agreed here on incorrect values even though that concept descriptions were available. 
+The highest agreement exhibits the \emph{Dictionary~based~Approach}, followed by \emph{None}. This is somewhat interesting as these are the methods with the lowest performance with regard to F-Measure. In fact, the agreement ratio just describes to what extent the responses coincide. From the observations in this dataset, it is hard, if not impossible, to draw conclusions solely based on agreement. In fact, when looking closely at the judgements with the highest agreement~ratio among incorrect answers, $16$ of $17$ judgements for the Dictionary~based~Approach and $3$ of $6$ judgements for the Ontology~based~Approach had Context added. Apparently, crowd workers agreed here on incorrect values even though concept descriptions were available. 
 
 \begin{figure}
     \centering
     \begin{subfigure}[b]{0.4\textwidth}
         \includegraphics[width=\textwidth]{plots/climate_change/hist_level_nn}
-        \caption{Neighbouring Nodes}
+        \caption{Ontology based Approach}
         \label{fig:hist_level_climate_change_nn}
     \end{subfigure}
     ~
     \begin{subfigure}[b]{0.4\textwidth}
         \includegraphics[width=\textwidth]{plots/climate_change/hist_level_ec}
-        \caption{Embedded Context}
+        \caption{Metadata based Approach}
         \label{fig:hist_level_climate_change_ec}
     \end{subfigure}
     ~
     \begin{subfigure}[b]{0.4\textwidth}
         \includegraphics[width=\textwidth]{plots/climate_change/hist_level_es}
-        \caption{External Source}
+        \caption{Dictionary based Approach}
         \label{fig:hist_level_climate_change_es}
     \end{subfigure}
     ~
@@ -57,7 +57,7 @@ The highest agreement exhibits \emph{External~Source}, followed by \emph{None}. 
     \caption{Histogram plots of the correct/incorrect judgements}\label{fig:hist_level_climate_change_all}
 \end{figure}
 
-To manifest our observations from above, bar plots~(illustrated in \hyperref[fig:hist_level_climate_change_all]{Figure~\ref*{fig:hist_level_climate_change_all}}) were created. It combines the agreement ratio with the amount of correct/incorrect judgements. Whereas a negative score indicates that more contributors agreed on incorrect answers or declined relevant concepts, a positive score shows that the majority of crowd worker's responses were correct. Indeed, when comparing the performance on level $-5$ \emph{External~Source} is on the same level as if Context was omitted. On the other hand, it shows the highest score of correct answers on level $5$.
+To manifest our observations from above, bar plots~(illustrated in \hyperref[fig:hist_level_climate_change_all]{Figure~\ref*{fig:hist_level_climate_change_all}}) were created. It combines the agreement ratio with the amount of correct/incorrect judgements. Whereas a negative score indicates that more contributors agreed on incorrect answers or declined relevant concepts, a positive score shows that the majority of crowd worker's responses were correct. Indeed, when comparing the performance on level $-5$ the \emph{Dictionary~based~Approach} is on the same level as if Context was omitted. On the other hand, it shows the highest score of correct answers on level $5$.
 
 Given the plots on the distribution of the correct/incorrect judgements from above, \hyperref[table:level_corr_incorr_climate_change]{Table~\ref*{table:level_corr_incorr_climate_change}} shows the summary statistics of agreement levels for each Context enrichment method. It confirms our observations made so far.
 \begingroup
@@ -67,9 +67,9 @@ Given the plots on the distribution of the correct/incorrect judgements from abo
 		\toprule
 		Method & mean & median & $1^{st}$ quartile & $3^{rd}$ quartile \\
 		\midrule
-		 Embedded Context & 2.04 & 3.00 & -1.00 & 5.00 \\
-		 Neighbouring Nodes & 1.98 & 3.00 & 1.00 & 5.00 \\
-		 External Source & 1.92 & 5.00 & -1.00 & 5.00 \\
+		 Metadata based Approach & 2.04 & 3.00 & -1.00 & 5.00 \\
+		 Ontology based Approach & 1.98 & 3.00 & 1.00 & 5.00 \\
+		 Dictionary based Approach & 1.92 & 5.00 & -1.00 & 5.00 \\
 		 None & 1.04 & 1.00 & -3.00 & 5.00 \\
 		\bottomrule
 	\end{tabularx}

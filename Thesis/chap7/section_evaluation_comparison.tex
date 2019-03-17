@@ -5,7 +5,7 @@ In the final evaluation step we take a broader look on the overall performance. 
 
 Based on our initial hypothesis which motivates Context enrichment, we have formulated a couple of questions that were answered in the next paragraphs:
 \paragraph{Which Context enrichment method performed best in general?}
-Our observations confirmed our initial hypothesis which suggests extending basic crowd-based ontology validation with Context. From the combined results of all datasets as shown in~\hyperref[table:bench_p_r_f_combined]{Table~\ref*{table:bench_p_r_f_combined}} it is evident that Embedded~Context worked best. In fact, it had not only the highest value of F-Measure but also the highest Precision and Recall. Indeed, this was rather expected due to the fact that Context was manually added. Obviously, no one has a better domain knowledge than the creators or maintainers of the ontology. 
+Our observations confirmed our initial hypothesis which suggests extending basic crowd-based ontology validation with Context. From the combined results of all datasets as shown in~\hyperref[table:bench_p_r_f_combined]{Table~\ref*{table:bench_p_r_f_combined}} it is evident that the Metadata~based~Approach worked best. In fact, it had not only the highest value of F-Measure but also the highest Precision and Recall. Indeed, this was rather expected due to the fact that Context was manually added. Obviously, no one has a better domain knowledge than the creators or maintainers of the ontology. 
 On the bottom end of the table is the previous approach without descriptions. 
 \begingroup
 \renewcommand{\arraystretch}{1.5}
@@ -14,9 +14,9 @@ On the bottom end of the table is the previous approach without descriptions.
 		\toprule
 		Method & Precision & Recall & F-Measure \\
 		\midrule
-		 Embedded Context & 0.797 & 0.921 & 0.854 \\
-		 Neighbouring Nodes & 0.787 & 0.887 & 0.834 \\
-		 External Source & 0.729 & 0.899 & 0.805 \\
+		 Metadata based Approach & 0.797 & 0.921 & 0.854 \\
+		 Ontology based Approach & 0.787 & 0.887 & 0.834 \\
+		 Dictionary based Approach & 0.729 & 0.899 & 0.805 \\
 		 None & 0.674 & 0.910 & 0.775 \\
 		\bottomrule
 	\end{tabularx}
@@ -27,7 +27,7 @@ On the bottom end of the table is the previous approach without descriptions.
 
 \paragraph{Did the crowd perform better with Context?}
 \hyperref[fig:results_accuracy_combined]{Figure~\ref*{fig:results_accuracy_combined}} depicts the combined accuracy of all methods which is calculated
-as the ratio between correct and incorrect judgements. For comparability, the exact number of judgements were written in labels. The performance of the top ranked method~(Embedded Context) is quite impressive. Concepts were judged correctly for nearly eighty percent~($78.4\%$), being an improvement of over $14\%$ compared to omitting concept descriptions. Even the last ranked enrichment method~(External Source), performs $4.6\%$ better.
+as the ratio between correct and incorrect judgements. For comparability, the exact number of judgements were written in labels. The performance of the top ranked method~(Metadata~based~Approach) is quite impressive. Concepts were judged correctly for nearly eighty percent~($78.4\%$), being an improvement of over $14\%$ compared to omitting concept descriptions. Even the last ranked enrichment method~(Dictionary~based~Approach), performs $4.6\%$ better.
 \begin{figure}
 	 \centering
 	 \includegraphics[width=0.75\textwidth]{plots/comparison/barplot_all_judgements}
@@ -49,7 +49,7 @@ In most cases though, we expect ontology engineers to have enough knowledge to p
 		\toprule
 		\multirow{2}{*}{\emph{Concept}} & \multicolumn{4}{c}{\emph{Methods}} & \emph{Accuracy}\\
 		\cmidrule(lr){2-5} \cmidrule(lr){6-6} 
-		 & EC & NN & ES & NONE & Total\\
+		 & Meta & Onto & Dict & None & Total\\
 		\midrule
 		sceptic & 0/5 & 0/5 & 0/5 & 0/5 & 0/20 \\
 		greenhouse & 0/5 & 1/5 & 0/5 & 0/5 & 1/20 \\
@@ -59,7 +59,7 @@ In most cases though, we expect ontology engineers to have enough knowledge to p
 		production & 1/5 & 1/5 & 0/5 & 0/5 & 2/20 \\
 		\bottomrule
 	\end{tabularx}
-	\caption{Concepts where most crowd workers had problems~(EC=Embedded Context, NN=Neighbouring Nodes, ES=External Source, NONE=No Context)}
+	\caption{Concepts where most crowd workers had problems~(Meta=Metadata based Approach, Onto=Ontology based Approach, Dict=Dictionary based Approach, None=No Context)}
 	\label{table:combined_evaluation_bad_concepts}
 \end{table}
 \endgroup

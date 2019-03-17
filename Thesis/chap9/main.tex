@@ -23,13 +23,6 @@ We presented three novel methods that enrich Crowdsourcing tasks with contextual
 
 All three approaches that were evaluated on three ontologies covering the domains of climate change, tennis and finance worked better than providing no Context at all. The Metadata~based~Approach outperformed all other methods in terms of Precision and Recall, leaving little room for future improvements. The other two approaches had some difficulties in certain situations, for example the Dictionary~based~Approach sometimes added inappropriate explanations, especially for concepts with multiple meanings associated. Likewise, the Ontology~based~Approach is limited to highly connected ontologies containing many subsumption relations. 
 
-Before discussing open questions that needs investigation in future work, we take a look at the beginnings of this thesis. We explain, how our contributions relate to the overarching vision of providing an ontology learning solution which beats current implementations. 
-
-It started by the publication~\cite{liu2005semi} which described the initial ontology learning framework. It generates the target ontology by conducting various sources to continuously extend a seed ontology. The framework underwent multiple revisions~\cite{weichselbraun2010_a, weichselbraun2010_b} until validation capabilities using Crowdsourcing techniques were integrated into the framework~\cite{wohlgenannt2012}.  
-At that time human evaluation of learned ontologies was just at the beginning, leaving much room for improvements. 
-
-Then the question arises, how the results of this thesis can contribute to this vision. This unexplored topic needs to be addressed by future research, possibly only after the improvement suggestions that are related to the approach taken by this thesis are in place. 
-
 While this work tried to advance research, covering the intersection between Semantic Web technologies and Crowdsourcing, there are still several open questions that could not be addressed, because these new questions that are discussed in the remainder of this chapter arose during the course of this work.
 
 Unfortunately, the Dictionary~based~Approach had problems in situations when multiple meanings were associated with the same concept or names contained special characters. The reason for that was that \hyperref[sec:wordnik]{WordNik} could not handle these cases properly. One could try to integrate other content providers to overcome these limitations. 

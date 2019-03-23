@@ -25,15 +25,22 @@ All three approaches that were evaluated on three ontologies covering the domain
 
 While this work tried to advance research, covering the intersection between Semantic Web technologies and Crowdsourcing, there are still several open questions that could not be addressed, because these new questions that are discussed in the remainder of this chapter arose during the course of this work.
 
+We identified the following topics that can be addressed in future work:
+
+\paragraph{Extending the Dictionary~based~Approach by using other content providers}
 Unfortunately, the Dictionary~based~Approach had problems in situations when multiple meanings were associated with the same concept or names contained special characters. The reason for that was that \hyperref[sec:wordnik]{WordNik} could not handle these cases properly. One could try to integrate other content providers to overcome these limitations. 
 
+\paragraph{Extending the Ontology~based~Approach to use \gls{owl}-Verbalizer}
 At the time of writing this thesis we were unable to integrate \gls{owl}-Verbalizer, an open source tool aimed at producing texts from generic \gls{owl} ontologies, because it was originally written in SWI-Prolog but our platform runs on the \gls{jvm}. Even though the tool authors are aware of this problem\footnote{\url{https://github.com/Kaljurand/owl-verbalizer/issues/13} accessed 2019/02/08}, the lack of compatibility with other programming languages still remains. Future research could possibly take a closer look at the Java~Interface~to~Prolog\footnote{\url{http://www.swi-prolog.org/packages/jpl/} accessed 2018/05/11} which offers a bidirectional interface between Java and Prolog that can be used to embed Prolog in Java as well as for embedding Java in Prolog. 
 
+\paragraph{Making the proposed methods more generic}
 Researchers could also investigate more in the direction of making our approaches more generic. This holds in particular for the Ontology~based~Approach because it only takes subsumption relations into account. A huge improvement would be to also include object properties, however, major changes would be required because the algorithm needs to consider besides concepts also individuals. 
 
+\paragraph{Covering other tasks of ontology validation}
 To achieve the goal of a general purpose solution for ontology validation, our methods should be extended to cover other tasks as well.
 The \hyperref[sec:ucomp_protege_plugin]{uComp~Protege~Plugin} could serve as a starting point here. Besides verification of domain relevance, other tasks include verification of relation correctness, specification of relation type and verification of domain and range. The challenging part here is to adapt the workflow of these tasks in such a way that the Crowdsourcing tasks include contextual information. 
 
+\paragraph{Integrating our contributions into an ontology learning solution}
 The last open topic relates to the big picture presented in the beginning of this chapter where our contributions provide just a small portion of work that is needed towards a fully fledged ontology learning framework. In that vein, future studies need to evaluate which of the approaches of ontology validation work best~(e.g. automated or manual ones) and possibly provide a hybrid approach which combines several of these approaches.
 
 

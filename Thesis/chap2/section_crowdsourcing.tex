@@ -55,16 +55,9 @@ Figure~Eight\footnote{\url{https://www.figure-eight.com/} accessed 2018/07/28} h
 Despite the sheer amount of Crowdsourcing use cases, we focus on efforts that have been made on data processing. The common term describing that concept is \emph{Data~Mining}, defined as \emph{"the extraction of implicit, previously unknown, potentially useful information from data."}~\cite{witten2016}
 Indeed, that term primarily relates to tasks involving \gls{ai}, which is also reflected by the fact that the book's~\cite{witten2000} original title was changed from \emph{Practical machine learning} to \emph{Data Mining: Practical Machine Learning Tools and Techniques with Java Implementations}.~\cite{bouckaert2010} Even though quite some efforts were made in developing new and improving existing algorithms and approaches in \gls{ai}, there are still situations in which Crowdsourcing performs better. Researchers have identified various types of data mining tasks that can be crowd-sourced which are discussed in the next paragraphs~\cite{xintong2014, barbier2012, sabou2012}:
 
-\paragraph{Classification} The first task utilising Crowdsourcing targets solving classification problems. From a data mining perspective, a classifier is created to extract features from datasets which is then used for classification. A widely known example is \gls{captcha}~\cite{ahn2003}. The goal was to determine whether or not the user is a human. 
-It is implemented as a challenge-response test in which users were asked to read and decipher a distorted word or phrase such as shown in~\hyperref[fig:captcha]{Figure~\ref*{fig:captcha}}.
-\begin{figure}
-	 \centering
-	 \includegraphics[width=0.3\textwidth]{drawio/CAPCHA}
-	 \caption{A \gls{captcha} for the word \guillemotright pump\guillemotleft~(depicted from~\cite{ahn2003})}\label{fig:captcha}
-\end{figure}  
-\gls{captcha}s are mainly used for security purposes such as preventing bots from performing certain actions~(e.g. spamming). They have been successfully applied in many applications including online polls, free email services and search engines, to name just a few. 
+\paragraph{Classification} Classification is the process of deciding to which class or category an item belongs to. In contrast to Clustering, all classes are known beforehand, the goal is to decide to which class an item belongs to. For example, researchers have investigated the problem of assigning images to a pre-defined set of classes~\cite{herrera2014}. In their study, the crowd was used to verify and possibly correct the classification done previously by an algorithm. 
 
-\paragraph{Clustering} Clustering is a technique which groups data into classes or clusters with the goal of finding similar items. In contrast to Classification, the classes or clusters are not known before.
+\paragraph{Clustering} Clustering is a technique which groups data into classes or clusters with the goal of finding similar items. In contrast to Classification, the classes or clusters are not known beforehand.
 For example, in a study~\cite{vinayak2016} crowd workers had to compare images and judge whether they are similar or not. The goal was to group similar images by collecting labels of images, e.g, of birds or dogs of different kinds and breeds. 
 
 \paragraph{Semi-Supervised Learning} Here, some labeled data together with some unlabeled data is used as input of a learning

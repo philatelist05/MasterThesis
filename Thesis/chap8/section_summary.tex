@@ -1,0 +1,22 @@
+
+
+%SUMMARY%
+%1.st paragraph: briefly describe the motivation and approach
+%2.nd paragraph: briefly describe proposed methods
+%3.rd paragraph: briefly describe the results
+
+\section{Summary}\label{sec:conclusion_and_futue_work_summary}
+%%Summary: Summary & Future Work%%
+In this thesis we investigated whether contextual information in Crowdsourcing tasks helped to achieve better results for performing ontology validation.
+Crowdsourcing is a technique of distributing small tasks to a typically large group of human workers. It offers a cost effective method of solving tasks which are traditionally hard for machines but easily solvable by humans. 
+Our contributions are based on previous work covering the uComp Protege plugin.
+
+Unfortunately, crowd workers often do not had enough knowledge to complete Crowdsourcing tasks. They need additional contextual information which improves their understanding.
+Before investigating our approaches which generate contextual information, we had to give a common definition of \guillemotright Context\guillemotleft: 
+Context refers to any sort of additional information that is supplied with a Crowdsourcing task to improve its understanding in such a way that it positively affects the crowds performance and the result quality. Furthermore, we do not set a limitation on the type or format of Context that is provided. 
+Even tough there exists some approaches that use Context in Crowdsourcing tasks, they all use a different notion of Context. Furthermore, none of these generate contextual information.
+
+We presented three novel methods that enrich Crowdsourcing tasks with contextual information to validate the relevance of concepts for a particular domain of interest. First, the Ontology~based~Approach processes hierarchical relations. Second, the Metadata~based~Approach generates descriptions based on annotations that are encoded within the ontology. Third, the idea of the Dictionary~based~Approach is to build up contextual information from example sentences by consulting the online dictionary WordNik.
+
+The evaluation was performed on three ontologies covering the domains of climate change, tennis and finance. The Metadata~based~Approach outperformed all other methods in terms of Precision and Recall, leaving little room for future improvements. The other two approaches had some difficulties in certain situations, for example the Dictionary~based~Approach sometimes added inappropriate explanations, especially for concepts with multiple meanings associated. Likewise, the Ontology~based~Approach is limited to highly connected ontologies containing many subsumption relations. 
+

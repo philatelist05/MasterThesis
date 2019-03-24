@@ -1,14 +1,6 @@
 \newacronym{owl}{OWL}{Web Ontology Language}
 \newacronym{jvm}{JVM}{Java Virtual Machine}
 
-\chapter{Summary \& Future Work}\label{chap:summary_and_future_work}
-
-
-%SUMMARY%
-%1.st paragraph: briefly describe the motivation and approach									DONE
-%2.nd paragraph: briefly describe proposed methods												DONE
-%3.rd paragraph: briefly describe the results													DONE
-
 %FUTURE WORK%
 %4.th ff paragraphs: describe big pricture														DONE
 	% Proposed solution is embedded into bigger context (e.g. ontology learning solution)		DONE
@@ -17,14 +9,7 @@
 %paragraph: add transition text to open questions --- future tasks								DONE
 %paragraph: for each open task add a new paragraph here											DONE
 
-%%SUMMARY%%
-In this thesis we investigated whether contextual information in Crowdsourcing tasks helped to achieve better results for performing ontology validation using Crowdsourcing techniques. Crowdsourcing is a technique of distributing small tasks to a typically large group of human workers. It offers a cost effective method of solving tasks which are traditionally hard for machines but easily solvable by humans. Contextual information is any kind of additional information that is supplied with a crowdsourcing task that improves the understanding of the task goals.
-
-We presented three novel methods that enrich Crowdsourcing tasks with contextual information to validate the relevance of concepts for a particular domain of interest. Whereas the Ontology~based~Approach processes hierarchical relations, the Metadata~based~Approach generates descriptions based on annotations that were encoded within the ontology, the idea of the Dictionary~based~Approach is to form the explanations from example sentences by conducting the online dictionary \hyperref[sec:wordnik]{WordNik}.
-
-All three approaches that were evaluated on three ontologies covering the domains of climate change, tennis and finance worked better than providing no Context at all. The Metadata~based~Approach outperformed all other methods in terms of Precision and Recall, leaving little room for future improvements. The other two approaches had some difficulties in certain situations, for example the Dictionary~based~Approach sometimes added inappropriate explanations, especially for concepts with multiple meanings associated. Likewise, the Ontology~based~Approach is limited to highly connected ontologies containing many subsumption relations. 
-
-%%%%%%%%FUTURE WORK
+\section{Future Work}\label{sec:future_work}
 While this work tried to advance research, covering the intersection between Semantic Web technologies and Crowdsourcing, there are still several open questions that could not be addressed, because these new questions that are discussed in the remainder of this chapter arose during the course of this work.
 
 We identified the following topics that can be addressed in future work:
@@ -44,6 +29,3 @@ The \hyperref[sec:ucomp_protege_plugin]{uComp~Protege~Plugin} could serve as a s
 
 \paragraph{Integrating our contributions into an ontology learning solution}
 The last open topic relates to the big picture presented in the beginning of this chapter where our contributions provide just a small portion of work that is needed towards a fully fledged ontology learning framework. In that vein, future studies need to evaluate which of the approaches of ontology validation work best~(e.g. automated or manual ones) and possibly provide a hybrid approach which combines several of these approaches.
-
-
-

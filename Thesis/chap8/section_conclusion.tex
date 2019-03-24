@@ -2,18 +2,8 @@
 \newacronym{ace}{ACE}{Attempto Controlled English}
 \newacronym{api}{API}{Application Programming Interface}
 
-\chapter{Discussion \& Conclusion}\label{chap:discussion_and_conclusion}
-%%SUMMARY%%
-In this thesis we investigated the quality improvements of Crowdsourcing tasks containing contextual information. Our contributions
-are based on previous work covering the uComp Protege plugin~(see \hyperref[sec:ucomp_protege_plugin]{Section~\ref*{sec:ucomp_protege_plugin}}). It extends the Protege ontology editor by adding validation capabilities using Crowdsourcing techniques~(see \hyperref[sec:state_of_the_art_crowdsourcing]{Section~\ref*{sec:state_of_the_art_crowdsourcing}}).  
-
-While our specific research topic is relatively unexplored by current literature, e.g. no common definition of the term \guillemotright Context\guillemotleft~exist yet~(see \hyperref[sec:context_in_crowdsourcing_tasks_context]{Section~\ref*{sec:context_in_crowdsourcing_tasks_context}}),
-we identified a few approaches that experimented with Crowdsourcing tasks that had Context~(see \hyperref[sec:context_in_crowdsourcing_tasks_approaches]{Section~\ref*{sec:context_in_crowdsourcing_tasks_approaches}}). 
-
-This thesis presents three novel methods that enrich Crowdsourcing tasks with contextual information to validate the relevance of concepts for a particular domain of interest. Whereas the Ontology~based~Approach processes hierarchical relations, the Metadata~based~Approach generates descriptions based on annotations that were encoded within the ontology, the idea of the Dictionary~based~Approach is to form the explanations from example sentences by conducting the online dictionary \hyperref[sec:wordnik]{WordNik}.
-
-%%%ANSWERS TO RQ%%
-In the remainder of this chapter each research question is revisited and answered by taking into consideration the results from our experimental evaluation~(see \hyperref[chap:results]{Chapter~\ref*{chap:results}}) and drawing final conclusions that point future research in novel directions. 
+\section{Conclusion}\label{sec:conclusion}
+In this section each research question is revisited and answered by taking into consideration the results from our experimental evaluation~(see \hyperref[chap:results]{Chapter~\ref*{chap:results}}) and drawing final conclusions that point future research in novel directions. 
 
 The main research question examined in this thesis was:
  
@@ -67,5 +57,4 @@ A common phenomenon over all datasets was the relatively high Recall, even when 
 
 Surprisingly, the Ontology~based~Approach worked pretty well even though its performance could not reach the top ranked method. Unquestionably,
 the quality of the descriptions directly correlates to the number of subsumption relations. This works especially for learned ontologies because learning frameworks naturally create ontologies with deep hierarchies. But since all concepts were connected by subsumption relations, explanations were missing for those isolated concepts. 
-
 

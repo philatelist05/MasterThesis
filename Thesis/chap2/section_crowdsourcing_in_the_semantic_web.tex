@@ -10,6 +10,7 @@
 \newacronym{ie}{IE}{Information Extraction}
 \newacronym{ui}{UI}{User Interface}
 \newacronym{url}{URL}{Uniform Resource Locator}
+\newacronym{led}{LED}{Listening Experience Database}
 
 % References to Crowdsourcing works in LD-LifeCycle
 
@@ -17,13 +18,16 @@
 %
 %
 % 2.) DATA STORAGE AND INDEXING
-%
+% LED: curated and crowdsourced Linked Data on Music Listening Experiences~\cite{adamou2014}
 %
 % 3.) DATA REVISION AND AUTHORING
 %
 %
 % 4.) DATA LINKING
-%
+% ZenCrowd: Entity Linking by the Crowd  
+% -) Combine both algorithmic and manual linking
+% -) Automate manual linking via crowdsourcing    
+% -) Dynamically assess human workers with a probabilistic reasoning framework    
 %
 % 5.) CLASSIFICATION AND ENRICHMENT
 %
@@ -34,10 +38,11 @@
 % 7.) DATA CLEANSING AND EVOLUTION
 %
 %
-% 8.) DATA BROWSING AND QUERYING
+% 8.) DATA BROWSING AND QUERYING --> DONE
 % Lexitags~\cite{veres2013}: e.g. use semantic Tags for better browsing
 % MaDaME: tool which uses Lexitags 
 %
+% CrowdQ: Crowdsourced Query Understanding
 
 \section{Crowdsourcing in the Semantic Web}\label{sec:state_of_the_art_crowdsourcing_and_the_semantic_web}
 This section starts by briefly introducing the Semantic Web and the driving ideas in it's early stages. The central part of this section is dedicated to discussing the interplay between the Semantic Web and Crowdsourcing by the \textit{Linked~Data~Life-Cycle}. 
@@ -73,10 +78,9 @@ It is obvious that these data would perfectly fit into the Linked Data model~\ci
 Wikidata content is also available in \gls{rdf} which is accessible at \url{http://tools.wmflabs.org/wikidata-exports/rdf/}. Unfortunately, this data is provided via dump files\footnote{\url{https://tools.wmflabs.org/wikidata-exports/rdf/exports.html} accessed 2018/08/06} only.
 
 \paragraph{Data Storage and Indexing} 
-Up to this stage, the data was already mapped to the \gls{rdf} data model but needs to be stored and indexed efficiently. Researchers have put a lot
-of effort into this field because efficient storage and indexing mechanisms are fundamental for the adoption of Linked Data. Due to efficient querying and storage capabilities of relational databases resulting from decades of research in this area, it makes sense to adopt these approaches for Linked Data as well~\cite{abadi2007}. However, to support storing very large quantities of data there exist custom solutions too~\cite{broekstra2002}. 
+Up to this stage, the data was already mapped to the \gls{rdf} data model but needs to be stored and indexed efficiently. Researchers have put a lot of effort into this field because efficient storage and indexing mechanisms are fundamental for the adoption of Linked Data. Due to efficient querying and storage capabilities of relational databases resulting from decades of research in this area, it makes sense to adopt these approaches for Linked Data as well~\cite{abadi2007}. However, to support storing very large quantities of data there exist custom solutions too~\cite{broekstra2002}. Targeting Linked Data indexing, various approaches and principles have been applied successfully. The common aspects of all approaches is their focus on \emph{Data Compression} and \emph{Data Pruning}~\cite{svoboda2011}. Whereas the basic idea of Data Compression is to minimise the footprint of the index, Data Pruning is a technique for avoiding unnecessary data processing. 
 
-Targeting Linked Data indexing, various approaches and principles have been applied successfully. The common aspects of all approaches is their focus on \emph{Data Compression} and \emph{Data Pruning}~\cite{svoboda2011}. Whereas the basic idea of Data Compression is to minimise the footprint of the index, Data Pruning is a technique for avoiding unnecessary data processing. 
+Whereas Data Indexing is traditionally done solely by machines, there are some approaches that combine Crowdsourcing and Semantic principles for Data Storage. One of them is the \gls{led}\footnote{\url{https://led.kmi.open.ac.uk/} accessed 2019/04/01}, a semantic knowledge base of accounts of listening to music in documented sources~\cite{adamou2014}. \gls{led} stores listening evidences of music across history and musical genres. Its dataset includes more than \numprint{10000} entries collected from various sources, volunteers from the crowd being one of them. 
 
 \paragraph{Data Revision and Authoring} In this stage users are given the opportunity to create new or modify existing semantic information. 
 This is called \textit{\gls{sca}} which is defined in the literature as~\textit{"a tool-supported

@@ -17,14 +17,14 @@
 % 1.) EXTRACTION
 %
 %
-% 2.) DATA STORAGE AND INDEXING
+% 2.) DATA STORAGE AND INDEXING --> DONE
 % LED: curated and crowdsourced Linked Data on Music Listening Experiences~\cite{adamou2014}
 %
-% 3.) DATA REVISION AND AUTHORING
+% 3.) DATA REVISION AND AUTHORING 
+%  Mechanical Protege
 %
-%
-% 4.) DATA LINKING
-% ZenCrowd: Entity Linking by the Crowd  
+% 4.) DATA LINKING --> DONE
+% ZenCrowd~\cite{demartini2012}: Entity Linking by the Crowd  
 % -) Combine both algorithmic and manual linking
 % -) Automate manual linking via crowdsourcing    
 % -) Dynamically assess human workers with a probabilistic reasoning framework    
@@ -80,6 +80,7 @@ Wikidata content is also available in \gls{rdf} which is accessible at \url{http
 \paragraph{Data Storage and Indexing} 
 Up to this stage, the data was already mapped to the \gls{rdf} data model but needs to be stored and indexed efficiently. Researchers have put a lot of effort into this field because efficient storage and indexing mechanisms are fundamental for the adoption of Linked Data. Due to efficient querying and storage capabilities of relational databases resulting from decades of research in this area, it makes sense to adopt these approaches for Linked Data as well~\cite{abadi2007}. However, to support storing very large quantities of data there exist custom solutions too~\cite{broekstra2002}. Targeting Linked Data indexing, various approaches and principles have been applied successfully. The common aspects of all approaches is their focus on \emph{Data Compression} and \emph{Data Pruning}~\cite{svoboda2011}. Whereas the basic idea of Data Compression is to minimise the footprint of the index, Data Pruning is a technique for avoiding unnecessary data processing. 
 
+%Crowdsourcing example LED \cite{adamou2014}%
 Whereas Data Indexing is traditionally done solely by machines, there are some approaches that combine Crowdsourcing and Semantic principles for Data Storage. One of them is the \gls{led}\footnote{\url{https://led.kmi.open.ac.uk/} accessed 2019/04/01}, a semantic knowledge base of accounts of listening to music in documented sources~\cite{adamou2014}. \gls{led} stores listening evidences of music across history and musical genres. Its dataset includes more than \numprint{10000} entries collected from various sources, volunteers from the crowd being one of them. 
 
 \paragraph{Data Revision and Authoring} In this stage users are given the opportunity to create new or modify existing semantic information. 
@@ -94,11 +95,23 @@ The central entity of the semantic ecosystem is a semantic document which holds 
 In information management, semantic documents serve a number of purposes such as information searching, information retrieval, information presentation, information integration, personalisation, reusability and interoperability~\cite{khalili2013}. For that reason there exists a research area dealing with the main fields of semantic content management. In particular, it covers the manipulation, creation and processing of semantic content. Users do not directly interact with semantic documents, but rather through a uniform \gls{ui}. A number of quality attributes for the assessment of \gls{ui}-features of \gls{sca}-Systems were proposed~\cite{khalili2013}. The goal was to improve usability, a measure of the effectiveness, efficiency and satisfaction a user achieves. 
 
 A number of tools for semantic content authoring were developed. A prominent example is OntoWiki~\cite{auer2006}, an open-source Semantic Wiki originally focusing on collaboration but evolved as an ontology editor and platform for knowledge acquisition. It was inspired by other Wiki systems but primarily focusing on managing \gls{rdf} knowledge bases.  Another tool, adding Crowdsourcing capabilities to ontology development activities is Mechanical~Protege\footnote{\url{http://people.aifb.kit.edu/yt2652/mechanicalProtege/}}. The tool is actually a plug-in for the ontology editor Protege\footnote{\url{https://protege.stanford.edu/} accessed 2018/08/07}. 
+%EXTEND THIS PARAGRAPH OF MECHANICAL PROTEGE HERE%
 
 \paragraph{Data Linking}
 The next principle according to the Linked Data Life-Cycle is the Data Linking principle. It is by far the most important principle because it 
-underlines the distributed nature of Linked Data. Instead of the traditional definition of data where information is stored in silos with little or no 
-relations to the outside, Linked Data sources are distributed, containing many links to other data sources. This paradigm perfectly fits into the distributed nature of the Web, turning it into a source of distributed information optimised for querying and browsing. 
+underlines the distributed nature of Linked Data. Instead of the traditional definition of data where information is stored in silos with little or no relations to the outside, Linked Data sources are distributed, containing many links to other data sources. This paradigm perfectly fits into the distributed nature of the Web, turning it into a source of distributed information optimised for querying and browsing. 
+
+%Crowdsourcing example ZenCrowd~\cite{demartini2012}%
+Using automated techniques of entity linking can be quite challenging, since parsing and disambiguating natural language
+text is considered a difficult task when done algorithmically. The process of relating entities extracted from text to their equivalents in the Linked Data space can be done automated~(\emph{Algorithmic Matching}) or with human intervention~(\emph{Manual Matching}). ZenCrowd~\cite{demartini2012} combines those two approaches by first trying the algorithmic approach and then improving the results by involving human workers. The main steps of the linking process are shown in~\hyperref[fig:zencrowd]{Figure~\ref*{fig:zencrowd}}.
+\begin{figure}
+	 \centering
+	 \includegraphics[width=\textwidth]{graphics/zencrowd}
+	 \caption{The linking process of ZenCrowd~(adopted from~\cite{demartini2012})}
+	 \label{fig:zencrowd}
+\end{figure}
+The process takes as input a collection of HTML pages. Those pages were then inspected by the \emph{Entity Extractors} to detect relevant textual entities. In the next step \emph{Algorithmic Matchers} try to create links to semantically similar entities from the linked data set. The results of this process are stored in a \emph{Probabilistic Network} which is taken by the \emph{Decision Engine} to decide whether the results are useful or not. In the latter case, the HTML pages are passed to the \emph{Micro-Task Manager} which uses Crowdsourcing to improve the results. 
+
 
 \paragraph{Classification and Enrichment}
 Over time, Linked Data sources grow in size and expressiveness. This principle refers to the process of extending the expressiveness and richness 
@@ -116,5 +129,6 @@ After the quality is analysed and problems are detected, strategies for fixing t
 Last, users have the opportunity to explore the Linked Data available on the Web in a fast and efficient way. A prominent way to query Linked Data is
 \gls{sparql}\footnote{\url{https://www.w3.org/TR/rdf-sparql-query/} accessed 2019/01/17}, a query language specifically designed to retrieve and manipulate Linked Data. There are similarities between \gls{sql} and \gls{sparql} in terms of query structure, but there are also differences.
 
+%Crowdsourcing example LexiTags~\cite{veres2013}%
 LexiTags~\cite{veres2013} is an example which combines Semantic Browsing and Crowdsourcing. It was initially designed as a tool for content management and emerged to a platform that expose crowdsourced semantic metadata to clients, both for creation and consumption of metadata. Its main interface keeps a list of bookmarked URLs, allowing users to add and edit semantic tags. Semantic tagging is a very powerful innovation which helps users to navigate through large datasets by constructing search queries from a set of semantic tags. 
 

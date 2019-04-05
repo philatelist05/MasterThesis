@@ -32,7 +32,7 @@
 % 5.) CLASSIFICATION AND ENRICHMENT
 %
 %
-% 6.) DATA ANALYSIS AND QUALITY
+% 6.) DATA ANALYSIS AND QUALITY --> DONE
 % e.g. ontology validation
 %
 %
@@ -129,9 +129,14 @@ base is typically enriched by analysing existing data to improve or extend its s
 Due to the distributed nature of Linked Data where information originating from heterogeneous data sources is merged, the quality of the resulting
 dataset is often varying. Therefore, a key factor for the adoption of Linked Data is ensuring its quality by identifying and fixing common problems. Before that, it is necessary to determine the quality of the existing dataset. For that, metrics which measure the quality in terms of accuracy, completeness, adequacy and degree of understandability need to be defined. \cite{zaveri2016} defines useful quality metrics along with 26 quality dimensions that help to measure the quality of the Linked Data.
 
+%TODO Crowdsourcing example \cite{mortensen2015}%
+In~\cite{mortensen2015} the authors analysed 200 taxonomic relations of SNOMED~CT, a widely used ontology mainly used in biomedical contexts. They used Crowdsourcing to detect inconsistencies and address the challenges of scalable ontology verification. The Crowdsourcing task interface shows the description of the evaluated relation and set of related concept definitions. The crowd worker can then either agree~(by answering \emph{yes}) or disagree~(by answering \emph{no}) on the presented statements. 
+
+
 \paragraph{Data Cleansing and Evolution}
 After the quality is analysed and problems are detected, strategies for fixing these problems are needed. In constantly evolving datasets with millions or even billions of \gls{rdf} triples it is important to keep the links between datasets. Likewise, conflicts and discrepancies in datasets can cause real trouble. Repairing such inconsistencies in overlapping datasets is called \emph{Data Fusion}. Several works focusing on repairing problematic datasets appeared in the literature. For example, \cite{mendes2012} considers repairing with respect to data fusion and \cite{flouris2012} investigates how provenance helps to improve the quality of Linked Data. In this context, provenance refers to where and how the data was obtained from. 
 
+%%Crowdsourcing example uComp Protege Plugin~\cite{wohlgenannt2016}%%
 The uComp Protege Plugin~\cite{wohlgenannt2016} is a good example which combines Data Cleansing and Crowdsourcing. An in-depth explanation is out of scope for this section. However, a detailed description of the plugin is given in~\hyperref[sec:ucomp_protege_plugin]{Section~\ref*{sec:ucomp_protege_plugin}} as it represents the baseline of this thesis.
 As soon as the results from the crowdsourced ontology validation are available, the plugin guides the user to take further actions as summarised in~\hyperref[table:data_cleansing_ucomp_protege]{Table~\ref*{table:data_cleansing_ucomp_protege}}. For each task the user can take advantage of the following cleansing actions: \emph{Concept Removal} for the Verification of Domain Relevance, \emph{Relation Removal} for the Verification of Relation Correctness, \emph{Relation Labelling} for the Specification of Relation Type and \emph{Domain/Range Removal} for the Verification of Domain/Range. 
 \begingroup

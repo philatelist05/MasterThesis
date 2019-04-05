@@ -63,20 +63,8 @@ Although the life cycle for semantic content starts with conceptual modelling~(e
 \paragraph{Extraction} When starting from scratch, data encoded in different formalisms need to be mapped to the semantic data model to facilitate semantic processing. 
 There exist several approaches for the extraction process. When considering unstructured sources, text in particular, \emph{\gls{nlp}} as well as \emph{\gls{ie}} techniques have been successfully applied to gather relevant information. Three sub-disciples of \gls{nlp} have emerged: \emph{Named~Entity~Recognition} for discovering entity instances, \emph{Keyword/Keyphrase~Extraction} for identifying common topics and \emph{Relationship~Extraction} for linking entities to keywords. For structured data such as \gls{xml} there exist a number of approaches. For example, the \gls{w3c} published the recommendation \gls{r2rml}\footnote{\url{http://www.w3.org/TR/r2rml/} accessed 2018/08/06} which describes a common notation for mapping relational tables, views and queries to \gls{rdf}. 
 
-Probably the most popular example of a community created/maintained knowledge base is Wikipedia\footnote{\url{https://www.wikipedia.org/} accessed 2018/08/06}. A little known fact is that its central platform for data management is Wikidata\footnote{\url{https://www.wikidata.org/wiki/Wikidata:Main_Page} accessed 2018/08/06}, a knowledge base containing millions of entities, labels and descriptions. For example, the page for Tim~Berners-Lee, a computer scientist and the \guillemotright author\guillemotleft~of the \gls{www}, contains properties in different languages~(excerpt shown in~\hyperref[fig:wikidata_tim_berners_lee_lang]{Figure~\ref*{fig:wikidata_tim_berners_lee_lang}}) as well as statements of him as a person~(excerpt shown in~\hyperref[fig:wikidata_tim_berners_lee_stat]{Figure~\ref*{fig:wikidata_tim_berners_lee_stat}}). 
-\begin{figure}
-	 \centering
-	 \includegraphics[width=0.75\textwidth]{graphics/wikidata_tim_berners_lee_lang}
-	 \caption{Excerpt of a Wikidata page showing language properties of Tim~Berners-Lee}\label{fig:wikidata_tim_berners_lee_lang}
-\end{figure}
-\begin{figure}
-	 \centering
-	 \includegraphics[width=0.75\textwidth]{graphics/wikidata_tim_berners_lee_stat}
-	 \caption{Excerpt of a Wikidata page showing statements of Tim~Berners-Lee}\label{fig:wikidata_tim_berners_lee_stat}
-\end{figure}
-Every page has a unique identifier~(e.g. \texttt{Q80}), a label~(e.g. \texttt{Tim~Berners-Lee}), a brief description~(e.g. \texttt{British computer scientist, inventor of the \gls{www}}), a list of aliases~(e.g. \texttt{TimBLSir, Tim Berners-LeeTimothy, John Berners-Lee, \ldots}), a list of statements~(e.g. \texttt{instanceof, image, \ldots}) and some links. 
-It is obvious that these data would perfectly fit into the Linked Data model~\cite{erxleben2014}.
-Wikidata content is also available in \gls{rdf} which is accessible at \url{http://tools.wmflabs.org/wikidata-exports/rdf/}. Unfortunately, this data is provided via dump files\footnote{\url{https://tools.wmflabs.org/wikidata-exports/rdf/exports.html} accessed 2018/08/06} only.
+%TODO Crowdsourcing example \cite{}%
+
 
 \paragraph{Data Storage and Indexing} 
 Up to this stage, the data was already mapped to the \gls{rdf} data model but needs to be stored and indexed efficiently. Researchers have put a lot of effort into this field because efficient storage and indexing mechanisms are fundamental for the adoption of Linked Data. Due to efficient querying and storage capabilities of relational databases resulting from decades of research in this area, it makes sense to adopt these approaches for Linked Data as well~\cite{abadi2007}. However, to support storing very large quantities of data there exist custom solutions too~\cite{broekstra2002}. Targeting Linked Data indexing, various approaches and principles have been applied successfully. The common aspects of all approaches is their focus on \emph{Data Compression} and \emph{Data Pruning}~\cite{svoboda2011}. Whereas the basic idea of Data Compression is to minimise the footprint of the index, Data Pruning is a technique for avoiding unnecessary data processing. 
@@ -129,7 +117,7 @@ base is typically enriched by analysing existing data to improve or extend its s
 Due to the distributed nature of Linked Data where information originating from heterogeneous data sources is merged, the quality of the resulting
 dataset is often varying. Therefore, a key factor for the adoption of Linked Data is ensuring its quality by identifying and fixing common problems. Before that, it is necessary to determine the quality of the existing dataset. For that, metrics which measure the quality in terms of accuracy, completeness, adequacy and degree of understandability need to be defined. \cite{zaveri2016} defines useful quality metrics along with 26 quality dimensions that help to measure the quality of the Linked Data.
 
-%TODO Crowdsourcing example \cite{mortensen2015}%
+%Crowdsourcing example \cite{mortensen2015}%
 In~\cite{mortensen2015} the authors analysed 200 taxonomic relations of SNOMED~CT, a widely used ontology mainly used in biomedical contexts. They used Crowdsourcing to detect inconsistencies and address the challenges of scalable ontology verification. The Crowdsourcing task interface shows the description of the evaluated relation and set of related concept definitions. The crowd worker can then either agree~(by answering \emph{yes}) or disagree~(by answering \emph{no}) on the presented statements. 
 
 

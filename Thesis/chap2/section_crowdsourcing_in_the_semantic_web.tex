@@ -20,7 +20,7 @@
 % 2.) DATA STORAGE AND INDEXING --> DONE
 % LED: curated and crowdsourced Linked Data on Music Listening Experiences~\cite{adamou2014}
 %
-% 3.) DATA REVISION AND AUTHORING 
+% 3.) DATA REVISION AND AUTHORING --> DONE
 %  Mechanical Protege
 %
 % 4.) DATA LINKING --> DONE
@@ -33,15 +33,16 @@
 %
 %
 % 6.) DATA ANALYSIS AND QUALITY
+% uComp Protege
 %
 %
 % 7.) DATA CLEANSING AND EVOLUTION
+% uComp Protege
 %
 %
 % 8.) DATA BROWSING AND QUERYING --> DONE
 % Lexitags~\cite{veres2013}: e.g. use semantic Tags for better browsing
 % MaDaME: tool which uses Lexitags 
-%
 % CrowdQ: Crowdsourced Query Understanding
 
 \section{Crowdsourcing in the Semantic Web}\label{sec:state_of_the_art_crowdsourcing_and_the_semantic_web}
@@ -94,8 +95,14 @@ manual composition process aiming at the creation of semantic documents."}~\cite
 The central entity of the semantic ecosystem is a semantic document which holds semantically enriched information. 
 In information management, semantic documents serve a number of purposes such as information searching, information retrieval, information presentation, information integration, personalisation, reusability and interoperability~\cite{khalili2013}. For that reason there exists a research area dealing with the main fields of semantic content management. In particular, it covers the manipulation, creation and processing of semantic content. Users do not directly interact with semantic documents, but rather through a uniform \gls{ui}. A number of quality attributes for the assessment of \gls{ui}-features of \gls{sca}-Systems were proposed~\cite{khalili2013}. The goal was to improve usability, a measure of the effectiveness, efficiency and satisfaction a user achieves. 
 
-A number of tools for semantic content authoring were developed. A prominent example is OntoWiki~\cite{auer2006}, an open-source Semantic Wiki originally focusing on collaboration but evolved as an ontology editor and platform for knowledge acquisition. It was inspired by other Wiki systems but primarily focusing on managing \gls{rdf} knowledge bases.  Another tool, adding Crowdsourcing capabilities to ontology development activities is Mechanical~Protege\footnote{\url{http://people.aifb.kit.edu/yt2652/mechanicalProtege/}}. The tool is actually a plug-in for the ontology editor Protege\footnote{\url{https://protege.stanford.edu/} accessed 2018/08/07}. 
-%EXTEND THIS PARAGRAPH OF MECHANICAL PROTEGE HERE%
+%Crowdsourcing example Mechanical Protege%
+A number of tools for semantic content authoring were developed. A good example that adds Crowdsourcing capabilities to ontology development activities is Mechanical~Protege\footnote{\url{http://people.aifb.kit.edu/yt2652/mechanicalProtege/}}. The tool is a plug-in for the ontology editor Protege\footnote{\url{https://protege.stanford.edu/} accessed 2018/08/07}. It allows creating classification hierarchies or labelling concepts and translating them into different languages. The user can choose from a set of pre-configured tasks, adjust parameters such as task description or reward for crowd workers and create Crowdsourcing jobs for Amazon~Mechanical~Turk\footnote{\url{https://www.mturk.com/} accessed 2019/04/03}. In the example shown in~\hyperref[fig:mechanical_protege_example]{Figure~\ref*{fig:mechanical_protege_example}} the user created a task to translate English labels into German labels for the concepts \emph{Spiciness}, \emph{Medium}, \emph{Hot}, \emph{IceCream}, \emph{Pizza} and \emph{PizzaBase}. Furthermore, settings were adjusted to require 2 judgements for each concept and paying crowd workers $0.05$ \$ for task completion.  
+\begin{figure}
+	 \centering
+	 \includegraphics[width=1\textwidth]{graphics/mechanical_protege_example}
+	 \caption{Crowdsourcing task creation in Mechanical Protege for translating concept labels}
+	 \label{fig:mechanical_protege_example}
+\end{figure}
 
 \paragraph{Data Linking}
 The next principle according to the Linked Data Life-Cycle is the Data Linking principle. It is by far the most important principle because it 
@@ -124,6 +131,9 @@ dataset is often varying. Therefore, a key factor for the adoption of Linked Dat
 
 \paragraph{Data Cleansing and Evolution}
 After the quality is analysed and problems are detected, strategies for fixing these problems are needed. In constantly evolving datasets with millions or even billions of \gls{rdf} triples it is important to keep the links between datasets. Likewise, conflicts and discrepancies in datasets can cause real trouble. Repairing such inconsistencies in overlapping datasets is called \emph{Data Fusion}. Several works focusing on repairing problematic datasets appeared in the literature. For example, \cite{mendes2012} considers repairing with respect to data fusion and \cite{flouris2012} investigates how provenance helps to improve the quality of Linked Data. In this context, provenance refers to where and how the data was obtained from. 
+
+The uComp Protege Plugin~\cite{wohlgenannt2016} is a good example which combines Data Cleansing and Crowdsourcing. An in-depth explanation is out of scope for this section. However, a detailed description of the plugin functionality is given in~\hyperref[sec:ucomp_protege_plugin]{Section~\ref*{sec:ucomp_protege_plugin}} as it represents the baseline of this thesis.
+
 
 \paragraph{Data Browsing and Querying}
 Last, users have the opportunity to explore the Linked Data available on the Web in a fast and efficient way. A prominent way to query Linked Data is

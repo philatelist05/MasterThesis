@@ -33,10 +33,10 @@
 %
 %
 % 6.) DATA ANALYSIS AND QUALITY
-% uComp Protege
+% e.g. ontology validation
 %
 %
-% 7.) DATA CLEANSING AND EVOLUTION
+% 7.) DATA CLEANSING AND EVOLUTION --> DONE
 % uComp Protege
 %
 %
@@ -132,7 +132,26 @@ dataset is often varying. Therefore, a key factor for the adoption of Linked Dat
 \paragraph{Data Cleansing and Evolution}
 After the quality is analysed and problems are detected, strategies for fixing these problems are needed. In constantly evolving datasets with millions or even billions of \gls{rdf} triples it is important to keep the links between datasets. Likewise, conflicts and discrepancies in datasets can cause real trouble. Repairing such inconsistencies in overlapping datasets is called \emph{Data Fusion}. Several works focusing on repairing problematic datasets appeared in the literature. For example, \cite{mendes2012} considers repairing with respect to data fusion and \cite{flouris2012} investigates how provenance helps to improve the quality of Linked Data. In this context, provenance refers to where and how the data was obtained from. 
 
-The uComp Protege Plugin~\cite{wohlgenannt2016} is a good example which combines Data Cleansing and Crowdsourcing. An in-depth explanation is out of scope for this section. However, a detailed description of the plugin functionality is given in~\hyperref[sec:ucomp_protege_plugin]{Section~\ref*{sec:ucomp_protege_plugin}} as it represents the baseline of this thesis.
+The uComp Protege Plugin~\cite{wohlgenannt2016} is a good example which combines Data Cleansing and Crowdsourcing. An in-depth explanation is out of scope for this section. However, a detailed description of the plugin is given in~\hyperref[sec:ucomp_protege_plugin]{Section~\ref*{sec:ucomp_protege_plugin}} as it represents the baseline of this thesis.
+As soon as the results from the crowdsourced ontology validation are available, the plugin guides the user to take further actions as summarised in~\hyperref[table:data_cleansing_ucomp_protege]{Table~\ref*{table:data_cleansing_ucomp_protege}}. For each task the user can take advantage of the following cleansing actions: \emph{Concept Removal} for the Verification of Domain Relevance, \emph{Relation Removal} for the Verification of Relation Correctness, \emph{Relation Labelling} for the Specification of Relation Type and \emph{Domain/Range Removal} for the Verification of Domain/Range. 
+\begingroup
+\renewcommand{\arraystretch}{2}
+	\begin{table}
+		\centering
+		\begin{tabularx}{0.8\textwidth}{l l}
+			\toprule
+			Task Type & Cleansing Action \\
+			\midrule
+	        Verification of Domain Relevance & Concept Removal \\
+			Verification of Relation Correctness & Relation Removal \\
+			Specification of Relation Type & Relation Labelling \\
+			Verification of Domain and Range & Domain/Range Removal \\
+			\bottomrule
+		\end{tabularx}
+		\caption{Data Cleansing capabilities of the uComp Protege Plugin}
+		\label{table:data_cleansing_ucomp_protege}
+	\end{table}
+\endgroup
 
 
 \paragraph{Data Browsing and Querying}

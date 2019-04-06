@@ -21,7 +21,7 @@
 % LED: curated and crowdsourced Linked Data on Music Listening Experiences~\cite{adamou2014}
 %
 % 3.) DATA REVISION AND AUTHORING --> DONE
-%  Mechanical Protege
+%  Mechanical Protege \cite{simperlMechnicalProtege}
 %
 % 4.) DATA LINKING --> DONE
 % ZenCrowd~\cite{demartini2012}: Entity Linking by the Crowd  
@@ -29,8 +29,8 @@
 % -) Automate manual linking via crowdsourcing    
 % -) Dynamically assess human workers with a probabilistic reasoning framework    
 %
-% 5.) CLASSIFICATION AND ENRICHMENT
-%
+% 5.) CLASSIFICATION AND ENRICHMENT -->
+% \cite{wohlgenannt2013}
 %
 % 6.) DATA ANALYSIS AND QUALITY --> DONE
 % e.g. ontology validation
@@ -93,8 +93,8 @@ manual composition process aiming at the creation of semantic documents."}~\cite
 The central entity of the semantic ecosystem is a semantic document which holds semantically enriched information. 
 In information management, semantic documents serve a number of purposes such as information searching, information retrieval, information presentation, information integration, personalisation, reusability and interoperability~\cite{khalili2013}. For that reason there exists a research area dealing with the main fields of semantic content management. In particular, it covers the manipulation, creation and processing of semantic content. Users do not directly interact with semantic documents, but rather through a uniform \gls{ui}. A number of quality attributes for the assessment of \gls{ui}-features of \gls{sca}-Systems were proposed~\cite{khalili2013}. The goal was to improve usability, a measure of the effectiveness, efficiency and satisfaction a user achieves. 
 
-%Crowdsourcing example Mechanical Protege%
-A number of tools for semantic content authoring were developed. A good example that adds Crowdsourcing capabilities to ontology development activities is Mechanical~Protege\footnote{\url{http://people.aifb.kit.edu/yt2652/mechanicalProtege/}}. The tool is a plug-in for the ontology editor Protege\footnote{\url{https://protege.stanford.edu/} accessed 2018/08/07}. It allows creating classification hierarchies or labelling concepts and translating them into different languages. The user can choose from a set of pre-configured tasks, adjust parameters such as task description or reward for crowd workers and create Crowdsourcing jobs for Amazon~Mechanical~Turk\footnote{\url{https://www.mturk.com/} accessed 2019/04/03}. In the example shown in~\hyperref[fig:mechanical_protege_example]{Figure~\ref*{fig:mechanical_protege_example}} the user created a task to translate English labels into German labels for the concepts \emph{Spiciness}, \emph{Medium}, \emph{Hot}, \emph{IceCream}, \emph{Pizza} and \emph{PizzaBase}. Furthermore, settings were adjusted to require 2 judgements for each concept and paying crowd workers $0.05$ \$ for task completion.  
+%Crowdsourcing example Mechanical Protege \cite{simperlMechnicalProtege}%
+A number of tools for semantic content authoring were developed. A good example that adds Crowdsourcing capabilities to ontology development activities is Mechanical~Protege~\cite{simperlMechnicalProtege}. The tool is a plug-in for the ontology editor Protege\footnote{\url{https://protege.stanford.edu/} accessed 2018/08/07}. It allows creating classification hierarchies or labelling concepts and translating them into different languages. The user can choose from a set of pre-configured tasks, adjust parameters such as task description or reward for crowd workers and create Crowdsourcing jobs for Amazon~Mechanical~Turk\footnote{\url{https://www.mturk.com/} accessed 2019/04/03}. In the example shown in~\hyperref[fig:mechanical_protege_example]{Figure~\ref*{fig:mechanical_protege_example}} the user created a task to translate English labels into German labels for the concepts \emph{Spiciness}, \emph{Medium}, \emph{Hot}, \emph{IceCream}, \emph{Pizza} and \emph{PizzaBase}. Furthermore, settings were adjusted to require 2 judgements for each concept and paying crowd workers $0.05$ \$ for task completion.  
 \begin{figure}
 	 \centering
 	 \includegraphics[width=1\textwidth]{graphics/mechanical_protege_example}
@@ -122,6 +122,10 @@ The process takes as input a collection of HTML pages. Those pages were then ins
 Over time, Linked Data sources grow in size and expressiveness. This principle refers to the process of extending the expressiveness and richness 
 of semantic knowledge bases. It means that instead of creating the structure upfront, the knowledge base evolves over time. For that, the knowledge 
 base is typically enriched by analysing existing data to improve or extend its schema. A variety of (semi-)~automatic enrichment approaches emerged over the past years. The methods span across several research areas, including machine learning, statistics, natural language processing, to name just a few. 
+
+%TODO: Crowdsourcing exmaple \cite{wohlgenannt2013}%
+\cite{wohlgenannt2013}
+
 
 \paragraph{Data Analysis and Quality}
 Due to the distributed nature of Linked Data where information originating from heterogeneous data sources is merged, the quality of the resulting

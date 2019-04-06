@@ -14,8 +14,8 @@
 
 % References to Crowdsourcing works in LD-LifeCycle
 
-% 1.) EXTRACTION
-%
+% 1.) EXTRACTION --> DONE
+% \cite{bontcheva2017}
 %
 % 2.) DATA STORAGE AND INDEXING --> DONE
 % LED: curated and crowdsourced Linked Data on Music Listening Experiences~\cite{adamou2014}
@@ -63,7 +63,17 @@ Although the life cycle for semantic content starts with conceptual modelling~(e
 \paragraph{Extraction} When starting from scratch, data encoded in different formalisms need to be mapped to the semantic data model to facilitate semantic processing. 
 There exist several approaches for the extraction process. When considering unstructured sources, text in particular, \emph{\gls{nlp}} as well as \emph{\gls{ie}} techniques have been successfully applied to gather relevant information. Three sub-disciples of \gls{nlp} have emerged: \emph{Named~Entity~Recognition} for discovering entity instances, \emph{Keyword/Keyphrase~Extraction} for identifying common topics and \emph{Relationship~Extraction} for linking entities to keywords. For structured data such as \gls{xml} there exist a number of approaches. For example, the \gls{w3c} published the recommendation \gls{r2rml}\footnote{\url{http://www.w3.org/TR/r2rml/} accessed 2018/08/06} which describes a common notation for mapping relational tables, views and queries to \gls{rdf}. 
 
-%TODO Crowdsourcing example \cite{}%
+%Crowdsourcing example \cite{bontcheva2017}%
+Even tough many problems can be solved efficiently by machines, there are still open tasks which are hard to solve algorithmically. \cite{siorpaes2008ontogame} summarised the major challenges for ontology construction, collecting named entities being one of them. 
+As an example, in a study~\cite{bontcheva2017} the authors crowdsourced a corpus containing around \numprint{10000} tweets to extract named entities. They defined a methodical framework which combines an expert based and crowd based approach. 
+\hyperref[fig:named_entity_recognition]{Figure~\ref*{fig:named_entity_recognition}} shows the Crowdsourcing task interface for selecting named entities in tweets. To prevent spamming, an explicit confirmation step was added at the bottom of the submission form. 
+\begin{figure}
+	 \centering
+	 \includegraphics[width=0.75\textwidth]{graphics/named_entity_recognition}
+	 \caption{Crowdsourcing task interface for named entity recognition~(adopted from~\cite{bontcheva2017})}
+	 \label{fig:named_entity_recognition}
+\end{figure}  
+After identifying the named entities, the next step is entity linking to find potentially ambiguous entities. DBpedia~\cite{auer2007} was chosen as target entity linking database because of its good coverage of named entities, its frequent updates and available mappings to other Linked Data sources. 
 
 
 \paragraph{Data Storage and Indexing} 

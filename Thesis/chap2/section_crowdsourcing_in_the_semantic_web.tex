@@ -50,7 +50,31 @@
 This section starts by briefly introducing the Semantic Web and the driving ideas in it's early stages. The central part of this section is dedicated to discussing the interplay between the Semantic Web and Crowdsourcing by the \textit{Linked~Data~Life-Cycle}. 
 
 The \gls{www} was probably one of the most influential and World changing innovation, allowing users to exchange documents without caring about the details of how they are processed or stored. The Semantic Web adds another layer on-top, enabling the use of references to real-world objects without concerning about the underlying documents in which these things are described. Therefore the Semantic Web can be seen as an extension of the \gls{www}. It provides the means to process data in machine-readable formats, linking related properties to globally accessible schemas and offering a wide range of data interfaces~\cite{hendler2010}.
-The adoption of Semantic Web technologies is still ongoing, many applications were developed that exploit these principles, but its full potential is just starting to be explored. This holds in particular because many tasks can not be fully automated or it would be too costly. Crowdsourcing, on the other hand, facilitates distribution of tasks to a large number of contributors in a scalable and affordable way. In the remainder of this section we analyse, how Crowdsourcing can promote the adoption of Semantic Web technologies. 
+The adoption of Semantic Web technologies is still ongoing, many applications were developed that exploit these principles, but its full potential is just starting to be explored. This holds in particular because many tasks can not be fully automated or it would be too costly. Crowdsourcing, on the other hand, facilitates distribution of tasks to a large number of contributors in a scalable and affordable way.
+In the remainder of this section we analyse, how Crowdsourcing can promote the adoption of Semantic Web technologies. 
+\hyperref[table:cs_and_semWeb_approaches]{Table~\ref*{table:cs_and_semWeb_approaches}} summarises the approaches in the Semantic Web area that showcase the application of Crowdsourcing techniques. 
+
+\begingroup
+\renewcommand{\arraystretch}{2}
+\begin{table}
+	\begin{tabularx}{\textwidth}{X l*{2}{Y}}
+		\toprule
+		Paper & LD Stage & CS Contribution \\
+		\midrule
+		\cite{bontcheva2017} & Stage 1 \emph{(Extraction)} & Selection of named entities \\
+		\cite{adamou2014} & Stage 2 \emph{(Data Storage \& Indexing)} & Creation of listening experiences \\
+		\cite{simperlMechnicalProtege} & Stage 3 \emph{(Data Revision \& Authoring)} & Translation of concept labels \\
+		\cite{demartini2012} & Stage 4 \emph{(Data Linking)} & Validation of linked entities \\
+		\cite{wohlgenannt2013} & Stage 5 \emph{(Classification \& Enrichment)} & Validation of learned ontology \\
+		\cite{mortensen2015} & Stage 6 \emph{(Data Analysis \& Quality)} & Validation of subclass relations \\
+		\cite{wohlgenannt2016} & Stage 7 \emph{(Data Cleansing \& Evolution)} & Validation of ontology parts \\
+		\cite{veres2013} & Stage 8 \emph{(Data Browsing \& Querying)} & Creation of semantic tags \\
+		\bottomrule
+	\end{tabularx}
+	\caption{Overview of approaches in the Semantic Web area that showcase the application of Crowdsourcing techniques. $\{$\emph{LD Stage}=Stage of the Linked Data Life-Cycle~(\hyperref[sec:ld_lifecycle]{Section~\ref*{sec:ld_lifecycle}}), \emph{CS Contribution}=Contribution related to Crowdsourcing$\}$}
+	\label{table:cs_and_semWeb_approaches}
+\end{table}
+\endgroup
 
 \subsection{The Linked Data Life-Cycle}\label{sec:ld_lifecycle}
 Over the years many tools and practices were developed that cover the full life cycle of weaving the Semantic Web. The stages of the Linked Data Life-Cycle are illustrated in~\hyperref[fig:linked_data_life_cycle]{Figure~\ref*{fig:linked_data_life_cycle}}. It shows the overall process of Linked Data management, starting from adding links and ending in manual authoring. 

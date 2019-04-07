@@ -11,6 +11,7 @@
 \newacronym{ui}{UI}{User Interface}
 \newacronym{url}{URL}{Uniform Resource Locator}
 \newacronym{led}{LED}{Listening Experience Database}
+\newacronym{gwap}{GWAP}{Games with a purpose}
 
 % References to Crowdsourcing works in LD-LifeCycle
 
@@ -29,7 +30,7 @@
 % -) Automate manual linking via crowdsourcing    
 % -) Dynamically assess human workers with a probabilistic reasoning framework    
 %
-% 5.) CLASSIFICATION AND ENRICHMENT -->
+% 5.) CLASSIFICATION AND ENRICHMENT --> DONE
 % \cite{wohlgenannt2013}
 %
 % 6.) DATA ANALYSIS AND QUALITY --> DONE
@@ -123,9 +124,9 @@ Over time, Linked Data sources grow in size and expressiveness. This principle r
 of semantic knowledge bases. It means that instead of creating the structure upfront, the knowledge base evolves over time. For that, the knowledge 
 base is typically enriched by analysing existing data to improve or extend its schema. A variety of (semi-)~automatic enrichment approaches emerged over the past years. The methods span across several research areas, including machine learning, statistics, natural language processing, to name just a few. 
 
-%TODO: Crowdsourcing exmaple \cite{wohlgenannt2013}%
-\cite{wohlgenannt2013}
-
+%Crowdsourcing exmaple \cite{wohlgenannt2013}%
+Even though automating the process of ontology refinement greatly reduces the need for expert contribution, there are still some tasks which require human involvement. \cite{wohlgenannt2013} presented a model for evolving lightweight ontologies and a prototype which implements the model. The model describes the ontology learning process which uses Crowdsourcing to validate the concepts of the learned ontology. The algorithmic part of the process takes a seed ontology as input which is then continuously extended. This process is repeated until the target ontology reflects the semantics of the input source. The prototypical implementation only accepts textual input sources but future adaptations were planned. 
+For the Crowdsourcing part a \gls{gwap} is used to eliminate unrelated concepts. The players of the game had to analyse the concept's relevance to the ontology's domain. The results of the Crowdsourcing part were taken to improve the quality of the learned ontology. 
 
 \paragraph{Data Analysis and Quality}
 Due to the distributed nature of Linked Data where information originating from heterogeneous data sources is merged, the quality of the resulting

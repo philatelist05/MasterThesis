@@ -61,14 +61,14 @@ In the remainder of this section we analyse, how Crowdsourcing can promote the a
 		\toprule
 		Paper & LD Stage & CS Contribution \\
 		\midrule
-		\cite{bontcheva2017} & Stage 1 \emph{(Extraction)} & Selection of named entities \\
-		\cite{adamou2014} & Stage 2 \emph{(Data Storage \& Indexing)} & Creation of listening experiences \\
-		\cite{simperlMechnicalProtege} & Stage 3 \emph{(Data Revision \& Authoring)} & Translation of concept labels \\
-		\cite{demartini2012} & Stage 4 \emph{(Data Linking)} & Validation of linked entities \\
-		\cite{wohlgenannt2013} & Stage 5 \emph{(Classification \& Enrichment)} & Validation of learned ontology \\
-		\cite{mortensen2015} & Stage 6 \emph{(Data Analysis \& Quality)} & Validation of subclass relations \\
-		\cite{wohlgenannt2016} & Stage 7 \emph{(Data Cleansing \& Evolution)} & Validation of ontology parts \\
-		\cite{veres2013} & Stage 8 \emph{(Data Browsing \& Querying)} & Creation of semantic tags \\
+		\cite{bontcheva2017} & Stage 1 \emph{(Data Extraction)} & Selecting named entities \\
+		\cite{adamou2014} & Stage 2 \emph{(Data Storage \& Indexing)} & Creating listening experiences \\
+		\cite{simperlMechnicalProtege} & Stage 3 \emph{(Data Revision \& Authoring)} & Translating concept labels \\
+		\cite{demartini2012} & Stage 4 \emph{(Data Linking)} & Validating linked entities \\
+		\cite{wohlgenannt2013} & Stage 5 \emph{(Data Classification \& Enrichment)} & Validating learned ontologies \\
+		\cite{mortensen2015} & Stage 6 \emph{(Data Analysis \& Quality)} & Validating subclass relations \\
+		\cite{wohlgenannt2016} & Stage 7 \emph{(Data Cleansing \& Evolution)} & Validating ontology parts \\
+		\cite{veres2013} & Stage 8 \emph{(Data Browsing \& Querying)} & Creating semantic tags \\
 		\bottomrule
 	\end{tabularx}
 	\caption{Overview of approaches in the Semantic Web area that showcase the application of Crowdsourcing techniques. $\{$\emph{LD Stage}=Stage of the Linked Data Life-Cycle~(\hyperref[sec:ld_lifecycle]{Section~\ref*{sec:ld_lifecycle}}), \emph{CS Contribution}=Contribution related to Crowdsourcing$\}$}
@@ -83,9 +83,9 @@ Over the years many tools and practices were developed that cover the full life 
 	 \includegraphics[width=0.75\textwidth]{drawio/Linked_Data_Life_Cycle}
 	 \caption{The Linked Data Life-Cycle~(consolidated from~\cite{auer2011, auer2012, siorpaes2008})}\label{fig:linked_data_life_cycle}
 \end{figure}  
-Although the life cycle for semantic content starts with conceptual modelling~(e.g. mapping unstructured data to structured or semi-structured formalisms), this is not always the case, especially if existing linked data should be managed as well. In that case, the first stage~(Extraction) can be omitted. Likewise, the stages of the life cycle do not exist in isolation of each other or are passed in strict order, instead they are mutually complementary. Consequently, the examples that were given in each stage may also be relevant for other stages~\cite{simperl2013}. 
+Although the life cycle for semantic content starts with conceptual modelling~(e.g. mapping unstructured data to structured or semi-structured formalisms), this is not always the case, especially if existing linked data should be managed as well. In that case, the first stage~(Data Extraction) can be omitted. Likewise, the stages of the life cycle do not exist in isolation of each other or are passed in strict order, instead they are mutually complementary. Consequently, the examples that were given in each stage may also be relevant for other stages~\cite{simperl2013}. 
 
-\paragraph{Extraction} When starting from scratch, data encoded in different formalisms need to be mapped to the semantic data model to facilitate semantic processing. 
+\paragraph{Data Extraction} When starting from scratch, data encoded in different formalisms need to be mapped to the semantic data model to facilitate semantic processing. 
 There exist several approaches for the extraction process. When considering unstructured sources, text in particular, \emph{\gls{nlp}} as well as \emph{\gls{ie}} techniques have been successfully applied to gather relevant information. Three sub-disciples of \gls{nlp} have emerged: \emph{Named~Entity~Recognition} for discovering entity instances, \emph{Keyword/Keyphrase~Extraction} for identifying common topics and \emph{Relationship~Extraction} for linking entities to keywords. For structured data such as \gls{xml} there exist a number of approaches. For example, the \gls{w3c} published the recommendation \gls{r2rml}\footnote{\url{http://www.w3.org/TR/r2rml/} accessed 2018/08/06} which describes a common notation for mapping relational tables, views and queries to \gls{rdf}. 
 
 %Crowdsourcing example \cite{bontcheva2017}%
@@ -143,7 +143,7 @@ text is considered a difficult task when done algorithmically. The process of re
 The process takes as input a collection of HTML pages. Those pages were then inspected by the \emph{Entity Extractors} to detect relevant textual entities. In the next step \emph{Algorithmic Matchers} try to create links to semantically similar entities from the linked data set. The results of this process are stored in a \emph{Probabilistic Network} which is taken by the \emph{Decision Engine} to decide whether the results are useful or not. In the latter case, the HTML pages are passed to the \emph{Micro-Task Manager} which uses Crowdsourcing to improve the results. 
 
 
-\paragraph{Classification and Enrichment}
+\paragraph{Data Classification and Enrichment}
 Over time, Linked Data sources grow in size and expressiveness. This principle refers to the process of extending the expressiveness and richness 
 of semantic knowledge bases. It means that instead of creating the structure upfront, the knowledge base evolves over time. For that, the knowledge 
 base is typically enriched by analysing existing data to improve or extend its schema. A variety of (semi-)~automatic enrichment approaches emerged over the past years. The methods span across several research areas, including machine learning, statistics, natural language processing, to name just a few. 

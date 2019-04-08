@@ -77,13 +77,13 @@ In the remainder of this section we analyse, how Crowdsourcing can promote the a
 \endgroup
 
 \subsection{The Linked Data Life-Cycle}\label{sec:ld_lifecycle}
-Over the years many tools and practices were developed that cover the full life cycle of weaving the Semantic Web. The stages of the Linked Data Life-Cycle are illustrated in~\hyperref[fig:linked_data_life_cycle]{Figure~\ref*{fig:linked_data_life_cycle}}. It shows the overall process of Linked Data management, starting from adding links and ending in manual authoring. 
+Over the years many tools and practices were developed that cover the full life cycle of weaving the Semantic Web. The stages of the Linked Data Life-Cycle are illustrated in~\hyperref[fig:linked_data_life_cycle]{Figure~\ref*{fig:linked_data_life_cycle}}. It shows the overall process of Linked Data management, starting from extracting Linked Data and ending in browsing Linked Data sources. 
 \begin{figure}
 	 \centering
 	 \includegraphics[width=0.75\textwidth]{drawio/Linked_Data_Life_Cycle}
 	 \caption{The Linked Data Life-Cycle~(consolidated from~\cite{auer2011, auer2012, siorpaes2008})}\label{fig:linked_data_life_cycle}
 \end{figure}  
-Although the life cycle for semantic content starts with conceptual modelling~(e.g. mapping unstructured data to structured or semi-structured formalisms), this is not always the case, especially if existing linked data should be managed as well. In that case, the first stage~(Data Extraction) can be omitted. Likewise, the stages of the life cycle do not exist in isolation of each other or are passed in strict order, instead they are mutually complementary. Consequently, the examples that were given in each stage may also be relevant for other stages~\cite{simperl2013}. 
+Although the life cycle for semantic content starts with conceptual modelling~(e.g. mapping unstructured data to structured or semi-structured formalisms), this is not always the case, especially if existing Linked Data should be managed as well. In that case, the first stage~(Data Extraction) can be omitted. Likewise, the stages of the life cycle do not exist in isolation of each other or are passed in strict order, instead they are mutually complementary. Consequently, the examples that were given in each stage may also be relevant for other stages~\cite{simperl2013}. 
 
 \paragraph{Data Extraction} When starting from scratch, data encoded in different formalisms need to be mapped to the semantic data model to facilitate semantic processing. 
 There exist several approaches for the extraction process. When considering unstructured sources, text in particular, \emph{\gls{nlp}} as well as \emph{\gls{ie}} techniques have been successfully applied to gather relevant information. Three sub-disciples of \gls{nlp} have emerged: \emph{Named~Entity~Recognition} for discovering entity instances, \emph{Keyword/Keyphrase~Extraction} for identifying common topics and \emph{Relationship~Extraction} for linking entities to keywords. For structured data such as \gls{xml} there exist a number of approaches. For example, the \gls{w3c} published the recommendation \gls{r2rml}\footnote{\url{http://www.w3.org/TR/r2rml/} accessed 2018/08/06} which describes a common notation for mapping relational tables, views and queries to \gls{rdf}. 
@@ -133,14 +133,14 @@ underlines the distributed nature of Linked Data. Instead of the traditional def
 
 %Crowdsourcing example ZenCrowd~\cite{demartini2012}%
 Using automated techniques of entity linking can be quite challenging, since parsing and disambiguating natural language
-text is considered a difficult task when done algorithmically. The process of relating entities extracted from text to their equivalents in the Linked Data space can be done automated~(\emph{Algorithmic Matching}) or with human intervention~(\emph{Manual Matching}). ZenCrowd~\cite{demartini2012} combines those two approaches by first trying the algorithmic approach and then improving the results by involving human workers. The main steps of the linking process are shown in~\hyperref[fig:zencrowd]{Figure~\ref*{fig:zencrowd}}.
+text is considered a difficult task when done algorithmically. The process of relating entities extracted from text to their equivalents in the Linked Data space can be done automated~(\emph{Algorithmic Matching}) or with human intervention~(\emph{Manual Matching}). ZenCrowd~\cite{demartini2012} combines those two approaches by first trying an algorithmic approach and then improving the results by involving human workers. The main steps of the linking process are shown in~\hyperref[fig:zencrowd]{Figure~\ref*{fig:zencrowd}}.
 \begin{figure}
 	 \centering
 	 \includegraphics[width=\textwidth]{graphics/zencrowd}
 	 \caption{The linking process of ZenCrowd~(adopted from~\cite{demartini2012})}
 	 \label{fig:zencrowd}
 \end{figure}
-The process takes as input a collection of HTML pages. Those pages were then inspected by the \emph{Entity Extractors} to detect relevant textual entities. In the next step \emph{Algorithmic Matchers} try to create links to semantically similar entities from the linked data set. The results of this process are stored in a \emph{Probabilistic Network} which is taken by the \emph{Decision Engine} to decide whether the results are useful or not. In the latter case, the HTML pages are passed to the \emph{Micro-Task Manager} which uses Crowdsourcing to improve the results. 
+The process takes as input a collection of HTML pages. Those pages were then inspected by the \emph{Entity Extractors} to detect relevant textual entities. In the next step \emph{Algorithmic Matchers} try to create links to semantically similar entities from the Linked Data set. The results of this process are stored in a \emph{Probabilistic Network} which is taken by the \emph{Decision Engine} to decide whether the results are useful or not. In the latter case, the HTML pages are passed to the \emph{Micro-Task Manager} which uses Crowdsourcing to improve the results. 
 
 
 \paragraph{Data Classification and Enrichment}
@@ -150,7 +150,7 @@ base is typically enriched by analysing existing data to improve or extend its s
 
 %Crowdsourcing exmaple \cite{wohlgenannt2013}%
 Even though automating the process of ontology refinement greatly reduces the need for expert contribution, there are still some tasks which require human involvement. \cite{wohlgenannt2013} presented a model for evolving lightweight ontologies and a prototype which implements the model. The model describes the ontology learning process which uses Crowdsourcing to validate the concepts of the learned ontology. The algorithmic part of the process takes a seed ontology as input which is then continuously extended. This process is repeated until the target ontology reflects the semantics of the input source. The prototypical implementation only accepts textual input sources but future adaptations were planned. 
-For the Crowdsourcing part a \gls{gwap} is used to eliminate unrelated concepts. The players of the game had to analyse the concept's relevance to the ontology's domain. The results of the Crowdsourcing part were taken to improve the quality of the learned ontology. 
+For the Crowdsourcing part a \gls{gwap} is used to eliminate unrelated concepts. The players of the game had to analyse the concept's relevance to the ontology's domain. The results of the Crowdsourcing part are taken to improve the quality of the learned ontology. 
 
 \paragraph{Data Analysis and Quality}
 Due to the distributed nature of Linked Data where information originating from heterogeneous data sources is merged, the quality of the resulting
@@ -187,7 +187,7 @@ As soon as the results from the crowdsourced ontology validation are available, 
 
 
 \paragraph{Data Browsing and Querying}
-Last, users have the opportunity to explore the Linked Data available on the Web in a fast and efficient way. A prominent way to query Linked Data is
+Last, users have the opportunity to explore the Linked Data available on the Web in a fast and efficient way. A prominent way to query Linked Data is the
 \gls{sparql}\footnote{\url{https://www.w3.org/TR/rdf-sparql-query/} accessed 2019/01/17}, a query language specifically designed to retrieve and manipulate Linked Data. There are similarities between \gls{sql} and \gls{sparql} in terms of query structure, but there are also differences.
 
 %Crowdsourcing example LexiTags~\cite{veres2013}%

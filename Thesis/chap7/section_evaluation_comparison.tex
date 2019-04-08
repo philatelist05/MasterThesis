@@ -6,7 +6,7 @@ In the final evaluation step we take a broader look on the overall performance. 
 Based on our initial hypothesis which motivates Context enrichment, we have formulated a couple of questions that were answered in the next paragraphs:
 \paragraph{Which Context enrichment method performed best in general?}
 Our observations confirmed our initial hypothesis which suggests extending basic crowd-based ontology validation with Context. From the combined results of all datasets as shown in~\hyperref[table:bench_p_r_f_combined]{Table~\ref*{table:bench_p_r_f_combined}} it is evident that the Metadata~based~Approach worked best. In fact, it had not only the highest value of F-Measure but also the highest Precision and Recall. Indeed, this was rather expected due to the fact that Context was manually added. Obviously, no one has a better domain knowledge than the creators or maintainers of the ontology. 
-On the bottom end of the table is the previous approach without descriptions. 
+On the bottom end of the table is the approach containing no descriptions~(None). 
 \begingroup
 \renewcommand{\arraystretch}{1.5}
 \begin{table}
@@ -27,7 +27,7 @@ On the bottom end of the table is the previous approach without descriptions.
 
 \paragraph{Did the crowd perform better with Context?}
 \hyperref[fig:results_accuracy_combined]{Figure~\ref*{fig:results_accuracy_combined}} depicts the combined accuracy of all methods which is calculated
-as the ratio between correct and incorrect judgements. For comparability, the exact number of judgements were written in labels. The performance of the top ranked method~(Metadata~based~Approach) is quite impressive. Concepts were judged correctly for nearly eighty percent~($78.4\%$), being an improvement of over $14\%$ compared to omitting concept descriptions. Even the last ranked enrichment method~(Dictionary~based~Approach), performs $4.6\%$ better.
+as the ratio between correct and incorrect judgements. For comparability, the exact number of judgements is written in labels. The performance of the top ranked method~(Metadata~based~Approach) is quite impressive. Concepts were judged correctly for nearly eighty percent~($78.4\%$), being an improvement of over $14\%$ compared to omitting concept descriptions. Even the last ranked enrichment method~(Dictionary~based~Approach), performs $4.6\%$ better.
 \begin{figure}
 	 \centering
 	 \includegraphics[width=0.75\textwidth]{plots/comparison/barplot_all_judgements_corrected}

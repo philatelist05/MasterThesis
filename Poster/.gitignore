@@ -1,0 +1,32 @@
+# OSX specific
+.DS_Store
+
+# Thesis PDF File
+poster.pdf
+
+# LaTex specific 
+*.acn
+*.acr
+*.alg
+*.aux
+*.bbl
+*.blg
+*.cls
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.hd
+*.idx
+*.ilg
+*.ind
+*.ist
+*.snm
+*.loa
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.toc
+

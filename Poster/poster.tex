@@ -42,7 +42,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Display a grid to help align images 
-\beamertemplategridbackground[12.7mm]
+%\beamertemplategridbackground[12.7mm]
 
 % play around with the background colors
 % \setbeamercolor{background canvas}{bg=yellow}
@@ -57,22 +57,18 @@
 \setlength{\textwidth}{811.8mm}
 
 % BLOCK COLORS
-\setbeamercolor{block body}{fg=black,bg=white}
-\setbeamercolor{block title}{fg=TuWienBlue,bg=white}
+\setbeamercolor{block body}{fg=black,bg=InfosysLightGrey}
+\setbeamercolor{block title}{fg=black,bg=TuWienBlue}
 
 % BEGIN BLOCK TEMPLATE %
 \setbeamertemplate{block begin}{
   \begin{beamercolorbox}{block title}%
-    \begin{tikzpicture}%
-      \node[draw,rectangle,line width=1mm,rounded corners=0mm,inner sep=0mm]{%
-        \begin{minipage}[c][2cm]{\linewidth}
+        \begin{minipage}[c][2cm]{\textwidth}
           \centering\textbf{\insertblocktitle}
         \end{minipage}
-      };
-    \end{tikzpicture}%
   \end{beamercolorbox}
-  \vspace*{1cm}
-  \begin{beamercolorbox}{block body}%
+  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip}}%
+	  \begin{beamercolorbox}[leftskip=1em,sep=1ex,vmode]{block body}%
 }
 
 % END BLOCK TEMPLATE %

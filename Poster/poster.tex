@@ -16,8 +16,6 @@
 
 \usepackage{TUINFPST}
 
-\usepackage{lipsum}
- 
 %\title[Computational Intelligence]{Interactive Computer Generated Architecture}
 % if you have a long title looking squeezed on the poster, just force
 % some distance:
@@ -91,26 +89,49 @@
 		%TOP%
 		\begin{columns}[t, onlytextwidth]
 			\begin{column}{.49\linewidth}
+				
 				\begin{block}{Context \& Motivation}
-					    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	
-						
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					\begin{columns}
+						\begin{column}{.45\linewidth}
+							\begin{figure}
+								\centering
+								\includegraphics[width=\textwidth]{figures/model_ontology_validation}
+							\end{figure}
+						\end{column}
+						\begin{column}{.5\linewidth}
+							\small
+							{\color{BeamerBlue}{Crowdsourced Ontology Validation}}
+							uses Human Computation to validate ontologies in a cost effective way. 
+							\vspace{1.5cm}
+							
+							The {\color{BeamerBlue}{uComp Protege Plugin}} allows the
+							creation and execution of Crowdsourcing~(CS) tasks for ontology validation from within the Protege ontology editor.
+							\vspace{1.5cm}
+							
+							{\color{BeamerBlue}{Problem:}} Crowd workers often do not had enough Context to complete such CS tasks.
+							\vspace{1.5cm}
+							
+							{\color{BeamerBlue}{Solution:}} Extend plugin to enrich CS tasks with Context.
+							\vspace{1.5cm}						
+						\end{column}
+					\end{columns}
 				\end{block}
+				
 			\end{column}
 			\begin{column}{.49\linewidth}
 				\begin{block}{Research Questions}
 					    \begin{itemize}
 							\setlength\itemsep{1.5cm}
-					    	\item \textsc{Context Enrichment of Crowdsourcing Tasks}
+					    	\item \textsc{\color{BeamerBlue}{Context Enrichment of Crowdsourcing Tasks}}
 							
 							Does the crowd perform better on context enriched Crowdsourcing tasks?
-					    	\item \textsc{Context Enrichment Methods}
+					    	\item \textsc{\color{BeamerBlue}{Context Enrichment Methods}}
 							
 							What methods can be applied that generate Context?
-					    	\item \textsc{Generalising the Applicability of the proposed Methods }
+					    	\item \textsc{\color{BeamerBlue}{Generalising the Applicability of the proposed Methods}}
 							
 							To what extent is it possible to transfer the investigated methods to different datasets?
-					    	\item \textsc{Comparative Evaluation of the proposed Methods }
+					    	\item \textsc{\color{BeamerBlue}{Comparative Evaluation of the proposed Methods}}
 							
 							Which of the proposed methods works best? What are potential shortcomings and why?
 					    \end{itemize}

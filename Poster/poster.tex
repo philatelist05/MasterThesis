@@ -78,8 +78,17 @@
 % END BLOCK TEMPLATE %
 \setbeamertemplate{block end}{
   \end{beamercolorbox}
-  \vspace{2cm}
+  \vspace{0.5cm}
 }
+
+% INTENDED HORIZONTAL LINE
+\newenvironment{myhline}
+ {\par\setlength{\topskip}{0em}%
+  \begin{list}{}{%
+    \setlength{\leftmargin}{1.5em}%
+    \setlength{\rightmargin}{1.5em}%
+  }\item\relax}
+ {\par\nopagebreak\rule{\linewidth}{0.4pt}\end{list}}
 
 % for crop marks, uncomment the following line
 %\usepackage[cross,width=88truecm,height=123truecm,center]{crop}
@@ -88,6 +97,7 @@
 \begin{document}
 
 \begin{frame}
+  \vspace{-2.5cm}
   \begin{columns}[t, onlytextwidth]
 
     \begin{column}{\textwidth}
@@ -128,9 +138,9 @@
 				\begin{block}{Research Questions}
 					    \begin{itemize}
 							\setlength\itemsep{1.5cm}
-					    	\item \textsc{\color{BeamerBlue}{Context Enrichment of Crowdsourcing Tasks}}
+					    	\item \textsc{\color{BeamerBlue}{Context Enrichment of CS Tasks}}
 							
-							Does the crowd perform better on context enriched Crowdsourcing tasks?
+							Does the crowd perform better on context enriched CS Tasks?
 					    	\item \textsc{\color{BeamerBlue}{Context Enrichment Methods}}
 							
 							What methods can be applied that generate Context?
@@ -258,12 +268,56 @@
 		\begin{columns}[t, onlytextwidth]
 			\begin{column}{.49\linewidth}
 				\begin{block}{Experimental Evaluation}
-					    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					\begin{minipage}[t]{.45\textwidth}
+						\small
+						Experimental Setup\\
+						CS Experiments performed on 3 Ontologies\\
+					\end{minipage}
+					\begin{minipage}[t]{.45\textwidth}
+						\small
+						Evaluation\\
+						Comparison with old implementation
+					\end{minipage}
+					\begin{myhline}
+						\vspace{-2cm}
+						\hfill
+					\end{myhline}
+					\begin{minipage}[t]{\textwidth}
+						
+						\small
+						CS Task Interfaces
+
+						\begin{minipage}[t]{.45\textwidth}
+							\begin{figure}[H]
+								 \centering
+								 \includegraphics[width=\textwidth]{figures/questionaire_university_example}
+								 \caption{Ontology based Approach}
+							\end{figure}
+						\end{minipage}
+						\begin{minipage}[t]{.45\textwidth}
+							\begin{minipage}[t]{\textwidth}
+								\begin{figure}[H]
+									 \centering
+									 \includegraphics[width=\textwidth]{figures/questionaire_metadata_example}
+									 \caption{Metadata based Approach}
+								\end{figure}
+							\end{minipage}
+							\begin{minipage}[t]{\textwidth}
+								\vspace{-2.15mm}
+								\begin{figure}[H]
+								 \centering
+								 \includegraphics[width=\textwidth]{figures/questionaire_wordnik_example}
+								 \caption{Dictionary based Approach}
+								\end{figure}
+							\end{minipage}
+						\end{minipage}
+					\end{minipage}
 				\end{block}
 			\end{column}
 			\begin{column}{.49\linewidth}
 				\begin{block}{Improvements through Context Enrichment}
 					    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 				\end{block}
 			\end{column}
 		\end{columns}

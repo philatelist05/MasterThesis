@@ -18,6 +18,7 @@
 \usepackage{algorithm}  			% For algorithms
 \usepackage[noend]{algpseudocode} 	% Allows pseudo-code like syntax in algorithms
 \usepackage{caption}				% Better caption handling
+\usepackage{ragged2e}				% Alignments
 
 %\title[Computational Intelligence]{Interactive Computer Generated Architecture}
 % if you have a long title looking squeezed on the poster, just force
@@ -90,6 +91,7 @@
   }\item\relax}
  {\par\nopagebreak\rule{\linewidth}{0.4pt}\end{list}}
 
+
 % for crop marks, uncomment the following line
 %\usepackage[cross,width=88truecm,height=123truecm,center]{crop}
 
@@ -137,8 +139,9 @@
 			\begin{column}{.49\linewidth}
 				\begin{block}{Research Questions}
 					\begin{minipage}[t][.25\textheight][c]{\textwidth}
-						\begin{minipage}[t][\textheight][c]{0.93\textwidth}
+						\begin{minipage}[t][\textheight][c]{0.9\textwidth}
 					    	\begin{itemize}
+								\justifying
 								\setlength\itemsep{1.5cm}
 					    		\item \textsc{\color{BeamerBlue}{Context Enrichment of CS~Tasks}}
 								
@@ -197,14 +200,14 @@
 					\vspace{1cm}
 					\begin{itemize}
 						\small
-						\setlength\itemsep{0.5cm}
+						\justifying
+						\setlength\itemsep{1cm}
 						\item Context Generation based on {\color{BeamerBlue}{Subsumption Relations}}
 						\item The algorithm outputs {\color{BeamerBlue}{ACE~(Attempto Controlled English)}} texts
 						\item {\color{BeamerBlue}{Fully automated}} without external dependencies
 						\item Achieves its {\color{BeamerBlue}{strengths}} in compact, tightly connected ontologies
 						\item Just a subset of ACE rules were implemented
 					\end{itemize}
-					\vspace{1.5cm}
 				\end{minipage}
 				\hfill\vline\hfill
 			    \begin{minipage}[t]{.3\linewidth}
@@ -231,7 +234,8 @@
 					\vspace{1cm}
 					\begin{itemize}
 						\small
-						\setlength\itemsep{1.15cm}
+						\justifying
+						\setlength\itemsep{1cm}
 						\item Context Generation based on {\color{BeamerBlue}{Annotation Properties}}
 						\item Terms of the {\color{BeamerBlue}{Dublin Core Metadata Set}} were used to encode the metadata
 						\item The metadata needs to be {\color{BeamerBlue}{added manually}} by (domain)~experts beforehand
@@ -255,13 +259,13 @@
 					\vspace{1.5cm}
 					\begin{itemize}
 						\small
-						\setlength\itemsep{0.5cm}
+						\justifying
+						\setlength\itemsep{1cm}
 						\item Context Generation based on {\color{BeamerBlue}{Dictionary Lookup}}
 						\item Fetches Context from the online dictionary {\color{BeamerBlue}{WorkNik}}
 						\item Has its {\color{BeamerBlue}{strengths}} when ontologies contain common, well known concepts
 						\item Fails when concept names contain phrases or special characters
 					\end{itemize}
-					\vspace{1.5cm}
 				\end{minipage}
 				\hfill
 			\end{block}

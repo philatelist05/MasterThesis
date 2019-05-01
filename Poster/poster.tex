@@ -19,6 +19,7 @@
 \usepackage[noend]{algpseudocode} 	% Allows pseudo-code like syntax in algorithms
 \usepackage{caption}				% Better caption handling
 \usepackage{ragged2e}				% Alignments
+\usepackage[export]{adjustbox}
 
 %\title[Computational Intelligence]{Interactive Computer Generated Architecture}
 % if you have a long title looking squeezed on the poster, just force
@@ -110,28 +111,41 @@
 			\begin{column}{.49\linewidth}
 				\begin{block}{Context \& Motivation}
 					\begin{minipage}[t][.25\textheight][c]{\textwidth}
-						\begin{minipage}[c][\textheight][c]{.49\textwidth}
-							\begin{figure}
-								%\hspace{-2cm}
-								\includegraphics[width=\textwidth]{figures/model_ontology_validation}
-							\end{figure}
+						\hfill
+						\begin{minipage}[t]{0.93\textwidth}
+							\begin{minipage}[t]{\textwidth}
+								\small
+								{\usebeamercolor[fg]{itemize item}{Crowdsourced Ontology Validation}}
+								uses Human Computation to validate ontologies in a cost effective way. 
+								
+								\vspace{1cm}
+								
+								The {\usebeamercolor[fg]{itemize item}{uComp Protege Plugin}} allows the
+								creation and execution of Crowdsourcing~(CS) tasks for ontology validation from within the Protege ontology editor.
+							
+							\end{minipage}
+							
+							\vspace{1cm}
+							
+							\begin{minipage}[t]{0.5\textwidth}
+								\small
+								\vspace{3cm}
+								{\usebeamercolor[fg]{itemize item}{Problem}}
+								
+								Crowd workers often do not had enough Context to complete such CS tasks.
+								
+								\vspace{3cm}
+								{\usebeamercolor[fg]{itemize item}{Solution}}
+								
+								Extend plugin to enrich CS tasks with Context.
+							\end{minipage}
+							\begin{minipage}[t]{.5\textwidth}
+								\hbox{}
+								\adjustimage{width=\textwidth}{figures/model_ontology_validation}
+							\end{minipage}
 						\end{minipage}
-						\begin{minipage}[c][\textheight][c]{.49\textwidth}
-							\small
-							{\usebeamercolor[fg]{itemize item}{Crowdsourced Ontology Validation}}
-							uses Human Computation to validate ontologies in a cost effective way. 
-							\vspace{1.5cm}
-							
-							The {\usebeamercolor[fg]{itemize item}{uComp Protege Plugin}} allows the
-							creation and execution of Crowdsourcing~(CS) tasks for ontology validation from within the Protege ontology editor.
-							\vspace{1.5cm}
-							
-							{\usebeamercolor[fg]{itemize item}{Problem:}} Crowd workers often do not had enough Context to complete such CS tasks.
-							\vspace{1.5cm}
-							
-							{\usebeamercolor[fg]{itemize item}{Solution:}} Extend plugin to enrich CS tasks with Context.
-							\vspace{1.5cm}
-						\end{minipage}
+						\hfill
+						\hbox{}
 					\end{minipage}
 				\end{block}
 			\end{column}
@@ -139,22 +153,27 @@
 			\begin{column}{.49\linewidth}
 				\begin{block}{Research Questions}
 					\begin{minipage}[t][.25\textheight][c]{\textwidth}
-					    \begin{itemize}
-							\justifying
-							\setlength\itemsep{1.5cm}
-					    	\item \textsc{\usebeamercolor[fg]{itemize item}{Context Enrichment of CS~Tasks}}
-							
-							Does the crowd perform better on context enriched CS~Tasks?
-					    	\item \textsc{\usebeamercolor[fg]{itemize item}{Context Enrichment Methods}}
-							
-							What methods can be applied that generate Context?
-					    	\item \textsc{\usebeamercolor[fg]{itemize item}{Generalising the Applicability of the proposed Methods}}
-							
-							To what extent is it possible to transfer the investigated methods to different datasets?
-					    	\item \textsc{\usebeamercolor[fg]{itemize item}{Comparative Evaluation of the proposed Methods}}
-							
-							Which of the proposed methods works best? What are potential shortcomings and why?
-					    \end{itemize}
+						\hfill
+						\begin{minipage}[t]{0.93\textwidth}
+					    	\begin{itemize}
+								\justifying
+								\setlength\itemsep{1.5cm}
+					    		\item \textsc{\usebeamercolor[fg]{itemize item}{Context Enrichment of CS~Tasks}}
+								
+								Does the crowd perform better on context enriched CS~Tasks?
+					    		\item \textsc{\usebeamercolor[fg]{itemize item}{Context Enrichment Methods}}
+								
+								What methods can be applied that generate Context?
+					    		\item \textsc{\usebeamercolor[fg]{itemize item}{Generalising the Applicability of the proposed Methods}}
+								
+								To what extent is it possible to transfer the investigated methods to different datasets?
+					    		\item \textsc{\usebeamercolor[fg]{itemize item}{Comparative Evaluation of the proposed Methods}}
+								
+								Which of the proposed methods works best? What are potential shortcomings and why?
+					    	\end{itemize}
+						\end{minipage}
+						\hfill
+						\hbox{}
 					\end{minipage}
 				\end{block}
 			\end{column}
@@ -171,99 +190,106 @@
 		%   Weaknesses
 		\begin{column}{\textwidth}
 			\begin{block}{Context Enrichment Methods}
-				\hfill
-			    \begin{minipage}[t]{.3\linewidth}
-					\begin{center}
-						\textsc{\usebeamercolor[fg]{itemize item}{Ontology based Approach}}
-					\end{center}
-					\vspace{1cm}
-					\begin{algorithm}[H]
-						\footnotesize
-						\caption{\parbox[c][2cm][c]{\textwidth}{Context Generation based on Neighbouring Nodes}}
-						\vspace{5mm}
-						\begin{algorithmic}
-							\Procedure{Generate Description}{}\newline
-								\textbf{Input:} A concept $C$\newline
-								\textbf{Output:} A textual description $T$ of $C's$ neighbouring nodes based on subsumption\newline
-								\State{$T=\{\}$}
-								\For {$ (c,d) \in C \sqsubseteq D $}
-									\State $T=T$ $\cup$ "Every " $\cup$ $name(c)$ $\cup$ " is a " $\cup$ $name(d)$
-								\EndFor
-								\For {$ (e,c) \in E \sqsubseteq C $}
-									\State $T=T$ $\cup$ "Every " $\cup$ $name(e)$ $\cup$ " is a " $\cup$ $name(c)$
-								\EndFor
-							\EndProcedure
-						\end{algorithmic}
-						\vspace{5mm}
-					\end{algorithm}
-					\begin{itemize}
-						\small
-						\justifying
-						\setlength\itemsep{1cm}
-						\item Context Generation based on {\usebeamercolor[fg]{itemize item}{Subsumption Relations}}
-						\item The algorithm outputs {\usebeamercolor[fg]{itemize item}{ACE~(Attempto Controlled English)}} texts
-						\item {\usebeamercolor[fg]{itemize item}{Fully automated}} without external dependencies
-						\item Achieves its {\usebeamercolor[fg]{itemize item}{strengths}} in compact, tightly connected ontologies
-						\item Just a subset of ACE rules were implemented
-					\end{itemize}
+				\vspace{1cm}
+				\begin{minipage}[c]{\textwidth}
+					\hfill
+			    	\begin{minipage}[t]{.3\linewidth}
+						\begin{center}
+							\textsc{\usebeamercolor[fg]{itemize item}{Ontology based Approach}}
+						\end{center}
+						\vspace{1cm}
+						\begin{algorithm}[H]
+							\footnotesize
+							\caption{\parbox[c][2cm][c]{\textwidth}{Context Generation based on Neighbouring Nodes}}
+							\vspace{5mm}
+							\begin{algorithmic}
+								\Procedure{Generate Description}{}\newline
+									\textbf{Input:} A concept $C$\newline
+									\textbf{Output:} A textual description $T$ of $C's$ neighbouring nodes based on subsumption\newline
+									\State{$T=\{\}$}
+									\For {$ (c,d) \in C \sqsubseteq D $}
+										\State $T=T$ $\cup$ "Every " $\cup$ $name(c)$ $\cup$ " is a " $\cup$ $name(d)$
+									\EndFor
+									\For {$ (e,c) \in E \sqsubseteq C $}
+										\State $T=T$ $\cup$ "Every " $\cup$ $name(e)$ $\cup$ " is a " $\cup$ $name(c)$
+									\EndFor
+								\EndProcedure
+							\end{algorithmic}
+							\vspace{5mm}
+						\end{algorithm}
+						\begin{itemize}
+							\small
+							\justifying
+							\setlength\itemsep{1cm}
+							\item Context Generation based on {\usebeamercolor[fg]{itemize item}{Subsumption Relations}}
+							\item The algorithm outputs {\usebeamercolor[fg]{itemize item}{ACE~(Attempto Controlled English)}} texts
+							\item {\usebeamercolor[fg]{itemize item}{Fully automated}} without external dependencies
+							\item Achieves its {\usebeamercolor[fg]{itemize item}{strengths}} in compact, tightly connected ontologies
+							\item Just a subset of ACE rules were implemented
+						\end{itemize}
+					\end{minipage}
+					\hfill\vline\hfill
+			    	\begin{minipage}[t]{.3\linewidth}
+						\begin{center}
+							\textsc{\usebeamercolor[fg]{itemize item}{Metadata based Approach}}						
+						\end{center}
+						\vspace{1cm}
+						\begin{algorithm}[H]
+							\footnotesize
+							\caption{\parbox[c][2cm][c]{\textwidth}{Context Generation based on Embedded Metadata}}
+							\vspace{5mm}
+							\begin{algorithmic}
+								\Procedure{Generate Description}{}\newline
+									\textbf{Input:} A concept $C$ with embedded metadata $\{m_1, m_2, \ldots, m_i \}$\newline
+									\textbf{Output:} A description $T$ of $C's$ metadata elements\newline
+									\State{$T=\{\}$}
+									\For {$ m_k \in \Phi(C) $}
+										\State $T=T$ $\cup$ $m_k$
+									\EndFor
+								\EndProcedure
+							\end{algorithmic}
+							\vspace{5mm}
+						\end{algorithm}
+						\begin{itemize}
+							\small
+							\justifying
+							\setlength\itemsep{1cm}
+							\item Context Generation based on {\usebeamercolor[fg]{itemize item}{Annotation Properties}}
+							\item Terms of the {\usebeamercolor[fg]{itemize item}{Dublin Core Metadata Set}} were used to encode the metadata
+							\item The metadata needs to be {\usebeamercolor[fg]{itemize item}{added manually}} by (domain)~experts beforehand
+							\item Gives the {\usebeamercolor[fg]{itemize item}{most control}} over Context Generation
+							\item Requires the most human involvement
+						\end{itemize}
+					\end{minipage}
+					\hfill\vline\hfill
+			    	\begin{minipage}[t]{.3\linewidth}
+						\begin{center}						
+							\textsc{\usebeamercolor[fg]{itemize item}{Dictionary based Approach}}
+						\end{center}
+						\vspace{1cm}
+						\begin{figure}[H]
+							 \centering
+							 \includegraphics[width=\textwidth]{figures/External_Source_Workflow}
+							 \caption{Conceptual Model of WordNik consultation to generate Context}
+						\end{figure}
+						
+						\vspace{-1cm}
+						\hrulefill
+						
+						\begin{itemize}
+							\small
+							\justifying
+							\setlength\itemsep{1cm}
+							\item Context Generation based on {\usebeamercolor[fg]{itemize item}{Dictionary Lookup}}
+							\item Fetches Context from the online dictionary {\usebeamercolor[fg]{itemize item}{WorkNik}}
+							\item Has its {\usebeamercolor[fg]{itemize item}{strengths}} when ontologies contain common, well known concepts
+							\item Fails when concept names contain phrases or special characters
+						\end{itemize}
+					\end{minipage}
+					\hfill
+					\hbox{}
 				\end{minipage}
-				\hfill\vline\hfill
-			    \begin{minipage}[t]{.3\linewidth}
-					\begin{center}
-						\textsc{\usebeamercolor[fg]{itemize item}{Metadata based Approach}}						
-					\end{center}
-					\vspace{1cm}
-					\begin{algorithm}[H]
-						\footnotesize
-						\caption{\parbox[c][2cm][c]{\textwidth}{Context Generation based on Embedded Metadata}}
-						\vspace{5mm}
-						\begin{algorithmic}
-							\Procedure{Generate Description}{}\newline
-								\textbf{Input:} A concept $C$ with embedded metadata $\{m_1, m_2, \ldots, m_i \}$\newline
-								\textbf{Output:} A description $T$ of $C's$ metadata elements\newline
-								\State{$T=\{\}$}
-								\For {$ m_k \in \Phi(C) $}
-									\State $T=T$ $\cup$ $m_k$
-								\EndFor
-							\EndProcedure
-						\end{algorithmic}
-						\vspace{5mm}
-					\end{algorithm}
-					\begin{itemize}
-						\small
-						\justifying
-						\setlength\itemsep{1cm}
-						\item Context Generation based on {\usebeamercolor[fg]{itemize item}{Annotation Properties}}
-						\item Terms of the {\usebeamercolor[fg]{itemize item}{Dublin Core Metadata Set}} were used to encode the metadata
-						\item The metadata needs to be {\usebeamercolor[fg]{itemize item}{added manually}} by (domain)~experts beforehand
-						\item Gives the {\usebeamercolor[fg]{itemize item}{most control}} over Context Generation
-						\item Requires the most human involvement
-					\end{itemize}
-				\end{minipage}
-				\hfill\vline\hfill
-			    \begin{minipage}[t]{.3\linewidth}
-					\begin{center}						
-						\textsc{\usebeamercolor[fg]{itemize item}{Dictionary based Approach}}
-					\end{center}
-					\vspace{1cm}
-					\begin{figure}[H]
-						 \centering
-						 \includegraphics[width=\textwidth]{figures/External_Source_Workflow}
-						 \caption{Conceptual Model of WordNik consultation to generate Context}
-					\end{figure}
-					\vspace{-1cm}
-					\hrulefill
-					\begin{itemize}
-						\small
-						\justifying
-						\setlength\itemsep{1cm}
-						\item Context Generation based on {\usebeamercolor[fg]{itemize item}{Dictionary Lookup}}
-						\item Fetches Context from the online dictionary {\usebeamercolor[fg]{itemize item}{WorkNik}}
-						\item Has its {\usebeamercolor[fg]{itemize item}{strengths}} when ontologies contain common, well known concepts
-						\item Fails when concept names contain phrases or special characters
-					\end{itemize}
-				\end{minipage}
-				\hfill
+				\vspace{1cm}
 			\end{block}
 		\end{column}
 		
@@ -273,80 +299,92 @@
 			\begin{column}{.49\textwidth}
 				\begin{block}{Experimental Evaluation}
 					\begin{minipage}[t][.25\textheight][c]{\textwidth}
-						\begin{minipage}[t]{.49\textwidth}
-							\small
-							{\usebeamercolor[fg]{itemize item}{Experimental Setup}}\par
-							Evaluation done on 3 Ontologies\\
-						\end{minipage}
-						\begin{minipage}[t]{.49\textwidth}
-							\small
-							{\usebeamercolor[fg]{itemize item}{Evaluation}}\par
-							Comparison with old implementation\\
-						\end{minipage}
-						\begin{myhline}
-							\vspace{-2cm}
-							\hfill
-						\end{myhline}
-						\vspace{-5mm}
-						\begin{minipage}[t]{\textwidth}
-							\small
-							{\usebeamercolor[fg]{itemize item}CS Task Interfaces}
-							
-							\vspace{-5mm}
-							\begin{minipage}[t]{.49\textwidth}
-								\begin{figure}[H]
-									 \centering
-									 \includegraphics[width=\textwidth]{figures/questionaire_university_example}
-									 \caption{Ontology based Approach}
-								\end{figure}
+						\hfill
+						\begin{minipage}[t]{0.93\textwidth}
+							\begin{minipage}[t]{.5\textwidth}
+								\small
+								{\usebeamercolor[fg]{itemize item}{Experimental Setup}}\par
+								Evaluation done on 3 Ontologies\\
 							\end{minipage}
-							\begin{minipage}[t]{.49\textwidth}
-								\begin{minipage}[t]{\textwidth}
+							\begin{minipage}[t]{.5\textwidth}
+								\small
+								{\usebeamercolor[fg]{itemize item}{Evaluation}}\par
+								Comparison with old implementation\\
+							\end{minipage}
+							
+							\hrulefill
+							
+							\begin{minipage}[t]{\textwidth}
+								\small
+								{\usebeamercolor[fg]{itemize item}CS Task Interfaces}
+								
+								\vspace{-5mm}
+								\begin{minipage}[t]{.49\textwidth}
 									\begin{figure}[H]
 										 \centering
-										 \includegraphics[width=\textwidth]{figures/questionaire_metadata_example}
-										 \caption{Metadata based Approach}
+										 \includegraphics[width=\textwidth]{figures/questionaire_university_example}
+										 \caption{Ontology based Approach}
 									\end{figure}
 								\end{minipage}
-								\begin{minipage}[t]{\textwidth}
-									\vspace{-2.15mm}
-									\begin{figure}[H]
-									 \centering
-									 \includegraphics[width=\textwidth]{figures/questionaire_wordnik_example}
-									 \caption{Dictionary based Approach}
-									\end{figure}
+								\begin{minipage}[t]{.49\textwidth}
+									\begin{minipage}[t]{\textwidth}
+										\begin{figure}[H]
+											 \centering
+											 \includegraphics[width=\textwidth]{figures/questionaire_metadata_example}
+											 \caption{Metadata based Approach}
+										\end{figure}
+									\end{minipage}
+									\begin{minipage}[t]{\textwidth}
+										\vspace{-1.9mm}
+										\begin{figure}[H]
+										 \centering
+										 \includegraphics[width=\textwidth]{figures/questionaire_wordnik_example}
+										 \caption{Dictionary based Approach}
+										\end{figure}
+									\end{minipage}
 								\end{minipage}
 							\end{minipage}
 						\end{minipage}
+						\hfill
+						\hbox{}
+						
 					\end{minipage}
 				\end{block}
 			\end{column}
 			\begin{column}{.49\textwidth}
 				\begin{block}{Conclusion \& Future Work}
 					\begin{minipage}[t][.25\textheight][c]{\textwidth}
-						\small
-						{\usebeamercolor[fg]{itemize item}{Improvements through Context Enrichment:}}
-						
-						\begin{itemize}
+						\hfill
+						\begin{minipage}[t]{0.93\textwidth}
 							\small
-							\justifying
-							\setlength\itemsep{1cm}
-							\item All 3 approaches improved the performance of the crowd as manifested through the F-Measure value above 80\%
-							\item The Metadata~based~Approach achieves results of highest quality and facilitates most flexible Context Generation
-						\end{itemize}
-						\begin{myhline}
-							\hfill
-						\end{myhline}
-						\small
-						{\usebeamercolor[fg]{itemize item}{Future Work:}}
-						
-						\begin{itemize}
+							{\usebeamercolor[fg]{itemize item}{Improvements through Context Enrichment:}}
+							
+							\begin{itemize}
+								\small
+								\justifying
+								\setlength\itemsep{1cm}
+								\item All 3 approaches improved the performance of the crowd as manifested through the F-Measure value above 80\%
+								\item The number of misclassified concepts could be reduced for all 3 approaches
+								\item The Metadata~based~Approach achieves results of highest quality and facilitates most flexible Context Generation
+							\end{itemize}
+							\vspace{1cm}
+							
+							\hrulefill
+							
+							\vspace{1.5cm}
 							\small
-							\justifying
-							\setlength\itemsep{1cm}
-							\item (Re-)evaluate the approaches with realistically large datasets to spot any bias towards specific characteristics of the validated ontology
-							\item Develop recommendations and guidelines towards a generic framework which combines the approaches to achieve high quality results
-						\end{itemize}
+							{\usebeamercolor[fg]{itemize item}{Future Work:}}
+							
+							\begin{itemize}
+								\small
+								\justifying
+								\setlength\itemsep{1cm}
+								\item (Re-)evaluation the approaches with realistically large datasets to spot any bias towards specific characteristics of the validated ontology
+								\item Development of recommendations and guidelines towards a generic framework which combines the approaches to achieve high quality results
+							\end{itemize}
+						\end{minipage}
+						\hfill
+						\hbox{}
 					\end{minipage}
 				\end{block}
 			\end{column}

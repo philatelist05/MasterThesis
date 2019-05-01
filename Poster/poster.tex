@@ -19,7 +19,8 @@
 \usepackage[noend]{algpseudocode} 	% Allows pseudo-code like syntax in algorithms
 \usepackage{caption}				% Better caption handling
 \usepackage{ragged2e}				% Alignments
-\usepackage[export]{adjustbox}
+\usepackage[export]{adjustbox}		%For aligning images right and left
+\usepackage{multicol}				%Multicolumn environment (for bibliography)
 
 %\title[Computational Intelligence]{Interactive Computer Generated Architecture}
 % if you have a long title looking squeezed on the poster, just force
@@ -40,7 +41,7 @@
 \titlegraphic{\includegraphics[height=52mm]{logo_ifs_cmyk}}
 \date[\today]{\today}
 \subject{epilog}
-\keywords{my kwd1, my kwd2}
+\keywords{crowdsourcing, ontology, validation, ontology validation, context}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -92,6 +93,8 @@
   }\item\relax}
  {\par\nopagebreak\rule{\linewidth}{0.4pt}\end{list}}
 
+%BIBLIOGRAPHY CUSTOMIZATION%
+\setbeamertemplate{bibliography item}[text]
 
 % for crop marks, uncomment the following line
 %\usepackage[cross,width=88truecm,height=123truecm,center]{crop}
@@ -120,7 +123,7 @@
 								
 								\vspace{1cm}
 								
-								The {\usebeamercolor[fg]{itemize item}{uComp Protege Plugin}} allows the
+								The {\usebeamercolor[fg]{itemize item}{uComp Protege Plugin}}~\cite{wohlgenannt2016} allows the
 								creation and execution of Crowdsourcing~(CS) tasks for ontology validation from within the Protege ontology editor.
 							
 							\end{minipage}
@@ -137,7 +140,7 @@
 								\vspace{3cm}
 								{\usebeamercolor[fg]{itemize item}{Solution}}
 								
-								Extend plugin to enrich CS tasks with Context.
+								Extend the plugin to enrich CS tasks with Context.
 							\end{minipage}
 							\begin{minipage}[t]{.5\textwidth}
 								\hbox{}
@@ -222,7 +225,7 @@
 							\justifying
 							\setlength\itemsep{1cm}
 							\item Context Generation based on {\usebeamercolor[fg]{itemize item}{Subsumption Relations}}
-							\item The algorithm outputs {\usebeamercolor[fg]{itemize item}{ACE~(Attempto Controlled English)}} texts
+							\item The algorithm outputs {\usebeamercolor[fg]{itemize item}{ACE~(Attempto Controlled English)}}~\cite{fuchs2008} texts
 							\item {\usebeamercolor[fg]{itemize item}{Fully automated}} without external dependencies
 							\item Achieves its {\usebeamercolor[fg]{itemize item}{strengths}} in compact, tightly connected ontologies
 							\item Just a subset of ACE rules were implemented
@@ -255,7 +258,7 @@
 							\justifying
 							\setlength\itemsep{1cm}
 							\item Context Generation based on {\usebeamercolor[fg]{itemize item}{Annotation Properties}}
-							\item Terms of the {\usebeamercolor[fg]{itemize item}{Dublin Core Metadata Set}} were used to encode the metadata
+							\item Terms of the {\usebeamercolor[fg]{itemize item}{Dublin Core Metadata}} were used to encode the metadata
 							\item The metadata needs to be {\usebeamercolor[fg]{itemize item}{added manually}} by (domain)~experts beforehand
 							\item Gives the {\usebeamercolor[fg]{itemize item}{most control}} over Context Generation
 							\item Requires the most human involvement
@@ -281,9 +284,9 @@
 							\justifying
 							\setlength\itemsep{1cm}
 							\item Context Generation based on {\usebeamercolor[fg]{itemize item}{Dictionary Lookup}}
-							\item Fetches Context from the online dictionary {\usebeamercolor[fg]{itemize item}{WorkNik}}
+							\item Fetches Context from the online dictionary {\usebeamercolor[fg]{itemize item}{WordNik}}
 							\item Has its {\usebeamercolor[fg]{itemize item}{strengths}} when ontologies contain common, well known concepts
-							\item Fails when concept names contain phrases or special characters
+							\item Often fails when concept names contain phrases or special characters
 						\end{itemize}
 					\end{minipage}
 					\hfill
@@ -365,7 +368,7 @@
 								\setlength\itemsep{1cm}
 								\item All 3 approaches improved the performance of the crowd as manifested through the F-Measure value above 80\%
 								\item The number of misclassified concepts could be reduced for all 3 approaches
-								\item The Metadata~based~Approach achieves results of highest quality and facilitates most flexible Context Generation
+								\item The Metadata~based~Approach achieves results of highest quality and facilitates the most flexible Context Generation
 							\end{itemize}
 							\vspace{1cm}
 							
@@ -379,7 +382,7 @@
 								\small
 								\justifying
 								\setlength\itemsep{1cm}
-								\item (Re-)evaluation the approaches with realistically large datasets to spot any bias towards specific characteristics of the validated ontology
+								\item (Re-)evaluation of the approaches with realistically large datasets to discover any bias towards specific characteristics of the validated ontology
 								\item Development of recommendations and guidelines towards a generic framework which combines the approaches to achieve high quality results
 							\end{itemize}
 						\end{minipage}
@@ -387,6 +390,23 @@
 						\hbox{}
 					\end{minipage}
 				\end{block}
+			\end{column}
+		\end{columns}
+		
+		
+		%REFERENCES
+		\begin{columns}[t, onlytextwidth]
+			\begin{column}{\textwidth}
+				\footnotesize
+				
+				References:
+				
+				\vspace{-1.3cm}
+				\setlength{\columnsep}{-10cm}
+				\begin{multicols}{2}
+					\bibliographystyle{abbrv}
+					\bibliography{literature}
+				\end{multicols}
 			\end{column}
 		\end{columns}
 		

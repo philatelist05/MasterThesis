@@ -73,7 +73,7 @@
         \end{minipage}
   \end{beamercolorbox}
   {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip}}%
-	  \begin{beamercolorbox}[leftskip=1em,sep=1ex,vmode]{block body}%
+	  \begin{beamercolorbox}{block body}%
 }
 
 % END BLOCK TEMPLATE %
@@ -110,13 +110,13 @@
 			\begin{column}{.49\linewidth}
 				\begin{block}{Context \& Motivation}
 					\begin{minipage}[t][.25\textheight][c]{\textwidth}
-						\begin{minipage}[c][\textheight][c]{.45\textwidth}
+						\begin{minipage}[c][\textheight][c]{.49\textwidth}
 							\begin{figure}
-								\hspace{-2cm}
+								%\hspace{-2cm}
 								\includegraphics[width=\textwidth]{figures/model_ontology_validation}
 							\end{figure}
 						\end{minipage}
-						\begin{minipage}[c][\textheight][c]{.45\textwidth}
+						\begin{minipage}[c][\textheight][c]{.49\textwidth}
 							\small
 							{\usebeamercolor[fg]{itemize item}{Crowdsourced Ontology Validation}}
 							uses Human Computation to validate ontologies in a cost effective way. 
@@ -139,24 +139,22 @@
 			\begin{column}{.49\linewidth}
 				\begin{block}{Research Questions}
 					\begin{minipage}[t][.25\textheight][c]{\textwidth}
-						\begin{minipage}[t][\textheight][c]{0.9\textwidth}
-					    	\begin{itemize}
-								\justifying
-								\setlength\itemsep{1.5cm}
-					    		\item \textsc{\usebeamercolor[fg]{itemize item}{Context Enrichment of CS~Tasks}}
-								
-								Does the crowd perform better on context enriched CS~Tasks?
-					    		\item \textsc{\usebeamercolor[fg]{itemize item}{Context Enrichment Methods}}
-								
-								What methods can be applied that generate Context?
-					    		\item \textsc{\usebeamercolor[fg]{itemize item}{Generalising the Applicability of the proposed Methods}}
-								
-								To what extent is it possible to transfer the investigated methods to different datasets?
-					    		\item \textsc{\usebeamercolor[fg]{itemize item}{Comparative Evaluation of the proposed Methods}}
-								
-								Which of the proposed methods works best? What are potential shortcomings and why?
-					    	\end{itemize}
-						\end{minipage}
+					    \begin{itemize}
+							\justifying
+							\setlength\itemsep{1.5cm}
+					    	\item \textsc{\usebeamercolor[fg]{itemize item}{Context Enrichment of CS~Tasks}}
+							
+							Does the crowd perform better on context enriched CS~Tasks?
+					    	\item \textsc{\usebeamercolor[fg]{itemize item}{Context Enrichment Methods}}
+							
+							What methods can be applied that generate Context?
+					    	\item \textsc{\usebeamercolor[fg]{itemize item}{Generalising the Applicability of the proposed Methods}}
+							
+							To what extent is it possible to transfer the investigated methods to different datasets?
+					    	\item \textsc{\usebeamercolor[fg]{itemize item}{Comparative Evaluation of the proposed Methods}}
+							
+							Which of the proposed methods works best? What are potential shortcomings and why?
+					    \end{itemize}
 					\end{minipage}
 				\end{block}
 			\end{column}
@@ -173,6 +171,7 @@
 		%   Weaknesses
 		\begin{column}{\textwidth}
 			\begin{block}{Context Enrichment Methods}
+				\hfill
 			    \begin{minipage}[t]{.3\linewidth}
 					\begin{center}
 						\textsc{\usebeamercolor[fg]{itemize item}{Ontology based Approach}}
@@ -271,15 +270,15 @@
 		
 		%BOTTOM%
 		\begin{columns}[t, onlytextwidth]
-			\begin{column}{.49\linewidth}
+			\begin{column}{.49\textwidth}
 				\begin{block}{Experimental Evaluation}
 					\begin{minipage}[t][.25\textheight][c]{\textwidth}
-						\begin{minipage}[t]{.45\textwidth}
+						\begin{minipage}[t]{.49\textwidth}
 							\small
 							{\usebeamercolor[fg]{itemize item}{Experimental Setup}}\par
 							Evaluation done on 3 Ontologies\\
 						\end{minipage}
-						\begin{minipage}[t]{.45\textwidth}
+						\begin{minipage}[t]{.49\textwidth}
 							\small
 							{\usebeamercolor[fg]{itemize item}{Evaluation}}\par
 							Comparison with old implementation\\
@@ -294,14 +293,14 @@
 							{\usebeamercolor[fg]{itemize item}CS Task Interfaces}
 							
 							\vspace{-5mm}
-							\begin{minipage}[t]{.45\textwidth}
+							\begin{minipage}[t]{.49\textwidth}
 								\begin{figure}[H]
 									 \centering
 									 \includegraphics[width=\textwidth]{figures/questionaire_university_example}
 									 \caption{Ontology based Approach}
 								\end{figure}
 							\end{minipage}
-							\begin{minipage}[t]{.45\textwidth}
+							\begin{minipage}[t]{.49\textwidth}
 								\begin{minipage}[t]{\textwidth}
 									\begin{figure}[H]
 										 \centering
@@ -322,14 +321,32 @@
 					\end{minipage}
 				\end{block}
 			\end{column}
-			\begin{column}{.49\linewidth}
-				\begin{block}{Improvements through Context Enrichment}
+			\begin{column}{.49\textwidth}
+				\begin{block}{Conclusion \& Future Work}
 					\begin{minipage}[t][.25\textheight][c]{\textwidth}
-						%- Answer ) Does the crowd perform better on Context enriched Crowdsourcing tasks?
+						\small
+						{\usebeamercolor[fg]{itemize item}{Improvements through Context Enrichment:}}
 						
-						%- Answer ) To what extent is it possible to transfer the investigated methods to different datasets?
+						\begin{itemize}
+							\small
+							\justifying
+							\setlength\itemsep{1cm}
+							\item All 3 approaches improved the performance of the crowd as manifested through the F-Measure value above 80\%
+							\item The Metadata~based~Approach achieves results of highest quality and facilitates most flexible Context Generation
+						\end{itemize}
+						\begin{myhline}
+							\hfill
+						\end{myhline}
+						\small
+						{\usebeamercolor[fg]{itemize item}{Future Work:}}
 						
-						%- Answer ) Which of the proposed methods work best? What are potential shortcomings and why?
+						\begin{itemize}
+							\small
+							\justifying
+							\setlength\itemsep{1cm}
+							\item (Re-)evaluate the approaches with realistically large datasets to spot any bias towards specific characteristics of the validated ontology
+							\item Develop recommendations and guidelines towards a generic framework which combines the approaches to achieve high quality results
+						\end{itemize}
 					\end{minipage}
 				\end{block}
 			\end{column}

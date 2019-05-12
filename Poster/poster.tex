@@ -113,7 +113,7 @@
 			
 			\begin{column}{.49\linewidth}
 				\begin{block}{Context \& Motivation}
-					\begin{minipage}[t][.25\textheight][c]{\textwidth}
+					\begin{minipage}[t][.23\textheight][c]{\textwidth}
 						\hfill
 						\begin{minipage}[t]{0.93\textwidth}
 							\begin{minipage}[t]{\textwidth}
@@ -132,20 +132,24 @@
 							
 							\begin{minipage}[t]{0.5\textwidth}
 								\small
-								\vspace{3cm}
+								\vspace{2cm}
 								{\usebeamercolor[fg]{itemize item}{Problem}}
 								
 								Crowd workers often do not have enough Context to complete such CS tasks
 								
-								\vspace{3cm}
+								\vspace{2cm}
 								{\usebeamercolor[fg]{itemize item}{Solution}}
 								
 								Extend the plugin to enrich CS tasks with Task Context information
 							\end{minipage}
-							\begin{minipage}[t]{.5\textwidth}
+							\hfill
+							\begin{minipage}[t]{.45\textwidth}
 								\hbox{}
+								\centering
 								\adjustimage{width=\textwidth}{figures/model_ontology_validation}
 							\end{minipage}
+							\hfill
+							\hbox{}
 						\end{minipage}
 						\hfill
 						\hbox{}
@@ -155,12 +159,13 @@
 			
 			\begin{column}{.49\linewidth}
 				\begin{block}{Research Questions}
-					\begin{minipage}[t][.25\textheight][c]{\textwidth}
+					\begin{minipage}[t][.23\textheight][c]{\textwidth}
 						\hfill
 						\begin{minipage}[t]{0.93\textwidth}
 					    	\begin{itemize}
 								\justifying
-								\setlength\itemsep{1.5cm}
+								\small
+								\setlength\itemsep{2.25cm}
 					    		\item \textsc{\usebeamercolor[fg]{itemize item}{Context Enrichment of CS~Tasks}}
 								
 								Does the crowd perform better on context enriched CS~Tasks?
@@ -223,7 +228,7 @@
 						\begin{itemize}
 							\small
 							\justifying
-							\setlength\itemsep{1cm}
+							\setlength\itemsep{0.5cm}
 							\item Context Generation based on {\usebeamercolor[fg]{itemize item}{Subsumption Relations}}
 							\item The algorithm outputs {\usebeamercolor[fg]{itemize item}{ACE~(Attempto Controlled English)}}~\cite{fuchs2008} texts
 							\item {\usebeamercolor[fg]{itemize item}{Fully automated}} without external dependencies
@@ -255,7 +260,7 @@
 						\begin{itemize}
 							\small
 							\justifying
-							\setlength\itemsep{1cm}
+							\setlength\itemsep{0.5cm}
 							\item Context Generation based on {\usebeamercolor[fg]{itemize item}{Annotation Properties}}
 							\item The {\usebeamercolor[fg]{itemize item}{Dublin Core Metadata Terms}} were used to encode the metadata
 							\item The metadata needs to be {\usebeamercolor[fg]{itemize item}{added manually}} by (domain)~experts beforehand
@@ -281,7 +286,7 @@
 						\begin{itemize}
 							\small
 							\justifying
-							\setlength\itemsep{1cm}
+							\setlength\itemsep{0.5cm}
 							\item Context Generation based on {\usebeamercolor[fg]{itemize item}{Dictionary Lookup}}
 							\item Fetches Context from the online dictionary {\usebeamercolor[fg]{itemize item}{WordNik}}
 							\item Best suited for ontologies containing {\usebeamercolor[fg]{itemize item}{common, well known concepts}}
@@ -300,90 +305,100 @@
 		\begin{columns}[t, onlytextwidth]
 			\begin{column}{.49\textwidth}
 				\begin{block}{Experimental Evaluation}
-					\begin{minipage}[t][.275\textheight][c]{\textwidth}
+					\begin{minipage}[t][.2\textheight][c]{\textwidth}
 						
-						\begin{minipage}[t]{\textwidth}
-							\small
-							{\usebeamercolor[fg]{itemize item}CS Task Interfaces}
-							
-							\vspace{-5mm}
-							\begin{minipage}[t]{.49\textwidth}
-								\begin{figure}[H]
-									 \centering
-									 \includegraphics[width=\textwidth]{figures/questionaire_university_example}
-									 \caption{Ontology based Approach}
-								\end{figure}
-							\end{minipage}
-							\begin{minipage}[t]{.49\textwidth}
-								\begin{minipage}[t]{\textwidth}
+						\hfill
+						\begin{minipage}[t]{0.93\textwidth}
+							\begin{minipage}[t]{\textwidth}
+								\small
+								{\usebeamercolor[fg]{itemize item}CS Task Interfaces}
+								
+								\vspace{-5mm}
+								\begin{minipage}[t]{.49\textwidth}
 									\begin{figure}[H]
 										 \centering
-										 \includegraphics[width=\textwidth]{figures/questionaire_metadata_example}
-										 \caption{Metadata based Approach}
+										 \includegraphics[width=\textwidth]{figures/questionaire_university_example}
+										 \caption{Ontology based Approach}
 									\end{figure}
 								\end{minipage}
-								\begin{minipage}[t]{\textwidth}
-									\vspace{-1.9mm}
-									\begin{figure}[H]
-									 \centering
-									 \includegraphics[width=\textwidth]{figures/questionaire_wordnik_example}
-									 \caption{Dictionary based Approach}
-									\end{figure}
+								\begin{minipage}[t]{.49\textwidth}
+									\begin{minipage}[t]{\textwidth}
+										\begin{figure}[H]
+											 \centering
+											 \includegraphics[width=\textwidth]{figures/questionaire_metadata_example}
+											 \caption{Metadata based Approach}
+										\end{figure}
+									\end{minipage}
+									\begin{minipage}[t]{\textwidth}
+										\vspace{-1.9mm}
+										\begin{figure}[H]
+										 \centering
+										 \includegraphics[width=\textwidth]{figures/questionaire_wordnik_example}
+										 \caption{Dictionary based Approach}
+										\end{figure}
+									\end{minipage}
 								\end{minipage}
 							\end{minipage}
 						\end{minipage}
+						\hfill
+						\hbox{}
 						
 					\end{minipage}
 				\end{block}
 			\end{column}
 			\begin{column}{.49\textwidth}
-				\begin{block}{Conclusion \& Future Work}
-					\begin{minipage}[t][.275\textheight][c]{\textwidth}
-						\hfill
-						\begin{minipage}[t]{0.93\textwidth}
-							\small
-							{\usebeamercolor[fg]{itemize item}{Improvements through Context Enrichment}}
-							
-							\begin{itemize}
-								\small
-								\justifying
-								\setlength\itemsep{1cm}
-								\item All 3 approaches improved the performance of the crowd (F-Measure above~80~\%)
-								\item The number of misclassified concepts could be reduced in all 3 approaches
-								\item The Metadata~based~Approach achieves results of highest quality and facilitates the most flexible Context Generation
-							\end{itemize}
-							\vspace{1cm}
-							
-							\hrulefill
-							
-							\vspace{1.5cm}
-							\small
-							{\usebeamercolor[fg]{itemize item}{Future Work}}
-							
-							\begin{itemize}
-								\small
-								\justifying
-								\setlength\itemsep{1cm}
-								\item (Re-)evaluation of the approaches with realistically large datasets to discover any bias towards specific characteristics of the validated ontology
-								\item Development of recommendations and guidelines towards a generic framework which combines the approaches to achieve high quality results
-							\end{itemize}
-						\end{minipage}
-						\hfill
-						\hbox{}
+				\begin{block}{Test Test}
+					\begin{minipage}[t][.2\textheight][c]{\textwidth}
+						
 					\end{minipage}
 				\end{block}
 			\end{column}
 		\end{columns}
+		\begin{columns}[t, onlytextwidth]
+			\begin{column}{\textwidth}
+				\begin{block}{Conclusion \& Future Work}
+					\hfill
+					\begin{minipage}[t][.09\textheight][c]{0.97\textwidth}
+						\begin{multicols}{2}
+							\footnotesize
+							{\usebeamercolor[fg]{itemize item}{Improvements through Context Enrichment}}\\
+							\vspace{-5mm}
+							\begin{itemize}
+								\footnotesize
+								\justifying
+								\setlength\itemsep{5mm}
+								\item All 3 approaches improved the performance of the crowd (F-Measure above~80~\%)
+								\item The number of misclassified concepts could be reduced in all 3 approaches
+								\item The Metadata~based~Approach achieves results of highest quality and facilitates the most flexible Context Generation
+							\end{itemize}
+							\footnotesize
+							{\usebeamercolor[fg]{itemize item}{Future Work}}\\
+							\vspace{-1cm}
+							\begin{itemize}
+								\footnotesize
+								\justifying
+								\setlength\itemsep{5mm}
+								\item (Re-)evaluation of the approaches with realistically large datasets to discover any bias towards specific characteristics of the validated ontology
+								\item Development of recommendations and guidelines towards a generic framework which combines the approaches to achieve high quality results
+							\end{itemize}
+						\end{multicols}
+					\end{minipage}
+					\hfill
+					\hbox{}
+				\end{block}
+			\end{column}
+		\end{columns}
 		
+			
 		
 		%REFERENCES
 		\begin{columns}[t, onlytextwidth]
 			\begin{column}{\textwidth}
-				\footnotesize
+				\scriptsize
 				
 				References:
 				
-				\vspace{-1.3cm}
+				\vspace{-1cm}
 				\setlength{\columnsep}{-10cm}
 				\begin{multicols}{2}
 					\bibliographystyle{abbrv}

@@ -310,7 +310,7 @@
 		\begin{columns}[t, onlytextwidth]
 			\begin{column}{.49\textwidth}
 				\begin{block}{Experimental Evaluation}
-					\begin{minipage}[t][.2\textheight][c]{\textwidth}
+					\begin{minipage}[t][.22\textheight][c]{\textwidth}
 						
 						\hfill
 						\begin{minipage}[t]{0.93\textwidth}
@@ -353,7 +353,7 @@
 			\end{column}
 			\begin{column}{.49\textwidth}
 				\begin{block}{Evaluation Results}
-					\begin{minipage}[t][.2\textheight][c]{\textwidth}
+					\begin{minipage}[t][.22\textheight][c]{\textwidth}
 						% Insert compartive graphics 
 						% 	*) showing the performed evaluation on 3 ontologies
 						%   *) showing the metrics (Precision, Recall, F-Measure, Agreement??) of the evaluation
@@ -362,10 +362,12 @@
 						\begin{minipage}[t]{0.93\textwidth}
 							\begin{minipage}[t]{\textwidth}
 								\begin{minipage}[t]{.48\textwidth}
+									\setlength\abovecaptionskip{0mm}
+									\setlength\belowcaptionskip{0mm}
 									
 									\begin{table}
-										\footnotesize
-										\captionsetup{font=footnotesize}
+										\scriptsize
+										\captionsetup{font=scriptsize}
 										\begin{tabularx}{\textwidth}{l c*{3}{Y}}
 											\toprule
 											Method & Precision & Recall & F-Measure \\
@@ -380,8 +382,8 @@
 									\end{table}
 									
 									\begin{table}
-										\footnotesize
-										\captionsetup{font=footnotesize}
+										\scriptsize
+										\captionsetup{font=scriptsize}
 										\begin{tabularx}{\textwidth}{l c*{3}{Y}}
 											\toprule
 											Method & Precision & Recall & F-Measure \\
@@ -394,14 +396,9 @@
 										\end{tabularx}
 										\caption{Finance Ontology}
 									\end{table}
-									
-								\end{minipage}
-								\hfill
-								\begin{minipage}[t]{.48\textwidth}
-									
 									\begin{table}
-										\footnotesize
-										\captionsetup{font=footnotesize}
+										\scriptsize
+										\captionsetup{font=scriptsize}
 										\begin{tabularx}{\textwidth}{l c*{3}{Y}}
 											\toprule
 											Method & Precision & Recall & F-Measure \\
@@ -415,9 +412,13 @@
 										\caption{Tennis Ontology}
 									\end{table}
 									
+								\end{minipage}
+								\hfill
+								\begin{minipage}[t]{.48\textwidth}
+									
 									\begin{table}
-										\footnotesize
-										\captionsetup{font=footnotesize}
+										\scriptsize
+										\captionsetup{font=scriptsize}
 										\begin{tabularx}{\textwidth}{l c*{3}{Y}}
 											\toprule
 											Method & Precision & Recall & F-Measure \\
@@ -428,7 +429,7 @@
 											 None & 0.674 & 0.910 & 0.775 \\
 											\bottomrule
 										\end{tabularx}
-										\caption{Combined Results}
+										\caption{Aggregated Results over all Ontologies}
 									\end{table}
 									
 								\end{minipage}
@@ -465,7 +466,7 @@
 								\footnotesize
 								\justifying
 								\setlength\itemsep{5mm}
-								\item (Re-)evaluation of the approaches with realistically large datasets to discover any bias towards specific characteristics of the validated ontology
+								\item (Re-) evaluation of the approaches with realistically large datasets to discover any bias towards specific characteristics of the validated ontology
 								\item Development of recommendations and guidelines towards a generic framework which combines the approaches to achieve high quality results
 							\end{itemize}
 						\end{multicols}
@@ -479,11 +480,10 @@
 			
 		
 		%REFERENCES
+		\vspace{-5mm}
 		\begin{columns}[t, onlytextwidth]
 			\begin{column}{\textwidth}
 				\scriptsize
-				
-				References:
 				
 				\vspace{-1cm}
 				\setlength{\columnsep}{-10cm}

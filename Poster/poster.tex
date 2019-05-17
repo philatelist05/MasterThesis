@@ -19,8 +19,10 @@
 \usepackage[noend]{algpseudocode} 	% Allows pseudo-code like syntax in algorithms
 \usepackage{caption}				% Better caption handling
 \usepackage{ragged2e}				% Alignments
-\usepackage[export]{adjustbox}		%For aligning images right and left
-\usepackage{multicol}				%Multicolumn environment (for bibliography)
+\usepackage[export]{adjustbox}		% For aligning images right and left
+\usepackage{multicol}				% Multicolumn environment (for bibliography)
+\usepackage{booktabs}   			% Improves the typesettings of tables.
+\usepackage{tabularx, booktabs} 	% Better Table support
 
 %\title[Computational Intelligence]{Interactive Computer Generated Architecture}
 % if you have a long title looking squeezed on the poster, just force
@@ -55,6 +57,9 @@
 % \usebackgroundtemplate{%
 %   \includegraphics[width=\paperwidth]{logo_KBS_2_CMYK}
 % }
+
+%TABULARX CUSTOMIZATION%
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
 
 %CAPTION SETUP
 \captionsetup[algorithm]{font=footnotesize}
@@ -352,6 +357,86 @@
 						% Insert compartive graphics 
 						% 	*) showing the performed evaluation on 3 ontologies
 						%   *) showing the metrics (Precision, Recall, F-Measure, Agreement??) of the evaluation
+						
+						\hfill
+						\begin{minipage}[t]{0.93\textwidth}
+							\begin{minipage}[t]{\textwidth}
+								\begin{minipage}[t]{.48\textwidth}
+									
+									\begin{table}
+										\footnotesize
+										\captionsetup{font=footnotesize}
+										\begin{tabularx}{\textwidth}{l c*{3}{Y}}
+											\toprule
+											Method & Precision & Recall & F-Measure \\
+											\midrule
+											 Onto & 0.758 & 0.805 & 0.781 \\
+											 Meta & 0.732 & 0.831 & 0.778 \\
+											 Dict & 0.724 & 0.821 & 0.769 \\
+											 None & 0.549 & 0.837 & 0.663 \\
+											\bottomrule
+										\end{tabularx}
+										\caption{Climate Change Ontology}
+									\end{table}
+									
+									\begin{table}
+										\footnotesize
+										\captionsetup{font=footnotesize}
+										\begin{tabularx}{\textwidth}{l c*{3}{Y}}
+											\toprule
+											Method & Precision & Recall & F-Measure \\
+											\midrule
+											 Meta & 0.797 & 0.985 & 0.881 \\
+											 Dict & 0.794 & 0.944 & 0.862 \\
+											 Onto & 0.756 & 0.949 & 0.842 \\
+											 None & 0.734 & 0.963 & 0.833 \\
+											\bottomrule
+										\end{tabularx}
+										\caption{Finance Ontology}
+									\end{table}
+									
+								\end{minipage}
+								\hfill
+								\begin{minipage}[t]{.48\textwidth}
+									
+									\begin{table}
+										\footnotesize
+										\captionsetup{font=footnotesize}
+										\begin{tabularx}{\textwidth}{l c*{3}{Y}}
+											\toprule
+											Method & Precision & Recall & F-Measure \\
+											\midrule
+											 Meta & 0.896 & 0.976 & 0.934 \\
+											 Onto & 0.874 & 0.939 & 0.905 \\ 
+											 None & 0.783 & 0.933 & 0.851 \\
+											 Dict & 0.648 & 0.980 & 0.780 \\
+											\bottomrule
+										\end{tabularx}
+										\caption{Tennis Ontology}
+									\end{table}
+									
+									\begin{table}
+										\footnotesize
+										\captionsetup{font=footnotesize}
+										\begin{tabularx}{\textwidth}{l c*{3}{Y}}
+											\toprule
+											Method & Precision & Recall & F-Measure \\
+											\midrule
+											 Meta & 0.797 & 0.921 & 0.854 \\
+											 Onto & 0.787 & 0.887 & 0.834 \\
+											 Dict & 0.729 & 0.899 & 0.805 \\
+											 None & 0.674 & 0.910 & 0.775 \\
+											\bottomrule
+										\end{tabularx}
+										\caption{Combined Results}
+									\end{table}
+									
+								\end{minipage}
+							\end{minipage}
+						\end{minipage}
+						\hfill
+						\hbox{}
+						
 					\end{minipage}
 				\end{block}
 			\end{column}

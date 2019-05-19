@@ -326,6 +326,7 @@
 										 \caption{Ontology based Approach}
 									\end{figure}
 								\end{minipage}
+								\hfill
 								\begin{minipage}[t]{.49\textwidth}
 									\begin{minipage}[t]{\textwidth}
 										\begin{figure}[H]
@@ -368,7 +369,7 @@
 									\begin{table}
 										\scriptsize
 										\captionsetup{font=scriptsize}
-										\begin{tabularx}{\textwidth}{l c*{3}{Y}}
+										\begin{tabularx}{\textwidth}{l | c*{3}{Y}}
 											\toprule
 											Method & Precision & Recall & F-Measure \\
 											\midrule
@@ -378,13 +379,13 @@
 											 None & 0.549 & 0.837 & 0.663 \\
 											\bottomrule
 										\end{tabularx}
-										\caption{Climate Change Ontology}
+										\caption{Climate Ontology}
 									\end{table}
 									
 									\begin{table}
 										\scriptsize
 										\captionsetup{font=scriptsize}
-										\begin{tabularx}{\textwidth}{l c*{3}{Y}}
+										\begin{tabularx}{\textwidth}{l | c*{3}{Y}}
 											\toprule
 											Method & Precision & Recall & F-Measure \\
 											\midrule
@@ -400,7 +401,7 @@
 									\begin{table}
 										\scriptsize
 										\captionsetup{font=scriptsize}
-										\begin{tabularx}{\textwidth}{l c*{3}{Y}}
+										\begin{tabularx}{\textwidth}{l | c*{3}{Y}}
 											\toprule
 											Method & Precision & Recall & F-Measure \\
 											\midrule
@@ -416,11 +417,13 @@
 								\end{minipage}
 								\hfill
 								\begin{minipage}[t]{.48\textwidth}
+									\setlength\abovecaptionskip{0mm}
+									\setlength\belowcaptionskip{0mm}
 									
 									\begin{table}
 										\scriptsize
 										\captionsetup{font=scriptsize}
-										\begin{tabularx}{\textwidth}{l c*{3}{Y}}
+										\begin{tabularx}{\textwidth}{l | c*{3}{Y}}
 											\toprule
 											Method & Precision & Recall & F-Measure \\
 											\midrule
@@ -432,7 +435,29 @@
 										\end{tabularx}
 										\caption{Aggregated Results over all Ontologies}
 									\end{table}
-									
+									\vspace{1cm}
+									\begin{table}
+										\scriptsize
+										\captionsetup{font=scriptsize}
+										\begin{tabularx}{\textwidth}{l | c*{2}{Y} || Y}
+											\toprule
+											Method & Finance & Tennis & Climate & Combined \\
+											\midrule
+											 Meta & 0.745 & 0.434 & 0.372 & 0.523 \\
+											 Onto & 0.726 & 0.617 & 0.360 & 0.543 \\
+											 Dict & 0.567 & 0.517 & 0.658 & 0.600 \\
+											 None & 0.611 & 0.377 & 0.522 & 0.549 \\
+											\bottomrule
+										\end{tabularx}
+										\caption{Inter-rater Agreement}
+									\end{table}
+									\begin{itemize}
+										\footnotesize
+										\justifying
+										\setlength\itemsep{2.5mm}
+										\item Improved the crowd's performance~(F-Measure above~80~\%)
+										\item No significant difference in Inter-rater Agreement
+									\end{itemize}
 								\end{minipage}
 								{\tiny Meta=Metadata~based~Approach, Onto=Ontology~based~Approach, Dict=Dictionary~based~Approach, None=No~Context}
 							\end{minipage}
@@ -452,15 +477,16 @@
 						\begin{multicols}{2}
 							\footnotesize
 							{\usebeamercolor[fg]{itemize item}{Improvements through Context Enrichment}}\\
-							\vspace{-5mm}
+							\vspace{-0.5cm}
 							\begin{itemize}
 								\footnotesize
 								\justifying
-								\setlength\itemsep{5mm}
-								\item All 3 approaches improved the performance of the crowd (F-Measure above~80~\%)
+								\setlength\itemsep{1cm}
 								\item The number of misclassified concepts could be reduced in all 3 approaches
 								\item The Metadata~based~Approach achieves results of highest quality and facilitates the most flexible Context Generation
 							\end{itemize}
+							\vfill\null
+							\columnbreak
 							\footnotesize
 							{\usebeamercolor[fg]{itemize item}{Future Work}}\\
 							\vspace{-1cm}

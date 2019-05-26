@@ -1,0 +1,28 @@
+Ein wichtiger Teil des Semantik Web Lebenszyklus ist die Ontologie Validierung,
+insbesondere bei erlernten Ontologien, die von Natur aus Fehler enthalten.
+Obwohl mittlerweile viele dieser Fehler von Algorithmen erkannt werden,
+ist dies mitunter bei komplexen Problemstellungen schwierig. Crowdsourcing stellt eine
+kosteneffiziente Alternative dar, die diese Aufgaben an eine Gruppe freiwilliger User (Crowd)
+auslagert. Dennoch gibt es bei der Ontologie Validierung mittels Crowdsourcing Verbesserungsbedarf.
+
+Ein Lösungsansatz wäre die Zugabe kontextbezogener Informationen zu Crowdsourcing Aufgaben.
+Dies hätte mitunter einen positiven Einfluss auf das Validierungsergebnis.
+
+Obwohl Fortschritte in diesem Bereich erzielt wurden, gibt es noch wenig Literatur
+zu diesem Thema. In dieser Diplomarbeit stellen wir 3 Methoden vor, die Kontext 
+generieren um die Relevanz von Konzepten innerhalb einer
+Domäne zu überprüfen. Während der Ontology-based-Approach hierarchische
+Relationen verarbeitet, basiert der Metadata-based-Approach auf Annotationen.
+Als Basis für die letzte Methode (Dictionary-based-Approach) dienen Beispielsätze des Online
+Wörterbuchs WordNik.
+
+Alle 3 Methoden wurden als Erweiterung des uComp Protege Plugin konzipiert, 
+ein Plugin für den Ontologie Editor Protege, das die Validierung von Ontologien mittels Crowdsourcing
+ermöglicht. Im Rahmen von 3 Experimenten mit Datensätzen aus den Bereichen Klimawandel, Tennis und Finanzen
+wurden alle 3 Methoden getestet. Die Metriken Precision, Recall und F-Measure wurden für jeden Datensatz berechnet
+um Rückschlüsse über die Performance der getesteten Methoden ziehen zu können. Der Metadata-based-Approach
+lieferte die besten Validierungsergebnisse. Anhand der guten bis sehr guten Ergebnisse aller 3 Methoden (F-Measure
+größer 80%) wurde gezeigt, dass die Qualität der Validierung durch das Hinzufügen kontextbezogener Information
+gesteigert werden konnte.
+
+
